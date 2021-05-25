@@ -9,6 +9,7 @@
 8. Why do we use name='viewport'?
 9. Why should we put link rel='stylesheet' href='index.css' in head?
 10. Why should we put script src='index.js' script at the bottom of body?
-11. What is the difference between ECMAScript vs. JavaScript vs. Node.js?
-12. What is difference between a block element, an inline element, and a inline-block element?
-13. What is a semantic HTML tag? What is the purpose of using it?
+11. What is async attribute? What about defer? Any difference?
+12. What is the difference between ECMAScript vs. JavaScript vs. Node.js?
+13. What is difference between a block element, an inline element, and a inline-block element?
+14. What is a semantic HTML tag? What is the purpose of using it?
