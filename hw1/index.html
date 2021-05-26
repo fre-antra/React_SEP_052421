@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Homework 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Sign Up</h1>
+      </header>
+      <form class="form">
+        <div class="form__InputDiv">
+          <div class="form__splitInputDiv">
+            <input
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              class="form__input form__splitInput"
+            />
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Last Name"
+              class="form__input form__splitInput"
+            />
+          </div>
+          <input
+            type="number"
+            id="mobileNumber"
+            placeholder="Mobile No."
+            class="form__input"
+          />
+          <input
+            type="text"
+            id="emailAddress"
+            placeholder="Email Address"
+            class="form__input"
+          />
+          <div class="form__splitInputDiv">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              class="form__input form__splitInput"
+            />
+            <input
+              type="password"
+              id="confrimPassword"
+              placeholder="Confirm Password"
+              class="form__input form__splitInput"
+            />
+          </div>
+        </div>
+        <div class="form__termsConditions">
+          <div>
+            <input
+              type="checkbox"
+              id="agreeTerms"
+              value="I Agree"
+              class="form__checkbox"
+            />
+            <label class="form__checkboxText">I Agree</label>
+          </div>
+          <div class="form__termsText">
+            By clicking <span id="form__registerText">Register</span>, you agree
+            to the <span id="form_termsText">Terms and Conditions</span> set out
+            by this site, including our cookie use.
+          </div>
+        </div>
+        <div class="form__buttons">
+          <div class="form__splitInputDiv">
+            <input
+              type="submit"
+              id="register"
+              class="form__input form__splitInput form__registerButton"
+              value="Register"
+            />
+            <input
+              type="button"
+              id="signIn"
+              class="form__input form__splitInput form__signInButton"
+              value="Sign In"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
