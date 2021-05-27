@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* class selector */
+/* .box{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+} */
+
+/* id selector */
+/* #box1{
+    background-color: yellow;
+} */
+
+/* element selector */
+/* div {
+    background-color: blue;
+} */
+
+/* attr selector */
+/* div[class^="bo"]{
+    background-color: purple;
+} */
+
+/* div.box[id="box1"]{
+    background-color: orange;
+} */
+
+/* decendant selector */
+body div {
+  background-color: aqua;
+}
+
+/* one level child selector */
+body > div {
+  background-color: brown;
+}
