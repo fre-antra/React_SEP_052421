@@ -1,3 +1,60 @@
-.first_paragraph {
-    color: chocolate;
+* {
+    font-family: Verdana;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 45px;
+}
+
+.button {
+    display: flex;
+    height: 45px;
+}
+#register__button {
+    color: white;
+    background: #5589C5;
+    border: 0px;
+}
+#signin__button {
+    background: #74B666;
+    color: white;
+    border: 0px;
+}
+
+.signup {
+    font-size: xx-large;
+    position: static;
+    text-align: center;
+}
+
+.col-6 {
+    width: calc(6/12*100%);
+}
+.col-8 {
+    width: calc(8/12*100%);
+}
+.col-9 {
+    width: calc(9/12*100%);
+}
+.col-10 {
+    width: calc(9/12*100%);
+}
+.col-11 {
+    width: calc(9/12*100%);
+}
+.col-12 {
+    width: calc(12/12*100%);
+}
+
+@media (min-width: 992px) {
+    .col-md4 {
+        width: calc(4/12*100%);
+    }
+    .col-md8 {
+        width: calc(8/12*100%);
+    }
 }
