@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  height: 100vh;
+}
+
+.wrapper h1 {
+  font-size: xx-large;
+}
+
+.input {
+  padding: 2% 3%;
+  border: none;
+  border: solid 1px #ccc;
+  border-radius: 7px;
+  font-size: medium;
+}
+
+.input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  outline: none;
+}
+
+.section--name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 53%;
+  margin-top: 25px;
+}
+.name {
+  flex: 0 1 48%;
+}
+
+.section--credential {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 53%;
+  margin-top: 25px;
+}
+
+.credential {
+  flex: 0 1 100%;
+}
+
+.email {
+  margin-top: 25px;
+}
+
+.section--password {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 53%;
+  margin-top: 25px;
+}
+
+.password {
+  flex: 0 1 48%;
+}
+
+.section--agreement {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: small;
+  width: 53%;
+  margin-top: 25px;
+}
+
+.section--agreement label {
+  width: 50%;
+}
+
+.section--agreement p {
+  width: 50%;
+}
+
+.agree {
+  width: 100%;
+  margin-left: 8%;
+}
+
+.section--button {
+  display: flex;
+  width: 53%;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.button {
+  flex: 0 1 48%;
+  padding: 2% 3%;
+  font-size: medium;
+  border-radius: 7px;
+  border: none;
+  border: solid 1px #ccc;
+}
+
+.register {
+  background-color: #2a8eff;
+  color: whitesmoke;
+  padding: 0.5% 2%;
+  border-radius: 4px;
+  font-size: x-small;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: x-small;
+  width: 75%;
+  margin-top: 25vh;
+  border-top: solid 1px black;
+}
+
+.footer p {
+  color: black;
+  font-weight: 900;
+}
+
+.register--button {
+  background-color: #2a8eff;
+  color: white;
+}
+
+.signin--button {
+  background-color: #1ec100;
+  color: white;
+}
+
+@media (max-width: 750px) {
+  .name {
+    flex: 0 1 100%;
+  }
+  .last--name {
+    margin-top: 25px;
+  }
+  .password {
+    flex: 0 1 100%;
+  }
+  .c--pw {
+    margin-top: 25px;
+  }
+  .footer {
+    margin-top: 10vh;
+  }
+}
