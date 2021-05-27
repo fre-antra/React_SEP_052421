@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+.signup {
+    font-size: xx-large;
+    position: static;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -18,17 +23,16 @@
     color: white;
     background: #5589C5;
     border: 0px;
+    font-size: 20px;
 }
-#signin__button {
+#sign__in__button {
     background: #74B666;
     color: white;
     border: 0px;
+    font-size: 20px;
 }
+#register__acknowledge {
 
-.signup {
-    font-size: xx-large;
-    position: static;
-    text-align: center;
 }
 
 .col-6 {
