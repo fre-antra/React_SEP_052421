@@ -1,17 +1,28 @@
-* {
+body {
     font-family: Verdana;
     box-sizing: border-box;
 }
+
+input {
+    height: 45px;
+    padding: 0px;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
-}
-input {
-    height: 45px;
+    position: relative;
 }
 .signup {
+    display: flex;
+    flex-wrap: wrap;
     font-size: xx-large;
-    position: static;
+    position: relative;
+}
+.confirm__data {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 #user__firstname {
     margin-right: 5px;
@@ -35,6 +46,9 @@ input {
     height: 45px;
     margin: 5px;
 }
+#register__button:hover{
+    opacity: 70%;
+}
 #sign__in__button {
     background: #74B666;
     color: white;
@@ -43,25 +57,11 @@ input {
     height: 45px;
     margin: 5px;
 }
-
-
+#sign__in__button:hover{
+    opacity: 70%;
+}
 .col-6 {
     width: calc(6/12*100%);
-}
-.col-8 {
-    width: calc(8/12*100%);
-}
-.col-9 {
-    width: calc(9/12*100%);
-}
-.col-10 {
-    width: calc(9/12*100%);
-}
-.col-11 {
-    width: calc(9/12*100%);
-}
-.col-12 {
-    width: calc(12/12*100%);
 }
 
 @media (min-width: 992px) {
@@ -69,6 +69,6 @@ input {
         width: calc(4/12*100%);
     }
     .col-md8 {
-        width: calc(8/12*100%);
+        width: calc(8   /12*100%);
     }
 }
