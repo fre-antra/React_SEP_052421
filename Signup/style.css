@@ -146,3 +146,121 @@ table {
 html {
     font-size: 62.5%;
 }
+
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+}
+
+.row {
+    width: 120rem;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.signup-heading {
+    font-size: 4rem;
+    text-transform: capitalize;
+    margin: 2rem;
+    text-align: center;
+}
+
+.signup-form {
+    width: 50%;
+    margin: 0 auto
+}
+
+.form {
+    width: 100%;
+}
+
+.general-fields {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem
+}
+
+input {
+    padding: 2rem 7rem;
+    border-radius: 1rem;
+    border: 1px solid gray
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.accepting_conditions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    align-items: flex-end;
+}
+
+.accepting_conditions label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.accepting_conditions input {
+    margin-right: 0.5rem;
+}
+
+#agree_checkbox {
+    margin-left: -1rem;
+    margin-bottom: 1rem
+}
+
+.text-condition {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.register {
+    background-color: rgb(39, 145, 187);
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    padding: 1px 1rem;
+    border-radius: 5px;
+}
+
+.terms {
+    color: rgb(39, 145, 187);
+}
+
+.sigin-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 1.5rem 11rem;
+    border-radius: 1rem;
+    color: #fff;
+    border: 0;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.register-btn {
+    background-color: rgb(39, 145, 187);
+}
+
+.signup-btn {
+    background-color: rgb(13, 195, 13);
+}

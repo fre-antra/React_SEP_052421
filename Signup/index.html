@@ -8,66 +8,75 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="row">
-      <h1>sign up</h1>
-      <!-- form start from here -->
-      <form class="signup-form">
-        <!-- names -->
-        <div class="names-fields">
-          <label>
-            <input id="first_name" type="text" placeholder="First Name" />
-          </label>
-          <label>
-            <input id="last_name" type="text" placeholder="Last Name" />
-          </label>
+    <!-- wrapper -->
+    <div class="wrapper">
+      <!-- row -->
+      <div class="row">
+        <h1 class="signup-heading">sign up</h1>
+        <!-- form start from here -->
+        <div class="signup-form">
+          <form class="form">
+            <!-- names -->
+            <div class="general-fields">
+              <label>
+                <input id="first_name" type="text" placeholder="First Name" />
+              </label>
+              <label>
+                <input id="last_name" type="text" placeholder="Last Name" />
+              </label>
+            </div>
+            <!-- names -->
+            <!-- contact -->
+            <div class="contact">
+              <label>
+                <!-- type="tel" id="phone" -->
+                <input id="mobile" type="tel" placeholder="Mobile No." />
+              </label>
+              <label>
+                <input id="email" type="email" placeholder="Email Address" />
+              </label>
+            </div>
+            <!-- contact -->
+            <!-- password -->
+            <div class="general-fields">
+              <label>
+                <input id="password" type="password" placeholder="Password" />
+              </label>
+              <label>
+                <input
+                  id="confirm-password"
+                  type="password"
+                  placeholder="Confirm Password"
+                />
+              </label>
+            </div>
+            <!-- password -->
+            <!-- accepting conditions -->
+            <div class="accepting_conditions">
+              <label>
+                <input id="agree_checkbox" type="checkbox" />
+                I agree
+              </label>
+              <p class="text-condition">
+                By clicking <span class="register">register</span>, you
+                agree to the <span class="terms">Terms and Conditions</span> set
+                <br />
+                out by this site, including our cookie use.
+              </p>
+            </div>
+            <!-- accepting conditions -->
+            <!-- buttons -->
+            <div class="sigin-btns">
+              <button class="btn register-btn">register</button>
+              <button class="btn signup-btn">sign up</button>
+            </div>
+            <!-- buttons -->
+          </form>
+          <!-- form ends here -->
         </div>
-        <!-- names -->
-        <!-- contact -->
-        <div class="contact">
-          <label>
-            <!-- type="tel" id="phone" -->
-            <input id="mobile" type="tel" placeholder="Mobile No." />
-          </label>
-          <label>
-            <input id="email" type="email" placeholder="Email Address" />
-          </label>
-        </div>
-        <!-- contact -->
-        <!-- password -->
-        <div class="password_fields">
-          <label>
-            <input id="password" type="password" placeholder="Password" />
-          </label>
-          <label>
-            <input
-              id="confirm-password"
-              type="password"
-              placeholder="Confirm Password"
-            />
-          </label>
-        </div>
-        <!-- password -->
-        <!-- accepting conditions -->
-        <div class="accepting_conditions">
-          <label>
-            <input type="checkbox" />
-            I agree
-          </label>
-          <p>
-            By clicking register, you agree to the
-            <span>terms and conditions</span> set out by this site, including
-            our cookie use.
-          </p>
-        </div>
-        <!-- accepting conditions -->
-        <!-- buttons -->
-        <div class="sigin-btns">
-          <button>register</button>
-          <button>sign up</button>
-        </div>
-        <!-- buttons -->
-      </form>
-      <!-- form ends here -->
+      </div>
+      <!-- row -->
     </div>
+    <!-- wrapper -->
   </body>
 </html>
