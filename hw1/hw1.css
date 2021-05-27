@@ -1,0 +1,87 @@
+*{
+	box-sizing:border-box
+}
+input{
+	border:1px,solid,rgb(168, 157, 157);
+	border-radius:5px;
+	padding: 9px;
+}
+
+#tag1{
+	margin:6px;
+	text-align: center;
+}
+
+/* .main{
+	text-align: center;
+} */
+
+.myForm{
+  background-color:white;
+  margin:50px auto;
+  justify-content:space-between;
+  width:60%;
+  border-radius:5px;
+  text-align: center;
+}
+
+
+/* #input-first,#input-last{
+	margin:0px 6px;
+} */
+
+#input-first{
+	width: 40%;
+	margin:2.5px
+}
+
+#input-last{
+	width: 40%;
+	margin:2.5px
+}
+
+.input-content{
+	width: calc(80% + 13px);
+	margin:2.5px;
+}
+
+#input-password{
+	width:40%;
+	margin:2.5px;
+}
+
+#input-confirm{
+	width:40%;
+	margin:2.5px
+}
+
+.checkbox-container {
+    width: 35%;
+    font-weight: bold;
+}
+
+.last-check{
+	margin:2.5px;
+	display: flex;
+}
+
+.text-btn{
+	background-color:rgb(90, 126, 202);
+	color:white
+}
+
+.buttons button{
+	width:40%;
+	padding:8px;
+	color:white;
+	border-radius:10px;
+	padding:15px
+}
+
+.btn-regist{
+	background-color: rgb(90, 126, 202);
+
+}
+.btn-sign{
+	background-color: #0b4d14;
+}
