@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+body {
+    height: 700px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBody{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    border: 2px solid white;
+    padding: 20px;
+}
+
+section input{
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 13px;
+    margin: 5px auto;
+    width: 90%;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+input::placeholder {
+    font-size: 19px;
+}
+
+.name, .password {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.name input, .password input{
+    /* need to optimize */
+    flex: 1 1 140px;
+}
+
+.name__first, .password__first {
+    /* need to optimize 当缩小时右边对不齐*/
+    margin-right: 15px;
+}
+
+.info input{
+    width: 100%;
+}
+
+.aggrement_check > *{
+    display: inline;
+}
+
+/* .aggrement div {
+    display: block;
+} */
+
+.aggrement{
+    display: flex;
+}
+.aggrement_check {
+    width: 25%;
+}
+.aggrement__note{
+    width: 70%;
+    font-size: 13px;
+    margin: 3px 0 3px auto;
+}
+
+.aggrement_check label {
+    /* unable to bold the text ???*/
+    font-weight: bold
+}
+
+.aggrement__register {
+    border-radius: 3px;
+    padding: 3px;
+    color:white;
+    background-color: skyblue;
+    font-size: 13px;
+    cursor: pointer;
+    display: inline;
+}
+
+.aggrement__term{
+    color:skyblue
+}
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.buttons button {
+    border-radius: 3px;
+    padding: 5px;
+    margin: 3px 3px;
+    padding: 14px 28px;
+    font-size: 16px;
+    color:white;
+    cursor: pointer;
+    display: inline-block;
+    width: 43%;
+    flex: 1 1 140px;
+}
+
+.buttons__register {
+    background-color: skyblue;
+}
+
+.buttons__login {
+    background-color: darkseagreen;
+}
+
+/* 
+@media (max-width: 600px) {
+    .mainBody {
+        width: 80%;
+        margin: auto;
+    }
+
+
+    section input{
+        width: 80%;
+    }
+
+    .buttons button {
+        width: 43%;
+    }
+
+} */
