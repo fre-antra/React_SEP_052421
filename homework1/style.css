@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.two{
+    width: 45%;
+    margin: 5px;
+    padding: 8px;
+}
+
+.one{
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+}
+
+.agree-term {
+    flex: 1;
+    margin: 10px;
+}
+
+.text-btn {
+    color: white;
+    background: blue;
+    padding: 0 4px;
+}
