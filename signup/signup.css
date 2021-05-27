@@ -125,7 +125,15 @@ div > .form__button:not(:last-child) {
 }
 
 @media only screen and (max-width: 600px) {
-    .inline {
-        display: inline;
+    .form > div {
+        flex-direction: column;
+    }
+    div > .form__input:not(:first-child),
+    div > .form__button:not(:first-child) {
+        margin-left: 0;
+    }
+    div > .form__input:not(:last-child),
+    div > .form__button:not(:last-child) {
+        margin-right: 0;
     }
 }
