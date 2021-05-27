@@ -12,6 +12,7 @@ input {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    align-items: stretch;
 }
 .signup {
     display: flex;
@@ -37,7 +38,9 @@ input {
     display: flex;
     flex-wrap: wrap;
 }
-
+#register__acknowledge{
+    right: 5px;
+}
 #register__button {
     color: white;
     background: #5589C5;
@@ -60,15 +63,15 @@ input {
 #sign__in__button:hover{
     opacity: 70%;
 }
+
 .col-6 {
     width: calc(6/12*100%);
 }
-
 @media (min-width: 992px) {
     .col-md4 {
         width: calc(4/12*100%);
     }
     .col-md8 {
-        width: calc(8   /12*100%);
+        width: calc(8/12*100%);
     }
 }
