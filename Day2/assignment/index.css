@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form {
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+
+.header {
+  font-size: 50px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.form__box {
+  width: calc(100% - 20px);
+}
+
+.box--half {
+  width: calc(6 / 12 * 100% - 20px);
+}
+
+@media (max-width: 600px) {
+  .form__box {
+    width: 80%;
+  }
+  .container {
+    width: 80%;
+  }
+}
+
+.agree__check {
+  font-weight: bold;
+  width: calc(3 / 12 * 100% - 20px);
+  min-width: 88px;
+}
+
+.text__agreement {
+  font-size: 0.9em;
+  width: calc(9 / 12 * 100%);
+}
+
+.btn__register__sm {
+  margin: 0px;
+  padding: 0px 10px;
+  color: white;
+  background: blue;
+}
+
+a {
+  color: blue;
+}
+
+.btn__register {
+  color: white;
+  background: blue;
+}
+
+.btn__signIn {
+  color: white;
+  background: green;
+}
