@@ -14,8 +14,8 @@
   position:absolute;
   top: 0; bottom: 0; left: 0; right: 0;
   margin: auto;
-  width:50%;
-  height:50%;
+  width:60%;
+  height:60%;
 }
 .header {
   font-size: 40px;
@@ -49,5 +49,41 @@ input, button {
 .form__box {
   width:calc(12 / 12 * 100%)
 }
+.container {
+  width:80%;
+}
 }
 
+.agree__check {
+  font-weight: bold;
+  width:calc(3 / 12 * 100% - 20px);
+  min-width:88px;
+}
+
+.text__agreement {
+  font-size: 0.9em;
+  width:calc(9 / 12 * 100%);
+  /* flex: 0 1 auto; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn__register {
+  color: white;
+  background: rgb(0, 113, 252);
+}
+
+a {
+  color: rgb(0, 29, 252);
+}
+
+.btn__signIn {
+  color: white;
+  background: rgb(9, 184, 94);
+}
+
+.btn__register__sm {
+  margin: 0px;
+  padding: 0px 5px;
+  color: white;
+  background: rgb(0, 113, 252); 
+}
