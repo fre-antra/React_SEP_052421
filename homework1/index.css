@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Sform {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 20px;
+  font-size: larger;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Sform input {
+  padding: 2px 2px;
+  margin: 5px 0px;
+}
+
+.b-input {
+  width: 360px;
+  display: block;
+}
+
+.fcenter {
+  display: flex;
+  justify-content: center;
+}
+
+.up {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.words {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+a {
+  font-size: small;
+}
+
+.wleft {
+  flex: 1;
+}
+.wright {
+  flex: 4;
+}
+.sub-button {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.left {
+  background: #5589c5;
+}
+.right {
+  background: #74b666;
+}
+
+span {
+  font-size: small;
+  text-align: start;
+}
