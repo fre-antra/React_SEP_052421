@@ -1,0 +1,92 @@
+flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0x;
+  margin: 0x;
+}
+
+.flex-item {
+  text-align: center;
+}
+
+.name {
+  flex-direction: row;
+  padding: 10px;
+}
+
+.password {
+  flex-direction: row;
+}
+
+.agreement {
+  flex-direction: row;
+  margin: 20px;
+}
+
+.agreement-checkbox {
+  float: left;
+  width: 40%;
+  font-weight: bold;
+  text-align: right;
+}
+
+.agreement-text {
+  float: right;
+  width: 60%;
+  text-align: center;
+}
+
+.buttons {
+  flex-direction: row;
+}
+
+input:focus {
+  box-shadow: 5px 5px aquamarine;
+}
+
+button {
+  color: white;
+  border-radius: 5px;
+  width: 300px;
+  margin: 15px;
+  font-size: x-large;
+  padding: 20px;
+}
+
+span {
+  background-color: rgb(53, 118, 190);
+  border-radius: 5px;
+  color: white;
+}
+
+#btn1 {
+  background-color: rgb(53, 118, 190);
+}
+
+#btn2 {
+  background-color: rgb(77, 173, 74);
+}
+
+#sm-box {
+  border-radius: 5px;
+  width: 300px;
+  font-size: x-large;
+  border-color: darkgrey;
+  padding: 20px;
+  margin: 15px;
+}
+
+#lg-box {
+  border-radius: 5px;
+  width: 680px;
+  font-size: x-large;
+  border-color: lightgrey;
+  padding: 20px;
+  margin: 10px;
+}
+
+@media all and (max-width: 600px) {
+    .flex-item {
+        justify-content: space-around;
+    }
+  }
