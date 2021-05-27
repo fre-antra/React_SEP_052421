@@ -17,6 +17,8 @@
   margin: auto;
   width:60%;
   height:60%;
+  max-width: 665px;
+  max-height: 665px;
 }
 
 .header {
@@ -61,6 +63,7 @@ input, button {
   font-weight: bold;
   width:calc(3 / 12 * 100% - 20px);
   min-width:88px;
+  padding: 10px;
 }
 
 .text__agreement {
@@ -90,4 +93,9 @@ a {
   padding: 0px 5px;
   color: white;
   background: rgb(0, 113, 252); 
+}
+
+input.checkbox--box {
+  padding: 0px;
+  margin: 0px;
 }
