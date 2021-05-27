@@ -1,0 +1,111 @@
+html{
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    width:90%;
+    max-width: 700px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    font-size: 1rem;
+    height: 45px;
+
+    border:1px solid grey;
+    border-radius: 5px;
+}
+
+.form__inputField--inline{
+    width:90%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.form__inputField--inline input{
+    width:48%;
+    margin:5px 1px;
+}
+
+.form__inputField--block{
+    width:90%;
+    display:flex;
+    justify-content: center;
+
+    margin:5px 2px;
+}
+
+.form__checkboxStatement{
+    width:90%;
+
+    display: flex;
+    align-items: center;
+}
+
+.form__checkboxStatement__checkbox{
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.form__checkboxStatement__checkbox label{
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.form__checkboxStatement span{
+    font-size: .7rem;
+}
+
+.form__checkboxStatement__highlightText{
+    background-color:#008CBA;
+    color:white;
+    padding:0px 5px;
+    border-radius: 2px;
+}
+
+.form__checkboxStatement span a{
+    color:#008CBA;
+    text-decoration: none;
+}
+
+.register-button{
+    color:white;
+    background-color: #008CBA;
+}
+
+.signin-button{
+    color:white;
+    background-color: #4CAF50;
+}
+
+@media (max-width: 600px) {
+    .form__inputField--inline{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form__inputField--inline input{
+        width:100%;
+    }
+}
