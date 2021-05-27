@@ -1,0 +1,115 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+}
+
+.col-4 {
+  width: calc(4 / 12 * 100%);
+}
+
+.col-8 {
+  width: calc(8 / 12 * 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__title {
+  justify-content: center;
+  width: auto;
+}
+
+.container__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__input,
+.btn {
+  width: 100%;
+  height: 3rem;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  border-color: #d0d0d0;
+  border-style: solid;
+  border-width: 1px;
+  font-size: large;
+  box-shadow: none;
+}
+
+.form__description {
+  font-size: 1rem;
+}
+
+.form__description > span {
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 2px;
+  color: white;
+  font-size: 0.8rem;
+  background-color: #428bca;
+}
+
+.form__checkbox {
+  font-weight: 700;
+}
+
+.form__description > a:link {
+  color: #6ea6d6;
+  text-decoration: none;
+}
+
+input[type="button"] {
+  color: white;
+}
+
+.btn__reg {
+  background-color: #428bca;
+}
+
+.btn__signIn {
+  background-color: #5cb85c;
+}
+
+input:hover {
+  box-shadow: 0 0 5px 0.2px #6cb2ea;
+}
+
+@media screen and (max-width: 600px) {
+  .form__row {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+  .form__buttons {
+    flex-direction: row;
+  }
+  .form__input {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.3rem;
+  }
+}

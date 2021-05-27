@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./signUp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__title">
+        <h1>Sign Up</h1>
+      </div>
+      <form class="container__form">
+        <div class="form__row">
+          <input
+            type="text"
+            class="form__input"
+            id="firstName"
+            placeholder="First Name"
+          />
+          <label for="firstName"></label>
+          <input
+            type="text"
+            class="form__input"
+            id="lastName"
+            placeholder="Last Name"
+          />
+          <label for="lastName"></label>
+        </div>
+        <div class="form__row">
+          <input
+            type="text"
+            class="form__input"
+            id="mobile"
+            placeholder="Mobile No."
+          />
+          <label for="mobile"></label>
+        </div>
+        <div class="form__row">
+          <input
+            type="text"
+            class="form__input"
+            id="email"
+            placeholder="Email Address"
+          />
+          <label for="email"></label>
+        </div>
+        <div class="form__row">
+          <input
+            type="password"
+            class="form__input"
+            id="password"
+            placeholder="Password"
+          />
+          <label for="password"></label>
+          <input
+            type="password"
+            class="form__input"
+            id="confirmPWD"
+            placeholder="Confirm Password"
+          />
+          <label for="confirmPWD"></label>
+        </div>
+        <div class="form__row">
+          <div class="form__checkbox col-4">
+            <input type="checkbox" id="agreement" />
+            <label for="agreement">I Agree</label>
+          </div>
+          <div class="form__description col-8">
+            By Clicking <span>Register</span>, you agree to the
+            <a href="#">Terms and Conditions</a> set out by this site, including
+            our Cookie Use.
+          </div>
+        </div>
+        <div class="form__row form__buttons">
+          <input type="button" class="btn btn__reg" value="Register" />
+          <input type="button" class="btn btn__signIn" value="Sign In" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
