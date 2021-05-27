@@ -9,41 +9,43 @@
     </head>
 
     <body>
-        <div class="mainBody">
+        <!-- form element is used to create an HTML form for user input -->
+        <form class="mainBody">
             <h1>Sign Up</h1>
-        <section class="name">
-            <input type="text" class="name__first" placeholder="First Name">
-            <input type="text" class="name__last" placeholder="Last Name">
-        </section>
-        
-        <section class="info">
-            <input type="text" class="info__mobileNum" placeholder="Mobile No.">
-            <input type="text" class="info__email" placeholder="Email Address">
-        </section>
-        
-        <section class="password" >
-            <input type="text" class="password__first"placeholder="Password">
-            <input type="text" class="password__confirm" placeholder="Confirm Password">
-        </section>
-        
-        <div class="aggrement">
-            <div class="aggrement__check">
-                <input type="checkbox" class="aggrement__checkbox" id="check">
-                <label for="check"><strong>I Agree</strong></label>
-            </div>
+            <section class="name">
+                <input type="text" class="name__first" placeholder="First Name">
+                <input type="text" class="name__last" placeholder="Last Name">
+            </section>
             
-            <div class="aggrement__note">
-                By clicking <button class="aggrement__register">Register</button>, you agree to the <span class="aggrement__term">Terms and Conditions</span>  
-                set out by this site, including our Cookie Use.
+            <section class="info">
+                <input type="tel" class="info__mobileNum" placeholder="Mobile No.">
+                <input type="email" class="info__email" placeholder="Email Address">
+            </section>
+            
+            <section class="password" >
+                <input type="password" class="password__first"placeholder="Password">
+                <input type="password" class="password__confirm" placeholder="Confirm Password">
+            </section>
+            
+            <div class="aggrement">
+                <div class="aggrement__check">
+                    <input type="checkbox" class="aggrement__checkbox" id="check">
+                    <label for="check"><strong>I Agree</strong></label>
+                </div>
+                
+                <div class="aggrement__note">
+                    By clicking <button class="aggrement__register">Register</button>, you agree to the <span class="aggrement__term">Terms and Conditions</span>  
+                    set out by this site, including our Cookie Use.
+                </div>
             </div>
-        </div>
 
 
-        <section class="buttons">
-            <button class="buttons__register">Register</button>
-            <button class="buttons__login">Log in </button>
-        </section>
+            <section class="buttons">
+                <button class="buttons__register">Register</button>
+                <button class="buttons__login">Log in </button>
+            </section>
 
-        </div>
+        </form>
+        
     </body>
 </html>

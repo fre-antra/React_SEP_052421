@@ -1,3 +1,4 @@
+/* reset CSS */
 *,
 *::before,
 *::after{
@@ -7,8 +8,9 @@
     box-sizing:border-box;
 }
 
-body {
-    height: 700px;
+/* setting of form */
+form {
+    height: 80%;
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -16,60 +18,51 @@ body {
     align-items: center;
 }
 
-.mainBody{
+/* setting of container */
+.container{
     position: relative;
     width: 70%;
     height: 70%;
-    border: 2px solid white;
+    border: 2px solid red;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-section input{
+/* Sign up  */
+.logInfo{
+    font-family: sans-serif;
+    text-align: center
+}
+
+/* input area */
+input::placeholder {
+    font-size: 16px;
+}
+
+.info input{
     border: 1px solid grey;
     border-radius: 3px;
     padding: 13px;
     margin: 5px auto;
-    width: 90%;
+    cursor: pointer;
 }
 
-h1{
-    display: flex;
-    justify-content: center;
+.info__box {
+    width: calc(100% - 20px)
 }
 
-input::placeholder {
-    font-size: 19px;
-}
-
-.name, .password {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-}
-
-.name input, .password input{
-    /* need to optimize */
-    flex: 1 1 140px;
-}
-
-.name__first, .password__first {
-    /* need to optimize 当缩小时右边对不齐*/
-    margin-right: 15px;
-}
-
-.info input{
-    width: 100%;
-}
-
-.aggrement_check > *{
-    display: inline;
+.box--half {
+    width: calc(1/2 * 100% - 12px)
 }
 
 
+/* aggrement div */
 .aggrement{
     display: flex;
+    flex-wrap: wrap;
 }
+
 .aggrement_check {
     width: 25%;
 }
@@ -79,11 +72,6 @@ input::placeholder {
     margin: 3px 0 3px auto;
 }
 
-.aggrement_check label {
-    /* unable to bold the text ???*/
-    font-weight: bold
-}
-
 .aggrement__register {
     border-radius: 3px;
     padding: 3px;
@@ -91,14 +79,13 @@ input::placeholder {
     background-color: skyblue;
     font-size: 13px;
     cursor: pointer;
-    display: inline;
 }
 
 .aggrement__term{
-    color:skyblue
+    color:rgb(50, 108, 131)
 }
 
-
+/* button div */
 .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -114,30 +101,31 @@ input::placeholder {
     color:white;
     cursor: pointer;
     display: inline-block;
-    width: 43%;
-    flex: 1 1 140px;
 }
 
 .buttons__register {
     background-color: skyblue;
+    width: calc(1/2 * 100% - 12px)
 }
 
 .buttons__login {
     background-color: darkseagreen;
+    width: calc(1/2 * 100% - 12px)
 }
 
 
-/* @media (max-width: 600px) {
-    .mainBody {
-        width: 85%;
+/* adjustment when window width less then 600px */
+@media (max-width: 600px) {
+    .container {
+        width: 80%;
     }
 
-    section input{
-        width: 90%;
+    .box--half {
+        width: calc(100% - 20px)
     }
 
-    .buttons button {
-        width: 90%;
+    .buttons__register, .buttons__login {
+        width: calc(100% - 20px);
     }
 
-} */
+}

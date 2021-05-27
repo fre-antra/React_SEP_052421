@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Baihan Chen">
+        <title>Antra LogIn</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!-- version 2: better organization -->
+        <!-- form element is used to create an HTML form for user input -->
+        <form action="" target="" method="" class="form">
+            <div class="container">
+                <h1 class="logInfo">Sign Up</h1>
+
+                <div class="info">
+                    <!-- input type has multiple selection -->
+                    <input type="text"  class="info__box box--half firstName" placeholder="First Name">
+                    <input type="text"  class="info__box box--half lastName" placeholder="Last Name">
+                    <input type="tel"  class="info__box mobileNum" placeholder="Mobile No.">
+                    <input type="email"  class="info__box email" placeholder="Email Address">
+                    <input type="password"  class="info__box box--half pwFirst" placeholder="Password">
+                    <input type="password"  class="info__box box--half pwConfirm" placeholder="Confirm Password">
+                </div>
+
+                <div class="aggrement">
+                    <div class="aggrement__check">
+                        <input type="checkbox" class="aggrement__checkbox" id="check">
+                        <label for="check"><strong>I Agree</strong></label>
+                    </div>
+                    
+                    <div class="aggrement__note">
+                        By clicking <button class="aggrement__register">Register</button>, you agree to the <span class="aggrement__term">Terms and Conditions</span>  
+                        set out by this site, including our Cookie Use.
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="buttons__register">Register</button>
+                    <button class="buttons__login">Log in </button>
+                </div>
+
+            </div>
+        </form>
+    </body>
+</html>
