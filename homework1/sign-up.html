@@ -1,34 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Document</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
-<div class="container">
-  <h1>Sign up</h1>
-  <form action="" class="form">
-    <!--      <label for="firstName">First Name: </label>-->
-    <input type="text" id="firstName" name="firstName" placeholder="First Name">
-    <!--      <label for="lastName">Last Name: </label>-->
-    <input type="text" id="lastName" name="lastName" placeholder="Last Name">
-    <input type="text" placeholder="Mobile No." class="one-row">
-    <input type="text" placeholder="Email Address" class="one-row">
-    <input type="text" placeholder="Password">
-    <input type="text" placeholder="Confirm Password">
-    <div class="area1">
-      <input type="checkbox" id="checkbox">
-      <label for="checkbox">I Agree</label>
-      <span>By clicking <button class="btn">Register</button>, you agree to the <a href="">Term and Condition</a> set out by this site,
-         including cookies</span>
+<div class="form-container">
+  <form action="" class="form-signup">
+    <header class="form-signup__header">
+      <h1 class="heading">Sign Up</h1>
+    </header>
+    <div class="form-row">
+      <div class="form-item">
+        <input type="text" class="fname" placeholder="First Name"/>
+      </div>
+      <div class="form-item">
+        <input type="text" class="lname" placeholder="Last Name"/>
+      </div>
     </div>
-    <div class="area2">
-      <button type="submit" class="blue">Register</button>
-      <button class="green">Sign In</button>
+    <div class="form-row">
+      <div class="form-item">
+        <input type="text" class="phone" placeholder="Mobile No."/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-item">
+        <input type="text" class="email" placeholder="Email Address"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-item">
+        <input type="password" class="password" placeholder="Password"/>
+      </div>
+      <div class="form-item">
+        <input
+                type="password"
+                class="repassword"
+                placeholder="Confirm Password"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="agree-wrapper">
+        <div class="check-agree">
+          <input type="checkbox" id="agree" class="agree"/>
+          <label for="agree">I Agree</label>
+        </div>
+        <p class="terms">
+          By clicking
+          <span class="badge-register">Register</span>, you agree to the
+          <a href="#" class="conditions">Terms and Conditions</a>
+          set out by this site, including our Cookie Use
+        </p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-item">
+        <input type="submit" class="btn primary" value="Register"/>
+      </div>
+      <div class="form-item">
+        <input type="button" class="btn success" value="Sign In"/>
+      </div>
     </div>
   </form>
 </div>
