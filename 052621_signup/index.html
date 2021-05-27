@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class=signup>
+        <h1 id="signup__title">Sign Up</h1>
+        <form class="signup__form">
+            <div class="signup__row">
+                <input class="col-6 col-md-12" name="fname" placeholder="First Name">
+                <input class="col-6 col-md-12" name="lanme" placeholder="Last Name">
+            </div>
+            <div class="signup__row">
+                <input class="col-12 col-md-12" name="mobile" placeholder="Mobile No.">
+                <input class="col-12 col-md-12" name="email" placeholder="Email Address">
+            </div>
+            <div class="signup__row">
+                <input class="col-6 col-md-12" name="pswd" placeholder="Password">
+                <input class="col-6 col-md-12" name="pswd-confirm" placeholder="Confirm Password">
+            </div>
+            <div class="signup__row--agreement">
+                <span class="a-col-3">
+                    <input type="checkbox" id="signup__agree" name="agree">
+                    <label for="agree"><strong>I Agree</strong></label>
+                </span>
+                <span class="a-col-9">
+                    By clicking <span id="signup__span--register">&nbsp;Register&nbsp;</span>, you agree to the <span id="signup__span--blue">Terms and Conditions</span> set out by this site, including our Cookie Use.
+                </span>
+            </div>
+            <div class="signup__row">
+                <input type="submit" class="col-6 col-md-12" id="signup__button--register" value="Register">
+                <button class="col-6 col-md-12" id="signup__button--signin">Sign In</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
