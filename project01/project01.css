@@ -2,38 +2,48 @@
     font-family: Verdana;
     box-sizing: border-box;
 }
-
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+input {
+    height: 45px;
+}
 .signup {
     font-size: xx-large;
     position: static;
 }
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+#user__firstname {
+    margin-right: 5px;
+    height: 45px;
+}
+#user__password {
+    margin-right: 5px;
     height: 45px;
 }
 
 .button {
     display: flex;
-    height: 45px;
+    flex-wrap: wrap;
 }
+
 #register__button {
     color: white;
     background: #5589C5;
     border: 0px;
     font-size: 20px;
+    height: 45px;
+    margin: 5px;
 }
 #sign__in__button {
     background: #74B666;
     color: white;
     border: 0px;
     font-size: 20px;
+    height: 45px;
+    margin: 5px;
 }
-#register__acknowledge {
 
-}
 
 .col-6 {
     width: calc(6/12*100%);
