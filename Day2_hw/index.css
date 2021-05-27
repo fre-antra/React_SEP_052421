@@ -89,4 +89,8 @@ body {
   .form-sign-up .form-row {
     flex-direction: column;
   }
+
+  .agreement-checkbox label {
+    display: none;
+  }
 }
