@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI",Arial,sans-serif;
+  font-weight: 400;
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container .form__header .form-heading{
+  text-align: center;
+}
+
+.form-sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-sign-up .form-row {
+  display: flex;
+  flex-direction: row;
+  flex:1 1 100%;
+  margin: 0.1rem;
+  justify-content: center;
+}
+
+.form-sign-up .form-row .form-item {
+  flex: 1 1 100%;
+  margin: 0.5rem 1rem
+}
+
+.form-sign-up .form-row .form-item input {
+  padding: 0.5rem;
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  border: 1px solid rgba(179, 177, 177, 0.543);
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.form-sign-up .form-row .agreement-checkbox {
+  flex: 1 1 30%;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.form-sign-up .form-row .agreement {
+  flex: 1 1 60%;
+  font-size: 0.8rem;
+}
+
+.form-row .form-item .btn--sign-up {
+  background-color: rgb(49, 118, 193);
+  color: white;
+}
+
+.form-row .form-item .btn--sign-in {
+  background-color: rgb(29, 157, 80);
+  color: white;
+}
+
+.agreement span {
+  background-color: rgb(49, 118, 193);
+  padding: 1px 3px;
+  border-radius: 2px;
+  color: white;
+}
+
+.agreement a {
+  color: blue;
+  text-decoration: none
+}
+
+@media only screen and (max-width: 600px) {
+  .form-sign-up .form-row {
+    flex-direction: column;
+  }
+}

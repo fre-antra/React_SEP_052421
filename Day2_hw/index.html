@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Assignment">
+    <meta name="keywords" content="HTML,CSS">
+    <meta name="author" content="ZQ_M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_05_26</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <header class="form__header">
+        <h1 class="form-heading">Sign Up</h1>
+      </header>
+      <form action="" target="_self" method="post" class="form-sign-up">
+        <div class="form-row">
+          <div class="form-item">
+            <label for="fname">
+            <input type="text" class="fname" name="fname" placeholder="First Name">
+          </div>
+          <div class="form-item">
+            <label for="lname">
+            <input type="text" class="lname" name="lname" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <label for="phone">
+            <input type="tel" class="phone" name="phone" placeholder="Mobile No." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <label for="email">
+              <input type="email" class="email" name="email" placeholder="Email Address">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <label for="pwd">
+            <input type="password" class="pwd" name="pwd" placeholder="Password">
+          </div>
+          <div class="form-item">
+            <label for="pwd">
+            <input type="password" class="pwd" name="cfpwd" placeholder="Confirm Password">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="agreement-checkbox">
+            <input type="checkbox" id="agree">
+            <label for="agree"> I Agree</label>
+          </div>
+          <p class="agreement">
+            By Clicking <span>Register</span>, you agree to the <a href="" class="terms-conditions">Terms and Conditions</a> set out by this site, including our Cookie Use.
+          </p>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <input type="submit" class="btn--sign-up" value="Register">
+          </div>
+          <div class="form-item">
+            <input type="button" class="btn--sign-in" value="Sign In">
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
