@@ -7,6 +7,7 @@
 .container {
     margin: auto;
     width: 500px;
+    border-radius: 5px;
 }
 
 body {
@@ -35,6 +36,7 @@ h1{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
     
 }
 
@@ -69,21 +71,6 @@ div input{
     border-radius: 3px;
 }
 
-div button{
-    width: calc(50% - 1rem);
-    height: 100%;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 12px;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 15px;
-    color:white;
-    position: relative;
-
-}
-
 .check {
     display: flex;
     flex-direction: row;
@@ -100,7 +87,20 @@ div button{
     margin-left: 30px;
 }
 
+/* Register and Sign in Button */
+div button{
+    height: 100%;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    color:white;
+    position: relative;
 
+}
 
 #buttons_register {
     background-color: #0088cc;
@@ -111,8 +111,11 @@ div button{
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .col-6 {
+        width: 100%;
+    }
+    .col-12 {
         width: 100%;
     }
 }
