@@ -10,7 +10,7 @@
 
 
 <p align="center">
-<img src="./screen shot 1.png" width=50%>
+<img src="./screen shot 3.png" width=50%>
 </p>
 
 ---------------------------------------------------
