@@ -5,24 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
   <title>Sign Up</title>
 </head>
 
 <body>
-  <form action="/" method="post">
-    <h1 class="header">Sign up</h1>
+  <form action="/" method="post" class="form">
     <div class="container">
-      <input type="text" class="col--6 col-sm--12" name="fname" placeholder="First Name" required>
-      <input type="text" class="col--6 col-sm--12" name="lname" placeholder="Last Name" required>
-      <input type="tel" class="col--12 col-sm--12" name="phone" placeholder="Mobile No." pattern="[0-9]{10}" required>
-      <input type="email" class="col--12 col-sm--12" name="email" placeholder="Email Address" required>
-      <input type="password" class="col--6 col-sm--12" name="password" placeholder="Password" required>
-      <input type="password" class="col--6 col-sm--12" name="password" placeholder="Confirm Password" required>
-      <input type="checkbox" class="col--1" name="checkbox" required>
-      <label class="2">I Agree</label>
-      <p class="col--9">By Clicking Register, you agree to the Terms and Conditions set out by this site, including our Cookie Use.</p>
-      <button class="col--6 col-sm--12" type="submit">Register</button>
-      <button class="col--6 col-sm--12" type="submit">Sign In</button>
+      <h1 class="header">Sign Up</h1>
+      <div class="flexbox">
+        <input type="text" class="form__box box--half" name="fname" placeholder="First Name" required>
+        <input type="text" class="form__box box--half" name="lname" placeholder="Last Name" required>
+        <input type="tel" class="form__box" name="phone" placeholder="Mobile No." pattern="[0-9]{10}" required>
+        <input type="email" class="form__box" name="email" placeholder="Email Address" required>
+        <input type="password" class="form__box box--half" name="password" placeholder="Password" required>
+        <input type="password" class="form__box box--half" name="password" placeholder="Confirm Password" required>
+        <div class="agree--check">
+          <input type="checkbox" class="checkbox__box" name="checkbox" required>
+          <label class="checkbox__text">I Agree</label>
+        </div>
+        <p class="text__state">By Clicking Register, you agree to the Terms and Conditions set out by this site,
+          including our Cookie Use.</p>
+        <button class="btn__register form__box box--half" type="submit">Register</button>
+        <button class="btn__signin  form__box box--half" type="submit">Sign In</button>
+      </div>
     </div>
   </form>
 </body>
