@@ -34,7 +34,9 @@ a {
   flex-direction: column;
   position: relative;
 }
-
+.header-title {
+  text-decoration: underline;
+}
 /* =========Main========== */
 .main {
   height: 90%;
