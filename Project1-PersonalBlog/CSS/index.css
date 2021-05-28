@@ -1,3 +1,11 @@
-/* body {
-  background-color: red;
-} */
+/* initialization */
+@import url(init.css);
+
+/* header */
+@import url(header.css);
+
+/* content */
+@import url(content.css);
+
+/* media */
+@import url(media.css);

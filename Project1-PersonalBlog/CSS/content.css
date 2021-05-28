@@ -1,0 +1,38 @@
+.grid-container {
+  position:relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  top: 77px;
+}
+
+.grid-card {
+  background-color: white;
+  border: 1px solid gray;
+  margin: 10px;
+  border-radius: 5px;
+  padding:10px;
+}
+
+.grid-card-green {
+  color: var(--color-green);
+}
+
+.grid-card-blue {
+  color: var(--color-blue);
+}
+
+.grid-card-header {
+  font-size: 2rem;
+}
+
+.grid-card-date {
+  color: gray;
+}
+
+.grid-card-footer {
+  padding-top: 40px;
+}
+
+.grid-card-footer a{
+  font-size: 10px
+}
