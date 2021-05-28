@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+}
+.parent {
+  padding: 1%;
+  margin: 1%;
+  background-color: black;
+  color: white;
+  position: relative;
+  height: 1000px;
+}
+
+.one {
+  background-color: rgb(151, 56, 56);
+}
+
+.two {
+  background-color: rgb(98, 191, 61);
+  position: fixed;
+  top: 0;
+}
+
+.three {
+  background-color: rgb(192, 219, 36);
+}
