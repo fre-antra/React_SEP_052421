@@ -1,0 +1,17 @@
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.old {
+  border: 1px solid lightskyblue;
+  color: lightskyblue;
+}
+
+.new {
+  border: 1px solid lightgrey;
+  color: lightgrey;
+}

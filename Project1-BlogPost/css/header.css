@@ -1,0 +1,22 @@
+.app-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__subscribe {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.header__title {
+  color: rgb(92, 92, 92);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__search {
+  width: 2rem;
+  cursor: pointer;
+}
