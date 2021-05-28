@@ -1,0 +1,18 @@
+.footer-container {
+    padding-top: 6vh;
+    background-color: var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-top: 1px solid rgb(231, 224, 224);
+    
+}
+
+.footer-container p {
+    margin-top: 3vh;
+}
+
+.footer-container p:last-child {
+    margin-bottom: 2vh;
+}
