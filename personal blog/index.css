@@ -1,0 +1,60 @@
+@import "nav.css";
+@import "footer.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+
+header{
+    font-family: 'Volkhov', serif;
+}
+#blog-title{
+    text-align: center;
+    font-size: 30px;
+}
+#subscribe{
+    position:relative;
+    top: 30px;
+    left:300px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+    width: 60%;
+    margin: auto;
+}
+
+.card {
+    border: 3px lightgray solid;
+    padding: 20px;
+    position: relative;
+}
+
+.card .type-world {
+    color: var(--color-world-blog);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card .type-design {
+    color: var(--color-design-blog);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card .date{
+    color: var(--color-subtitle);
+    margin-bottom: 10px;
+}
+
+.card .content {
+    margin-bottom: 100px;
+}
+
+.card .more{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: #537bbb
+}
