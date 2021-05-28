@@ -34,9 +34,10 @@ body{
     padding: 10px 0;
     color: #fff;
     bottom: 0;
+    display: inline;
 }
 .jumbotron {
-    padding: 5%;
+    padding: 2%;
     background-color: var(--color-grey);
 }
 .title{
@@ -58,12 +59,24 @@ body{
     column-gap: 5%;
     justify-content: space-between;
 }
-nav a{
+li a{
     color: var(--color-white);
     text-decoration: none;
     padding: 7px 25px;
     display: inline-block;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+}
+li {
+    float: left;
+  }
+  
 
 
 
