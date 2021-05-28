@@ -1,0 +1,47 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+#bottom__navbar {
+    background-color: #0b4d14;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+#bottom__navbar .right {
+    right: 10px;
+    position: relative;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    opacity: 80%;
+}
+
+.introduction {
+    background-color: #c6bfbf;
+    position: static;
+}
+.content {
+
+}
