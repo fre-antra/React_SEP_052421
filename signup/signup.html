@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign-Up Mock</title>
+        <link rel="stylesheet" type="text/css" href="./signup.css">
+    </head>
+    <body>
+        <header>
+            <h1>Sign-Up</h1>
+        </header>
+
+        <main>
+            <form class="form">
+                <div>
+                    <input type="text" class="form__input inline" name="fname" id="fname" placeholder="First Name">
+                    <input type="text" class="form__input inline" name="lname" id="lname" placeholder="Last Name">
+                </div>
+                
+                <input type="tel" class="form__input" name="tel" id="tel" placeholder="Mobile No.">
+                <input type="email" class="form__input" name="email" id="email" placeholder="abc123@def.com">
+                <div>
+                    <input type="password" class="form__input inline" name="password" id="password" placeholder="Password">
+                    <input type="password" class="form__input inline" name="cpassword" id="cpassword" placeholder="Confirm Password">
+                </div>
+                
+
+                <div>
+                    <section class="checkboxSec">
+                        <input class="inline" type="checkbox" class="form__input" name="checkbox" id="checkbox">
+                        <label class="inline" for="checkbox" id="checkboxLabel">I Agree</label>
+                    </section>
+                    <section>
+                        <div class="inline" id="agree">
+                            By clicking 
+                            <div class="highlightText">Register</div>
+                            , you agree to the 
+                            <a>Terms and Conditions</a>
+                             set out by this site, including our Cookie Use.</div>
+
+                    </section>
+                </div>
+                <div>
+                    <input class="form__button" id="submit" type="submit" value="Register">
+                    <button class="form__button" id="signin">Sign In</button>
+                </div>
+            </form>
+            
+        </main>
+    </body>
+</html>
