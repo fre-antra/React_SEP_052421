@@ -28,7 +28,7 @@ body{
 .blog{
     width: 240px;
     margin: 0px 4px;
-    border:1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 .footer-container{
@@ -36,6 +36,30 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     width: 500px;
+}
+
+.post-container {
+    display: flex;
+    background-color: darkkhaki;
+    width: 500px;
+    margin:0px 500px;
+}
+
+.left-container {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .footer-container p{
