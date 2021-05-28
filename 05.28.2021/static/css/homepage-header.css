@@ -29,10 +29,11 @@
     flex-wrap: wrap;
 }
 
-.homepage-header__menu-item,  .homepage-header__search{
+.homepage-header__menu-item {
     font-weight: 400;
     font-size: 130%;
     padding: 20px;
+    text-align: center;
 }
 
 .homepage-header__search {
@@ -54,5 +55,14 @@
     }
     .homepage-header__menu-item {
         width: 33%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .homepage-header__menu {
+        justify-content: space-evenly;
+    }
+    .homepage-header__menu-item {
+        width: 50%;
     }
 }
