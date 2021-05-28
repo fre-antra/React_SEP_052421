@@ -1,0 +1,23 @@
+footer{
+    height: 100px;
+    width: 70%;
+    margin:auto;
+    margin-top: 50px;
+    background-color:rgb(247, 245, 245);
+    color: var(--color-subtitle);
+    border-top: 1px solid gray;
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px;
+}
+
+footer a {
+    color: #537bbb;
+}

@@ -1,0 +1,15 @@
+:root {
+    --color-world-blog: #4285F4;
+    --color-design-blog: #00C851;
+    --color-subtitle: #888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+}

@@ -1,0 +1,22 @@
+body{
+    background-color: aqua;
+}
+h1{
+    text-align: center;
+}
+h1 em{
+    color: brown;
+}
+p{
+    text-align: center;
+}
+.center{
+    font-size: 200%;
+    font-style: oblique;
+    text-align: end;
+    color: burlywood;
+
+}
+li em{
+    color:royalblue;
+}

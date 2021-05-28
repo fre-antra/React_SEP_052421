@@ -1,27 +1,27 @@
 //primitive: number boolean string undefined null symbol bigint
 // console.log(true);
 // console.log(6);
-var a = 5;
-function foo(input) {
-    input = 6;
-    console.log("input=",input);
-}
-foo(a);
-console.log("a=",a);
-//pass by value: copy the value
+// var a = 5;
+// function foo(input) {
+//     input = 6;
+//     console.log("input=",input);
+// }
+// foo(a);
+// console.log("a=",a);
+// //pass by value: copy the value
 
-//pass by value
-var b = 7;
-var c= b;
-b = 11;
-console.log("b=", b,"c=",c)//11, 7
-//primitive pass by value; object pass by reference.
+// //pass by value
+// var b = 7;
+// var c= b;
+// b = 11;
+// console.log("b=", b,"c=",c)//11, 7
+// //primitive pass by value; object pass by reference.
 
-//coersion
-var res= true + false;
-console.log(res);//1
-console.log("1"==1);//true
-console.log("1"===1);//false: it's about coersion
+// //coersion
+// var res= true + false;
+// console.log(res);//1
+// console.log("1"==1);//true
+// console.log("1"===1);//false: it's about coersion
 
 //plain obj
 // var obj = {};
@@ -119,46 +119,46 @@ function foo() {
     console.log("normal");
 }
 //function as anonymous fn
-fn();
-let fn=function(){
-    console.log("variable");
-}//Cannot access 'fn' before initialization
+// fn();
+// let fn=function(){
+//     console.log("variable");
+// }//Cannot access 'fn' before initialization
 
-//arrow function
-test();
-let test=()=>{
-    console.log("test");
-}//Cannot access 'test' before initialization
+// //arrow function
+// test();
+// let test=()=>{
+//     console.log("test");
+// }//Cannot access 'test' before initialization
 
-//variable fn
-myFn();
-let myFn = function namedFn(){
-    console.log("myFn");
-}//Cannot access 'test' before initialization
+// //variable fn
+// myFn();
+// let myFn = function namedFn(){
+//     console.log("myFn");
+// }//Cannot access 'test' before initialization
 
-function Person(name, age) {
-    this.name=name;
-    this.age=age;
-}
-let pa= new Person("david", 12);
-console.log(pa);
+// function Person(name, age) {
+//     this.name=name;
+//     this.age=age;
+// }
+// let pa= new Person("david", 12);
+// console.log(pa);
 
-//using function to create class obj
-function Person(name, age) {
-    this.name=name;
-    this.age=age;
-}
-let pa= Person("david", 12);//undefined it's a function and without return value.
-console.log(pa);
-//difference with:
-function Person(name, age) {
-    let obj={};
-    obj.name=name;
-    obj.age=age;
-    obj._proto_constructor= Person;
-    return obj;
-}
-let pa= Person("david", 12);
-console.log(pa);
+// //using function to create class obj
+// function Person(name, age) {
+//     this.name=name;
+//     this.age=age;
+// }
+// let pa= Person("david", 12);//undefined it's a function and without return value.
+// console.log(pa);
+// //difference with:
+// function Person(name, age) {
+//     let obj={};
+//     obj.name=name;
+//     obj.age=age;
+//     obj._proto_constructor= Person;
+//     return obj;
+// }
+// let pa= Person("david", 12);
+// console.log(pa);
 
 
