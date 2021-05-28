@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+}
+
+
+
+
+@import "main.css";
+/* @import url("main.css"); */
+/* @import url("main.css"); */
+
+@import "log.css"; 
+
+/* @import url("navigation.css");  */
+
