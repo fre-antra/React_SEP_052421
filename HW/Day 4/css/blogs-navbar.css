@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 2rem;
+}
+
+.navbar h1 {
+  font-size: 3rem;
+  font-family: "Prata", serif;
+  text-decoration: underline;
+}
+
+.navbar a,
+.navbar h6 {
+  font-size: 1.2rem;
+  color: #a4a4a4;
+}
