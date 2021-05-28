@@ -1,6 +1,14 @@
-* {
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+html{
+  font-size: 60%;
 }
 
 .header {
@@ -105,7 +113,7 @@ a.tandc {
 span.register {
   background-color: cornflowerblue;
   color: white;
-  width: 100%;
+  display: inline-block;
   padding: 2px;
   border: 1px solid #ccc;
   border-radius: 4px;
