@@ -1,0 +1,32 @@
+body {
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+header span {
+    left: 0;
+    padding: 20px;
+    text-decoration: underline;
+}
+header h1 {
+    margin: auto;
+    text-decoration: underline;
+}
+header img {
+    right: 0;
+    padding: 20px;
+}
+.search-icon-small {
+    width: 20px;
+    height: 20px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    left: 50%;
+}
