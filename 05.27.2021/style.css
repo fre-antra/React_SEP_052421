@@ -63,6 +63,7 @@ li a {
     font-size: 200%;
     font-weight: 600;
     padding: 32px 0;
+    line-height: 36px;
 }
 
 .introduction__content {
@@ -81,7 +82,7 @@ li a {
 }
 
 .bullet-points__item {
-    width: 30%;
+    padding: 16px;
 }
 
 .footer {
@@ -111,4 +112,10 @@ li a {
 
 .footer__right li {
     float: right;
+}
+
+@media (max-width: 600px) {
+    .bullet-points__wrapper{
+        flex-direction: column;
+    }
 }
