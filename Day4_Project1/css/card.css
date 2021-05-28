@@ -1,0 +1,38 @@
+:root {
+  --color--shallow-gray: #dadada;
+}
+
+.card {
+  padding: 1.2rem 1rem;
+  margin: 0;
+  height: 12rem;
+  width: 48%;
+  margin: 0.2rem;
+}
+
+.card p, h2 {
+  padding: 3px 0;
+}
+
+.card a {
+  position: relative;
+  top: 1.2rem;
+}
+
+.thin-border {
+  border: 2px solid var(--color--shallow-gray);
+}
+
+.thick-border {
+  border-left: 6px solid var(--color--shallow-gray);
+  border-right: 6px solid var(--color--shallow-gray);
+  border-top: 4px solid var(--color--shallow-gray);
+  border-bottom: 8px solid var(--color--shallow-gray);
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: auto;
+    height: auto;
+  }
+}

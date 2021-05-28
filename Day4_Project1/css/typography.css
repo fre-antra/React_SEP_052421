@@ -1,0 +1,29 @@
+:root {
+  --color-white: #ffffff;
+  --color-green: #138823; 
+  --color--black: #000;
+  --color--gray: #a9a9a9;
+  --color--dark--gray: rgb(97, 96, 96);
+  --color--blue: #1f72cb;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+}
+
+.dark-grey-font {
+  color: var(--color--dark--gray);
+}
+
+.green-font {
+  color: var(--color-green);
+}
+
+.blue-font {
+  color: var(--color--blue);
+}
+
+.grey-font {
+  color: var(--color--gray);
+}
