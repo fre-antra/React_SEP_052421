@@ -1,0 +1,14 @@
+@media (max-width: 730px) {
+  .blog-row {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .card {
+    margin: 0.5rem 0;
+  }
+
+  .mg-l {
+    margin-left: 0;
+  }
+}

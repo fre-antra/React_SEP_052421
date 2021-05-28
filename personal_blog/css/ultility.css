@@ -1,0 +1,14 @@
+.mg-l {
+  margin-left: 1rem;
+}
+.mg-r {
+  margin-right: 1rem;
+}
+
+.primary-color {
+  color: var(--color-primary);
+}
+
+.secondary-color {
+  color: var(--color-secondary);
+}
