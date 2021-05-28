@@ -6,6 +6,9 @@ b {
     font-family: inherit;
 }
 
+i {
+    font-family: inherit;
+}
 
 .typography__category {
     padding-top: 1rem;
@@ -32,4 +35,17 @@ b {
     fill: lightslategray;
     width: 2rem;
     height: 2rem;
+}
+
+/* Article Typography CSS */
+.article > h1 {
+    font-size: 2.5rem;
+}
+
+.article > h2 {
+    font-size: 2rem;
+}
+
+.article > h3 {
+    font-size: 1.5rem;
 }

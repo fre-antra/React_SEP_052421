@@ -17,10 +17,9 @@ header{
 }
 
 footer {
-    position: fixed;
+    position: relative;
     overflow: hidden;
     bottom: 0px;
-    width: 100vw;
     background-color: #E2E2E2;
     text-align: center;
     height: 6rem;
@@ -30,6 +29,7 @@ footer > h5 {
     padding: 1rem;
 }
 
+/* index layout */
 .container {
     padding: 2rem;
 }
@@ -53,11 +53,24 @@ footer > h5 {
     border: 0.5rem solid #E2E2E2;
 }
 
+/* page layout */
+.content__page {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 33%) ;
+    padding: 3rem;
+}
+
+/* Media Queries */
+
 @media only screen and (max-width: 600px) {
     .container { 
         padding: 0rem;
     }    
     .content {
+        padding: 0rem;
+    }
+    .content__page{
         padding: 0rem;
     }
     header{

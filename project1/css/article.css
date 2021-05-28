@@ -1,0 +1,59 @@
+.article{
+    grid-column: 1 / span 2;
+}
+
+.article > hr {
+    border-top: 1px solid lightslategray;
+}
+
+.article > p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article > ul {
+    padding-left: 3rem;
+}
+
+.article > ol {
+    padding-left: 3rem;
+}
+
+.sidebar{
+    grid-column: 3;
+}
+
+.border{
+    border: 2px solid #E2E2E2;
+    width: 100%;
+}
+
+.buttons {
+    padding-top: 3rem;
+}
+
+.articleButton {
+    height: 40px;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 2rem;
+    height: 3rem;
+    width: 8rem;
+}
+
+#older {
+    border: 2px solid #5bbce4;
+    color: #5bbce4;
+}
+
+#newer{
+    border: 2px solid lightslategray;
+    color: lightslategray;
+}
+
+/* Sidebar */
+
+.about{
+    background-color: #E2E2E2;
+    padding: 1rem;
+}
