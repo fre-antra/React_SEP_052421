@@ -3,7 +3,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin: auto;
-  width: 90%;
+  width: 80%;
+  overflow: scroll;
 }
 .main-postcontainer__row {
   display: flex;
@@ -33,5 +34,8 @@
   .main-postcontainer__row {
     display: flex;
     flex-direction: column;
+  }
+  .main-postcontainer__post {
+    margin: 4%;
   }
 }
