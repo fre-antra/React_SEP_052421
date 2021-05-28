@@ -10,7 +10,8 @@
 
 /* setting of form */
 form {
-    height: 80%;
+    /* position: relative; */
+    height: 750px;
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -20,13 +21,10 @@ form {
 
 /* setting of container */
 .container{
-    position: relative;
     width: 70%;
     height: 70%;
     border: 2px solid red;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 /* Sign up  */
