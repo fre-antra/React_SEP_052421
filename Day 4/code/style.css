@@ -1,0 +1,148 @@
+:root {
+    --color-primary: #4285f4;
+    --color-primary-dark: #0d47a1;
+    --color-success: #00c851;
+    --color-success-dark: #007e33;
+    --color-grey: #e0e0e0;
+    --color-grey-dark: #62666bdc;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.25%;
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: #68bcf3;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+p {
+    color: var(--color-grey-dark);
+    font-size: 1.2rem;
+
+}
+
+.container {
+    width: 80%;
+    max-width: 110rem;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+.search_icon {
+    width: 1.5rem;
+}
+
+.search_icon img {
+    width: 90%;
+}
+
+.header-link {
+    color: var(--color-grey-dark)
+}
+
+.main-heading {
+    font-size: 4rem;
+    text-decoration: underline;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem
+}
+
+
+.articles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+}
+
+.world-text,
+.design-text {
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.world-text {
+    color: #226fb8;
+}
+
+.design-text {
+    color: green
+}
+
+.article {
+    width: 48%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 5px;
+    border: 5px solid #F3F3F3;
+}
+
+.article-header {
+    margin: 1rem 0;
+}
+
+.article-heading {
+    font-size: 2rem;
+}
+
+.date {
+    color: gray
+}
+
+.text-article {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 550;
+}
+
+
+.footer {
+    width: 100%;
+    height: 10rem;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    /* border-top: 2px solid #DEDEDE; */
+    border-top: 2px solid var(--color-grey-dark);
+}
+
+.footer-text {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: slategray
+}
+
+.system {
+    color: #68bcf3;
+    text-decoration: underline;
+}
