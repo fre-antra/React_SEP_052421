@@ -1,0 +1,29 @@
+.post {
+    padding: 2.4rem 4rem;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 5px;
+}
+
+.post-color1 {
+    color: var(--color-blue);
+}
+
+.post-color2 {
+    color: var(--color-green);
+}
+
+.post-header {
+    margin-bottom: 0;
+}
+
+.post-data {
+    margin-top: 5px;
+    color: var(--color-gray);
+}
+
+.post-content {
+    height: 40%;
+    overflow: auto;
+    line-height: 2rem;
+    margin-bottom: 6rem;
+}

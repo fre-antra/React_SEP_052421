@@ -1,10 +1,13 @@
 @import url("./nav.css");
+@import url("./post.css");
+@import url("./footer.css");
 
 :root {
-  --color-green: #59da31;
-  --color-blue: #2a67c9;
+  --color-green: #4ba52f;
+  --color-blue: #4887eb;
   --color-black: #000000;
-  --color-grey: #817b7b;
+  --color-gray: #a7a4a4;
+  --color-light-gray: #dad4d4;
 }
 
 *,
@@ -33,11 +36,27 @@ h1, h2, h3, h4, h5 {
   margin: 15px 0;
 }
 
-p {
-  margin: 15px;
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+.post-row {
+  display: flex;
+  margin: 0rem 8rem 7rem 6rem;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-
+@media screen and (max-width: 600px) {
+  .post-row {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 
