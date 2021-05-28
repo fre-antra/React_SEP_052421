@@ -45,6 +45,7 @@ p {
   height: 80%;
   margin: 5% 5%;
   display: flex;
+  font-size: 70%;
   flex-direction: row;
 }
 .main-leftsection__buttons {
