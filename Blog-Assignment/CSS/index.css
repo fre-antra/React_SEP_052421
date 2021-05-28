@@ -1,8 +1,12 @@
+@import url('./indexmain.css');
+@import url('./detailpostmain.css');
+@import url('./header.css');
+@import url('./footer.css');
 :root {
-  --color-green: #0b4d14;
+  --color-green: #4eeb63;
   --color-black: #000;
-  --color-gray: #f3f0f0;
-  --color-white: #ffffff;
+  --color-gray: #cfcccc;
+  --color-blue: #3568f5;
 }
 
 *,
@@ -11,14 +15,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial';
 }
 html {
-  /* font-size: 62.25%; */
+  font-size: 82.25%;
 }
-
-@import url('./header.css');
-
+a {
+  cursor: pointer;
+}
+.color-green {
+  color: var(--color-green);
+}
+.color-blue {
+  color: var(--color-blue);
+}
 .container {
   height: 100vh;
   display: flex;
@@ -26,95 +35,8 @@ html {
   position: relative;
 }
 
-/* =========Header========== */
-.header {
-  /* background-color: aliceblue; */
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2%;
-}
 /* =========Main========== */
 .main {
   height: 100%;
-  margin: 5% 2%;
-}
-.main-postcontainer {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.main-postcontainer__row {
-  display: flex;
-  flex-direction: row;
-}
-.main-postcontainer__post {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-black);
-  box-shadow: 5px 5px 5px rgb(158, 156, 156);
-  flex: 50%;
-  margin: 1%;
-  margin-bottom: 60px;
-  padding: 1%;
-}
-.main-post {
-  height: 100%;
-  margin: 5% 2%;
-  display: flex;
-  flex-direction: row;
-}
-
-.main-leftsection {
-  display: flex;
-  flex-direction: column;
-  flex: 75%;
-}
-.main-rightsection {
-  flex: 25%;
-  display: flex;
-  flex-direction: column;
-}
-.main-leftsection,
-.main-rightsection {
-  margin: 2%;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.rightsection-about {
-  background-color: var(--color-gray);
-  padding: 5%;
-  margin-bottom: 2%;
-}
-.rightsection-archives {
-  padding: 5%;
-  margin-bottom: 2%;
-}
-.rightsection-elsewhere {
-  padding: 5%;
-  margin-bottom: 2%;
-}
-li {
-  list-style: none;
-}
-/* =========Footer========== */
-.footer {
-  background-color: var(--color-gray);
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  box-sizing: border-box;
-  flex-wrap: wrap;
+  margin: 5% 3%;
 }

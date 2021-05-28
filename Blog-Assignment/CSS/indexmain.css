@@ -1,0 +1,30 @@
+.main-postcontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+}
+.main-postcontainer__row {
+  display: flex;
+  flex-direction: row;
+}
+.main-postcontainer__post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px rgb(158, 156, 156);
+  flex: 45%;
+  margin: 1%;
+  padding: 0.5%;
+}
+
+.link-continue {
+  color: var(--color-blue);
+}
+.post-time {
+  color: var(--color-gray);
+}
+.post-link {
+  margin-top: 10px;
+}
