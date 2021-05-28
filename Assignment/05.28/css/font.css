@@ -1,0 +1,15 @@
+.card-name-color-green, .card-name-color-blue{
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.card-title{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.card-date{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 90%;
+}

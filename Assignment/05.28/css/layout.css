@@ -1,0 +1,4 @@
+.container{
+    min-width: 1000px;
+    width:expression(document.body.clientWidth < 1000? "1000px": "auto" );
+}
