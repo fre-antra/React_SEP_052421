@@ -11,3 +11,78 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+}
+
+li {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+h1, p {
+  padding: 5px;
+  margin: 5px;
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: Arial;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p a {
+  color: blue;
+  
+}
+
+.header {
+  background-color: var(--color-header);
+  position: fixed;
+  width:100vw;
+}
+
+.nav-container {
+  padding: 10px 100px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.content {
+  padding-top: 58px;
+  height: 150vh;
+}
+
+.section-one {
+  background-color: var(--color-section-one);
+  padding: 50px 100px;
+}
+
+.section-two {
+  display: flex;
+  padding: 10px 100px;
+}
+
+.footer-wrapper {
+  padding: 10px 100px;
+  background-color: var(--color-footer);
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width:100vw;
+}
