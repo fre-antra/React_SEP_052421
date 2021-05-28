@@ -1,0 +1,79 @@
+@import "./colors.css";
+@import "./fonts.css";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    margin: 20px auto 20px;
+    width: 80%;
+}
+
+.blogs {
+    justify-content: center;
+    text-align: left;
+    width: 80%;
+}
+
+.card-1 {
+    border: 3px solid gray;
+    height: 200px;
+    padding: 20px;
+    width: 80%;
+}
+
+.card-1_first_p {
+    color: blue;
+}
+
+.card-2 {
+    border: 3px solid gray;
+    height: 200px;
+    padding: 20px;
+    width: 80%;
+}
+
+.card-2_first_p {
+    color: green;
+}
+
+.header-left {grid-area: header-left; }
+.header { grid-area: header; }
+.header-right { grid-area: header-right; }
+
+.card-1 { grid-area: card-1; }
+.blogs-gap { grid-area: blogs-gap; }
+.card-2 { grid-area: card-2; }
+
+.footer { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'header-left header header-right'
+        /*'grid-container-header'*/
+        /*'card-1 card-1 card-1 card-1 blogs-gap card-2 card-2 card-2 card-2'
+        'card-1 card-1 card-1 card-1 blogs-gap card-2 card-2 card-2 card-2'
+        'card-1 card-1 card-1 card-1 blogs-gap card-2 card-2 card-2 card-2'*/
+        'card-1 blogs-gap card-2'
+        'card-1 blogs-gap card-2'
+        'card-1 blogs-gap card-2'
+        'footer footer footer footer footer footer footer footer footer'
+    ;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-container .blogs div {
+    margin: 30px auto 30px;
+}
+
+.post-title {
+    font-family: 'Abril Fatface', cursive;
+}
