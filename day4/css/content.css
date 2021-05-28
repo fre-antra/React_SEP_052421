@@ -1,0 +1,51 @@
+.app-content {
+  position: static;
+  margin: 2% 10% 2% 10%;
+}
+
+.grid-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+.grid-item {
+  position: relative;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.card__title{
+  font-family: "Times New Roman";
+}
+
+.card__date {
+  color: var(--color-grey-dark);
+  font-size: smaller;
+  padding-bottom: 5px;
+}
+
+.card__content {
+  font-size: small;
+  padding-bottom: 20px;
+}
+
+.card__footer {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+article > p.card_blue {
+  color: var(--color-primary);
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+article > p.card_green {
+  color: var(--color-success-dark);
+  font-weight: bold;
+  padding-bottom: 10px;
+}
