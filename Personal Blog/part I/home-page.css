@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 30px 0 30px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.row {
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.blue,
+.green {
+    display: inline-block;
+    border: 2px solid gray;
+    padding: 20px;
+}
+
+.green {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    box-shadow: 10px 5px 5px darkgray;
+}
+
+.blue .title {
+    color: blue;
+    margin-bottom: 5px;
+}
+
+.green .title {
+    color: green;
+    margin-bottom: 5px;
+}
+
+.date {
+    color: darkgray;
+}
+
+.post-content {
+    margin-bottom: 50px;
+}
