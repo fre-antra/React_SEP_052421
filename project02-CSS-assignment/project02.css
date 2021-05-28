@@ -42,8 +42,7 @@ li a:hover {
 }
 .col {
     width: 30%;
-    display: flex;
-    flex-wrap: wrap;
+
 }
 #col-left {
     left: 0;
@@ -55,5 +54,6 @@ li a:hover {
     right: 0;
 }
 .content {
-
+    display: flex;
+    flex-wrap: wrap;
 }
