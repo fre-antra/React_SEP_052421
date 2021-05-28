@@ -1,0 +1,35 @@
+u {
+    font-family: inherit;
+}
+
+b { 
+    font-family: inherit;
+}
+
+
+.typography__category {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.typography__title {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.typography__color--blue { 
+    color: blue;
+}
+
+.typography__color--gray {
+    color: lightslategray;
+}
+
+.typography__color--green { 
+    color: green;
+}
+
+.svg__color--gray{
+    fill: lightslategray;
+    width: 2rem;
+    height: 2rem;
+}
