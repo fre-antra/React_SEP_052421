@@ -1,0 +1,43 @@
+@import url("./nav.css");
+
+:root {
+  --color-green: #59da31;
+  --color-blue: #2a67c9;
+  --color-black: #000000;
+  --color-grey: #817b7b;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 15px 0;
+}
+
+p {
+  margin: 15px;
+}
+
+
+
+
+

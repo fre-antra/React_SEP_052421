@@ -1,0 +1,38 @@
+.nav-container {
+    margin: 4rem 5rem 4rem 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    min-height: 5rem;
+    
+}
+
+.search-icon {
+    width: 3rem;
+    height: auto;
+}
+
+.search-bar {
+    height: 2.5rem;
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+
+}
+
+.nav-submit a {
+    color: #797373;
+}
+
+.nav-header h1 {
+    font-size: 4rem;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
