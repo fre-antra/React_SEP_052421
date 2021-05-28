@@ -1,0 +1,13 @@
+:root {
+  --color-header: #000;
+  --color-section-one: #c6bfbf;
+  --color-footer: #0b4d14;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
