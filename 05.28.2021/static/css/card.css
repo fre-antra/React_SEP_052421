@@ -1,0 +1,91 @@
+:root {
+    --color-blue: #1fa0ae;
+    --color-black: #000;
+    --color-gray: #a6a6a6;
+    --color-font: #3c3163;
+}
+
+.homepage-card {
+    border-radius: 16px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 8px;
+    justify-content: center;
+    padding: 4rem 4rem 1rem 4rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../../assets/cover.jpg);
+    transition: all, 0.5s;
+}
+
+.homepage-card:hover {
+    transform: rotate(0);
+}
+
+.homepage-card__wrapper {
+    color: white;
+    text-decoration: none;
+}
+
+.homepage-card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    transition: all, 0.5s;
+}
+
+.homepage-card p {
+    margin-top: 0.5em;
+    line-height: 2em;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all, 0.5s;
+}
+
+.homepage-card button {
+    margin-top: 0.5em;
+}
+
+.homepage-card:hover {
+    background-color: white;
+    background-image: unset;
+}
+
+.homepage-card:hover a {
+    color: var(--color-font);
+}
+
+.homepage-card:before {
+    background: #ddd;
+    width: 250%;
+    height: 250%;
+}
+
+.homepage-card:after {
+    background: white;
+    width: 200%;
+    height: 200%;
+}
+
+.homepage-card:hover {
+    color: var(--color-font);
+    transform: rotate(0);
+}
+
+.homepage-card:before,
+.homepage-card:after {
+    content: "";
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, 0.5;
+    transition-timing-function: ease-in-out;
+}
+
+.homepage-card:hover:before, .homepage-card:hover:after {
+    transform: scale(1);
+    transition: all, 0.5s;
+}

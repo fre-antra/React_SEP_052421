@@ -1,0 +1,32 @@
+:root {
+    --color-blue: #1fa0ae;
+    --color-black: #000;
+    --color-gray: #a6a6a6;
+  }
+
+.homepage-card {
+    display: flex;
+    align-items: flex-end;
+    min-height: 400px;
+}
+
+.homepage-content__wrapper {
+    width: 70%;
+    margin: 0 auto;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+}
+
+@media(max-width:1400px) {
+    .homepage-content__wrapper {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media(max-width:1000px) {
+    .homepage-content__wrapper {
+        grid-template-columns: 100%;
+    }
+}
