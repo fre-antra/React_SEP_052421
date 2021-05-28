@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+    .nav-icons {
+        margin: .5rem;
+        flex-direction: column;
+    }
+    .svg-icon.search-icon {
+        margin-top: 0.5rem;
+    }
+    .cards-container {
+        padding-top: 8rem;
+    }
+    .card {
+        width: 90%;
+    }
+}
