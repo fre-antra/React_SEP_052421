@@ -58,6 +58,7 @@ p {
 
 .btn-blue {
   border: 1px solid var(--color-blue);
+  color: (--color-blue);
 }
 .btn-gray {
   border: 1px solid var(--color-gray);
