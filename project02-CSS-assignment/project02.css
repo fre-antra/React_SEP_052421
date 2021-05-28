@@ -17,11 +17,9 @@ ul {
     width: 100%;
 
 }
-#bottom__navbar .right {
-    right: 10px;
-    position: relative;
+.bottom__navbar__right {
+    float: right;
 }
-
 li {
     float: left;
 }
@@ -41,6 +39,20 @@ li a:hover {
 .introduction {
     background-color: #c6bfbf;
     position: static;
+}
+.col {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#col-left {
+    left: 0;
+}
+#col-mid {
+    margin: auto;
+}
+#col-right {
+    right: 0;
 }
 .content {
 
