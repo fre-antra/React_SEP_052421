@@ -1,0 +1,104 @@
+  
+:root {
+  --color-Green:  #0b4d14;
+  --color-Black:  #000;
+  --color-Gray: #c6bfbf;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+.navbar-container {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-Black);
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    align-content: center;
+    margin-left: 8rem;
+}
+
+.nav-item {
+    line-height: 5rem;
+    color: white;
+    margin: 0.2rem 2.9rem 0.2rem 0.2rem;
+    cursor: pointer;
+}
+
+.title-container {
+    background-color: var(--color-Gray);
+    margin-top: -18rem;
+    padding: 3rem 10rem 3rem 3rem;
+    position: fixed;
+}
+
+.title {
+    margin-left: 5rem;
+}
+
+.title p {
+    padding-top: 2.2rem;  
+}
+
+
+.main-container {
+    margin: 23rem 8rem 5rem 7rem;
+    display: flex;
+    left: 0;
+    right: 0;
+}
+
+
+.content {
+    margin: 15px;
+}
+
+
+.footer-container {
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    background-color: var(--color-Green); 
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8rem;
+}
+.footer-content {
+    color: white;
+    display: flex;
+    margin: 0rem 8rem 3rem 3rem;
+    line-height: 5rem;
+}
+
+.footer-content li {
+    margin: 0.7rem;
+    
+}
+
