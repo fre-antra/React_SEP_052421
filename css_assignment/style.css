@@ -2,6 +2,7 @@
   --color-nav: #000;
   --color-showcase: #c6bfbf;
   --color-footer: #0b4d14;
+  --color-nav-text: #fff;
 }
 
 * {
@@ -33,7 +34,7 @@ ul {
 }
 
 .nav-item a {
-  color: #fff;
+  color: var(--color-nav-text);
   padding: 0 1rem;
 }
 
