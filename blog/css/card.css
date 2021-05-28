@@ -1,0 +1,51 @@
+/* Colors */
+@import url(./utils.css);
+.card-container {
+    display: flex;
+    flex-flow: row;
+    margin: 15px;
+}
+
+.card-col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.card {
+    border: 2px solid var(--color-grey);
+    margin: 1.5rem 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    box-shadow: 0 4px 8px 0 var(--color-grey);
+}
+
+.card__category {
+    font-weight: bold;
+}
+.card__title h2 {
+    font-weight: bold;
+}
+
+.card__date {
+    color: var(--color-grey-dark);
+}
+
+.card__summary {
+    margin-bottom: 3rem;
+}
+
+.card__footer a {
+    color: var(--color-blue);
+}
+
+@media only screen and (max-width: 900px) {
+    .card-container {
+        flex-flow: column;
+    }
+}
