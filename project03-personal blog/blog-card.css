@@ -1,6 +1,7 @@
 .card {
-    background: #c6bfbf;
+    background: white;
     text-decoration: none;
+    border-width: 5px;
     width: 400px;
     height: 300px;
 
@@ -15,4 +16,19 @@
     top: 0;
     transition: all .1s ease-in;
 
+}
+.card h1 {
+    padding: 0px;
+    margin-top: 0px;
+}
+.card h2 {
+    padding: 0px;
+    margin: 0px;
+
+}
+.card a {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+    color: #0064A7;
 }
