@@ -38,9 +38,15 @@
 
 .homepage-card p {
     margin-top: 0.5em;
-    line-height: 2em;
     font-size: 16px;
     font-weight: 600;
+    line-height: 24px;
+    height: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .homepage-card a {

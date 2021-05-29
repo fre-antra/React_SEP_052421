@@ -11,3 +11,9 @@
 
 /* footer */
 @import url(./footer.css);
+
+/* article */
+@import url(./article.css);
+
+/* icon */
+@import url(../../assets/icon/iconfont.css);

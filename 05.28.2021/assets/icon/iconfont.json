@@ -1,0 +1,44 @@
+{
+  "id": "2579623",
+  "name": "assignment",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3876431",
+      "name": "linkedin",
+      "font_class": "linkedin",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "5260069",
+      "name": "twitter",
+      "font_class": "twitter",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5634657",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "f19d",
+      "unicode_decimal": 61853
+    },
+    {
+      "icon_id": "7605109",
+      "name": "company",
+      "font_class": "company",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "15270250",
+      "name": "job",
+      "font_class": "job",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    }
+  ]
+}
