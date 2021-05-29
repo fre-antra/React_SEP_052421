@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    top: 122px;
+  }
+  
+  .header-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}

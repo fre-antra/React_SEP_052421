@@ -1,0 +1,14 @@
+/* initialization */
+@import url(init.css);
+
+/* header */
+@import url(header.css);
+
+/* content */
+@import url(content.css);
+
+/* footer */
+@import url(footer.css);
+
+/* media */
+@import url(media.css);
