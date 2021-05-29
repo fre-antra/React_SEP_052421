@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Baihan Chen">
         <title>Blog Page</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./style/index.css">
+        <link rel="stylesheet" href="style/blog.css"> 
+
     </head>
 
     <body>
@@ -16,30 +18,42 @@
                 <img clase="navBar__search" src="images/search_icon_152764.png" alt="">
             </div>
 
-            <div class="blogContent">
-                <div class="blogContent__mainBody">
+            <!-- <div class="blogContent">  -->
+                <div class="mainBody">
                     <h1 class="mainBody__title">Sample blog Post</h1>
                     <p class="mainBody__time">
                         January 1, 2014 by 
                         <a class="mainBody__author" href="">Mark</a>
                     </p>
                     <p class="mainBody__content">
-                        anfkljnfkjanagjkndsjknfjkasdfn
-                    </p>
+                        <p class="content__intro">
+                            Your childhood teacher did not wrong you when they taught you that there should be three, or four, or five sentences in a paragraph. 
+                        </p>
+                        <hr>
+                        <p class="content__firstP">
+                            It is important to understand, however, that the aim in teaching this was not to impart a hard-and-fast rule of grammar, drawn from an authoritative-but-dusty book. 
+                            The true aim of this strategy was to teach you that your ideas must be well supported to be persuasive and effective.
+                        </p>
+                    
 
-                    <h2 class="mainBody__heading">Heading</h2>
-                    <p class="mainBody__content">
-                        aslhfjksadhgjlkahdjfhajsdkf
-                    </p>
+                        <h2 class="content__heading">Heading</h2>
+                        <p class="heading__content">
+                            The model regarding paragraph length that your teacher undoubtedly taught you involves a topic sentence, a number of facts that support that core idea, and a concluding sentence. The proviso about the number of sentences between the topic sentence and the conclusion was not given to you because it was the magic formula for creating paragraphs of the perfect length; rather, your educator was attempting to give you a good reason to do adequate research on your topic. Academic writing yields the best examples of the topic-support-conclusion paragraph structure.
+                        </p>
 
-                    <h3 class="mainBody__subHeading">Sub-Heading</h3>
-                    <p class="mainBody__content">
-                        aslhfjksadhgjlkahdjfhajsdkf
-                    </p>
+                        <h3 class="content__subHeading">Sub-Heading</h3>
+                        <p class="subHeading__content">
+                            Your childhood teacher did not wrong you when they taught you that there should be three, or four, or five sentences in a paragraph. 
+                            <p class="content__insertSample">
+                                Example code Block
+                            </p>
+                            It is important to understand, however, that the aim in teaching this was not to impart a hard-and-fast rule of grammar, drawn from an authoritative-but-dusty book. The true aim of this strategy was to teach you that your ideas must be well supported to be persuasive and effective.
+                        </p>
 
-                    <h3 class="mainBody__subHeading">Sub-Heading</h3>
-                    <p class="mainBody__content">
-                        aslhfjksadhgjlkahdjfhajsdkf
+                        <h3 class="content__subHeading">Sub-Heading</h3>
+                        <p class="subHeading__content">
+                            The model regarding paragraph length that your teacher undoubtedly taught you involves a topic sentence, a number of facts that support that core idea, and a concluding sentence. 
+                        </p>
 
                         <ul class="content__unoredeList">
                             <li>assdg</li>
@@ -47,11 +61,19 @@
                             <li>sgsdgf</li>
                         </ul>
 
+                        <p class="subHeading__content">
+                        The proviso about the number of sentences between the topic sentence and the conclusion was not given to you because it was the magic formula for creating paragraphs of the perfect length; 
+                        </p>
+
                         <ol class="content__oredeList">
                             <li>:p</li>
                             <li>:)</li>
                             <li>orz</li>
                         </ol>
+
+                        <p class="subHeading__content">
+                        rather, your educator was attempting to give you a good reason to do adequate research on your topic. Academic writing yields the best examples of the topic-support-conclusion paragraph structure.
+                        </p>
                     </p>
 
                     <div class="mainBody__buttons">
@@ -61,35 +83,35 @@
 
                 </div>
 
-                <div class="blogContent__sideBar">
+                <div class="sideBar">
                     <div class="sideBar__describe">
-                        <h3>About</h3>
+                        <h2>About</h2>
                         <p>
-                            Content
+                            Defines the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
                         </p>
                     </div>
 
                     <div class="sideBar__archives">
-                        <h3>Archives</h3>
-                        <a href="">A</a>
-                        <a href="">B</a>
-                        <a href="">C</a>
-                        <a href="">D</a>
-                        <a href="">E</a>
-                        <a href="">F</a>
-                        <a href="">G</a>
-                        <a href="">H</a>
+                        <h2>Archives</h2>
+                        <a href="">12/2014</a>
+                        <a href="">11/2014</a>
+                        <a href="">10/2014</a>
+                        <a href="">9/2014</a>
+                        <a href="">8/2014</a>
+                        <a href="">7/2014</a>
+                        <a href="">6/2014</a>
+                        <a href="">5/2014</a>
                     </div>
 
                     <div class="sideBar__elseWhere">
-                        <h3>ElseWhere</h3>
+                        <h2>ElseWhere</h2>
                         <a href="">GitHub</a>
                         <a href="">Twitter</a>
                         <a href="">Facebook</a>
                     </div>
 
                 </div>
-            </div>
+            <!-- </div> -->
 
             <footer class="footerInfo">
                 <p class="footerInfo__techSupport">
@@ -97,18 +119,6 @@
                 </p>
             </footer>
         </div>
-        
-        headers
-        author info 
-            name
-            titles 
-            company school
-            short bio
-            avatat
-        social sharing
-            Twitter
-            Facebook
-            linkedin
 
     </body>
 </html>

@@ -1,4 +1,150 @@
-* {
-    background-color: blue;
-    color: blue;
+/* color variable */
+:root {
+    --time-color: rgb(214, 214, 214);
+    --button-color: hsl(219, 71%, 57%);
+    --footerGray: rgb(228, 228, 228);
+  }
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: 1fr 1fr 0.8fr;
+    grid-template-rows: 100px auto 80px;
+}
+
+/* define positions for each secction in grid */
+.navBar {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.mainBody {
+    grid-column-start: 1;
+    grid-column-end:  3;
+    grid-row-start: 2;
+    grid-row-end:  3;
+}
+
+.sideBar{
+    grid-column-start: 3;
+    grid-column-end:  4;
+    grid-row-start: 2;
+    grid-row-end:  3;
+}
+
+.footerInfo {
+    grid-column-start: 1;
+    grid-column-end:  4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+/* navigation bar */
+.navBar {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    text-decoration: underline;
+}
+
+.navBar img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+/* blog post */
+.mainBody, .sideBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5%;
+}
+
+.mainBody p {
+    padding: 15px 0;
+}
+
+.mainBody > ul,ol {
+    padding-left: 40px;
+}
+
+.mainBody hr {
+    height:2px;
+    color:gray;
+}
+
+.mainBody__time {
+    /* color: var(--time-color); */
+    opacity: 0.5;
+}
+
+p.content__insertSample {
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding-left: 20px;
+    font-family: monospace;
+    margin: 0 0 10px 0;
+}
+
+/* buttons */
+.mainBody__buttons button {
+    border-radius: 30px;
+    width: 20%;
+    height: 30px;
+    color: var(--button-color);
+    border-color: var(--button-color);
+}
+
+
+/* side bar */
+.sideBar {
+    justify-content: left;
+    padding: 20px;
+}
+
+.sideBar div{
+    padding:30px;
+}
+
+.sideBar h2{
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+.sideBar__describe, .sideBar__describe > *{
+    background-color: var(--footerGray);
+}
+
+.sideBar__archives, .sideBar__elseWhere {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+/* footer */
+.footerInfo > *,  .footerInfo a{
+    display: inline;    
+    background-color: var(--footerGray);
+}
+
+.footerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footerGray);
 }
