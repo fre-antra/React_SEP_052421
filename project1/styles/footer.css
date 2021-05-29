@@ -1,0 +1,15 @@
+:root {
+    --color-blue: #0b4d14; 
+    --color-black: #000;
+    --color-light-grey:rgb(211,211,211);
+    --color-dark-grey:rgb(128,128,128);
+    --color-white: #fff;
+  }
+.footer {
+    width: 100%;
+    position: relative;        
+    padding: 10px 0;
+    bottom: 0;
+    background-color:lightgray;
+    text-align: center;
+} 

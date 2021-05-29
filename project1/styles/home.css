@@ -1,0 +1,48 @@
+:root {
+  --color-blue: #0b4d14; 
+  --color-black: #000;
+  --color-light-grey:rgb(211,211,211);
+  --color-dark-grey:rgb(128,128,128);
+  --color-white: #fff;
+}
+.container{
+    width: 80%;
+    margin: 2% auto; 
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+@media (max-width: 600px) {
+  .left-header {
+      float: left;
+      width: 100%;
+     
+  }
+  .middle-header {
+      float: left;
+      width: 100%;
+   
+  }
+  .right-header {
+     
+      float: right;
+      width:100;
+     
+  }
+  .wrapper{
+      margin-top: 10%;
+      gap:20px;
+      grid-template-columns: 3fr;
+  }
+  
+  
+}
+
+
+
+
+
+

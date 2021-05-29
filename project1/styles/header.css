@@ -1,0 +1,33 @@
+:root {
+    --color-blue: #0b4d14; 
+    --color-black: #000;
+    --color-light-grey:rgb(211,211,211);
+    --color-dark-grey:rgb(128,128,128);
+    --color-white: #fff;
+  }
+.header {
+    width: 100%;
+    position: relative;        
+    /* padding: 10px 0; */
+    top: 0;
+    text-align: center;
+    margin-bottom: 0%;
+}
+
+.left-header{
+    color: var(--color-dark-grey);
+    float: left;
+    width:20%
+}
+
+.middle-header{
+    width:70%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.right-header{
+    float:right;
+    width:10%
+}
+

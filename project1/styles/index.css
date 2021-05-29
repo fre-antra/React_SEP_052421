@@ -1,0 +1,19 @@
+@import url(./footer.css);
+@import url(./header.css);
+@import url(./card-template.css);
+@import url(./home.css);
+
+:root {
+    --color-blue: #0b4d14; 
+    --color-black: #000;
+    --color-light-grey:rgb(211,211,211);
+    --color-dark-grey:rgb(128,128,128);
+    --color-white: #fff;
+  }
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
