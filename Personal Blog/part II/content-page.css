@@ -6,7 +6,124 @@
     box-sizing: border-box;
 }
 
+.subscribe {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    color: gray;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
 header h1 {
     text-align: center;
     margin: 20px 0 20px 0;
+    text-decoration: underline;
+}
+
+.body {
+    position: relative;
+    margin: 20px;
+}
+
+.date {
+    color: darkgray;
+}
+
+.date a {
+    cursor: pointer;
+}
+
+.about {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    width: 200px;
+    padding: 10px
+}
+
+.about-title {
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.content-area {
+
+}
+
+.area-row {
+    margin: 20px 0 20px 0;
+    width: 80%;
+}
+
+.bordered {
+    border: 1px solid darkgrey;
+    padding: 5px 0 5px 0;
+}
+
+.archives {
+    position: absolute;
+    top: 290px;
+    right: 95px;
+}
+
+.archives-title {
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.archives-content {
+    font-size: 16px;
+}
+
+.ul,
+.ol {
+    margin: 30px;
+}
+
+.archives ul,
+.elsewhere ul {
+    list-style-type: none;
+}
+
+.elsewhere {
+    position: absolute;
+    top: 610px;
+    right: 80px;
+}
+
+.elsewhere-title {
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.elsewhere-content {
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.btn {
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #88b8ff;
+}
+
+.blue {
+    color: blue;
+    border: 1px solid blue;
+}
+
+.gray {
+    color: darkgrey;
+    border: 1px solid darkgrey;
 }
