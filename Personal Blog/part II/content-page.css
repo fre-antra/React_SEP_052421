@@ -7,7 +7,7 @@
 }
 
 .subscribe {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 10px;
     color: gray;
