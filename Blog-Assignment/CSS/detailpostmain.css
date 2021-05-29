@@ -7,45 +7,48 @@
   margin-bottom: 3%;
 }
 
+.main-leftsection,
+.main-rightsection {
+  justify-content: space-between;
+  align-items: flex-start;
+}
 .main-rightsection {
   flex: 25%;
   display: flex;
   flex-direction: column;
-}
-.main-leftsection,
-.main-rightsection {
-  margin: 2%;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
 }
 .rightsection-about {
   background-color: var(--color-gray);
-  padding: 5%;
-  margin-bottom: 2%;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 .rightsection-archives {
-  padding: 5%;
-  margin-bottom: 2%;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 .rightsection-elsewhere {
-  padding: 5%;
-  margin-bottom: 2%;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 li {
   list-style: none;
 }
 h3,
-h5 {
-  margin-bottom: 10px;
+h6 {
+  margin-bottom: 5px;
 }
 p {
   margin-bottom: 5px;
 }
 .main-post {
-  height: 80%;
-  margin: 5% 5%;
+  height: 70%;
+  padding: 2%;
+  margin: 0 5%;
+  margin-top: 5%;
+  margin-bottom: 6%;
   display: flex;
-  font-size: 70%;
+  font-size: 60%;
   flex-direction: row;
 }
 .main-leftsection__buttons {
