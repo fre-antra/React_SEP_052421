@@ -1,3 +1,7 @@
+.content-container{
+  padding: 10px;
+}
+
 .grid-container {
   position:relative;
   display: grid;
@@ -14,6 +18,9 @@
   box-shadow: 0.7rem 0.7rem 5px black;
 }
 
+.gri-card, p {
+  padding: 10px 0px;
+}
 .grid-card-green {
   color: var(--color-green);
 }
@@ -30,10 +37,12 @@
   color: gray;
 }
 
-.grid-card-footer {
-  padding-top: 40px;
+.grid-card-content {
+  font-size: 1.2rem;
 }
 
-.grid-card-footer a{
-  font-size: 10px
+.grid-card-footer {
+  padding-top: 40px;
+  font-size: 1.2rem;
 }
+

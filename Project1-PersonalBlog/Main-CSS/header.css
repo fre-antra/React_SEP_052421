@@ -23,3 +23,8 @@ a{
   font-size: 3rem;
   font-family: sans-serif;
 }
+
+.search-symbol {
+  width:104.64px;
+  padding: 20px;
+}
