@@ -6,7 +6,6 @@ body{
 }
 .header-container {
     background-color: pink;
-    margin: 0px;
     padding: 0px;
     width: 500px;
     margin:0px 500px;
@@ -47,16 +46,19 @@ body{
 
 .left-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 350px;
-    margin: 0px;
+    margin: 0px 5px;
     padding: 0px;
+}
+
+.button-container {
+    display: flex;
 }
 
 .right-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     width: 150px;
     margin: 0px;
     padding: 0px;
