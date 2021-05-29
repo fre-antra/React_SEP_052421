@@ -1,0 +1,13 @@
+@import url(./default.css);
+
+/* header */
+@import url(./header.css);
+
+/* homepage content */
+@import url(./homepage_content.css);
+
+/* card */
+@import url(./card.css);
+
+/* footer */
+@import url(./footer.css);

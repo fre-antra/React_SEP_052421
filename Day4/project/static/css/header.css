@@ -1,0 +1,39 @@
+:root {
+  --color-blue: #1fa0ae;
+  --color-black: #000;
+  --color-gray: #a6a6a6;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 100px 0 100px;
+}
+
+.header__title {
+  height: 80px;
+  font-weight: 600;
+  line-height: 190%;
+  font-size: 200%;
+  align-items: flex-end;
+  width: 60%;
+  text-align: center;
+}
+
+.header__search {
+  margin: 30px 0 0 0;
+  text-align: right;
+  width: 10%;
+}
+
+.header__search img {
+  width: 25%;
+  height: 50%;
+}
+
+.header__subscribe {
+  margin: 30px 0 0 0;
+  text-align: right;
+  width: 10%;
+}

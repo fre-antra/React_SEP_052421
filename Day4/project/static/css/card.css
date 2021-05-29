@@ -1,0 +1,57 @@
+:root {
+  --color-blue: #1fa0ae;
+  --color-black: #000;
+  --color-gray: #a6a6a6;
+  --color-font: #3c3163;
+}
+
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__wrapper {
+  color: var(--color-black);
+  text-decoration: none;
+  height: 100%;
+  padding: 16px;
+  display: grid;
+}
+
+.card__link {
+  margin-top: 20px;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  margin-top: 0.5em;
+  line-height: 2em;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card a {
+  margin-top: 200px;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+  background-color: var(--color-blue);
+}
+
+.card__wrapper a:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .card__wrapper {
+    height: 100%;
+  }
+}
