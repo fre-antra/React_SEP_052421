@@ -1,14 +1,14 @@
 body{
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 .header-container {
-    background-color: pink;
     padding: 0px;
-    width: 500px;
-    margin:0px 500px;
+    width: 60%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,18 +16,17 @@ body{
 }
 
 .blogs-container{
-    background-color: aqua;
-    margin:0px 500px;
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-
+    justify-content: space-between;
+    width: 60%;
 }
+
 .blog{
-    width: 240px;
-    margin: 0px 4px;
-    border: 1px solid #ddd;
+    width: 40%;
+    margin: 15px 20px;
+    border: 3px solid #ddd;
 }
 
 .footer-container{
@@ -39,7 +38,6 @@ body{
 
 .post-container {
     display: flex;
-    background-color: darkkhaki;
     width: 500px;
     margin:0px 500px;
 }
@@ -66,4 +64,22 @@ body{
 
 .footer-container p{
     margin: 0px 100px;
+}
+
+.search-icon {
+    width: 10px;
+    height: 10px;
+    margin: 0px 20px;
+}
+
+.subscribe {
+    color: #999;
+}
+
+.header-container h1 a {
+    color: black;
+}
+
+a {
+    color: #2990f7;
 }
