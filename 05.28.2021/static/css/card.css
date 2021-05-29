@@ -49,13 +49,42 @@
     -webkit-box-orient: vertical;
 }
 
+.homepage-card button {
+    margin: 0;
+    zoom: 1;
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #ca3535;
+    border-color: #c43c35;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.3)), to(rgba(255,255,255,0)));
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 13px arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.homepage-card button:active{
+    background: rgb(190, 60, 53);
+    position: relative;
+    top: 1px;
+    text-shadow: none;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
+
 .homepage-card a {
+    text-shadow: 0 1px 0 rgb(0 0 0 / 20%)
     margin-top: 0.5em;
     border: none;
     padding: 4px;
     border-radius: 4px;
     color:white;
-    background-color: var(--color-font);
+    text-decoration: none;
+    /* background-color: var(--color-font); */
 }
 
 .homepage-card__wrapper a:hover {
