@@ -1,33 +1,7 @@
-:root {
-  --color-primary: #0000ff;
-  --color-secondary: #008000;
-  --color-border: #c6bfbf;
-  --light-text: #808080;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.25%; /*regular font size = 16*/
-}
-
-body {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.6rem;
-}
-
-a {
-  color: var(--color-primary);
-}
-
 /* app layout */
 .app-container {
-  /* max-width: 1100px;
-  margin: 0 auto; */
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +11,7 @@ a {
 }
 
 /* blog layout */
-.blog-content {
+.blog-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -47,4 +21,12 @@ a {
 .blog-row {
   display: flex;
   flex-direction: row;
+}
+
+/* post layout */
+.post-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 7rem;
+  padding-top: 3rem;
 }

@@ -1,0 +1,25 @@
+:root {
+  --color-primary: #0000ff;
+  --color-secondary: #008000;
+  --color-border: #c6bfbf;
+  --light-text: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%; /*regular font size = 16*/
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6rem;
+}
+
+a {
+  color: var(--color-primary);
+}

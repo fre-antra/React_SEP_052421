@@ -1,3 +1,6 @@
+/* initialize stuffs */
+@import url(init.css);
+
 /* layout */
 @import url(layout.css);
 
@@ -6,6 +9,9 @@
 
 /* card */
 @import url(card.css);
+
+/* post */
+@import url(post.css);
 
 /* footer */
 @import url(footer.css);
