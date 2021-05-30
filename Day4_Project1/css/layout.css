@@ -1,5 +1,6 @@
 :root {
-  --color--gray: #f2f0f0;
+  --color-shallow-gray: rgb(242, 240, 240);
+  --color--gray: #e1dfdf;
   --color--dark-gray: rgb(193, 193, 193);
 }
 
@@ -11,9 +12,13 @@
   box-sizing: border-box;
 }
 
-img {
-  height: 50px;
-  width: px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+header {
+  width: 100%;
 }
 
 header a {
@@ -28,14 +33,16 @@ header a {
 .flex-row {
   padding: 2% 5%;
   display: flex;
+  flex: 1 1 100%;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
 footer {
   width: 100%;
-  background-color: var(--color--gray);
+  background-color: var(--color-shallow-gray);
   border-top: 1px solid var(--color--dark-gray);
+  color: var(--color--dark-gray);
 }
 
 footer .flex-row {
@@ -52,4 +59,57 @@ footer a {
     flex-direction: column;
     align-items: space-between;
   }
+}
+
+.content-container {
+  display: flex;
+  flex-flow: row nowrap;
+  line-height: 1.5rem;
+  padding: 0 3rem;
+}
+
+.main-content {
+  flex: 1 1 100%;
+  padding: 0 2rem;
+}
+
+.sidebar-container {
+  flex: 1 2 100%;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.main-content p {
+  padding: 1rem 0;
+}
+
+.gray-bottom-border {
+  border-bottom: 1px solid var(--color--gray);
+}
+
+.no-top-padding {
+  padding-top: 0;
+}
+
+.gray-borders {
+  border: 2px solid var(--color--gray);
+}
+
+.content-container .no-top-padding {
+  padding-top: 0;
+}
+
+.content-container .no-padding {
+  padding: 0;
+}
+
+.content-container ul, ol{
+  padding: 0 2.5rem;
+}
+
+.courier {
+  font-family: courier, serif;
+}
+
+.btn-container {
+  padding: 3.5rem 0;
 }

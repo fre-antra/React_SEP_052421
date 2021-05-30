@@ -1,0 +1,30 @@
+:root {
+  --color-white: #ffffff;
+  --color-green: #138823; 
+  --color--black: #000;
+  --color--gray: #a9a9a9;
+  --color--dark--gray: rgb(97, 96, 96);
+  --color--blue: #1f72cb;
+  --color-shallow-gray: rgb(242, 240, 240);
+}
+
+.sidebar-container h3 {
+  padding: 0.2rem 0;
+}
+
+.about-container {
+  padding: 1.5rem 1.2rem;
+  background-color: var(--color-shallow-gray);
+}
+
+.archives-container {
+  padding: 3rem 1.2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.elsewhere-container {
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}

@@ -1,0 +1,27 @@
+:root {
+  --color-white: #ffffff;
+  --color--blue: #1f72cb;
+  --color--gray: #878383;
+}
+
+.btn {
+  height: 2.5rem;
+  width: auto;
+  border-radius: calc(2.5rem * 0.5);
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-white);
+  cursor: pointer;
+  margin: 0.1rem;
+}
+
+.gray-btn {
+  border: 2px solid var(--color--gray);
+  color: var(--color--gray);
+}
+
+.blue-btn {
+  border: 2px solid var(--color--blue);
+  color: var(--color--blue);
+}
+
