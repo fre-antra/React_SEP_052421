@@ -31,6 +31,10 @@ i {
     color: green;
 }
 
+.typography__family--georgia {
+    font-family: Georgia, serif;
+}
+
 .svg__color--gray{
     fill: lightslategray;
     width: 2rem;

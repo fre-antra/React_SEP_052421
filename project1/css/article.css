@@ -3,7 +3,7 @@
 }
 
 .article > hr {
-    border-top: 1px solid lightslategray;
+    border-top: 1px solid #E2E2E2;
 }
 
 .article > p {
@@ -56,4 +56,22 @@
 .about{
     background-color: #E2E2E2;
     padding: 1rem;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar > section {
+    padding-top: 2rem;
+}
+
+.archives > ul{
+    list-style-type: none;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
 }
