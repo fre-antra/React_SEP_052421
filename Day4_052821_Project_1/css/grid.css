@@ -1,0 +1,19 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6 {
+    width: calc(50%);
+}
+
+div[class^="col"] {
+    position: relative;
+    height: 240px;
+}
+
+@media (max-width: 600px) {
+    .col-md-12 {
+        width: calc(100%);
+    }
+}

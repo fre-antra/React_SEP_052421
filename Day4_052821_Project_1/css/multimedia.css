@@ -1,0 +1,10 @@
+img {
+    position: relative;
+    width: 100%;
+}
+iframe {
+    position: relative;
+    border: none;
+    width: 420px;
+    height: 315px;
+}

@@ -1,0 +1,20 @@
+.columns {
+    position: relative;
+    max-width: 960px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.col-content {
+    box-sizing: border-box;
+    position: absolute;
+    left: 30px;
+    width: calc(100% - 240px);
+}
+
+.col-right {
+    box-sizing: border-box;
+    position: absolute;
+    right: 30px;
+    width: 150px;
+}

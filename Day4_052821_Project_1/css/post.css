@@ -1,0 +1,52 @@
+.post-container {
+    padding: 16px;
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 0 10px rgb(225, 225, 225);
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+    width: calc(100% - 16px);
+    left: 8px;
+    height: calc(100% - 30px);
+    top: 15px;
+}
+
+.post-container:hover {
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 0 0;
+    border-radius: 2px;
+}
+
+p, h2, a {
+    margin: 4px 0 4px 0;
+}
+
+p[class^="post-type"] {
+    margin: 6px 0 6px 0;
+}
+
+p, a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.post-type_world {
+    color: dodgerblue;
+}
+.post-type_design {
+    color: limegreen;
+}
+.post-date {
+    color: grey;
+}
+.post-content {
+    margin-top: 8px;
+}
+.post-link {
+    position: absolute;
+    bottom: 16px;
+    color: dodgerblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
