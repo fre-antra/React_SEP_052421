@@ -1,4 +1,4 @@
-/* initialize stuffs */
+/* initialize and reset */
 @import url(init.css);
 
 /* layout */
@@ -15,6 +15,9 @@
 
 /* footer */
 @import url(footer.css);
+
+/* button */
+@import url(button.css);
 
 /* ultility */
 @import url(ultility.css);

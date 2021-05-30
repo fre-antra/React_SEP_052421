@@ -1,8 +1,13 @@
 :root {
-  --color-primary: #0000ff;
+  --color-primary: cornflowerblue;
   --color-secondary: #008000;
   --color-border: #c6bfbf;
   --light-text: #808080;
+
+  --heading-h1: 3.5rem;
+  --heading-h2: calc(var(--heading-h1) / 1.2);
+  --heading-h3: calc(var(--heading-h2) / 1.2);
+  --heading-h4: calc(var(--heading-h3) / 1.2);
 }
 
 * {
@@ -22,4 +27,15 @@ body {
 
 a {
   color: var(--color-primary);
+}
+
+ul,
+ol {
+  padding-left: 3.5rem;
+}
+
+hr {
+  background-color: var(--color-border);
+  height: 1px;
+  border: none;
 }
