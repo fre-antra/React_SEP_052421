@@ -24,3 +24,11 @@ body {
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+a:link, a:visited{
+  color: var(--color-primary);
+}
+
+a:hover{
+  color: var(--color-primary-dark);
+}

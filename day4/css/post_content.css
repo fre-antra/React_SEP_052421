@@ -1,0 +1,126 @@
+/* post.html */
+.post-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .post-side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .post-main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+    border: solid 1px lightgray;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .heading-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+  }
+  
+  .heading-3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.8em;
+  }
+  
+  main .heading-4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6em;
+  }
+  
+  .heading-5 {
+    color: var(--color-grey-dark);
+  }
+  
+  q {
+    quotes: """ """;
+    text-decoration: underline;
+    font-style: italic;
+  }
+  
+  .post-side h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+    font-style: italic;
+  }
+  
+  .post-side div{
+    padding-bottom: 40px;
+  }
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  figcaption {
+    text-align: center;
+  }
+  
+  pre code {
+    border: 1px solid var(--color-grey);
+    display: block;
+    overflow: scroll;
+    font-family: "Monaco", monospace;
+    text-align: left;
+    max-height: 100px;
+  }
+  
+  .ul__post, .ol__post{
+    list-style-position: inside;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .ul__archive{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  
+  li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .post-side ul{
+    list-style: none;
+  }
+  
+  button {
+    border: solid 1px var(--color-primary);
+    background-color: white;
+    border-radius: 10px;
+    color: var(--color-primary);
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  button:hover{
+    background-color: var(--color-primary-dark);
+    color: white;
+  }
+  

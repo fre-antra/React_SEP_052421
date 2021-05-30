@@ -1,5 +1,25 @@
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .grid-container {
     grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-content{
+    flex-direction: column;
+  }
+
+  .ul__archive{
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    font-size: smaller;
+  }
+  .post-content{
+    width: 100%;
+    max-width: 100%;
   }
 }
