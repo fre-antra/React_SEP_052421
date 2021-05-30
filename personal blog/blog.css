@@ -1,0 +1,126 @@
+
+@import "nav.css";
+@import "footer.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+header{
+    font-family: 'Volkhov', serif;
+}
+#blog-title{
+    text-align: center;
+    font-size: 30px;
+}
+#subscribe{
+    position:relative;
+    top: 30px;
+    left:200px;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+h1, h2{
+    font-family: 'Volkhov', serif;
+    font-weight: bold;
+}
+
+.article{
+    padding: 0 15px;
+}
+
+.info{
+    color: var(--color-subtitle);
+    margin: 5px 0 15px 0;
+}
+
+.disclaimer{
+    padding-bottom: 15px;
+}
+
+.content{
+    padding: 15px 0;
+}
+
+.importance{
+    margin: 15px 0;
+    border: 1px solid var(--color-subtitle);
+    padding: 5px 0 25px 0;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+}
+
+.items{
+    padding: 15px 20px 15px 30px;
+}
+
+.button-container{
+    margin-top: 50px;
+}
+
+.btn{
+    height: 40px;
+    width: 90px;
+    margin: 5px;
+    border-radius: 40px;
+    background-color: #fff;
+}
+
+.older{
+    color: var(--color-world-blog);
+    border-color: var(--color-world-blog);
+}
+
+.newer{
+    color: var(--color-subtitle);
+    border-color: var(--color-subtitle);
+}
+
+.side-bar{
+    display: grid;
+}
+
+.side-bar h3{
+    font-style: italic;
+    font-family: 'Volkhov', serif;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.side-bar li{
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+a{
+    color: #537bbb;
+}
+
+.side-bar .about{
+    background-color: #eee;
+    margin-bottom: 25px;
+}
+
+.side-bar .about p{
+    padding-left: 5px;
+}
+
+@media (max-width:600px){
+    .wrapper{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 1rem;
+        width: 80%;
+        margin: auto;
+    }
+
+    .side-bar{
+        display: grid;
+    }
+}
