@@ -1,14 +1,18 @@
 @media (max-width: 730px) {
-  .blog-row {
+  .blog-container {
+    grid-template-columns: auto;
+  }
+
+  /* .blog-row {
     flex-direction: column;
     margin: 1rem 0;
-  }
+  } */
 
-  .card {
+  /* .card {
     margin: 0.5rem 0;
-  }
+  } */
 
-  .mg-l {
+  /* .mg-l {
     margin-left: 0;
-  }
+  } */
 }
