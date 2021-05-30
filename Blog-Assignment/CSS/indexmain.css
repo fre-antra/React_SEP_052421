@@ -1,10 +1,13 @@
 .main {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 90%;
   margin: auto;
   margin-top: 60px;
   margin-bottom: 70px;
-  padding: 2%;
+  padding: 1%;
+  overflow: scroll;
 }
 
 .main-postcontainer {
@@ -46,13 +49,7 @@
 }
 
 @media (max-width: 700px) {
-  .main {
-    /* margin-top: 60px;
-    margin-bottom: 70px; */
-    padding: 2%;
-  }
   .main-postcontainer {
-    height: 85%;
     overflow: scroll;
   }
   .main-postcontainer__row {

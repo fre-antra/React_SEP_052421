@@ -1,75 +1,94 @@
+.main-post {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 70px;
+  padding: 1%;
+  overflow: scroll;
+}
 .main-leftsection {
   display: flex;
   flex-direction: column;
-  flex: 75%;
-}
-.main-leftsection__text {
-  margin-bottom: 3%;
-}
-
-.main-leftsection,
-.main-rightsection {
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  flex: 75%;
+  margin-right: 2%;
 }
 .main-rightsection {
   flex: 25%;
   display: flex;
   flex-direction: column;
+}
+.main-leftsection__text {
+  margin-bottom: 4%;
+}
+
+.main-rightsection {
   justify-content: flex-start;
 }
+
 .rightsection-about {
   background-color: var(--color-gray);
-  padding: 5px;
-  margin-bottom: 30px;
+  padding: 5%;
 }
-.rightsection-archives {
+.rightsection-archives,
+.rightsection-about {
   padding: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+.rightsection-archives li,
+.rightsection-elsewhere li {
+  list-style: none;
 }
 .rightsection-elsewhere {
   padding: 5px;
   margin-bottom: 30px;
 }
-li {
-  list-style: none;
+.borderpara {
+  border: 0.5px solid var(--color-gray);
 }
-
-h3,
-h6 {
-  margin-bottom: 5px;
+.list {
+  padding-left: 3%;
 }
 p {
   margin-bottom: 5px;
+  text-align: justify;
 }
-.main-post {
-  height: 70%;
-  padding: 2%;
-  margin: 0 5%;
-  margin-top: 5%;
-  margin-bottom: 6%;
-  display: flex;
-  font-size: 60%;
-  flex-direction: row;
+
+a {
+  color: var(--color-blue);
 }
 .main-leftsection__buttons {
-  width: 30%;
+  width: 100%;
 }
 .btn {
   background: none;
   border-radius: 30px;
-  padding: 3%;
+  padding: 1%;
+}
+.main-leftsection__text h6 {
+  margin-bottom: 10px;
 }
 
 .btn-blue {
   border: 1px solid var(--color-blue);
-  color: (--color-blue);
+  color: var(--color-blue);
 }
 .btn-gray {
   border: 1px solid var(--color-gray);
+  color: var(--color-gray);
 }
 
 .header-subscribe,
 .header-search__icon {
   color: var(--color-graydark);
+}
+
+@media (max-width: 800px) {
+  .btn {
+    padding: 2%;
+  }
 }
