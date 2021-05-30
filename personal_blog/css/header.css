@@ -11,10 +11,10 @@
   align-items: center;
 }
 
-.header-content h1 {
+.header__content h1 {
   text-decoration: underline;
 }
 
-.header-content a {
+.header__content a {
   color: var(--light-text);
 }

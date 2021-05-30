@@ -5,23 +5,27 @@
   margin: 2rem 0;
 }
 
+.card:hover {
+  box-shadow: unset;
+}
+
 .card-content {
   padding: 2rem 2rem;
 }
 
-.card-header {
-  font-weight: bold;
-}
-
-.card-text {
+.card-wrapper {
   margin-top: 0.5rem;
   margin-bottom: 3.5rem;
 }
 
-.card-date {
+.card__header {
+  font-weight: bold;
+}
+
+.card__date {
   color: var(--light-text);
 }
 
-.card-paragraph {
+.card__paragraph {
   padding: 0.5rem 0;
 }
