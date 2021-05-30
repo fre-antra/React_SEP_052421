@@ -4,3 +4,11 @@
     font-size: 15px;
     margin: 20px 0 20px 0;
 }
+button[class^="footer"] {
+    border-radius: 3px;
+    border: 0;
+    padding: 4px;
+    font-size: 12px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
