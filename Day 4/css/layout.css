@@ -1,0 +1,18 @@
+.projectBlock {
+  width: 50%;
+}
+
+.projectContinue {
+  position: fixed;
+  bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .projectBlock-2 {
+    width: 100%;
+  }
+  .projectContinue-2 {
+    position: relative;
+    bottom: -4rem;
+  }
+}

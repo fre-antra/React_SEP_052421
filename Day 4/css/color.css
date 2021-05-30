@@ -1,0 +1,39 @@
+:root {
+  --color-title-blue: #4383f7;
+  --color-title-green: #65ad64;
+  --color-project-gray: #a9a9a9;
+}
+
+a {
+  color: var(--color-title-blue);
+  cursor: pointer;
+}
+
+.projectTitle {
+  font-style: italic;
+}
+
+.projectDate {
+  font-size: 10px;
+  color: var(--color-project-gray);
+}
+
+.line {
+  width: 100%;
+  border: var(--color-project-gray) 0.5px solid;
+  margin: auto;
+}
+
+.ap {
+  color: black;
+}
+
+.lastButton {
+  color: var(--color-title-blue);
+  border: var(--color-title-blue) 1px solid;
+}
+
+.nextButton {
+  color: var(--color-title-green);
+  border: var(--color-title-green) 1px solid;
+}
