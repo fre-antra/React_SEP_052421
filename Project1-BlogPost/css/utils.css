@@ -1,17 +1,17 @@
 .blue {
-  color: blue;
+  color: var(--color-blue);
 }
 
 .green {
-  color: green;
+  color: var(--color-green);
 }
 
 .old {
-  border: 1px solid lightskyblue;
-  color: lightskyblue;
+  border: 1px solid var(--color-lightskyblue);
+  color: var(--color-lightskyblue);
 }
 
 .new {
-  border: 1px solid lightgrey;
-  color: lightgrey;
+  border: 1px solid var(--color-lightgray);
+  color: var(--color-lightgray);
 }

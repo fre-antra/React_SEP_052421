@@ -12,8 +12,8 @@
   width: 50%;
   padding: 1rem;
   margin: 1rem;
-  border: 2px solid rgb(177, 175, 175);
-  box-shadow: 0 0 2px gray;
+  border: 2px solid var(--color-180gray);
+  box-shadow: 0 0 2px var(--color-gray);
 }
 
 .col-6:first-child {
@@ -35,7 +35,7 @@
 }
 
 .card__date {
-  color: gray;
+  color: var(--color-gray);
   font-size: 1.4rem;
 }
 
@@ -52,7 +52,7 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 565px) {
+@media (max-width: 600px) {
   .row {
     flex-direction: column;
   }

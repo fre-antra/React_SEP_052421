@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: lightskyblue;
+  color: var(--color-lightskyblue);
 }
 
 @media (max-width: 1000px) {

@@ -17,43 +17,46 @@
 }
 /* Left Column  */
 .left__title {
-  color: rgb(12, 12, 12);
+  color: var(--color-lightblack);
 }
 
 .left__date {
-  color: rgb(180, 180, 180);
+  color: var(--color-180gray);
   margin-bottom: 1rem;
 }
 
 .left__text {
   margin: 1rem 0;
-  color: rgb(95, 95, 95);
+  color: var(--color-95gray);
   font-size: 1.1rem;
 }
 
 .col-8 li {
-  color: rgb(95, 95, 95);
+  color: var(--color-95gray);
   margin-left: 3rem;
 }
 
 .hr {
-  border-top: 1px solid rgb(216, 213, 213);
+  border-top: 1px solid var(--color-238gray);
 }
 
 .left__buttonSection {
+  display: flex;
   padding: 2rem;
 }
 
 .btn {
+  margin: 0 0.5rem;
   padding: 0.5rem;
   border-radius: 2rem;
   width: 25%;
   font-size: 1.2rem;
   text-align: center;
+  background-color: var(--color-white);
 }
 
 .outline {
-  border: 1px solid lightgrey;
+  border: 1px solid var(--color-lightgray);
   padding: 0.5rem;
 }
 
@@ -63,24 +66,26 @@
 
 /* Right Column */
 .about {
-  background-color: rgb(238, 238, 238);
+  background-color: var(--color-238gray);
   padding: 1rem;
 }
 
 .about__title {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: rgb(95, 95, 95);
+  color: var(--color-95gray);
 }
 
 .about__text {
   font-size: 1.1rem;
   line-height: 1.3;
-  color: rgb(116, 116, 116);
+  color: var(--color-116gray);
 }
 
 .archives,
 .elsewhere {
+  display: flex;
+  flex-direction: column;
   margin-top: 2rem;
   padding: 1rem;
 }
@@ -88,7 +93,7 @@
 .archives__title,
 .elsewhere__title {
   margin-bottom: 1rem;
-  color: rgb(95, 95, 95);
+  color: var(--color-95gray);
 }
 
 .archives li,
@@ -108,5 +113,38 @@
   .col-4 {
     width: 100%;
     display: flex;
+  }
+  .about {
+    width: calc(4 / 12 * 100%);
+  }
+  .archives {
+    margin-top: 0;
+    width: calc(4 / 12 * 100%);
+  }
+  .elsewhere {
+    margin-top: 0;
+    width: calc(4 / 12 * 100%);
+  }
+}
+
+@media (max-width: 440px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    width: 30%;
+  }
+}
+
+@media (max-width: 350px) {
+  .left__buttonSection {
+    flex-direction: column;
+  }
+  .btn {
+    width: 40%;
+    margin: 0.5rem 0;
   }
 }

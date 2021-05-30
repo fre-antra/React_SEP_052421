@@ -7,11 +7,11 @@
 
 .header__subscribe {
   font-size: 1.2rem;
-  color: gray;
+  color: var(--color-gray);
 }
 
 .header__title {
-  color: rgb(92, 92, 92);
+  color: var(--color-95gray);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -19,4 +19,25 @@
 .header__search {
   width: 2rem;
   cursor: pointer;
+}
+
+@media (max-width: 250px) {
+  .header__search {
+    width: 1.5rem;
+  }
+  .header__subscribe {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 200px) {
+  .app-header {
+    justify-content: center;
+  }
+  .header__search {
+    display: none;
+  }
+  .header__subscribe {
+    display: none;
+  }
 }

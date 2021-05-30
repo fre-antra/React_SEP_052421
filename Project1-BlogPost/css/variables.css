@@ -2,5 +2,14 @@
   --color-green: green;
   --color-blue: blue;
   --color-white: white;
+  --color-gray: gray;
   --color-lightgray: lightgray;
+  --color-lightskyblue: lightskyblue;
+  --color-95gray: rgb(95, 95, 95);
+  --color-238gray: rgb(238, 238, 238);
+  --color-180gray: rgb(180, 180, 180);
+  --color-lightblack: rgb(12, 12, 12);
+  --color-116gray: rgb(116, 116, 116);
+  --color-footerBackground: rgb(243, 241, 241);
+  --color-footerText: rgb(160, 160, 160);
 }
