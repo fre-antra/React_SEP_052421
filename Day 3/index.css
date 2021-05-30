@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*html doc*/
+html {
+  font-size: 62.25%;
+}
+
+/*body*/
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/*Nav*/
+.navMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  height: 6rem;
+  color: #fff;
+}
+
+.container {
+  max-width: 108rem;
+  margin: 0 auto;
+}
+
+.navMenuList {
+  margin: 0 2rem;
+  height: 6rem;
+  display: flex;
+  align-content: center;
+}
+
+.navMenu .navMenuList .navMenuItem {
+  line-height: 6rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+/*header*/
+.header {
+  background-color: #c6bfbf;
+  margin-top: 6rem;
+}
+
+.header .heading {
+  padding: 3rem 10px;
+}
+
+.header p {
+  padding: 0 10px 3rem 10px;
+}
+
+/*Article*/
+.article {
+  display: flex;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.article .articleContent {
+  margin: 15px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/*Footer*/
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 6rem;
+  background-color: #0b4d14;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .footernavMenu {
+  display: flex;
+  color: #fff;
+}
+
+.footer .footernavMenu li {
+  margin: 0 1rem;
+  line-height: 6rem;
+}
