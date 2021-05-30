@@ -1,0 +1,71 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-areas: "section aside";
+  column-gap: 40px;
+}
+
+.section1-title {
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.section1-title__author-date {
+  color: rgb(155, 155, 155);
+}
+
+section {
+  grid-area: section;
+}
+
+aside {
+  grid-area: aside;
+}
+
+aside > .blog-detail__aside-about {
+  background-color: rgb(248, 250, 251);
+}
+
+aside > .blog-detail__aside-archives {
+  display: flex;
+  flex-direction: column;
+}
+
+aside > .blog-detail__aside-elsewhere {
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="border"] {
+  text-align: left;
+  border: 3px solid rgb(236, 237, 237);
+}
+
+.section4__buttons {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.btn {
+  padding: 5px 15px;
+  background-color: transparent;
+  color: skyblue;
+  border: 1px solid skyblue;
+  border-radius: 20px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: #999999;
+  border: 1px solid #999999;
+}
+
+a.section1-title__author-name:hover {
+    content: url(image01.jpg); 
+    display: block;
+    width:50px;
+    height:50px;
+}

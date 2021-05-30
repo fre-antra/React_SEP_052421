@@ -1,0 +1,37 @@
+.blog-container {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height: 1.3em;
+}
+
+header.blog-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+
+a.subscribtion-link:hover {
+  font-size: 150%;
+  color: red;
+}
+
+.blog-title {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.subscribtion-link {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.svg-icon{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}

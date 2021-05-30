@@ -1,0 +1,12 @@
+@import url('reset.css');
+@import url('header.css'); 
+@import url('page1_main.css');
+@import url('footer.css');
+  
+@media (max-width: 700px) {
+    .blog-container {
+      grid-template-columns: auto;
+    }
+}
+  
+

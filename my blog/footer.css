@@ -1,0 +1,14 @@
+footer.blog-footer {
+    padding: 50px;
+    text-align: center;
+    font-size: 1r;
+    background-color: rgb(250, 249, 249);
+  }
+  
+  .blog-footer > div:first-child {
+    color: gray;
+  }
+  
+  a {
+    color: rgb(116, 173, 255);
+  }
