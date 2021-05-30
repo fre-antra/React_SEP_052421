@@ -9,6 +9,9 @@
     .cards-container {
         padding-top: 8rem;
     }
+    .content-container {
+        padding-top: 8rem;
+    }
     .card {
         width: 90%;
     }
