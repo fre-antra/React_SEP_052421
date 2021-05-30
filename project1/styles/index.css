@@ -2,6 +2,7 @@
 @import url(./header.css);
 @import url(./card-template.css);
 @import url(./home.css);
+@import url(./blog.css);
 
 :root {
     --color-blue: #0b4d14; 

@@ -1,0 +1,116 @@
+.blog-wrapper {
+    display: grid;
+    grid-template-columns: 55% 45%; 
+    column-gap: 5%;
+    column-gap: 5%;
+    
+}
+
+.blog {
+   margin-left:31%;
+   margin-right: 10%;
+   line-height: normal;
+   width: 75%
+}
+
+.non-blog{
+    margin-left: 5%;
+}
+
+.text {
+    margin-bottom: 15px;
+}
+.indent {
+    margin-left: 10%;
+}
+
+.block {
+    border: 1px solid darkgray;
+}
+.older{
+    border: 1px solid blue;
+    color: blue;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 30px 2px 50px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: white;
+}
+
+.newer{
+    border: 1px solid grey;
+    color: grey;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 30px 2px 50px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: white;
+}
+
+.about{
+    background-color: aliceblue;
+    width: 40%;
+    height:20%;
+    padding: 1%;
+}
+
+.about h3 {
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.about p {
+    margin-left: 10%;
+ 
+}
+.archives {
+    margin-top: 7.5%;
+}
+
+.elsewhere{
+    margin-top: 7.5%;
+}
+
+@media (max-width: 600px) {
+    .left-header {
+        float: left;
+        width: 100%;
+       
+    }
+    .middle-header {
+        float: left;
+        width: 100%;
+     
+    }
+    .right-header {
+       
+        float: right;
+        width:100;
+       
+    }
+    .blog-wrapper{
+        margin-top: 10%;
+        gap:20px;
+        grid-template-columns: 2fr;
+    }
+    .blog {
+        width: 100%;
+    }
+    .non-blog{
+        display: flex;
+        column-gap: 20px;
+    }
+    .about {
+       height: 100%
+
+    }
+    
+}
