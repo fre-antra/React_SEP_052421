@@ -1,0 +1,21 @@
+.post-container {
+    display: flex;
+    width: 60%;
+    margin:0px 500px;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin: 0px 5px;
+    padding: 0px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 5rem;
+    padding: 0px;
+}

@@ -1,0 +1,17 @@
+.header-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 a {
+    color: black;
+}
+
+.search-icon {
+    width: 10px;
+    height: 10px;
+    margin: 0px 20px;
+}
+

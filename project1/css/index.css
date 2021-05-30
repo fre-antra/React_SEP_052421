@@ -1,3 +1,7 @@
+@import "blogs.css";
+@import "head.css";
+@import "post.css";
+
 body{
     box-sizing: border-box;
     display: flex;
@@ -5,97 +9,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-.header-container {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.blogs-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 60%;
-}
-
-.row-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.blog{
-    width: 40%;
-    padding: 2rem 2rem;
-    margin: 1rem 1rem;
-    border: 0.3rem solid #ddd;
-}
-
-.blog .left{
-    color: #2990f7;
-}
-
-.blog .right{
-    color: #26a641;
-}
-
-.footer-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    background-color: #f8f8f8;
-    padding: 2rem;
-}
-
-.post-container {
-    display: flex;
-    width: 60%;
-    margin:0px 500px;
-}
-
-.left-container {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-    margin: 0px 5px;
-    padding: 0px;
-}
 
 .button-container {
     display: flex;
     margin: 2rem;
-}
-
-.right-container {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: 5rem;
-    padding: 0px;
-}
-
-.footer-container p{
-    margin: 0px 100px;
-}
-
-.search-icon {
-    width: 10px;
-    height: 10px;
-    margin: 0px 20px;
-}
-
-.subscribe {
-    color: #999;
-}
-
-.header-container h1 a {
-    color: black;
-}
-
-a {
-    color: #2990f7;
 }
 
 .about{
