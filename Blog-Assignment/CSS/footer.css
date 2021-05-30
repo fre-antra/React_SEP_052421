@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--color-gray);
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -10,4 +10,10 @@
   width: 100vw;
   height: 70px;
   bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    height: 50px;
+  }
 }

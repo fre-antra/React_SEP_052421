@@ -2,11 +2,13 @@
 @import url('./detailpostmain.css');
 @import url('./header.css');
 @import url('./footer.css');
+
 :root {
   --color-green: #4eeb63;
   --color-black: #000;
   --color-gray: #cfcccc;
   --color-blue: #3568f5;
+  --color-graydark: #888787;
 }
 
 *,
@@ -16,8 +18,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 82.25%;
+body {
+  height: 100vh;
 }
 a {
   cursor: pointer;
@@ -32,21 +34,10 @@ a {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 .header-title {
   text-decoration: underline;
 }
-/* =========Main========== */
-.main {
-  height: 90%;
-  margin: 5% 3%;
-  font-size: 72.25%;
-}
-
-@media (max-width: 700px) {
-  .main {
-    margin-top: 10%;
-    margin-bottom: 250px;
-  }
+.container {
+  font-size: 82.25%;
 }
