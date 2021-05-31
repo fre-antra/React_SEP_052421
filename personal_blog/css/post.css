@@ -13,16 +13,41 @@
   font-size: var(--heading-h1);
 }
 
+.post__publish {
+  color: var(--light-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.post__publish-by {
+  padding-bottom: 1rem;
+}
+
+.post__publish-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.post__publish-wrapper img {
+  width: 5rem;
+}
+
+.post__publish-userinfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+}
+
+.post__background img {
+  width: 100%;
+}
+
 .post__content h2 {
   font-size: var(--heading-h2);
 }
 
 .post__content h3 {
   font-size: var(--heading-h3);
-}
-
-.post__publish {
-  color: var(--light-text);
 }
 
 .post__button {

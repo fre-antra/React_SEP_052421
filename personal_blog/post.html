@@ -13,14 +13,14 @@
   <div class="app-container">
     <header class="app-header">
       <div class="header-wrapper">
-        <div class="header__content">
+        <div class="header__content-subscribe">
           <a href="home.html">Subscribe</a>
         </div>
-        <div class="header__content">
+        <div class="header__content-title">
           <h1>Blog Title</h1>
         </div>
-        <div class="header__content">
-          <div>Search Icon</div>
+        <div class="header__content-icon">
+          <img src="./assets/search_icon.png" alt="search-icon">
         </div>
       </div>
     </header>
@@ -30,10 +30,23 @@
         <div class="post__header">
           <h1>Sample blog post</h1>
           <div class="post__publish">
-            <span>January 1, 2014 by</span>
-            <a href="#">Mark</a>
+            <div class="post__publish-by">
+              <span>January 1, 2014 by</span>
+              <a href="#">Mark</a>
+            </div>
+            <div class="post__publish-wrapper">
+              <img src="./assets/user-avatar.png" alt="user-avatar">
+              <div class="post__publish-userinfo">
+                <span><b>Title:</b> Lorem, ipsum dolor.</span>
+                <span><b>Occupation:</b> Lorem ipsum dolor sit amet consectetur.</span>
+              </div>
+            </div>
           </div>
         </div>
+        <figure class="post__background">
+          <img src="./assets/background.jpg" alt="background-image">
+          <figcaption>Lorem ipsum dolor sit, amet consectetur adipisicing.</figcaption>
+        </figure>
         <div class="post__content">
           <p>
             This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic

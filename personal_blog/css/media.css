@@ -1,4 +1,23 @@
 @media (max-width: 730px) {
+  /* header */
+  .header-wrapper {
+    flex-direction: column;
+  }
+
+  .header__content-subscribe {
+    order: 3;
+  }
+
+  .header__content-title {
+    order: 1;
+    padding-bottom: 1rem;
+  }
+
+  .header__content-icon {
+    order: 2;
+    padding-bottom: 0.5rem;
+  }
+
   /* blog */
   .blog-container {
     grid-template-columns: auto;

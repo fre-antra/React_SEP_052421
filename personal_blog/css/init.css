@@ -39,3 +39,9 @@ hr {
   height: 1px;
   border: none;
 }
+
+figcaption {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-style: italic;
+}

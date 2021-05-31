@@ -14,10 +14,14 @@
   align-items: center;
 }
 
-.header__content h1 {
+.header__content-title h1 {
   text-decoration: underline;
 }
 
-.header__content a {
+.header__content-subscribe a {
   color: var(--light-text);
+}
+
+.header__content-icon img {
+  width: 3rem;
 }
