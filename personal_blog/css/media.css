@@ -1,18 +1,21 @@
 @media (max-width: 730px) {
+  /* blog */
   .blog-container {
     grid-template-columns: auto;
   }
 
-  /* .blog-row {
-    flex-direction: column;
-    margin: 1rem 0;
-  } */
+  /* post */
+  .post-container {
+    grid-template-columns: auto;
+  }
 
-  /* .card {
-    margin: 0.5rem 0;
-  } */
+  .post__button {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
 
-  /* .mg-l {
-    margin-left: 0;
-  } */
+  .post__aside-about,
+  .post__aside-archive {
+    margin-bottom: 3rem;
+  }
 }

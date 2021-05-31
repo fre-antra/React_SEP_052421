@@ -2,10 +2,6 @@
   padding-bottom: 3rem;
 }
 
-.post__header h1 {
-  font-size: var(--heading-h1);
-}
-
 .post__header h1,
 .post__content h2,
 .post__content h3,
@@ -13,9 +9,14 @@
   padding-bottom: 0.5rem;
 }
 
+.post__header h1 {
+  font-size: var(--heading-h1);
+}
+
 .post__content h2 {
   font-size: var(--heading-h2);
 }
+
 .post__content h3 {
   font-size: var(--heading-h3);
 }
@@ -24,6 +25,11 @@
   color: var(--light-text);
 }
 
+.post__button {
+  margin: 5rem 0;
+}
+
+/* post aside */
 .post__aside h4 {
   font-size: var(--heading-h4);
 }
@@ -37,8 +43,4 @@
 .post__aside-elsewhere {
   display: flex;
   flex-direction: column;
-}
-
-.post__button {
-  margin: 5rem 0;
 }
