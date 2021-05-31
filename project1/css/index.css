@@ -1,6 +1,7 @@
 @import "blogs.css";
 @import "head.css";
 @import "post.css";
+@import "footer.css";
 
 body{
     box-sizing: border-box;
