@@ -1,0 +1,35 @@
+.author {
+  font-size: 1.3rem;
+  display:flex;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 10px
+}
+
+.author-avatar {
+  width: 44px;
+  height:44px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--color-blue)
+}
+
+.author-info {
+  line-height: 1.5em;
+  padding: 5px;
+}
+
+.author-name{
+  font-weight: 600;
+  display: block;
+  font-size: 1.5rem;
+}
+
+
+.section-one-content a{
+  color: var(--color-blue);
+  font-weight: bold;
+}
+
+strong {
+  font-style: italic;
+}

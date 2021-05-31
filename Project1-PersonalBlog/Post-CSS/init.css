@@ -14,17 +14,10 @@
 
 html {
   font-size: 62.25%;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
-  background-color: rgb(215, 215, 215);
+  background: #F7F7F7;
 }
 
-ul li {
-  padding: 10px;
-}
-
-img {
-  padding: 10px;
-}

@@ -1,0 +1,13 @@
+.footer-container {
+  padding: 20px;
+  background-color: var(--color-gray);
+  text-align: center;
+  font-size: 1.3rem;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}
+
+a[getbootstrap] {
+  cursor: pointer;
+}

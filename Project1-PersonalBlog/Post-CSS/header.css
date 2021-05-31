@@ -1,0 +1,31 @@
+.header-container {
+  background-color: black;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  position: sticky;
+  top:0;
+  padding:20px;
+}
+
+.header-subscribe{
+  /* text-align: center; */
+  padding: 10px;
+  font-size: 1.3rem;
+  /* width: 10%; */
+  margin-top: 30px;
+}
+.header {
+  width:80%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.header-subscribe a,
+h1 a {
+  color: #fff;
+  text-decoration: none;
+}
