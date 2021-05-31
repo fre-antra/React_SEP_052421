@@ -1,0 +1,25 @@
+.blog-side {
+    margin-top: 1.2rem;
+}
+
+.blog-side div {
+    margin-bottom: 6rem;
+}
+
+.side-title {
+    font-style: italic;
+}
+
+.about p {
+    text-align: left;
+}
+
+
+.side-list li {
+    margin-bottom: 0.5rem;
+}
+
+.side-list a{
+    color: var(--color-blue);
+}
+

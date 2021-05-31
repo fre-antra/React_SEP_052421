@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
     border-top: 1px solid rgb(231, 224, 224);
     
 }
 
 .footer-container p {
     margin-top: 3vh;
+    text-align: center;
 }
 
 .footer-container p:last-child {
