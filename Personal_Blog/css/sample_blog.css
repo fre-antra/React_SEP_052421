@@ -1,0 +1,78 @@
+@import "./colors.css";
+@import "./fonts.css";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    margin: 20px auto 20px;
+    width: 80%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.grid-container-header {
+    grid-column: 1/5;
+    grid-row: 1;
+    align-items: center;
+    display: grid;
+}
+
+.header-left {
+    grid-column: 1/2;
+    text-align: left;
+}
+
+.header {
+    grid-column: 2/4;
+}
+
+.header-right {
+    grid-column: 4/5;
+    text-align: right;
+}
+
+.grid-container-posts {
+    grid-column: 1/4;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.grid-container-side {
+    grid-column: 4/5;
+    text-align: left;
+}
+
+code {
+    border: 1px solid gray;
+
+}
+
+.grid-container-side ul li {
+    list-style-type: none;
+}
+
+.post-link {
+    /*border: 2px solid blue;*/
+    /*border-radius: 50%;*/
+    padding: 10px;
+}
+
+.footer {
+    background-color: #eeeeee;
+    grid-column: 1/5;
+    grid-row: 5/6;
+    text-align: center;
+    padding: 20px;
+}
+
