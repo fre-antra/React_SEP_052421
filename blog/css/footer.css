@@ -1,0 +1,48 @@
+.footer-container {
+  background-color: var(--color-ink);
+  border-top: 0.8rem solid var(--color-crimson);
+}
+
+nav,
+.footer {
+  height: 100%;
+}
+
+.footer-links-container {
+  display: none;
+}
+
+.social-button {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  background-size: 100% 100% !important;
+}
+
+.social-button:hover {
+  transform: scale(1.5);
+  transition: 0.3s;
+}
+
+.facebook-button {
+  background: var(--icon-fb) no-repeat center;
+}
+
+.twiter-button {
+  background: var(--icon-tt) no-repeat center;
+}
+
+.ytb-button {
+  background: var(--icon-ytb) no-repeat center;
+}
+
+.google-button {
+  background: var(--icon-gg) no-repeat center;
+}
+
+.footer-texts-container p {
+  color: var(--color-White);
+}
