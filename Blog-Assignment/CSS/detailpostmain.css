@@ -92,3 +92,9 @@ a {
     padding: 2%;
   }
 }
+@media (max-width: 600px) {
+  .main-post {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
