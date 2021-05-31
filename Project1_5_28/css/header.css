@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-subscribe {
+  font-size: 1rem;
+}
+
+.header-title {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header-search {
+  width: 2rem;
+  cursor: pointer;
+}

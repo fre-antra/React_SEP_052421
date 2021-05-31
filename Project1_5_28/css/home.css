@@ -4,6 +4,10 @@
   --color-blue: #0000ff;
   --color-footer: #f9f9f9;
   --color-border: #eceded;
+  --color-white: white;
+  --color-black: black;
+  --color-blogContent: #75777a;
+  --color-about: #f8f9fa;
 }
 
 * {
@@ -14,17 +18,15 @@
 }
 
 .wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 1000px;
-  height: 1000px;
+  width: 50%;
   margin: 0 auto;
 }
 
 .blog_header {
   display: flex;
-  padding: 30px;
+  padding: 2rem;
   text-decoration: underline;
   justify-content: space-between;
   align-items: center;
@@ -42,29 +44,29 @@
 .left_box {
   display: flex;
   flex-direction: column;
-  border: 3px solid var(--color-border);
-  padding: 50px;
-  margin: 20px;
-  padding: 20px 180px 20px 20px;
+  border: 0.2rem solid var(--color-border);
+  padding: 4rem;
+  margin: 1.3rem;
+  padding: 1.3rem 11rem 1.3rem 1.3rem;
 }
 
 .right_box {
   display: flex;
   flex-direction: column;
   border: 3px solid var(--color-border);
-  padding: 50px;
-  margin: 20px;
-  padding: 20px 180px 20px 20px;
+  padding: 4rem;
+  margin: 1.3rem;
+  padding: 1.3rem 11rem 1.3rem 1.3rem;
 }
 
 .left_type {
-  padding-bottom: 20px;
+  padding-bottom: 1.5rem;
   font-size: small;
   color: var(--color-blue);
 }
 
 .right_type {
-  padding-bottom: 20px;
+  padding-bottom: 1.3rem;
   font-size: small;
   color: var(--color-green);
 }
@@ -73,25 +75,25 @@
 .right_header {
   font-size: x-large;
   font-weight: 600;
-  padding-bottom: 5px;
+  padding-bottom: 0.33rem;
 }
 
 .left_date,
 .right_date {
   font-size: small;
   color: var(--color-gray);
-  padding-bottom: 5px;
+  padding-bottom: 0.33rem;
 }
 
 .left_content,
 .right_content {
-  font-size: 10px;
-  padding-bottom: 45px;
+  font-size: 0.7rem;
+  padding-bottom: 3rem;
 }
 
 .left_type,
 .right_type {
-  padding-bottom: 10px;
+  padding-bottom: 0.7rem;
 }
 
 .left_header,
@@ -116,9 +118,19 @@
   text-decoration: underline;
 }
 .footer .sponsor {
-  padding: 40px;
+  padding: 2.5rem;
 }
 
 .footer div {
-  padding: 10px;
+  padding: 0.7rem;
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 15%;
+  }
+  .blog_article {
+    flex-direction: column;
+  }
 }
