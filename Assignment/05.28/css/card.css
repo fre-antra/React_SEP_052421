@@ -1,0 +1,60 @@
+.card-name-color-green, .card-name-color-blue{
+    display: flex;
+    padding-bottom: 5px;
+}
+
+.card-name-color-green{
+    color: var(--color-green);
+}
+
+.card-name-color-blue{
+    color: var(--color-blue);
+}
+
+.card-title{
+    display: flex;
+}
+
+
+
+.card-date{
+    color: var(--color-lightGray);
+    display: flex;
+}
+
+.card-content{
+    text-align: left;
+    padding: 5px;
+}
+
+.sidebar{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: left;
+    line-height: 50%;
+}
+
+.card-content-border{
+    margin: 15px 0 15px;
+    padding: 5px;
+    text-align: left;
+    border: medium solid var(--color-lightGray);
+}
+
+main ul, ol{
+    margin-left: 40px;
+    line-height :120%;
+}
+
+
+.card-footer{
+    position: absolute;
+}
+
+HR{
+    align-self: start;
+    margin: 10px;
+    width: "100%";
+    SIZE: 1;
+}

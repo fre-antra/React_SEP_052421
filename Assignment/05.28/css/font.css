@@ -1,3 +1,9 @@
+.header h1{
+    font-family: 'Indie Flower', cursive;
+    font-size: 200%;
+}
+
+
 .card-name-color-green, .card-name-color-blue{
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
@@ -12,4 +18,14 @@
 .card-date{
     font-family: "Times New Roman", Times, serif;
     font-size: 90%;
+}
+
+.sidebar, .intro{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.text-decoration{
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: underline;
 }

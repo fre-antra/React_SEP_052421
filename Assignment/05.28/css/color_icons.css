@@ -4,54 +4,12 @@
     --color-gray: #c6bfbf;
     --color-lightGray: #D3D3D3;
     --color-white: white;
+    --color-grayWhite: #F6F6F6;
     --color-orange: orange;
     --color-blue: blue;
+    --color-whiteGray: #DFDFDF;
 }
 
-material-icons{
-    display: inline-block;
-    position: absolute;
+.icon-white{
+    color: white;
 }
-
-
-.header {
-    background-color: var(--color-black);
-}
-
-
-.header h1{
-    color: var(--color-white);
-}
-
-.header h4{
-    color: var(--color-white);
-}
-
-.header h4:hover{
-    color: var(--color-orange);
-}
-
-.grid-container {
-    background-color: var(--color-white);
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.card-name-color-green{
-    color: var(--color-green);
-}
-
-.card-name-color-blue{
-    color: var(--color-blue);
-}
-
-.card-date{
-    color: var(--color-lightGray);
-}
-
-.footer {
-    background-color: var(--color-lightGray);
-}
-

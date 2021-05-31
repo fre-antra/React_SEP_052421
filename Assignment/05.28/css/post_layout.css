@@ -1,0 +1,59 @@
+.container{
+    min-width: 1000px;
+    width:expression(document.body.clientWidth < 1000? "1000px": "auto" );
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url('../image/leaves-pattern.png');
+}
+
+.grid-container {
+    background-color: var(--color-grayWhite);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+                "main-content intro"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar"
+                "main-content sidebar";
+    
+    padding: 10px;
+}
+
+.grid-item{
+    background-color: var(--color-white);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    margin: 10px 200px 300px;
+}
+
+
+.main-content{
+    grid-area: main-content;
+    
+}
+
+.intro{
+    grid-area: intro;
+    background-color: var(--color-whiteGray);
+}
+
+.sidebar{
+    grid-area: sidebar;
+}

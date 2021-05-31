@@ -1,0 +1,44 @@
+.header {  
+    background-color: var(--color-black);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.header h1{   
+    color: var(--color-white);
+    display: center;
+    margin-top: -5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+}
+
+.header h4{    
+    color: var(--color-white);
+    display: inline;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+
+
+.header h4:hover{
+    color: var(--color-orange);
+}
+
+#search{
+    margin-top: 15px;
+
+}
+
+.fa-hand-point-right{
+    margin: 17px 2px 0 15px;
+    display: inline;
+}
+
+.fa-search{
+    margin-right: 20px;
+    display: inline;
+}
