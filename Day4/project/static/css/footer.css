@@ -8,7 +8,7 @@
 
 .footer__wrapper {
   width: 70%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }

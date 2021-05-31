@@ -1,0 +1,112 @@
+:root {
+  --color-blue: #1fa0ae;
+  --color-black: #000;
+  --color-lightgray: lightgray;
+}
+
+.content-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 100px 0 100px;
+  padding: 32px;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 60% 30%;
+  grid-template-rows: auto;
+}
+
+.main-content {
+  flex: 1 1 100%;
+  padding: 0 2rem;
+}
+
+.main-content p {
+  padding: 1rem 0;
+}
+
+.sidebar-container h3 {
+  padding: 0.2rem 0;
+}
+
+.about-container {
+  padding: 1.5rem 1.2rem;
+  background-color: var(--color-lightgray);
+}
+
+.archives-container {
+  padding: 3rem 1.2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.elsewhere-container {
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.gray-bottom-border {
+  border-bottom: 1px solid var(--color-lightgray);
+}
+
+.no-top-padding {
+  padding-top: 0;
+}
+
+.gray-borders {
+  border: 2px solid var(--color-lightgray);
+}
+
+.content-container .no-top-padding {
+  padding-top: 0;
+}
+
+.content-container .no-padding {
+  padding: 0;
+}
+
+.content-container ul,
+ol {
+  padding: 0 2.5rem;
+}
+
+.courier {
+  font-family: courier, serif;
+}
+
+.btn-container {
+  padding: 3.5rem 0;
+}
+
+.btn {
+  height: 2.5rem;
+  width: auto;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-white);
+  cursor: pointer;
+  margin: 0.1rem;
+}
+
+.gray-btn {
+  border: 2px solid var(--color-lightgray);
+  color: var(--color--gray);
+}
+
+.blue-btn {
+  border: 2px solid var(--color-blue);
+  color: var(--color-blue);
+}
+
+.blue-font {
+  color: var(--color-blue);
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-row {
+    flex-direction: column;
+    align-items: space-between;
+  }
+}
