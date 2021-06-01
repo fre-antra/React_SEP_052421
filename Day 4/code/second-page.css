@@ -1,0 +1,97 @@
+.second-page {
+    display: flex;
+    align-items: baseline;
+}
+
+.blogs {
+    flex: 2;
+    padding: 2rem;
+
+}
+
+.blog {
+    margin-top: 1rem
+}
+
+h2,
+h3 {
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: -1rem;
+}
+
+aside {
+    flex: 1;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.archives {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem
+}
+
+.archives h3 {
+    margin: 2px;
+}
+
+.archives a {
+    margin-top: 5px
+}
+
+.else-where {
+    margin-top: 2rem
+}
+
+.para {
+    margin-top: 1.5rem;
+}
+
+.para-1 {
+    border-bottom: 0.5px solid gray;
+    padding-bottom: 1rem;
+}
+
+.para-3 {
+    border: 1px solid gray;
+    padding-bottom: 1rem;
+}
+
+ul,
+ol {
+    margin-left: 3rem;
+}
+
+.btns {
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background: transparent;
+    border: transparent
+}
+
+.order-btn,
+.newer-btn {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.newer-btn {
+    color: var(--color-grey);
+    border: 2px solid var(--color-grey);
+
+}
