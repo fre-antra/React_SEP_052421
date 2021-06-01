@@ -1,7 +1,15 @@
-.header-container {
+/* .header-container {
     width: 60%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+} */
+
+.header-container{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
     align-items: center;
 }
 
