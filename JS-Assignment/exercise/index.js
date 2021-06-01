@@ -7,9 +7,8 @@ test implemented by the provided function.
 myEvery: The every() method tests whether all elements in the array pass the test 
 implemented by the provided function. It returns a Boolean value.
 
-myReduce:   Reduces an array or object to a single value by repetitively calling iterator(accumulator, item) for each item. 
-Accumulator should be the return value of the previous iterator call.
-
+myReduce: The reduce() method executes a reducer function (that you provide) on 
+each element of the array, resulting in a single output value.
 */
 
 const test1= [3, 5, 9, 11];
@@ -44,3 +43,21 @@ const odd = (element) => {
 console.log(test3.myEvery(odd));
 console.log(test4.myEvery(odd));
 
+
+const test5 = [1, 2, 3, 4];
+const test6 = [2, 4, 6, 10];
+
+Array.prototype.myReduce =function(callback, accumulator) {
+  for (let ele of this) {
+    if (accumulator === undefined) {
+      accumulator = ele;
+    } else {
+      accumulator = callback(accumulator, ele);
+    }
+  }
+  return accumulator;
+}
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(test5.myReduce(reducer, 0))
+console.log(test6.myReduce(reducer))
