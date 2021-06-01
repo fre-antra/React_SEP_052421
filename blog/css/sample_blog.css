@@ -1,0 +1,123 @@
+/* Colors */
+@import url(./utils.css);
+
+/* Typography */
+@import url(./typography.css);
+
+:root {
+    --footer-height: 10rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.25%;
+}
+
+body {
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-title);
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.blog-main {
+    margin-bottom: calc(var(--footer-height) + 1rem);
+}
+.blog-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: var(--footer-height);
+    background-color: var(--color-grey);
+    border-top: 1px solid var(--color-grey-dark);
+}
+
+.blog-footer__text {
+    margin: 0.5rem 0;
+}
+
+.blog-container {
+    margin: auto 5rem;
+}
+.post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+}
+.post-article {
+    grid-column: 1/4;
+    text-align: left;
+    line-height: 1.5;
+}
+.post-aside {
+    grid-column: 4/5;
+    text-align: left;
+}
+
+.post-article > ul,
+.post-article > ol,
+.post-aside ul {
+    margin: 1rem 0;
+    list-style-position: inside;
+}
+.post-aside a {
+    color: var(--color-blue);
+}
+.code-block {
+    border: 1px solid var(--color-grey);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.post-buttons {
+    margin: 5rem 0;
+}
+
+.post-buttons button {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+}
+.older-post {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+}
+.newer-post {
+    color: var(--color-grey--dark);
+    border-color: var(--color-grey-dark);
+}
+.aside__about {
+    background-color: var(--color-grey);
+    padding: 1rem;
+}
