@@ -128,6 +128,86 @@
 // console.log(c.getArea());
 
 // // loop
-// // object copy
 
-// 3.30pm
+// for (let i = 0; i < arr.length; i++)
+// const arr = [3, 2, 1];
+
+// Array.prototype.myForEach = function(callbackfn) {
+//     // console.log('this: ', this);
+//     for (let i = 0; i < this.length; i++) {
+//         callbackfn(this[i], i, this);
+//     }
+// }
+
+// Array.prototype.myMap = function(callbackfn) {
+//     // console.log('this: ', this);
+//     const arr = [];
+//     for (let i = 0; i < this.length; i++) {
+//         arr.push(callbackfn(this[i], i, this));
+//     }
+//     return arr;
+// }
+
+// Array.prototype.myFilter = function(callbackfn) {
+//     // console.log('this: ', this);
+//     const arr = [];
+//     for (let i = 0; i < this.length; i++) {
+
+//         if (callbackfn(this[i], i, this)) {
+//             arr.push(this[i])
+//         }
+//     }
+//     return arr;
+// }
+
+// // mySome, myEvery, myReduce
+
+// const arr = ['a', 'b', 'c'];
+// console.log(arr.reduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaabbcc'
+// // 'dd' + a + a = 'ddaa' + b + b = ddaabb + c + c 
+
+// for (let i in arr) {
+//     console.log(arr[i]);
+// }
+
+// console.log(arr.myFilter((num, i, array) => {
+//     return num > 1;
+// }));
+
+
+// const obj = {name: 'Jojo', age: 18};
+
+// for (let key in obj) {
+//     console.log(key, obj[key]);
+// }
+
+// // object copy: shallow, deep
+
+const obj = {
+    name: 'Dio', 
+    age: 200,
+    arr: [
+        { id: 1 }
+    ],
+    date: new Date(),
+    foo() {
+        console.log(111);
+    }
+};
+// first leve, 
+
+// const obj2 = {...obj};
+// obj2.arr[0].id = 2;
+// console.log(obj.arr[0].id);
+
+// // JSON.stringify
+// console.log(JSON.stringify(obj));
+// const obj2 = JSON.parse( JSON.stringify(obj) );
+// console.log(obj,obj2);
+
+// deep coyp;
+const _ = require('lodash');
+const obj3 = _.cloneDeep(obj);
+console.log(obj);
+console.log(obj3);
+
