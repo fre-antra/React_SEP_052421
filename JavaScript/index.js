@@ -160,10 +160,19 @@
 //     return arr;
 // }
 
+Array.prototype.myReduce = function(callbackfn, init) {
+    // console.log('this: ', this);
+    let acc = init;
+    for (let i = 0; i < this.length; i++) {
+        acc = callbackfn(acc, this[i], i, this);
+    }
+    return acc;
+}
+
 // // mySome, myEvery, myReduce
 
-// const arr = ['a', 'b', 'c'];
-// console.log(arr.reduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaabbcc'
+const arr = ['a', 'b', 'c'];
+console.log(arr.myReduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaabbcc'
 // // 'dd' + a + a = 'ddaa' + b + b = ddaabb + c + c 
 
 // for (let i in arr) {
@@ -183,17 +192,17 @@
 
 // // object copy: shallow, deep
 
-const obj = {
-    name: 'Dio', 
-    age: 200,
-    arr: [
-        { id: 1 }
-    ],
-    date: new Date(),
-    foo() {
-        console.log(111);
-    }
-};
+// const obj = {
+//     name: 'Dio', 
+//     age: 200,
+//     arr: [
+//         { id: 1 }
+//     ],
+//     date: new Date(),
+//     foo() {
+//         console.log(111);
+//     }
+// };
 // first leve, 
 
 // const obj2 = {...obj};
@@ -206,8 +215,8 @@ const obj = {
 // console.log(obj,obj2);
 
 // deep coyp;
-const _ = require('lodash');
-const obj3 = _.cloneDeep(obj);
-console.log(obj);
-console.log(obj3);
+// const _ = require('lodash');
+// const obj3 = _.cloneDeep(obj);
+// console.log(obj);
+// console.log(obj3);
 
