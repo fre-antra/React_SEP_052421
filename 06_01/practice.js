@@ -23,6 +23,7 @@ Array.prototype.myFilter = function(callbackfn) {
     return arr;
 }
 
+// mySome, myEvery, myReduce
 Array.prototype.myEvery = function(callbackfn) {
   for (let i = 0; i < this.length; i++) {
     if (!callbackfn(this[i], i, this)) return false;
