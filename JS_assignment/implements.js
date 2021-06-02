@@ -1,3 +1,27 @@
+Array.prototype.myForEach = function (callbackfn) {
+  for (let i = 0; i < this.length; i++) {
+    callbackfn(this[i], i, this);
+  }
+};
+
+Array.prototype.myMap = function (callbackfn) {
+  const arr = [];
+  for (let i = 0; i < this.length; i++) {
+    arr.push(callbackfn(this[i], i, this));
+  }
+  return arr;
+};
+
+Array.prototype.myFilter = function (callbackfn) {
+  const arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callbackfn(this[i], i, this)) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
+};
+
 Array.prototype.mySome = function (callbackfn) {
   for (let i = 0; i < this.length; i++) {
     if (callbackfn(this[i], i, this)) {
@@ -32,6 +56,9 @@ Array.prototype.myReduce = function (callbackfn, initVal) {
 
 // =================================================
 const arr = [3, 2, 7, 1, 9, 11];
-console.log(arr.mySome((cur, i, arr) => cur > 3));
-console.log(arr.myEvery((cur, i, arr) => cur < 3));
-console.log(arr.myReduce((acc, cur, i, arr) => acc + cur, 0));
+arr.myForEach((n) => console.log(n));
+console.log(arr.myMap((n) => n + 3));
+console.log(arr.myFilter((n) => n < 5));
+console.log(arr.mySome((cur) => cur > 3));
+console.log(arr.myEvery((cur) => cur < 3));
+console.log(arr.myReduce((acc, cur) => acc + cur, 4));
