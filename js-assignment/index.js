@@ -30,10 +30,21 @@ console.log('Answer of Question 2-2, checkPalindrome ===>', res202);
 
 // 3. Write a JavaScript function that generates all combinations of a string. Example string : 'dog' Expected Output : d,do,dog,o,og,g 
 const combination = (str) => {
-
+    let set = new Set();
+    helper3(set, str, 0, '');
+    return [...set];
 }
 
-let res3 = combination('nurses');
+function helper3(set, str, beginIndex, el) {
+    let temp = '';
+    for (let i = beginIndex; i < str.length; i++) {
+        temp = el + str[i];
+        if (!set.has(temp)) set.add(temp);
+        helper3(set, str, i + 1, temp);
+    }
+}
+
+let res3 = combination('dog');
 console.log('Answer of Question 3, combination ===>', res3);
 
 // 4. Write a JavaScript function that returns a passed string with letters in alphabetical order. Example string : 'webmaster' Expected Output : 'abeemrstw'Assume punctuation and numbers symbols are not included in the passed string.
@@ -86,7 +97,13 @@ console.log('Answer of Question 7, countVowels ===>', res7);
 
 //8. Write a JavaScript function that accepts a number as a parameter and check the number isprime or not. Note : A prime number (or a prime) is a natural number greater than 1 that has no positivedivisors other than 1 and itself.
 const isPrime = (num) => {
-
+    if (num < 3) return true;
+    let i = 2;
+    while (i < num) {
+        if (num % i === 0) return false;
+        i++;
+    }
+    return true;
 }
 
 let res8 = isPrime(13);
@@ -126,26 +143,55 @@ console.log('Answer of Question 10, identityMatrix ===>', res10);
 
 // 11. Write a JavaScript function which will take an array of numbers stored and find the secondlowest and second greatest numbers, respectively. Sample array : [1,2,3,4,5]Expected Output : 2,4 
 const secondLowestAndGreatest = (arr) => {
+    let secondMin;
+    let secondMax;
+    let max = Math.max(...arr);
+    let min = Math.min(...arr);
 
+    arr.sort((a, b) => a - b);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > min) {
+            secondMin = arr[i];
+            break;
+        }
+    }
+
+    arr.sort((a, b) => b - a);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < max) {
+            secondMax = arr[i];
+            break;
+        }
+    }
+
+    return [secondMin, secondMax];
 }
 
-let res11 = secondLowestAndGreatest([1, 1, 2, 2, 2, 4, 4, 4, 5, 6, 6]);
+let res11 = secondLowestAndGreatest([1, 1, 2, 2, 2, 8, 8, 7, 74, 4, 4, 5, 6, 6]);
 console.log('Answer of Question 11, secondLowestAndGreatest ===>', res11);
 
 // 12. Write a JavaScript function which says whether a number is perfect. According to Wikipedia : In number theory, a perfect number is a positive integer that is equal tothe sum of its proper positive divisors, that is, the sum of its positive divisors excluding thenumber itself (also known as its aliquot sum). Equivalently, a perfect number is a number that ishalf the sum of all of its positive divisors (including itself).Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1+ 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed bythe perfect numbers 496 and 8128.
 const perfectNum = (num) => {
-
+    let sum = 0;
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) sum += i;
+    }
+    return num === sum / 2;
 }
 
-let res12 = perfectNum(22);
+let res12 = perfectNum(496);
 console.log('Answer of Question 12, perfectNum ===>', res12);
 
 //13. Write a JavaScript function to compute the factors of a positive integer.
 const computeFacotrs = (num) => {
-
+    let ans = 0;
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) ans += i;
+    }
+    return ans;
 }
 
-let res13 = computeFacotrs(22);
+let res13 = computeFacotrs(24);
 console.log('Answer of Question 13, computeFacotrs ===>', res13);
 
 //14. Write a JavaScript function to convert an amount to coins. Sample function : amountTocoins(46, [25, 10, 5, 2, 1])Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. Output : 25, 10, 10, 1
@@ -222,11 +268,25 @@ let res20 = generateId(10);
 console.log('Answer of Question 20, generateId ===>', res20);
 
 //21. Write a JavaScript function to get all possible subset with a fixed length (for example 2)combinations in an array. Sample array : [1, 2, 3] and subset length is 2 Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
-const arraySubnets = (arr) => {
-
+const arraySubnets = (arr, length) => {
+    let ans = [];
+    helper21(arr, ans, [], 0, length);
+    return ans;
 }
 
-let res21 = arraySubnets();
+function helper21(arr, ans, tempArr, beginIndex, length) {
+    if (tempArr.length === length) {
+        ans.push(tempArr.slice());
+        return;
+    }
+    for (let i = beginIndex; i < arr.length; i++) {
+        tempArr.push(arr[i]);
+        helper21(arr, ans, tempArr, i + 1, length);
+        tempArr.pop();
+    }
+}
+
+let res21 = arraySubnets([1, 1, 2, 2, 3], 2);
 console.log('Answer of Question 21, arraySubnets ===>', res21);
 
 //22. Write a JavaScript function that accepts two arguments, a string and a letter and the functionwill count the number of occurrences of the specified letter within the string
@@ -283,7 +343,7 @@ const longestSubstring = (arr) => {
 
 }
 
-let res26 = longestSubstring();
+let res26 = longestSubstring('abcdefghhaijklmnopqrstuvwh');
 console.log('Answer of Question 26, longestSubstring ===>', res26);
 
 //27. Write a JavaScript function that returns the longest palindrome in a given string. Note: According to Wikipedia "In computer science, the longest palindromic substring or longestsymmetric factor problem is the problem of finding a maximum-length contiguous substring of agiven string that is also a palindrome. For example, the longest palindromic substring of"bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; forexample, in the string "abracadabra", there is no palindromic substring with length greater thanthree, but there are two palindromic substrings with length three, namely, "aca" and "ada".In some applications it may be necessary to return all maximal palindromic substrings (that is, allsubstrings that are themselves palindromes and cannot be extended to larger palindromicsubstrings) rather than returning only one substring or returning the maximum length of apalindromic substring.
