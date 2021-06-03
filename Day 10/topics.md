@@ -1,0 +1,12 @@
+- Destructure
+- Arrow function and this keyword
+- Closure
+- IIFE
+- Currying function
+- setTimeout()
+- Event loop (Call stack, Task/Event queue, Async/Browser API)
+- Callback hell
+- XMLHttpRequest
+- JSON.parse() and JSON.stringify()
+- Higher-order function
+- Wrapper function
