@@ -1,0 +1,9 @@
+@media(max-width:600px) {
+    .form {
+        background-color: red;
+    }
+
+    ..signup-form {
+        background-color: green;
+    }
+}

@@ -210,20 +210,3 @@ function findNumbers(arr) {
 //  the number 6 is equal to half the sum of all its positive
 //  divisors: ( 1+ 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14.
 //   This is followed by the perfect numbers 496 and 8128.
-let obj = {
-  foo: function () {
-    return () => {
-      console.log(this);
-    };
-  },
-  foo2: () => {
-    console.log(this);
-  },
-};
-let fun = obj.foo();
-// fun();
-
-function test(...args) {
-  return args;
-}
-console.log(test(1, 2, 3, 4));
