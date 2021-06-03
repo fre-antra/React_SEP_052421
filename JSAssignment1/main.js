@@ -191,6 +191,8 @@ function Imatrix(num) {
     let matrix = Array(num).fill(0).map((element) => Array(num).fill(0))
 
     // let matrix = new Array(num).fill(new Array(num).fill(0))
+    // this method is pass by reference, each row will treat as same reference
+    // second answer: https://stackoverflow.com/questions/8301400/how-do-you-easily-create-empty-matrices-javascript
     
     for(let i = 0; i < num; i++){
         matrix[i][i] = 1
@@ -270,42 +272,150 @@ function unique(str) {
 
 
 // 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+function dic(str) {
+    const dic = {}
+    for(let char of str){
+        if(char in dic){
+            dic[char] += 1
+        }else{
+            dic[char] = 1
+        }
+    }
+    return dic
+}
+
+console.log(dic('adfgsfvdxsvxzqwdfasdftc'));
+
 
 // 18. Write a function for searching JavaScript arrays with a binary search. 
 // Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
 
+function binary(target,arr) {
+    let left = 0
+    let right = arr.length -1
+    while(leff < right){
+        let mid = Math.floor((left + right) / 2)
+        if (arr[mid] < target){
+            return mid
+        }else if (arr[mid] < target){
+            left = mid
+        }else{
+            right = mid
+        }
+    }
+
+    return -1
+}
+
+
 // 19. Write a JavaScript function that returns array elements larger than a number. 
+function larger(num, arr){
+    return arr.filter((e) => e > num)
+}
+
+console.log(larger(3,[1,4,6,2,3,5,3,6,1,2,3]));
+
 
 // 20. Write a JavaScript function that generates a string id (specified length) of random characters. 
 // Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+function genID(num){
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    let ans = ''
+    for(let i =0; i < num; i++){
+        ans += chars[Math.floor(Math.random() * 100) % chars.length]
+    }
+    return ans 
+}
+
+console.log(genID(3));
+console.log(genID(9));
+
 
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
 // Sample array : [1, 2, 3] and subset length is 2 
 // Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
 
+
+
+
+
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
 // Sample arguments : 'microsoft.com', 'o' 
 // Expected output : 3 
+function occurrences(str, char){
+    return [...str].filter( e => e === char).length
+
+    // or
+    return str.split(char).length - 1
+}
+
+console.log(occurrences('microsoft.com', 'o')); 
+
+
 
 // 23. Write a JavaScript function to find the first not repeated character. 
 // Sample arguments : 'abacddbec' 
 // Expected output : 'e' 
+function firstRe (str) {
+    for (let i = 0; i < str.length; i++) {
+        let char = str.charAt(i);
+        if (str.indexOf(char) == i && str.indexOf(char, i + 1) == -1) {
+          return char;
+        }
+      }
+      return null;
+}
+
+
 
 // 24. Write a JavaScript function to apply Bubble Sort algorithm. 
 // Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order". 
 // Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
 // Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+function bubble(arr){
+    for(let i in arr){
+        for(let j =0; j < arr.length - i - 1; j++){
+            if(arr[j] < arr[j+1]){
+                let tmp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = tmp
+            }
+        }
+    }
+    return arr
+}
+
+
 
 // 25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. 
 // Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
 // Expected output : "United States of America"
+function longest(arr){
+    return arr.sort( (a,b) => b.length >a.length)[0]
+}
+
+
 
 // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
+
 
 // 27. Write a JavaScript function that returns the longest palindrome in a given string. 
 // Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome. For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic substring with length greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
 // In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings that are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning only one substring or returning the maximum length of a palindromic substring.
 
+
+
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+function passFn(arg,cb){
+    cb()
+    console.log(arg)
+}
+
 
 // 29. Write a JavaScript function to get the function name. 
+function getName(fn){
+    return fn.name
+}
+
+console.log(getName(function MyName() {}))
+// source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
