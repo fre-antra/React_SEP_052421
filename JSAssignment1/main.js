@@ -333,7 +333,23 @@ console.log(genID(9));
 
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
 // Sample array : [1, 2, 3] and subset length is 2 
-// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+// Expected output : [[1，2], [1，3], [2, 3]]
+function subset(len, arr){
+    let ans = []
+    
+    dfs([], 0)
+    
+    function dfs(path, index){
+        ans.push(path)
+        for (let i = index; i< arr.length; i++){
+            dfs(path.concat(arr[i]),i+1)
+        }
+    }
+    console.log(ans);
+    return ans.filter( e => e.length == len)
+}
+
+console.log(subset(2,[1, 2, 3] ));
 
 
 
@@ -397,12 +413,44 @@ function longest(arr){
 
 
 // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
+function longestSub(arr){
+
+    let seen = new Set()
+    let longest = 0
+    let left = 0
+    for(let right = 0; right < arr.length; right++){
+        while(seen.has(arr[right])){
+            seen.delete(arr[left])
+            left += 1
+        }
+        seen.add(arr[right])
+        longest = Math.max(longest, right - left + 1)
+    }
+    return longest
+}
 
 
 // 27. Write a JavaScript function that returns the longest palindrome in a given string. 
 // Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome. For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic substring with length greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
 // In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings that are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning only one substring or returning the maximum length of a palindromic substring.
+function longestPali(str) {
+    let ans = ''
+    for(let i =0; i< str.length; i++){
+        for (let j =0; j<2; j ++){
+            let l = i, r = i+j
+            while( str[l] && str[l] == str[r]){
+                l -= 1
+                r += 1
+            }
+            if((r-l-1) > ans.length){
+                ans = str.substring(l+1, r)
+            }
+        }
+    }
+    return ans
+}
 
+console.log(longestPali('akjshdfhjabbcbbaakjhadjh'));
 
 
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
