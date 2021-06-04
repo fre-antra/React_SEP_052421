@@ -240,10 +240,11 @@ console.log(findFactors(8128));
 // amountTocoins(46, [25, 10, 5, 2, 1])Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
 // Output : 25, 10, 10, 1
 
-function coins(amount, coins) {
+function amountTocoins(amount, coins) {
   let res = [];
   for (let i = 0; i < coins.length; i++) {
-    for (let j = 0; j < amount / coins[i]; j++) {
+    let coinNum = Math.floor(amount / coins[i]);
+    for (let j = 0; j < coinNum; j++) {
       res.push(coins[i]);
       amount -= coins[i];
     }
@@ -251,7 +252,7 @@ function coins(amount, coins) {
   return res;
 }
 
-console.log(coins(46, [25, 10, 5, 2, 1]));
+console.log(amountTocoins(46, [25, 10, 5, 2, 1]));
 
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b
 // is thebases. Accept b and n from the user and display the result.
