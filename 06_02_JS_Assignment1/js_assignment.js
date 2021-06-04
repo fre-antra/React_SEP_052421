@@ -150,7 +150,6 @@ function isPerfectNum(num) {
     }
   }
   set.forEach((value) => acc = acc + value);
-  console.log(set, acc);
   if (acc / 2 === num) return true;
   else return false;
 }
@@ -263,10 +262,7 @@ const fixedLengthCombinations = (arr, len) => {
       }
       ans.push([arr[i]]);
   }
-  // exact length
-  // return ans.filter((currentValue) => currentValue.length === len); 
-  //min length 
-  return ans.filter((currentValue) => currentValue.length >= len);
+  return ans.filter((currentValue) => currentValue.length === len);
 }
 console.log(fixedLengthCombinations([1, 2, 3], 2));
 
