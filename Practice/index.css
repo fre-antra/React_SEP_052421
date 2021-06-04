@@ -3,14 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-}
+
 .parent {
   padding: 1%;
   margin: 1%;
   background-color: black;
   color: white;
   position: relative;
+  width: 80%;
   height: 1000px;
 }
 
@@ -20,10 +20,10 @@ body {
 
 .two {
   background-color: rgb(98, 191, 61);
-  position: fixed;
-  top: 0;
 }
 
 .three {
   background-color: rgb(192, 219, 36);
+  position: absolute;
+  width: 100%;
 }
