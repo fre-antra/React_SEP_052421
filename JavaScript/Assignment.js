@@ -58,8 +58,15 @@ function f9(arg) {
   return typeof arg;
 }
 
-function f10(matrix) {
-
+function f10(n) {
+  let arr = [], i, j;
+  for (i = 0; i < n; i++) {
+    arr[i] = [];
+    for (j = 0; j < n; j++) {
+      arr[i][j] = [i, j];
+    }
+  }
+  return arr;
 }
 
 function f11(arr) {
@@ -191,6 +198,72 @@ function f23(str) {
   return null;
 }
 
-function f24() {
-  
+function f24(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let num = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = num
+      }
+    }
+  }
+}
+
+function f25(list) {
+  return list.sort((a, b) => b.length - a.length)[0]
+}
+
+function f26(str) {
+  let maxLen = 0, maxStr = '', temp, postIndex;
+  for (let i = 0; i < str.length; i++) {
+    temp = str[i]
+    postIndex = maxStr.indexOf(temp)
+    if (postIndex > -1) {
+      maxStr = maxStr.substring(postIndex + 1)
+    }
+    maxStr += temp
+    maxLen = Math.max(maxLen, maxStr.length)
+  }
+  return maxLen
+}
+
+// 最长回文substring
+function f27(s) {
+  if (s.length < 2) {
+    return s
+  }
+  let res = ''
+  for (let i = 0; i < s.length; i++) {
+    // 回文子串长度是奇数
+    helper(i, i)
+    // 回文子串长度是偶数
+    helper(i, i + 1)
+  }
+
+  function helper(m, n) {
+    while (m >= 0 && n < s.length && s[m] === s[n]) {
+      m--
+      n++
+    }
+    // 此处m,n的值循环完后 是恰好不满足循环条件的时刻
+    // 此时m到n的距离为n-m+1 但是mn两个边界不能取 所以应该取m+1到n-1的区间 长度是n-m-1
+    if (n - m - 1 > res.length) {
+      // slice也要取[m+1,n-1]这个区间
+      res = s.slice(m + 1, n)
+    }
+  }
+
+  return res
+}
+
+function f28(cb) {
+  if (typeof cb !== 'function') {
+    throw 'You must pass a function as a param'
+  }
+  cb();
+}
+
+function f29() {
+  console.log(arguments.callee.name);
 }
