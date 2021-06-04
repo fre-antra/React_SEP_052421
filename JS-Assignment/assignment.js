@@ -66,6 +66,7 @@ function capitalizeLetter(string) {
     .split(" ")
     .map((item) => item[0].toUpperCase() + item.slice(1))
     .join(" ");
+
   /* Use reduce */
   // return string
   //   .split(" ")
@@ -77,18 +78,16 @@ function capitalizeLetter(string) {
   //       currentValue[0].toUpperCase() +
   //       currentValue.slice(1)
   //   );
+  
   /* Use for loop */
-  //   let array = string.split(' ');
-  //   let result = [];
-  //   for (let word of array) {
-  //     word = word.split('')
-  //     for (let letter of word) {
-  //       word[0] = letter.toUpperCase();
-  //       break;
-  //     }
-  //     result.push(word.join(''))
-  //   }
-  //   return result.join(' ')
+    // let array = string.split(' ');
+    // let result = [];
+    // for (let word of array) {
+    //   word = word.split('')
+    //   word[0] = word[0].toUpperCase();
+    //   result.push(word.join(''))
+    // }
+    return result.join(' ')
 }
 
 console.log(capitalizeLetter("the quick brown fox"));
@@ -117,21 +116,22 @@ console.log(longestWord("Web Development Tutorial"));
 //i: string, o: number(number of vowel),
 //Be aware: capital
 function numberOfVowel(string) {
-  let vowelArr = {
-    A: true,
-    E: true,
-    I: true,
-    O: true,
-    U: true,
-    a: true,
-    e: true,
-    i: true,
-    o: true,
-    u: true,
-  };
+  // let vowelArr = {
+  //   A: true,
+  //   E: true,
+  //   I: true,
+  //   O: true,
+  //   U: true,
+  //   a: true,
+  //   e: true,
+  //   i: true,
+  //   o: true,
+  //   u: true,
+  // };
+  let vowelArr = new Set('AEIOUaeiou');
   let count = 0;
   for (let char of string) {
-    if (vowelArr[char]) count++;
+    if (vowelArr.has(char)) count++;
   }
   return count;
 }
@@ -158,6 +158,7 @@ function typeOfValue(input) {
   return typeof input;
 }
 console.log(typeOfValue((a) => console.log(b)));
+console.log(typeOfValue(true));
 
 // 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
 //identity matrix means the number on the diagonal is '1'.
@@ -268,7 +269,7 @@ function unique(string) {
   // return uni;
 
   /* use set */
-  return [...new Set(string.split(""))].join("");
+  return [...new Set(string)].join("");
 }
 
 console.log(unique("thequickbrownfoxjumpsoverthelazydog"));
@@ -296,11 +297,11 @@ console.log(occurrences("sentence"));
 function binarySearch(array, target) {
   let left = 0,
     right = array.length - 1;
-  while (left < right) {
+  while (left <= right) {
     let mid = Math.floor((right + left) / 2);
     if (array[mid] === target) return mid;
-    if (array[mid] > target) right = mid;
-    if (array[mid] < target) left = mid;
+    if (array[mid] > target) right = mid - 1;
+    if (array[mid] < target) left = mid + 1;
   }
 }
 
@@ -343,31 +344,44 @@ console.log(generateId(8));
 // Sample array : [1, 2, 3] and subset length is 2
 // Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
 //input: [1, 2, 3, 4], 2 
-// output : [
-//   [2, 1],
-//   [3, 1],
-//   [3, 2],
-//   [3, 2, 1],
-//   [4, 1],
-//   [4, 2],
-//   [4, 2, 1],
-//   [4, 3],
-//   [4, 3, 1],
-//   [4, 3, 2],
-//   [4, 3, 2, 1],
+// output : 
+// [
+//   [1, 2],
+//   [1, 3],
+//   [1, 4],
+//   [2, 3],
+//   [2, 4],
+//   [3, 4],
+//   [1, 2, 3],
+//   [1, 2, 4],
+//   [1, 3, 4],
+//   [2, 3, 4],
+//   [1, 2, 3, 4],
 // ];
 //i: array subset length; o: array of subsets
 //constrain: Is order matter?
-// function subset(array, len) {
-//   let subsetArr = [array];
-//   for ()
-// }
 
-
+var subsetArr = function (array, len) {
+  var helper = function (k, mutateArr, store, results) {
+    if (k === 0) {
+      results.push(store);
+      return;
+    }
+    for (var j = 0; j < mutateArr.length; j++) {
+      helper(k - 1, mutateArr.slice(j + 1), store.concat([mutateArr[j]]), results);
+    }
+  };
+  var results = [];
+  for (var i = len; i < array.length; i++) {
+    helper(i, array, [], results);
+  }
+  results.push(array);
+  return results;
+};
    
 
 
-console.log(subset([1, 2, 3, 4], 2));
+console.log(subsetArr([1, 2, 3, 4], 2));
 
 
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
