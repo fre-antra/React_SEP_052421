@@ -372,17 +372,19 @@ var subsetArr = function (array, len) {
     }
   };
   var results = [];
-  for (var i = len; i < array.length; i++) {
-    helper(i, array, [], results);
-  }
-  results.push(array);
+
+  // for (var i = len; i < array.length; i++) {
+    // helper(i, array, [], results);
+  // }
+  // results.push(array);
+  helper(len, array, [], results);
   return results;
 };
    
 
 
 console.log(subsetArr([1, 2, 3, 4], 2));
-
+//[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
 // Sample arguments : 'microsoft.com', 'o'
