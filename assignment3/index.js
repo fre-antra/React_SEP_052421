@@ -227,8 +227,141 @@ const function20 = (length) => {
 }
 console.log(function20(7));
 
-const function21 = (arr) => {
-
+const recurse21 = (arr) => {
+    if (arr.length === 1) return [arr];
+    else {
+        subarr = recurse21(arr.slice(1));
+        return subarr.concat(subarr.map(e => e.concat(arr[0])), [[arr[0]]]);
+    }
 }
 
-console.log(function21([1,2,3]));
+const function21 = (arr, size) => {
+    return recurse21(arr).filter(a => a.length === size);
+}
+
+console.log(function21([1, 2, 3], 2));
+
+const function22 = (phrase, letter) => {
+    const lets = phrase.split('');
+
+    let count = 0;
+    for (l of lets) {
+        if (l === letter) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(function22("microsoft.com", "o"));
+
+const function23 = (phrase) => {
+    const count = function17(phrase);
+
+    let unique = [];
+    for (let in count) {
+        if (count[let] === 1) {
+            unique.push(String.fromCharCode(97 + parseFloat(let)));
+        }
+    }
+
+    return phrase.split('').filter(value => unique.includes(value))[0];
+}
+
+console.log(function23("abacddbecf"));
+
+const function24 = (arr) => {
+    let len = arr.length;
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(function24([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
+
+const function25 = (arr) => {
+    let ret = "";
+    for (country of arr) {
+        if (country.length > ret.length) {
+            ret = country;
+        }
+    }
+
+    return ret;
+}
+
+console.log(function25(["Australia", "Germany", "United States of America"]));
+
+const function26 = (phrase) => {
+
+    let start = 0, end = 0, set = new Set(), ansLen = 0, string = "";
+    while (end < phrase.length) {
+        if (!set.has(phrase[end])) {
+            set.add(phrase[end]);
+            ansLen = Math.max(ansLen, end - start + 1);
+            if (ansLen > end - start + 1) {
+                ansLen = ansLen;
+            } else {
+                ansLen = end - start + 1;
+                if (string.length < ansLen) {
+                    string = phrase.substr(start, ansLen);
+                }
+            }
+            end++;
+        } else {
+            set.delete(phrase[start]);
+            start++;
+        }
+    }
+    return string
+};
+
+console.log(function26("absabsdfa"));
+
+const isPalindrom = (arr) => {
+    let i = 0;
+    let j = arr.length - 1;
+    while (i <= j) {
+        if (arr[i] !== arr[j]) {
+            return false;
+        }
+        i++; j--;
+    }
+    return true;
+}
+
+const function27 = (phrase) => {
+    let len = phrase.length;
+    while (len > 0) {
+        for (let i = 0; i < phrase.length - len + 1; i++) {
+            let str = phrase.slice(i, i + len);
+            if (isPalindrom(str)) {
+                return str;
+            }
+        }
+        len--;
+    }
+    return "";
+}
+
+console.log(function27("adabbaadc"))
+
+const function28 = (func) => {
+    func();
+    return "other function"
+}
+
+console.log(function28(() => console.log("passing function")));
+
+function function29() {
+    return arguments.callee.name;
+}
+
+console.log(function29());
