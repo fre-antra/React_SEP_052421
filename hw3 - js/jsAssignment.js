@@ -419,8 +419,19 @@ const fixedLengthSubsets = (subsetLength, inputArray) => {
     return outputArray;
 }
 
+//Approach 2
+const fixedLengthSubsets2 = (subsetLength, inputArray) => {
+    const res = inputArray.reduce((arr, val) => arr.concat(
+        arr.map(arr => [val,...arr])
+        ),
+        [[]])
+    return res.filter(res => res.length === subsetLength);
+}
+
+
 //TODO leftshift and do while revision - different way to implement this?
 //console.log(fixedLengthSubsets(2, [1,2,3]));
+console.log(fixedLengthSubsets2(2,[1,2,3]));
 
 /*
 
