@@ -148,29 +148,158 @@ function fn(b, n) {
 }
 
 //16
+function fn(value) {
+  const alphaBox = {};
+  const unique = [];
+  for (let c of value) {
+    if (!(c in alphaBox)) {
+      unique.push(c);
+      alphaBox[c] = true;
+    }
+  }
+  return unique.join("");
+}
 
 //17
+function fn(value) {
+  const count = {};
+  for (let c of value) {
+    if (!(c in count)) {
+      count[c] = 1;
+    } else {
+      count[c] += 1;
+    }
+  }
+  return count;
+}
 
 //18
+function fn(arr, x) {
+  arr.sort();
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    if (arr[mid] > x) {
+      end = mid - 1;
+    } else if (arr[mid] < x) {
+      start = mid + 1;
+    } else {
+      return mid;
+    }
+  }
+  return -1;
+}
 
 //19
+function fn(arr, x) {
+  return arr.filter((num) => num > x);
+}
 
 //20
+function fn() {
+  const word = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const idArr = [];
+  for (let i = 0; i < word.length; i++) {
+    idArr.push(word[Math.floor(Math.random() * word.length)]);
+  }
+  return idArr.join("");
+}
 
 //21
+function fn(arr, len) {
+  return arr
+    .reduce(
+      (subsets, cur) => subsets.concat(subsets.map((set) => [cur, ...set])),
+      [[]]
+    )
+    .filter((set) => set.length >= len);
+}
 
 //22
+function fn(str, letter) {
+  return Array.from(str).filter((w) => w === letter).length;
+}
 
 //23
+function fn(str) {
+  for (let i = 0; i < str.length; i++) {
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) return i;
+  }
+  return -1;
+}
 
 //24
+function fn(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr.reverse();
+}
 
 //25
+function fn(arr) {
+  let longest = "";
+  for (let country of arr) {
+    if (country.length > longest.length) {
+      longest = country;
+    }
+  }
+  return longest;
+}
 
 //26
+function fn(s) {
+  let start = 0;
+  let cms = "";
+  const used = {};
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] in used && start <= used[s[i]]) {
+      start = used[s[i]] + 1;
+    }
+    cms =
+      cms.length < s.substring(start, i + 1).length
+        ? s.substring(start, i + 1)
+        : cms;
+    used[s[i]] = i;
+  }
+  return cms;
+}
 
 //27
+function fn(s){
+  let pw = ''
+  
+  for(let i=0; i<s.length; i++){
+    for(let j=s.length; j>-1; j--){
+      let word = s.substring(i,j)
+      if(pw.length >= j-i) break
+      else if(word === word.split('').reverse().join('')){
+        pw = word
+        break
+      }
+    }
+  }
+  return pw
+}
 
 //28
+function fn(_cb){
+  cb()
+}
+function _cb{
+  console.log('hello antra')
+}
 
 //29
+function fn(cb){
+  console.log(cb.name)
+}
