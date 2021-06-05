@@ -159,6 +159,166 @@ function exponent(b, n) {
 console.log(exponent(3, 2));
 
 //Q16
+function uniqueCharacter(str) {
+  return String.prototype.concat(...new Set(str));
+}
+console.log(uniqueCharacter("abbc"));
+
+//Q17
+function countCharacter(str) {
+  let dict = {};
+  for (ch of str) {
+    if (!(ch in dict)){
+      dict[ch] = 1;
+    }else{
+      dict[ch] += 1;
+    }
+  }
+  return dict;
+}
+console.log(countCharacter('aabfdfdasfdafa'));
+
+//Q18
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length-1;
+  while (left <= right) {
+    mid = left + Math.floor((right-left)/2);
+    if (target > arr[mid]) {
+      left = mid+1;
+    }else if (target < arr[mid]){
+      right = mid-1;
+    }else {return mid;}
+  }
+  return -1;
+}
+console.log(binarySearch([1, 2, 3, 4], 4));
+
+//Q19
+function larger(arr, num) {
+  const result = [];
+  for (let number of arr){
+    if (number> num){
+      result.push(number);
+    }
+  }
+  return result;
+}
+console.log(larger([1, 2, 3, 4, 5], 3));
+
+//Q20
+const generateRandomeString = (n) => {
+  const chars =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const l = chars.length;
+  let result = '';
+  for (let i = 0; i < n; i++) {
+    const idx = Math.floor(Math.random() * 100);
+    result += chars[idx % l];
+  }
+  return result;
+};
+console.log(generateRandomeString(6));
+
+//Q21
+
+//Q22
+function countOccurence(text, char) {
+    let result = 0;
+    for (let i=0; i<text.length; ++i) {
+        if (text[i] === char) {
+            result += 1;
+        }
+    }
+    return res;
+}
+console.log(countOccurence('microsoft.com', 'o'));
+
+//Q23
+const findFirstNonRepeat = (string) => {
+  const dict = {};
+  for (const ch of string) {
+    if (ch in dict) {
+      dict[ch] += 1;
+    } else {
+      dict[ch] = 1;
+    }
+  }
+  for (const ch of string) {
+    if (dict[ch] == 1) {
+      return ch;
+    }
+  }
+  return -1;
+};
+console.log(findFirstNonRepeat('abacddbec'));
+
+//Q24
+function bubbleSort(arr) {
+    let no_swap = false;
+    while (!no_swap) {
+        no_swap = true
+        for (let i=0; i<arr.length-1; ++i) {
+            if (arr[i] < arr[i+1]) {
+                no_swap = false;
+                let cache = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = cache;
+            }
+        }
+    }
+    return arr;
+}
+console.log(bubbleSort([5, 2, 3, 4, 1]));
+
+//Q25
+const findLongest(arr) {
+  let res = '';
+  for (const country of arr) {
+    if (country.length > res.length) {
+      res = country;
+    }
+  }
+  return res;
+};
+
+console.log(findLongest(['Australia', 'Germany', 'United States of America'])
+);
+
+//Q28
+let func1 = function() {
+    console.log('This is function 1');
+}
+
+//Q29
+function getFunctionName(func) {
+    return func.name;
+}
+function function1() {
+  console.log(1);
+};
+console.log(getFunctionName(function1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
