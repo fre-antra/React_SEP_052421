@@ -308,7 +308,7 @@ function getSubsets(array, n) {
             output.push(output[j].concat(array[i]));
         }
     }
-    return output.filter((e) => e.length >= n);
+    return output.filter((e) => e.length = n);
 }
 console.log("test function 21: ", getSubsets([1,2,3], 2));
 
