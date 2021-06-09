@@ -263,19 +263,19 @@
 // console.log("thequickbrownfxjmpsvlazydg");
 
 // // 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
-// const getOccurrences = str => {
-//     const map = new Map();
-//     let arr = str.match(/\b\w+\b/g);
-//     console.log(arr);
-//     arr.forEach(ele => {
-//         if (!map.has(ele)) map.set(ele, 0);
-//         map.set(ele, map.get(ele) + 1);
-//     });
-//     return map;
-// };
-// // ~test~
-// const str = "show me the money again, show them again, and again";
-// console.log(getOccurrences(str));
+const getOccurrences = str => {
+    const map = new Map();
+    let arr = str.match(/\b\w+\b/g);
+    console.log(arr);
+    arr.forEach(ele => {
+        if (!map.has(ele)) map.set(ele, 0);
+        map.set(ele, map.get(ele) + 1);
+    });
+    return map;
+};
+// ~test~
+const str = "show me the money again, show them again, and again";
+console.log(getOccurrences(str));
 
 // // 18. Write a function for searching JavaScript arrays with a binary search.
 // // Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
@@ -337,31 +337,31 @@
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array.
 // Sample array : [1, 2, 3] and subset length is 2
 // Expected output : [[2, 1], [3, 1], [3, 2]]
-const subset = (arr, len) => {
-    const res = [];
-    const subArr = [];
-    if (!arr.length || len < 1) return null;
-    arr.sort((a, b) => a - b);
-    helper(subArr, 0, res);
+// const subset = (arr, len) => {
+//     const res = [];
+//     const subArr = [];
+//     if (!arr.length || len < 1) return null;
+//     arr.sort((a, b) => a - b);
+//     helper(subArr, 0, res);
     
-    const helper = (subArr, start, res) => {
-        if (subArr.length === len) {
-            res.push([...subArr]);
-            return;
-        }
-        for (let i = start; i < arr.length; i++) {
-            if (arr[i + 1] && arr[i] === arr[i + 1]) continue;
-            subArr.push(arr[i]);
-            helper(subArr, i + 1, res);
-            subArr.pop();
-        }
-    }
-    return res;
-};
-// ~test~
-const arr = [1, 2, 3, 4];
-const len = 2;
-console.log(subset(arr, len));
+//     const helper = (subArr, start, res) => {
+//         if (subArr.length === len) {
+//             res.push([...subArr]);
+//             return;
+//         }
+//         for (let i = start; i < arr.length; i++) {
+//             if (arr[i + 1] && arr[i] === arr[i + 1]) continue;
+//             subArr.push(arr[i]);
+//             helper(subArr, i + 1, res);
+//             subArr.pop();
+//         }
+//     }
+//     return res;
+// };
+// // ~test~
+// const arr = [1, 2, 3, 4];
+// const len = 2;
+// console.log(subset(arr, len));
 
 // // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
 // // Sample arguments : 'microsoft.com', 'o'
