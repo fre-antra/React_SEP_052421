@@ -1,0 +1,160 @@
+:root {
+  --height-header: 60px;
+  --height-todolist: 400px;
+  --height-todolist-header: 30px;
+
+  --width-todolist: 500px;
+
+  --color-green: rgb(30, 255, 0);
+  --color-red-button: rgb(148, 21, 21);
+  --color-red-li-hover: rgb(27, 172, 8);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-header {
+  position: fixed;
+  background: linear-gradient(to right, #222, var(--color-green));
+  width: 100%;
+  height: var(--height-header);
+  font-size: 3.2rem;
+  color: white;
+  line-height: var(--height-header);
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  padding-left: 2rem;
+  user-select: none;
+  text-shadow: 0 0 3px rgba(70, 70, 70, 0.8);
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.todolist {
+  height: var(--height-todolist);
+  width: var(--width-todolist);
+  background-color: rgb(205, 245, 205);
+  box-shadow: 1px 1px 7px black;
+  border-radius: 5px;
+}
+
+.todo__title {
+  line-height: var(--height-todolist-header);
+  font-size: 2rem;
+  font-weight: 300;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.row {
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.todo__input {
+  line-height: var(--height-todolist-header);
+  font-size: 1.5rem;
+  width: 100%;
+  flex: 0.9;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid lightgrey;
+  padding-left: 1rem;
+  outline: none;
+}
+
+.btn {
+  flex: 0.1;
+  background-color: var(--color-green);
+  border: none;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.btn i {
+  color: rgb(238, 238, 238);
+}
+
+.todo__content {
+  height: calc(
+    var(--height-todolist) - var(--height-todolist-header) * 2 - 2rem
+  );
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+ul li {
+  font-size: 1.5rem;
+  list-style: none;
+  width: 100%;
+  line-height: 25px;
+  cursor: pointer;
+  padding-left: 0.5rem;
+  user-select: none;
+  border-radius: 2px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+ul li i {
+  height: 100%;
+  padding: 1rem;
+  color: #222;
+  transition: all 0.7s ease-in-out;
+  text-decoration: none;
+}
+
+ul li i:hover {
+  background-color: red;
+  color: whitesmoke;
+  transition: all 0.7s ease-in-out;
+}
+
+ul li:nth-child(odd) {
+  background-color: rgb(248, 248, 196);
+}
+
+ul li:hover {
+  background-color: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
