@@ -16,14 +16,17 @@ const todoAPI = (() => {
 
 //View
 const View = (() => {
+  //DOM String to add html contnent using template string
   const domString = {
     todolist: "todo__content",
   };
 
+  //render element with inner html
   const render = (element, htmlString) => {
     element.innerHTML = htmlString;
   };
 
+  //Creating a template for LI from API array
   const createTodoTmp = (todoArr) => {
     let htmlString = "";
     todoArr.forEach((item) => {
@@ -32,6 +35,7 @@ const View = (() => {
     return htmlString;
   };
 
+  //Adding a new todo task from input.
   const addTodo = (element, todoTitle) => {
     var li = document.createElement("li");
     var text = document.createTextNode(todoTitle);
@@ -44,16 +48,34 @@ const View = (() => {
     element.appendChild(li);
   };
 
+  //Checking (cross through) the li element on click
+  const checkLiElement = (element) => {
+    if (element.tagName == "LI") {
+      if (element.style.textDecoration == "line-through") {
+        element.style.textDecoration = "none";
+      } else {
+        element.style.textDecoration = "line-through";
+      }
+    }
+  };
+
+  //Deleting the todo li task
+  const removeTodo = (element) => {
+    element.style.display = "none";
+  };
   return {
     domString,
     render,
     createTodoTmp,
     addTodo,
+    checkLiElement,
+    removeTodo,
   };
 })();
 
 //Model
 const Model = ((api) => {
+  //Todo class
   class Todo {
     constructor(userId, id, title, completed) {
       this.userId = userId;
@@ -63,6 +85,7 @@ const Model = ((api) => {
     }
   }
 
+  //getting todos from api.
   const getAllTodos = api.getAllTodos;
 
   return {
@@ -79,6 +102,7 @@ const AppController = ((model, view) => {
   const input = document.querySelector(".todo__input");
   const liCLose = document.getElementsByClassName("close");
 
+  //Initializing by bridging between the model and view
   const init = () => {
     model.getAllTodos().then((data) => {
       const todoTmpHtmlString = view.createTodoTmp(data);
@@ -110,14 +134,7 @@ const AppController = ((model, view) => {
   //Adding Li click function
   const liClick = () => {
     todoElement.addEventListener("click", (event) => {
-      const curLiElement = event.target;
-      if (curLiElement.tagName == "LI") {
-        if (curLiElement.style.textDecoration == "line-through") {
-          curLiElement.style.textDecoration = "none";
-        } else {
-          curLiElement.style.textDecoration = "line-through";
-        }
-      }
+      view.checkLiElement(event.target);
     });
   };
 
@@ -125,8 +142,7 @@ const AppController = ((model, view) => {
   const removeLi = () => {
     for (let i = 0; i < liCLose.length; i++) {
       liCLose[i].onclick = function () {
-        let parent = this.parentElement;
-        parent.style.display = "none";
+        view.removeTodo(this.parentElement);
       };
     }
   };
@@ -135,6 +151,7 @@ const AppController = ((model, view) => {
     init,
     btnClick,
     liClick,
+    removeLi,
   };
 })(Model, View);
 

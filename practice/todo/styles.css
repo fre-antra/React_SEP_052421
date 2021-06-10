@@ -88,6 +88,7 @@ body {
   border: 1px solid lightgrey;
   padding-left: 1rem;
   outline: none;
+  border-right: none;
 }
 
 .btn {
@@ -98,13 +99,19 @@ body {
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.2s ease;
+  border: 1px solid lightgrey;
+  border-left: none;
 }
 
 .btn:hover {
-  opacity: 1;
+  background-color: var(--color-red-li-hover);
+  box-shadow: 0 0 5px var(--color-green);
   transition: all 0.2s ease;
 }
 
+.btn:hover i {
+  color: white;
+}
 .btn i {
   color: rgb(238, 238, 238);
 }
@@ -145,7 +152,7 @@ ul li i {
 }
 
 ul li i:hover {
-  background-color: red;
+  background-color: var(--color-red-button);
   color: whitesmoke;
   transition: all 0.7s ease-in-out;
 }
