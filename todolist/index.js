@@ -2,24 +2,43 @@
 
 const todoAPI = (() => {
 
-    const baseUrl = 'https://jsonplaceholder.typicode.com';
+    const baseUrl = 'http://localhost:3000';
     const todoPath = 'todos';
 
     const getAllTodos = () =>
         fetch([baseUrl, todoPath].join('/'))
             .then((response) => response.json());
 
+    const addTodo = (newtodo) =>
+        fetch([baseUrl, todoPath].join('/'), {
+            method: 'POST',
+            body: JSON.stringify(newtodo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json());
+
+    const deleteTodo = (id) =>
+        fetch([baseUrl, todoPath, id].join('/'), {
+            method: 'DELETE',
+        });
+
     return {
-        getAllTodos
+        getAllTodos,
+        deleteTodo,
+        addTodo
     }
 })();
 
 const View = (() => {
 
     const domString = {
-        todolist: 'todolist__content'
+        todolist: 'todolist__content',
+        removebtn: 'btn-remove',
+        input: 'todolist__input'
     }
-    
+
     const render = (element, htmlString) => {
         element.innerHTML = htmlString;
     }
@@ -32,6 +51,12 @@ const View = (() => {
                     <span>
                         ${ele.title}
                     </span>
+                    <button 
+                        class="btn-remove" 
+                        id="${ele.id}"
+                    >
+                        X
+                    </button>
                 </li>
             `;
         });
@@ -45,32 +70,86 @@ const View = (() => {
     }
 })();
 
-const Model = ((api) => {
+const Model = ((api, view) => {
     class Todo {
-        constructor(userId, id, title, completed) {
-            this.userId = userId;
-            this.id = id;
+        constructor(title) {
+            this.userId = 8;
             this.title = title;
-            this.completed = completed;
+            this.completed = false;
+        }
+    }
+
+    class State {
+        #todolist = [];
+        #input = '';
+
+        get input() {
+            return this.#input;
+        }
+
+        set input(input) {
+            this.#input = input;
+        }
+
+        get todolist() {
+            return this.#todolist;
+        }
+
+        set todolist(newlist) {
+            this.#todolist = newlist;
+
+            const todoElement = document.querySelector('.' + view.domString.todolist);
+            const todoTmp = view.createTodoTmp(this.#todolist);
+            view.render(todoElement, todoTmp);
         }
     }
 
     const getAllTodos = api.getAllTodos;
+    const deleteTodo = api.deleteTodo;
+    const addTodo = api.addTodo;
 
     return {
+        Todo,
+        State,
         getAllTodos,
-        Todo
+        deleteTodo,
+        addTodo
     }
-})(todoAPI);
+})(todoAPI, View);
 
 const AppController = ((model, view) => {
+    const state = new model.State();
 
-    const todoElement = document.querySelector('.' + view.domString.todolist);
+    const addTaskToList = () => {
+        const input = document.querySelector('.' + view.domString.input);
+
+        input.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter' && event.target.value !== '') {
+                
+                const newTodo = new model.Todo(event.target.value);
+        
+                model.addTodo(newTodo).then(data => {
+                    state.todolist = [data, ...state.todolist];
+                });
+
+                event.target.value = '';
+            }
+        })
+    }
+
+    const removeTodoFromList = () => {
+        const todolist = document.querySelector('.' + view.domString.todolist);
+        todolist.addEventListener('click', (event) => {
+            state.todolist = state.todolist.filter(todo => +todo.id !== +event.target.id);
+            model.deleteTodo(+event.target.id);
+        });
+    }
 
     const init = () => {
-        model.getAllTodos().then( data => {
-            const todoTmp = view.createTodoTmp(data);
-            view.render(todoElement, todoTmp);
+        model.getAllTodos().then(data => {
+            state.todolist = data;
+            removeTodoFromList();
+            addTaskToList();
         });
     }
 
