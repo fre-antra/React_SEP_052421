@@ -91,6 +91,9 @@ class MyPromise {
           }
         }
       }, 0);
+      // without the bind it would return undefined
+      // we need to know what cause the function to be called
+      // then bind to the causer
     }.bind(this);
     this.reject = function () {};
     this.thenCbQueue = [];
