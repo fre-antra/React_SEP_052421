@@ -1,20 +1,17 @@
 :root {
-	--height-header: 60px;
+	--height-header: 100px;
 	--height-todolist: 300px;
 	--height-todolist-header: 30px;
 
-	--width-todolist: 400px;
 	--color-teal: #008080;
-	--color-green: rgb(30, 255, 0);
-	--color-red-button: rgb(148, 21, 21);
-	--color-red-li-hover: rgb(27, 172, 8);
+	--color-grey: #f0eeee;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Dancing Script", cursive;
+	font-family: Arial, sans-serif;
 }
 
 html,
@@ -39,76 +36,56 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
+.search {
+	height: 60px;
+}
+.search__input {
+	background-color: #f0eeee;
+	border: none;
+	padding: 0 2rem;
+	border-radius: 100px;
+	width: 80%;
+	transition: all 0.2s;
+	margin-right: -3.25rem;
+	line-height: 1.5;
+}
+.search__button {
+	background-color: transparent;
+	border: none;
+}
+.search__icon {
+	color: grey;
+}
 .content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: var(--height-header);
-	width: 100%;
-	background-color: bisque;
+	/* margin-top: var(--height-header); */
+	margin: var(--height-header) auto;
+	width: 80%;
 }
-.todolist {
-	height: var(--height-todolist);
-	width: var(--width-todolist);
-	background-color: var(--color-teal);
-	box-shadow: 10px 10px 10px black;
-	border-radius: 10px;
-}
-
-.todolist__header,
-.todolist__input,
-ul li {
-	height: var(--height-todolist-header);
-	width: 100%;
-	outline: none;
-	border: none;
-	font-size: 1rem;
-	text-transform: capitalize;
-	line-height: var(--height-todolist-header);
-	letter-spacing: 3px;
-	padding: 0 10px;
-	user-select: none;
-	list-style: none;
-}
-
-.todolist__header {
-	font-size: 1.5rem;
-	text-align: center;
-}
-
-.todolist__content {
-	height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
-	overflow: auto;
-}
-
-ul li {
+.searchResult {
 	display: flex;
-	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
 }
-
-ul li:hover {
-	background-color: var(--color-red-li-hover);
+.searchResult .search-message {
+	text-align: center;
+	font-size: 2rem;
+	padding: 2rem;
+	border-bottom: 1px solid var(--color-teal);
+	width: 88%;
 }
-
-ul li button {
-	background-color: transparent;
-	color: red;
-	border: none;
-	outline: none;
-	font-size: 1.3rem;
+.album-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 }
-
-ul li button:hover {
-	font-size: 1.4rem;
-}
-
-ul li button:active {
-	font-size: 1.2rem;
-}
-
-ul li span {
-	/* line-height: var(--height-todolist-header); */
-	width: 100%;
-	overflow: hidden;
+.album-container .card {
+	margin: 1rem;
+	flex: 0 0 10rem;
+	text-align: center;
+	border: 1px solid var(--color-teal);
+	background-color: var(--color-grey);
+	padding: 0.5rem;
 }

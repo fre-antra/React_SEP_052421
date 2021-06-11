@@ -2,39 +2,19 @@
 
 const albumAPI = (() => {
 
-    const baseUrl1 =  'https://itunes.apple.com/search?term=${';
-    const baseUrl2 =  '}&media=music&entity=album&attribute=artistTerm&limit=50';
+    const getAlbums = (ARTIST_NAME) => {
+        return fetchJsonp(`https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=50`)
+            .then((response) => response.json());
+    };
 
-    // fetchJsonp(baseUrl)
-    //     .then(res => res.json())
-    //     .then(json => console.log(json));
-
-    const getAllAlbums = (ARTIST_NAME) => {
-        fetchJsonp([baseUrl1, ARTIST_NAME, baseUrl2].join(''))
-            .then((response) => response.json())
-            .then(json => console.log(json));
-    }
-    // const addAlbum = (ARTIST_NAME) =>
-    //     fetchJsonp(baseUrl, {
-    //         method: 'GET',
-    //         body: JSON.stringify(ARTIST_NAME),
-    //         headers: {
-    //             'Content-type': 'application/json; charset=UTF-8',
-    //         },
-    //     })
-    //         .then((response) => response.json());
-
-    return {
-        getAllAlbums,
-    }
+    return { getAlbums };
 })();
 
 const View = (() => {
 
     const domString = {
         input: 'search__input',
-        albumContainer: 'albumContainer',
-        searchBar: 'search-bar',
+        albumContainer: 'album-container',
         searchMessage: 'search-message',
     }
 
@@ -43,11 +23,12 @@ const View = (() => {
     }
 
     const createCard = arr => {
-        let htmlString = ''
-        arr.forEach(e => {
+        let htmlString = '';
+
+        arr.forEach(album => {
             htmlString +=  `<div class="card">
-                                <img src="${e.artworkUrl100}">
-                                <div class="card-title">${e.collectionName}</div>
+                                <img src="${album.artworkUrl100}">
+                                <div class="card-title">${album.collectionName}</div>
                             </div>`;
         })
         return htmlString;
@@ -62,7 +43,6 @@ const View = (() => {
 })();
 
 const Model = ((api, view) => {
-
     class Album {
         #albumList = [];
         #num = 0;
@@ -86,12 +66,10 @@ const Model = ((api, view) => {
 
             view.render(albumEle, temp);
         }
-
-        
     }
 
-    const getAllAlbums = api.getData;
-
+    const getAllAlbums = api.getAlbums;
+    
     return {
         Album,
         getAllAlbums,
@@ -104,26 +82,21 @@ const AppController = ((model, view) => {
 
     const addListener = () => {
         const input = document.querySelector('.' + view.domString.input);
-        const searchBar = document.querySelector('#' + view.domString.searchBar)
-        const searchMess = document.querySelector(('#' + view.domString.searchMessage))
+        const searchMess = document.querySelector(('#' + view.domString.searchMessage));
 
         input.addEventListener('keyup', (event) => {
             if (event.key === 'Enter' && event.target.value !== '') {
 
-                const artist = event.target.value;
-                
-                model.getAllAlbums(artist).then(data =>{
-                    album.num = +data.resultCount;
+                let artist = event.target.value;
+                console.log(artist);
+                console.log(model);
+                model.getAllAlbums(artist).then(data => {
+                    album.num = data.resultCount;
                     album.albumList = data.results;
-                    const newMessage = `${album.num} results for ${artist}`;
+                    const newMessage = `${album.num} results for "${artist}"`;
+                    console.log(data.results);
                     view.render(searchMess, newMessage)
                 })
-
-                const newSeach = new model.Album(state.input);
-                model.addAlbum(newSeach).then(data => {
-                    state.todolist = [data, ...state.todolist];
-                });
-                
 
                 // event.target.value = '';
             }
@@ -141,3 +114,7 @@ const AppController = ((model, view) => {
 })(Model, View);
 
 AppController.init();
+
+// const test = albumAPI.getAlbums("swift").then((data) => {
+//     console.log(data);
+//   });
