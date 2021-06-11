@@ -8,7 +8,6 @@ const Model = ((api, view) => {
 
   class State {
     #cards = []
-
     get cards() {
       return this.cards
     }
