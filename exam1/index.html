@@ -1,0 +1,51 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Album List</title>
+        <link rel="stylesheet" href="./index.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+        <script async src="./index.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="seach">
+                <input
+                    type="text"
+                    class="search__input"
+                    placeholder="Search..."
+                    required value
+                />
+                <button class="search__button">
+                    <i class="fa fa-search search__icon"></i>
+                </button>
+            </div>
+        </header>
+        <main class="content">
+            <!-- <section class="todolist">
+                <header class="todolist__header">todo list</header>
+                <input
+                    type="text"
+                    class="todolist__input"
+                    placeholder="input here"
+                />
+                <ul class="todolist__content">
+
+                </ul>
+            </section> -->
+            <section class="searchResult">
+                <div class="search-message" id="search-message">
+                    Search Albums by ArtistName:
+                </div>
+                <br/>
+                <div class="albumContainer" id="albumContainer"></div>
+                
+            </section>
+        </main>
+    </body>
+</html>

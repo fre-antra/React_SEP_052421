@@ -1,0 +1,114 @@
+:root {
+	--height-header: 60px;
+	--height-todolist: 300px;
+	--height-todolist-header: 30px;
+
+	--width-todolist: 400px;
+	--color-teal: #008080;
+	--color-green: rgb(30, 255, 0);
+	--color-red-button: rgb(148, 21, 21);
+	--color-red-li-hover: rgb(27, 172, 8);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Dancing Script", cursive;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.header {
+	position: fixed;
+	background-color: var(--color-teal);
+	height: var(--height-header);
+	width: 100%;
+	color: white;
+	font-size: 2rem;
+	text-transform: capitalize;
+	line-height: var(--height-header);
+	letter-spacing: 3px;
+	padding-left: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: var(--height-header);
+	width: 100%;
+	background-color: bisque;
+}
+.todolist {
+	height: var(--height-todolist);
+	width: var(--width-todolist);
+	background-color: var(--color-teal);
+	box-shadow: 10px 10px 10px black;
+	border-radius: 10px;
+}
+
+.todolist__header,
+.todolist__input,
+ul li {
+	height: var(--height-todolist-header);
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 1rem;
+	text-transform: capitalize;
+	line-height: var(--height-todolist-header);
+	letter-spacing: 3px;
+	padding: 0 10px;
+	user-select: none;
+	list-style: none;
+}
+
+.todolist__header {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.todolist__content {
+	height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
+	overflow: auto;
+}
+
+ul li {
+	display: flex;
+	justify-content: space-around;
+}
+
+ul li:hover {
+	background-color: var(--color-red-li-hover);
+}
+
+ul li button {
+	background-color: transparent;
+	color: red;
+	border: none;
+	outline: none;
+	font-size: 1.3rem;
+}
+
+ul li button:hover {
+	font-size: 1.4rem;
+}
+
+ul li button:active {
+	font-size: 1.2rem;
+}
+
+ul li span {
+	/* line-height: var(--height-todolist-header); */
+	width: 100%;
+	overflow: hidden;
+}
