@@ -43,6 +43,7 @@ input:focus {
 }
 
 .searchResult {
+    width: 80%;
     margin: auto;
     padding: 1rem;
     height: calc(100vh - 60px);
