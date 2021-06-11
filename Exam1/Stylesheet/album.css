@@ -1,0 +1,20 @@
+.album {
+  align-self: stretch;
+  background-color: var(--color-light-gray);
+  border: 2px solid var(--color-green);
+  padding: 5px 5px;
+  margin: 6px 6px;
+  flex: 0 0 11rem;
+}
+
+.album-img {
+  display: block;
+  margin: auto;
+}
+
+.album-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}

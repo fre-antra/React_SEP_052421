@@ -37,7 +37,7 @@ const View = (() => {
   };
 
   const creatCount = (count, searchRes) => {
-    let str = `${count} results for "${searchRes}"`;
+    let str = `${searchRes} results for "${count}"`;
     return str;
   };
 
