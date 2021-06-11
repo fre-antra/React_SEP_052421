@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Exam1" />
+    <meta name="keywords" content="HTML,CSS,JS" />
+    <meta name="author" content="ZQ_M" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam1</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Above line is for importing search icon -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap"
+      rel="stylesheet"
+    />
+    <!-- // Above 2 lines are for importing Google fonts -->
+  </head>
+  <body>
+    <div class="container">
+      <header class="container__header">
+        <form class="form__search">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search..."
+            required
+          />
+          <button class="search__button"><i class="fa fa-search"></i></button>
+        </form>
+      </header>
+      <div class="container__content">
+        <section class="section__content">
+          <div class="result_information">Search Albums by ArtistName:</div>
+          <div class="cards_container">
+            <!-- <div class="card">
+              <img class="card__img" src="">
+              <div class="card_content" src=""></div>
+            </div> -->
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
