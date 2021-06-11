@@ -9,33 +9,32 @@ export const Model = ((api, view) => {
     #resultNum = 0;
     #resultList = [];
 
+    get resultList() {
+      return this.#resultList;
+    }
+
     get input() {
       return this.#input;
     }
 
-    set input(input) {
-      this.#input = input;
-    }
-
-    get resultList() {
-      return this.#resultList;
+    get resultNum() {
+      return this.#resultNum;
     }
 
     set resultList(newList) {
       this.#resultList = newList;
 
-      const resultElem = document.querySelector("#" + view.domString.resultList);
-      console.log(resultElem);
+      const resultElem = document.querySelector("." + view.domString.resultList);
       const resultTmp = view.createResults(this.#resultList);
       view.render(resultElem, resultTmp);
 
-      // const infoElem = document.querySelector("." + view.domString.headerText);
-      // const infoTmp = view.createInfo(this.#resultNum, this.#input);
-      // view.render(infoElem, infoTmp);
+      const infoElem = document.querySelector("." + view.domString.headerText);
+      const infoTmp = view.createInfo(this.#resultNum, this.#input);
+      view.render(infoElem, infoTmp);
     }
 
-    get resultNum() {
-      return this.#resultNum;
+    set input(input) {
+      this.#input = input;
     }
 
     set resultNum(num) {

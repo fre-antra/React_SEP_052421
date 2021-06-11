@@ -2,7 +2,7 @@ export const View = (() => {
   const domString = {
     input: "search-bar__input",
     headerText: "section__header-text",
-    resultList: "card-wrapper",
+    resultList: "section__result",
   };
 
   const render = (element, htmlString) => {
@@ -10,18 +10,17 @@ export const View = (() => {
   };
 
   const createResults = (resultArr) => {
-    console.log(resultArr);
     let htmlString = "";
     resultArr.forEach((elem) => {
       htmlString += `
       <div class="card">
-        <div class="card__image-wrapper">
-          <img class="card__image" src="${elem.artworkUrl100}" alt="">
+          <div class="card__image-wrapper">
+            <img class="card__image" src="${elem.artworkUrl100}" alt="album">
+          </div>
+          <div class="card__text-wrapper">
+            <p class="card__text">${elem.collectionCensoredName}</p>
+          </div>
         </div>
-        <div class="card__text-wrapper">
-          <p class="card__text">${elem.collectionCensoredName}</p>
-        </div>
-      </div>
       `;
     });
     return htmlString;

@@ -11,12 +11,10 @@ export const AppController = ((model, view) => {
       if (e.key === "Enter") {
         state.input = e.target.value;
         model.getAPI(state.input).then((data) => {
-          console.log(data);
           if (data.resultCount === 0) {
             state.resultList = [];
             state.resultNum = 0;
           } else {
-            console.log(data.results);
             state.resultNum = data.resultCount;
             state.resultList = data.results;
           }
