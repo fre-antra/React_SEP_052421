@@ -1,0 +1,58 @@
+@import url(./nav.css);
+
+:root {
+  --color-green: rgb(17,128,128);
+  --color-blue: #4887eb;
+  --color-black: #000000;
+  --color-gray: #a7a4a4;
+  --color-light-gray: #dad4d4;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  font-family: 'Do Hyeon', sans-serif;;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 15px 0;
+}
+
+.album-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.album-header p {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.album-container hr {
+    width: 60%;
+    color: var(--color-green);
+}
+
+.album-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}

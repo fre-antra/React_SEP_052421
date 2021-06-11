@@ -1,0 +1,36 @@
+.navbar-cantainer {
+    background-color: var(--color-green);
+    display: flex;
+    min-height: 5.5rem;
+    position: sticky;
+}
+
+.navbar-searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.searchBar {
+    width:50%;
+}
+
+.search-input {
+    border: 1px solid white;
+    border-radius: 15px;
+    min-height: 2.8rem;
+    width: 80%;
+    margin-right: -3.5rem;
+    padding-left: 20px;
+}
+
+.search-btn {
+    border: none;
+    background-color: transparent;
+}
+.search-btn img {
+    width: 2rem;
+    height: auto;
+}
+
