@@ -13,6 +13,7 @@ const View = (() => {
   const domStrings = {
     list: "display__list",
     input: "display__input",
+    title: "display__title",
   };
 
   const render = (element, htmlString) => {
@@ -72,6 +73,10 @@ const Model = ((api, view) => {
       const albumElement = document.querySelector("." + view.domStrings.list);
       const albumTemp = view.createAlbums(this.#albumlist);
       view.render(albumElement, albumTemp);
+      view.render(
+        document.querySelector("." + view.domStrings.title),
+        `Search for "${this.#input}"`
+      );
     }
   }
 
@@ -97,9 +102,7 @@ const AppController = ((model, view) => {
           console.log(state.albumlist);
         });
 
-        state.input = "";
-
-        // event.target.value = '';
+        //        state.input = "";
       }
     });
   };

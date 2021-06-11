@@ -16,6 +16,12 @@ header{
     padding-right: 3rem;
     background-color: cadetblue;
     padding: 3rem;
+    justify-content: space-between;
+}
+
+.search__bar{ 
+    display:flex;
+    align-items: center;
 }
 
 .content {
