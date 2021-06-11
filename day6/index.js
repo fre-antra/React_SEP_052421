@@ -157,12 +157,13 @@
 
 // Higher order func: reduce, foreach, function that takes func as arg
 
-const obj = {
-    foo() {
-        console.log(this);
-        function bar() {
-            console.log(this);
-        };
-    return bar;
-}};
-obj.foo()();
+// const obj = {
+//     foo() {
+//         console.log(this);
+//         function bar() {
+//             console.log(this);
+//         };
+//         return bar;
+//     }
+// };
+// obj.foo()();

@@ -1,0 +1,119 @@
+:root {
+  --color-teal-1: #008080;
+  --color-gray-light-1: #faf9f9;
+  --color-gray-light-2: #f4f2f2;
+  --color-gray-light-3: #f0eeee;
+  --color-gray-light-4: #ccc;
+  --color-gray-dark-1: #333;
+  --color-gray-dark-2: #777;
+  --color-gray-dark-3: #999;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__header {
+  display: flex;
+  flex: 0 0 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-teal-1);
+}
+
+.container__content {
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.search__input {
+  background-color: var(--color-gray-light-3);
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  width: 50%;
+}
+
+.search__input:focus {
+  outline: none;
+  width: 60%;
+  background-color: var(--color-gray-light-2);
+}
+
+.search__button {
+  background-color: var(--color-gray-light-2);
+  border: none;
+  display: inline-block;
+  appearance: auto;
+  border-radius: 50px;
+  transform: translateX(-30px);
+}
+
+.search__button:active {
+  background-color: var(--color-gray-light-3);
+}
+
+.searchResult,
+.searchResult__info {
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.searchResult__info {
+  color: var(--color-gray-dark-1);
+  font-size: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-teal-1);
+  margin-bottom: 1rem;
+}
+
+.searchResult__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid var(--color-teal-1);
+  background-color: var(--color-gray-light-3);
+  border-radius: 5px;
+  flex: 0 0 10rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.card img {
+  padding: 0.5rem;
+}
+
+.card__title {
+  color: var(--color-gray-dark-1);
+  text-align: center;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

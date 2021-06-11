@@ -1,0 +1,126 @@
+:root {
+  --height-header: 60px;
+  --height-todolist: 300px;
+  --height-todolist-header: 20px;
+
+  --width-todolist: 400px;
+
+  --color-red: #e63946;
+  --color-white: #f1faee;
+  --color-lightBlue: #a8dadc;
+  --color-seaBlue: #457b9d;
+  --color-darkBlue: #1d3557;
+  --color-yellow: #e9c46a;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Staatliches", cursive;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  background: linear-gradient(
+    to right,
+    var(--color-lightBlue),
+    var(--color-seaBlue)
+  );
+  height: var(--height-header);
+  width: 100%;
+  color: var(--color-red);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2rem;
+  line-height: var(--height-header);
+  letter-spacing: 1px;
+  padding-left: 10px;
+  user-select: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+.todo__list {
+  height: var(--height-todolist);
+  width: var(--width-todolist);
+  background-color: var(--color-yellow);
+  box-shadow: 10px 10px 10px black;
+  border-radius: 10px;
+}
+
+.todo__header,
+.todo__input,
+ul li {
+  height: var(--height-todolist-header);
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 20px;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  user-select: none;
+  list-style: none;
+}
+
+.todo__header {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.todo__tasks {
+  height: calc(var(--height-todolist) - 2 * var(--height-todolist-header));
+  overflow: auto;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-around;
+  height: max-content;
+}
+
+ul li:hover {
+  background-color: #457b9d;
+}
+
+ul li button {
+  background-color: #1d3557;
+  color: #e9c46a;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  width: 1.5rem;
+}
+
+ul li button:hover {
+  font-size: 1.4rem;
+  color: #e63946;
+}
+
+ul li button:active {
+  font-size: 1.2rem;
+}
+
+ul li span {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+}

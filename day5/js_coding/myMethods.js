@@ -1,5 +1,5 @@
 
-const arr = [1, 2, 3, 4];
+const arr = [2, 2, 3, 4];
 
 Array.prototype.myForEach = function (callback) {
   for (let i = 0; i < this.length; i++) {
@@ -26,7 +26,9 @@ Array.prototype.myFilter = function (callback) {
 }
 
 Array.prototype.myReduce = function (callback, initialVal) {
+  // set initial accumulator as initial value or the first element of the array
   let acc = initialVal || this[0];
+  // start form 1 if initial accumulator is already the first element
   const startIndex = initialVal ? 0 : 1;
   for (let i = startIndex; i < this.length; i++) {
     acc = callback(acc, this[i], i, this)
@@ -52,9 +54,9 @@ Array.prototype.mySome = function (callback) {
   return false;
 }
 
-arr.myForEach(x => console.log(x))
-console.log(arr.myMap(x => x * 2))
-console.log(arr.myFilter(x => x > 1))
+// arr.myForEach(x => console.log(x))
+// console.log(arr.myMap(x => x * 2))
+// console.log(arr.myFilter(x => x > 1))
 console.log(arr.myReduce((acc, cur) => acc + cur, 0)) // 10
-console.log(arr.mySome(x => x > 3)) // true
-console.log(arr.myEvery(x => x >= 1)) // true
+// console.log(arr.mySome(x => x > 3)) // true
+// console.log(arr.myEvery(x => x >= 1)) // true
