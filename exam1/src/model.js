@@ -24,13 +24,13 @@ export const Model = ((api, view) => {
     set resultList(newList) {
       this.#resultList = newList;
 
-      const resultElem = document.querySelector("." + view.domString.resultList);
+      const resultElem = document.querySelector("#" + view.domString.resultList);
       const resultTmp = view.createResults(this.#resultList);
       view.render(resultElem, resultTmp);
 
-      const infoElem = document.querySelector("." + view.domString.headerText);
-      const infoTmp = view.createInfo(this.#resultNum, this.#input);
-      view.render(infoElem, infoTmp);
+      // const infoElem = document.querySelector("." + view.domString.headerText);
+      // const infoTmp = view.createInfo(this.#resultNum, this.#input);
+      // view.render(infoElem, infoTmp);
     }
 
     set input(input) {
