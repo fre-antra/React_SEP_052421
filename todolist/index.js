@@ -2,7 +2,7 @@
 
 const todoAPI = (() => {
 
-    const baseUrl = 'http://localhost:3000';
+    const baseUrl = 'https://jsonplaceholder.typicode.com';
     const todoPath = 'todos';
 
     const getAllTodos = () =>
@@ -88,6 +88,8 @@ const Model = ((api, view) => {
         }
 
         set input(input) {
+            const inputelement = document.querySelector('.' + view.domString.input);
+            inputelement.value = input;
             this.#input = input;
         }
 
@@ -126,13 +128,16 @@ const AppController = ((model, view) => {
         input.addEventListener('keyup', (event) => {
             if (event.key === 'Enter' && event.target.value !== '') {
                 
-                const newTodo = new model.Todo(event.target.value);
+                state.input = event.target.value;
+                const newTodo = new model.Todo(state.input);
         
                 model.addTodo(newTodo).then(data => {
                     state.todolist = [data, ...state.todolist];
                 });
 
-                event.target.value = '';
+                state.input = '';
+
+                // event.target.value = '';
             }
         })
     }
