@@ -1,0 +1,21 @@
+.album-card {
+    margin: 20px 10px 0 10px;
+    width: 110px;
+    border: 1px solid rgb(0, 128, 128);
+    border-radius: 3px;
+    background-color: rgb(240, 240, 240);
+    font-size: 13px;
+}
+
+img {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+p.albumname {
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10px;
+}
