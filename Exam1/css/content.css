@@ -1,0 +1,36 @@
+.container-search-result {
+    position: relative;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.search-result {
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.search-result-title {
+    width: 90%;
+    padding: 1rem;
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 1px solid teal;
+    margin: auto auto 1rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-result-item {
+    margin: 1rem;
+    background-color: #f0eeee;
+    border: 1px solid teal;
+    border-radius: 3px;
+    flex: 0 0 10rem;
+}
