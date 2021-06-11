@@ -75,7 +75,141 @@
 // const obj3 = _.cloneDeep(obj)
 // console.log(obj)
 // console.log(obj3)
-const foo = function () {
-  return Math.random() * 1000
-}
-console.log(foo())
+// const foo = function () {
+//   return Math.random() * 1000
+// }
+// console.log(foo())
+
+// const myFetch = function (url) {
+//   return new Promise((resolve, reject) => {
+//     let data
+//     var xhttp = new XMLHttpRequest()
+//     xhttp.onreadystatechange = function () {
+//       if (this.readyState == 4 && this.status == 200) {
+//         data = JSON.parse(this.responseText)
+//         resolve(data)
+//       }
+//     }
+//     xhttp.open('GET', url, true)
+//     xhttp.send()
+//   })
+// }
+// class MyPromise {
+//   constructor(cb) {
+//     this.promiseState = 'pending'
+//     this.resolve = function (data) {
+//       this.promiseState = 'fulfilled'
+//       this.curData = data
+//       setTimeout(() => {
+//         while (this.thenCbQueue.length > 0) {
+//           const curThenCb = this.thenCbQueue.shift()
+//           if (this.curData instanceof MyPromise) {
+//             this.curData.then(promiseData => {
+//               curThenCb(promiseData)
+//             })
+//           } else {
+//             this.curData = curThenCb(this.curData)
+//           }
+//         }
+//       }, 0)
+//     }.bind(this)
+//     this.reject = function (error) {
+//       this.promiseState = 'failed'
+//       this.curError = error
+//       setTimeout(() => {
+//         while (this.catchCbQueue.length > 0) {
+//           const curCatchCb = this.catchCbQueue.shift()
+//           this.curError = curCatchCb(this.curError)
+//         }
+//       })
+//     }.bind(this)
+//     this.thenCbQueue = []
+//     this.catchCbQueue = []
+//     cb(this.resolve, this.reject)
+//   }
+//   then(thenCb) {
+//     this.thenCbQueue.push(thenCb)
+//     return this
+//   }
+//   catch(catchCb) {
+//     this.catchCbQueue.push(catchCb)
+//     return this
+//   }
+// }
+
+// const p = new MyPromise((res, rej) => {
+//   res('Hello')
+// })
+//   .then(data => {
+//     console.log('Data1: ')
+//     console.log(data)
+//     return new MyPromise((res, rej) => {
+//       res('Promise Data')
+//     })
+//   })
+//   .then(data2 => {
+//     console.log('Data2: ')
+//     console.log(data2)
+//   })
+
+// const p = new MyPromise((resolve, reject) => {
+//   let timer = randomTimer()
+//   setTimeout(() => {
+//     if (timer > 2000) {
+//       reject('Rejected: Too long to wait')
+//     } else {
+//       resolve('Resolve')
+//     }
+//   }, timer)
+// })
+//   .then(data => {
+//     console.log('Data1: ')
+//     console.log(data)
+//     return 'Hi'
+//   })
+//   .catch(error => {
+//     console.warn(error)
+//   })
+
+// const p = new Promise((resolve, reject) => {
+//   console.log("hello");
+// });
+
+// console.log(p)
+
+// function Person(age, weight) {
+//   this.age = age
+//   this.weight = weight
+// }
+// Person.prototype.getInfo = function () {
+//   return (
+//     'I am ' + this.age + ' years old ' + 'and weighs ' + this.weight + ' kilo.'
+//   )
+// }
+
+// function Employee(age, weight, salary) {
+//   Person.call(this)
+//   this.age = age
+//   this.weight = weight
+//   this.salary = salary
+// }
+
+// Employee.prototype.getInfo = function () {
+//   return (
+//     'I am ' +
+//     this.age +
+//     ' years old ' +
+//     'and weighs ' +
+//     this.weight +
+//     ' kilo ' +
+//     'and earns ' +
+//     this.salary +
+//     ' dollar.'
+//   )
+// }
+
+// var person = new Person(50, 90)
+// var employee = new Employee(43, 80, 50000)
+
+// console.log(person.getInfo())
+// console.log(employee.getInfo())

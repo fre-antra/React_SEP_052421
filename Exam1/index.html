@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shuchintha Itunes</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <script src="https://use.fontawesome.com/be8aebe252.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <form class="search-form">
+          <div>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="search__input"
+              id="search__name"
+            />
+          </div>
+          <button type="button" class="search-img" id="search-btn">
+            <i class="fa fa-search search-icon" aria-hidden="true"></i>
+          </button>
+        </form>
+      </header>
+      <div class="main-container">
+        <div class="main-container">
+          <h2 class="result-text" id="search-result">
+            Search Album by ArtistName:
+          </h2>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <main class="card-container">
+      <div class="card__list" id="cardlist"></div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
