@@ -12,11 +12,6 @@ const Controller = ((view, model) => {
   const init = () => {
     searchInput.addEventListener("keyup", (e) => {
       if (e.key == "Enter") {
-        // model.getITunesAlbums(e.target.value).then((data) => {
-        //   console.log(data);
-        //   const albumHtmlTmpString = view.createCardTmp(data.results);
-        //   console.log(albumHtmlTmpString);
-        // });
         if (e.target.value === null || e.target.value.trim() === "") {
           alert("Type artist name");
         } else {
@@ -30,6 +25,13 @@ const Controller = ((view, model) => {
               view.render(cardSection, albumHtmlTmpString);
               view.infoTitle(infoTitle, data.resultCount, e.target.value);
             });
+
+          //FIXME Then of undefined error even after using fetchJsonp
+          //   model.getITunesAlbums(e.target.value).then((data) => {
+          //     console.log(data);
+          //     const albumHtmlTmpString = view.createCardTmp(data.results);
+          //     console.log(albumHtmlTmpString);
+          //   });
         }
       }
     });

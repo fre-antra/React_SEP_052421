@@ -2,29 +2,23 @@
 
 const iTunesAPI = (() => {
   const getITunesAlbums = (artistName) => {
-    fetch(
-      `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200"`
-    ).then((response) => response.json());
-  };
-
-  const getAlbums = (url) => {
-    fetch(url).then((res) => res.json());
+    fetchJsonp(
+      `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200`
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   };
 
   return {
     getITunesAlbums,
-    getAlbums,
   };
 })();
 
 const Models = ((api) => {
   const getITunesAlbums = api.getITunesAlbums;
 
-  const getAlbums = api.getAlbums;
-
   return {
     getITunesAlbums,
-    getAlbums,
   };
 })(iTunesAPI);
 
