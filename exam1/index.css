@@ -40,14 +40,14 @@ input:focus {
     flex: 1 1 auto;
     overflow-y: auto;
     width: 100%;
+    height: calc(100vh - 60px);
+    overflow-x: scroll;
 }
 
 .searchResult {
     width: 80%;
     margin: auto;
     padding: 1rem;
-    height: calc(100vh - 60px);
-    overflow-x: scroll;
 }
 
 .searchResult__count {
