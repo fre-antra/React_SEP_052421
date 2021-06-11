@@ -29,7 +29,7 @@ const View = (() => {
       tmp += `
               <div class="result-card">
                   <img class='card-img' src="${data.artworkUrl100}" alt="">
-                  <div class="card_title">${data.collectionName}</div>
+                  <div class="card-title">${data.collectionName}</div>
               </div>
           `;
     });
