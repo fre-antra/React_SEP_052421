@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <script async src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="homePage-container">
+      <div class="navbar-container">
+        <nav class="navbar flex-row-space">
+          <div class="navbar-left-container flex-item-space"></div>
+
+          <div class="navbar-mid-container flex-item-space">
+            <div class="search-container flex-item-space">
+              <label for="searchbox" class="search-label">
+                <div class="btn-search"></div>
+              </label>
+              <input class="input-search" type="text" id="searchbox" placeholder="Search..." />
+            </div>
+          </div>
+
+          <div
+            class="navbar-right-container flex-item-space flex-row-space"
+          ></div>
+        </nav>
+      </div>
+
+      <div class="content-container">
+        <div class="mainContent-container flex-column-space">
+          <div class="search-info flex-item-space">
+            <p>Search Albums by ArtistName:</p>
+          </div>
+
+          <div class="search-results flex-item-space flex-row-space"></div>
+        </div>
+      </div>
+      <div class="footer-container"></div>
+    </div>
+  </body>
+</html>
