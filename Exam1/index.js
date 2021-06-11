@@ -1,14 +1,14 @@
-const API = (() => {
-    
-    const getAllAlbums = (artist) => 
-        fetchJsonp(`https://itunes.apple.com/search?term=${artist}&media=music&entity=album&attribute=artistTerm&limit=500`)
-        .then(res => res.json())
-    
-    return {
-        getAllAlbums,
-    }
-})()
 
+const API = (() => {
+
+    const getAllAlbums = (ARTIST_NAME) => 
+        fetch("https://itunes.apple.com/search?term=" + ARTIST_NAME + "&media=music&entity=album&attribute=artistTerm&limit=200")
+        .then((response) => response.json());
+
+    return {
+        getAllAlbums
+    };
+})();
 const View = (() => {
     const domString = {
         searchInput: 'search-input',
@@ -69,7 +69,25 @@ const Module = ((api, view) => {
 const Controller = ((view, module) => {
     const state = new module.State();
     const searchInput = document.querySelector('#' + view.domString.searchInput);
-    
+    const searchMessage = document.querySelector('#' + view.domString.searchMessage);
+
+    const init = () => {
+        searchInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter' && event.target.value === '') {
+                let title = 'Search Albums by ArtistName:';
+                view.render(searchMessage, title);
+            }
+            else{
+                module.getAllAlbums(event.target.value).then(data => {
+                    state.numOfCollection = data.resultCount;
+                    state.collections = data.results;
+                    let title = `${data.resultCount} results for "${event.target.value}"`;
+                    view.render(searchMessage, title);
+                });
+            }
+        });
+    }
+
     return {
         init
     };

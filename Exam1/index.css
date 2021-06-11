@@ -40,7 +40,7 @@ body {
 
 .search-icon{
     color: var(--color-white);
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 .content {
@@ -82,7 +82,6 @@ hr {
 
 .content .cards-container .card_title {
     position: relative;
-    text-align: center;
     font-size: 60%;
     padding: 2px;
 }
