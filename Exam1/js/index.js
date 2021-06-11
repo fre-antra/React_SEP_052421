@@ -3,8 +3,9 @@ const appleApis = (() => {
     `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200`;
 
   const fetchAlbums = (artistName) => {
-    fetchJsonp(requestURL(artistName))
-      .then((response) => response.json());
+    return fetchJsonp(requestURL(artistName)).then((response) =>
+      response.json()
+    );
   };
 
   return {
@@ -12,7 +13,7 @@ const appleApis = (() => {
   };
 })();
 
-const model = ((api) => {
+const model = (function (api) {
   class album {
     constructor(rawData) {
       this.name = rawData.collectionName;
@@ -21,13 +22,16 @@ const model = ((api) => {
   }
 
   const getAlbums = function (artistName) {
-    let albumList;
-    api.fetchAlbums(artistName).then((res) => console.log(res));
-    console.log(albumList);
-    for (let i = 0; i < albumList.length; i++) {
-      albumList[i] = new album(albumList[i]);
-    }
-    return albumList;
+    return api.fetchAlbums(artistName).then((albumList) => {
+      albumList = albumList.results;
+      for (let i = 0; i < albumList.length; i++) {
+        albumList[i] = new album(albumList[i]);
+      }
+      console.log(this);
+      this.albumCount = albumList.length;
+      this.albumList = albumList;
+      return albumList;
+    });
   };
 
   return {
@@ -38,7 +42,8 @@ const model = ((api) => {
 
 const view = (() => {
   const selectors = {
-    album: "album-container",
+    info: "search-info p",
+    albums: "search-results",
     searchBtn: "btn-search",
     searchBox: "input-search",
   };
@@ -48,9 +53,11 @@ const view = (() => {
     for (let i = 0; i < albumList.length; i++) {
       html += `
         <div class="album-container flex-item-space">
-          <div class="album-cover"></div>
+          <div class="album-cover">
+          <img class="cover-img" src="${albumList[i].cover}" />
+          </div>
           <div class="album-name">
-            ${album.collectionName}
+            ${albumList[i].name}
           </div>
         </div>
       `;
@@ -71,13 +78,36 @@ const view = (() => {
 })();
 
 const controller = (function (model, view) {
+  const addLoading = function () {
+    view.render(
+      document.querySelector("." + view.selectors.info),
+      `
+      <div class="loading">
+        <div class="loading-circle1"></div>
+        <div class="loading-circle2"></div>
+      </div>
+      `
+    );
+  };
+
   const searchAlbums = () => {
+    addLoading();
+
     let searchValue = document.querySelector(
       "." + view.selectors.searchBox
     ).value;
 
     if (searchValue != "") {
-      console.log(model.getAlbums(searchValue));
+      model.getAlbums(searchValue).then((albums) => {
+        view.render(
+          document.querySelector("." + view.selectors.albums),
+          view.albumHtml(albums)
+        );
+        view.render(
+          document.querySelector("." + view.selectors.info),
+          `${model.albumCount} results for "${searchValue}"`
+        );
+      });
     }
   };
 
