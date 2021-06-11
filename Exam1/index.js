@@ -19,10 +19,6 @@ const View = (() => {
     element.innerHTML = htmlTemplate;
   };
 
-  const newInfo = (name, number) => {
-    return `${number} results for ${name}`;
-  };
-
   const createCardTmp = (arr) => {
     let tmp = '';
     arr.forEach((data) => {
@@ -39,7 +35,6 @@ const View = (() => {
   return {
     domString,
     render,
-    newInfo,
     createCardTmp,
   };
 })();
