@@ -1,0 +1,14 @@
+:root {
+  --color-primary: #038080;
+  --color-secondary: #ffffff;
+
+  --color-textColor: #333333;
+  --color-inputBg: #f0eeee;
+  --color-inputText: #757575;
+
+  --color-cardBg: #f0eeee;
+
+  --header-height: 60px;
+  --card-height: 160px;
+  --card-width: 115px;
+}

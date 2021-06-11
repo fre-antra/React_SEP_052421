@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Album Search</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <input
+        type="text"
+        placeholder="Search..."
+        name="header__input"
+        class="header__input"
+      />
+      <img
+        src="assets/search-icon.png"
+        alt="search"
+        class="header__searchIcon"
+      />
+    </header>
+    <main class="app-main">
+      <section class="main__infoSection">
+        <h1 class="info__title">Search Albums by Artist Name:</h1>
+        <hr class="info__hr" />
+      </section>
+      <section class="main__cardSection"></section>
+    </main>
+    <script type="module" src="scripts/Model.js"></script>
+    <script type="module" src="scripts/Controller.js"></script>
+    <script type="module" src="scripts/View.js"></script>
+  </body>
+</html>
