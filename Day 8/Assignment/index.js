@@ -1,7 +1,8 @@
+//Some function need to build: 20,21,26,27
+
 // 1. Write a JavaScript function that reverse a number.
 // Example x = 32243;
 // Expected Output : 34223
-
 function foo1(num) {
   var array1 = Array.from(String(num), Number);
   return array1.reverse().join("");
