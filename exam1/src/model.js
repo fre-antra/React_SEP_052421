@@ -9,22 +9,23 @@ export const Model = ((api, view) => {
     #resultNum = 0;
     #resultList = [];
 
-    get resultList() {
-      return this.#resultList;
-    }
-
     get input() {
       return this.#input;
     }
 
-    get resultNum() {
-      return this.#resultNum;
+    set input(input) {
+      this.#input = input;
+    }
+
+    get resultList() {
+      return this.#resultList;
     }
 
     set resultList(newList) {
       this.#resultList = newList;
 
       const resultElem = document.querySelector("#" + view.domString.resultList);
+      console.log(resultElem);
       const resultTmp = view.createResults(this.#resultList);
       view.render(resultElem, resultTmp);
 
@@ -33,8 +34,8 @@ export const Model = ((api, view) => {
       // view.render(infoElem, infoTmp);
     }
 
-    set input(input) {
-      this.#input = input;
+    get resultNum() {
+      return this.#resultNum;
     }
 
     set resultNum(num) {

@@ -16,6 +16,7 @@ export const AppController = ((model, view) => {
             state.resultList = [];
             state.resultNum = 0;
           } else {
+            console.log(data.results);
             state.resultNum = data.resultCount;
             state.resultList = data.results;
           }

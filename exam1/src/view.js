@@ -6,10 +6,11 @@ export const View = (() => {
   };
 
   const render = (element, htmlString) => {
-    element.htmlString = htmlString;
+    element.innerHTML = htmlString;
   };
 
   const createResults = (resultArr) => {
+    console.log(resultArr);
     let htmlString = "";
     resultArr.forEach((elem) => {
       htmlString += `
