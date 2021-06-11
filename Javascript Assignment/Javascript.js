@@ -207,18 +207,15 @@ function larger(arr, num) {
 console.log(larger([1, 2, 3, 4, 5], 3));
 
 //Q20
-const generateRandomeString = (n) => {
-  const chars =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const l = chars.length;
+function randomString(n) {
+  const character_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = '';
-  for (let i = 0; i < n; i++) {
-    const idx = Math.floor(Math.random() * 100);
-    result += chars[idx % l];
+  for (let i=0; i<n; i++){
+    result += character_list[Math.floor((Math.random()*200))%character_list.length];
   }
   return result;
-};
-console.log(generateRandomeString(6));
+}
+console.log(randomString(5));
 
 //Q21
 
