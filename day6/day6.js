@@ -94,7 +94,75 @@
 // //console.log(a); //function
 // a();
 
-//IIFE: yifei: it can br run without invoked
+// var closureAlert = function () {
+//     var x = "help!";
+//     var alerter = function() {
+//         alert(x);
+//     }
+//     alerter();
+// };
+
+// var closureAlert = function () {
+//     var x = 0;
+//     var alerter = function() {
+//         alert(++x);//++x:x plus 1, then return x; x++: return x and then x plus 1;
+//     }
+//     return alerter;
+// }
+// var funclosure = closureAlert();
+// var funclosure1 = closureAlert();
+// funclosure();//1
+// funclosure();//2
+//console.log(funclosure1);//1: call a new function, it will create a new brand.
+
+
+// var add = function(num) {
+//     var num1 = num;
+//     var addToNum1 = function(num2) {
+//         return num1 + num2;
+//     }
+//     return addToNum1;//return addToNum1 to add5;
+// }
+// var add5 = add(5);
+// console.log(add5(2));//7
+// console.log(add5(3));//8: this is a new scope: num2 = 3
+// var add5 = add(10);//overwrite
+// console.log(add5(2));//12
+
+// function counter () {
+//     var n =0;
+//     return{
+//         count: function(){return ++n;},
+//         reset: function(){return  n=0},
+//     };
+// };
+// var myCounter = counter();
+// console.log(myCounter);//object:{count:function, resset: function}
+// console.log(myCounter.count());//1
+// console.log(myCounter.count());//2
+// console.log(myCounter.reset());//0
+
+var sayAlice = function() {
+    var makeLog = function(){
+        console.log(alice);
+    };
+    var alice = "why hello";
+    return makeLog();
+}
+var what = sayAlice();//why hello
+
+var sayAlice = function() {
+    var makeLog = function(){
+        console.log(alice);
+    };
+    return makeLog();
+    var alice = "why hello";
+    //return makeLog();
+}
+var what = sayAlice();//undefined
+
+
+//IIFE: yifei: it can be run without invoked
 // (function foo() {
 //     console.log("hello");
 // })();
@@ -181,15 +249,25 @@
 // }
 // foo();//01234
 
-function foo() {
-    console.log("foo");
-}
-function randomTimer(){
-    return Math.random()*1000;
-}
-function callFooWithRandomTimer(){
-    setTimeout(foo, randomTimer());//composition
-}
+// var closureAlerter = function() {
+//     var x = "help";
+//     var alerter = function() {
+//         alert(x);
+//     }
+//     setTimeout(alerter, 1000);
+//     console.log("hi");
+//  }
+//  closureAlerter(); // hi=> help
+
+// function foo() {
+//     console.log("foo");
+// }
+// function randomTimer(){
+//     return Math.random()*1000;
+// }
+// function callFooWithRandomTimer(){
+//     setTimeout(foo, randomTimer());//composition
+// }
 
 //callback hell....? can be solved by using promise()
 
