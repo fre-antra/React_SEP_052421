@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
-    <script async src="./index.js"></script>
+    <script async type="module" src="./index.js"></script>
     <title>Exam 1</title>
 </head>
 <body>
     <nav class="navbar-cantainer">
         <div class="navbar-searchBar">
             <div class="searchBar">
-                <input type="text" class="search-input" id="search-input" placeholder="Search...">
+                <input type="text" class="search-input"  placeholder="Search...">
                 <button class="search-btn" id="search-btn">
                     <img src="./img/search-icon.png" alt="">
                 </button>
@@ -25,10 +25,10 @@
 
     <main class="album-container">
         <div class="album-header">
-            <p id="result-count">Search Albums by ArtistName:</p>
+            <p class="result-count">Search Albums by ArtistName:</p>
         </div>
         <hr>
-        <div class="album-row" id="album-result"></div>
+        <div class="album-result"></div>
     </main>
 </body>
 </html>
