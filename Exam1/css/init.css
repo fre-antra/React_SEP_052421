@@ -1,0 +1,24 @@
+:root {
+  --color-blue: rgb(11, 194, 227);
+  --color-green: rgb(10, 203, 65);
+  --color-gray: rgb(198, 189, 189)
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+  font-family: sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+}

@@ -1,0 +1,8 @@
+/* initialization */
+@import url(init.css);
+
+/* header */
+@import url(header.css);
+
+/* search-result */
+@import url(content.css);
