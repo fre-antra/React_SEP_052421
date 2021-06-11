@@ -1,4 +1,4 @@
-const AppApi = (() => {
+const albumAPI = (() => {
   const getAllAlbums = (artistName) => {
     return fetchJsonp(
       `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=50`
@@ -14,9 +14,15 @@ const View = (() => {
     searchMessage: 'search-info',
     cardsContainer: 'result-container',
   };
+
   const render = (element, htmlTemplate) => {
     element.innerHTML = htmlTemplate;
   };
+
+  const newInfo = (name, number) => {
+    return `${number} results for ${name}`;
+  };
+
   const createCardTmp = (arr) => {
     let tmp = '';
     arr.forEach((data) => {
@@ -29,9 +35,11 @@ const View = (() => {
     });
     return tmp;
   };
+
   return {
     domString,
     render,
+    newInfo,
     createCardTmp,
   };
 })();
@@ -42,9 +50,9 @@ const Model = ((api) => {
   return {
     getAllAlbums,
   };
-})(AppApi);
+})(albumAPI);
 
-const AppController = ((view, model) => {
+const AppControl = ((view, model) => {
   const albumElement = document.querySelector('#' + view.domString.searchBar);
 
   const addListenerOnInput = () => {
@@ -58,11 +66,11 @@ const AppController = ((view, model) => {
             const infoElement = document.querySelector(
               '#' + view.domString.searchMessage
             );
-            const message = `${data.resultCount} results for "${event.target.value}"`;
+            const message = `${data.resultCount} results for "${artist}"`;
             view.render(infoElement, message);
 
             const cardsElement = document.querySelector(
-              '#' + view.domString.cardContainer
+              '#' + view.domString.cardsContainer
             );
             const cardsTep = view.createCardTmp(data.results);
             view.render(cardsElement, cardsTep);
@@ -82,4 +90,5 @@ const AppController = ((view, model) => {
     init,
   };
 })(View, Model);
-AppController.init();
+
+AppControl.init();
