@@ -1,19 +1,12 @@
 :root {
-    --height-header: 60px;
-    --height-todolist: 300px;
-    --height-todolist-header: 30px;
-
-    --width-todolist: 400px;
-
     --color-green: rgb(15, 131, 131);
-    --color-red-button: rgb(148, 21, 21);
-    --color-red-li-hover: rgb(27, 172, 8);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 
@@ -34,9 +27,20 @@ body {
     width: 45%;
     height: 2rem;
     padding: 8px;
+    border-style: none;
+    outline: none;
     padding-left: 20px;
     border-radius: 20px;
 }
+
+#topBar__icon{
+    position: relative;
+    border-style: none;
+    left: -30px;
+    top: 6px;
+}
+
+
 
 .topBar__input:focus {
     width: 50%;
@@ -47,11 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-hr {
-    width: 80%;
-    color: var(--color-green);
+    padding: 5px 15px;
 }
 
 .mainBody__indicator{
@@ -59,22 +59,22 @@ hr {
     font-size: 1.8rem;
 }
 
-
-.mainBody__Cards{
-    display: flex;
-    flex-direction: row;
+hr {
+    width: 80%;
+    color: var(--color-green);
 }
 
+
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
     width: 10rem;
     height: 20rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    overflow: hidden;
   }
 
 .card__img {
@@ -82,7 +82,8 @@ hr {
     height: auto;
 }
 .card__name {
+    text-align: center;
     padding-top: 10px;
-    font-size: 1.3rem;
     height: auto;
+    font-size: 1rem;
 }

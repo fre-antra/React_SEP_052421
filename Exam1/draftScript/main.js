@@ -1,13 +1,19 @@
 const itunesAPI = (() => {
-    const baseUrl_pre = 'https://itunes.apple.com/search?term=${'
-    const baseUrl_post = '}&media=music&entity=album&attribute=artistTerm&limit=200'
+    // const baseUrl_pre = 'https://itunes.apple.com/search?term=${'
+    // const baseUrl_post = '}&media=music&entity=album&attribute=artistTerm&limit=200'
 
     const getAlbums = (artist) => {
+        const url = `https://itunes.apple.com/search?term=${artist}&media=music&entity=album&attribute=artistTerm&limit=200`
         // console.log([baseUrl_pre, artist, baseUrl_post].join(''));
-        fetchJsonp([baseUrl_pre, artist, baseUrl_post].join(''))
+        return fetchJsonp(url)
             .then((response) => response.json())
-            .then((json) => console.log('from API', json));
-        }
+        // .then((json) => console.log('from API', json))
+        // .then(json => {
+        //     console.log('I am json',json);
+        //     return json
+        // });
+    }
+
 
     return {
         getAlbums
@@ -51,10 +57,11 @@ const View = (() => {
     const createCard = (albumArr) => {
         let htmlString = '';
         albumArr.forEach(ele => {
+            // console.log(ele);
             htmlString += `
                 <div class="card">
-                    <img class="card__img" src="${ele.imgUrl}" alt="${ele.albumName}">
-                    <p class="card__name">${ele.albumName}</p>
+                    <img class="card__img" src="${ele.artworkUrl100}" alt="${ele.collectionName}">
+                    <p class="card__name">${ele.collectionName}</p>
                 </div>
             `;
         });
@@ -94,14 +101,16 @@ const Controller = ((view, model) => {
                 //------------  STUCK in here -------------//
                 // TypeError: Cannot read property 'then' of undefined
                 // but success in API fetch
+                // fixed by adding a return for fetchJsonp 
                 model.getAlbums(artist).then((data) => {
-                    console.log('iam',data);
+
                     // update indicator
-                    const indicatorUpdate = view.updateIndicator(data)
+                    const indicatorUpdate = `${data.results.length} result of "${artist}"`
                     view.render(indicatorElement, indicatorUpdate);
                     // create cards div
-                    const createCards = view.createCard(data);
+                    const createCards = view.createCard(data.results);
                     view.render(cardsElement, createCards);
+
                 });
             }
         })
