@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Exam1" />
+    <meta name="keywords" content="HTML,CSS,JS" />
+    <meta name="author" content="ZQ_M" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Above line is for importing search icon -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap"
+      rel="stylesheet"
+    />
+    <!-- // Above 2 lines are for importing Google fonts -->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script async type="module" src="./js/Controller.js"></script>
+  </head>
+  <body>
+    <header class="container__header">
+      <div class="search-bar">
+        <input type="text" class="search__input" placeholder="Search..." />
+        <button class="search__button"><i class="fa fa-search"></i></button>
+      </div>
+    </header>
+    <div class="container__content">
+      <div id="info" class="result_information">
+        Search Albums by ArtistName:
+      </div>
+      <div class="cards_container"></div>
+    </div>
+  </body>
+</html>
