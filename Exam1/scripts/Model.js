@@ -2,11 +2,9 @@
 
 const iTunesAPI = (() => {
   const getITunesAlbums = (artistName) => {
-    fetchJsonp(
+    return fetchJsonp(
       `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200`
-    )
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+    ).then((response) => response.json());
   };
 
   return {

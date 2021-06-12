@@ -15,24 +15,23 @@ const Controller = ((view, model) => {
         if (e.target.value === null || e.target.value.trim() === "") {
           alert("Type artist name");
         } else {
-          //FIXME for some reason the then function was not working from the models file.
-          fetch(
-            `https://itunes.apple.com/search?term=${e.target.value}&media=music&entity=album&attribute=artistTerm&limit=200"`
-          )
-            .then((response) => response.json())
-            .then((data) => {
-              const albumHtmlTmpString = view.createCardTmp(data.results);
-              view.render(cardSection, albumHtmlTmpString);
-              view.infoTitle(infoTitle, data.resultCount, e.target.value);
-            });
-
-          //FIXME Then of undefined error even after using fetchJsonp
-          //   model.getITunesAlbums(e.target.value).then((data) => {
-          //     console.log(data);
-          //     const albumHtmlTmpString = view.createCardTmp(data.results);
-          //     console.log(albumHtmlTmpString);
-          //   });
+          model.getITunesAlbums(e.target.value).then((data) => {
+            const albumHtmlTmpString = view.createCardTmp(data.results);
+            view.render(cardSection, albumHtmlTmpString);
+            view.infoTitle(infoTitle, data.resultCount, e.target.value);
+          });
         }
+      }
+    });
+    searchIcon.addEventListener("click", () => {
+      if (searchInput.value === null || searchInput.value.trim() === "") {
+        alert("Type Artist name");
+      } else {
+        model.getITunesAlbums(searchInput.value).then((data) => {
+          const albumHtmlTmpString = view.createCardTmp(data.results);
+          view.render(cardSection, albumHtmlTmpString);
+          view.infoTitle(infoTitle, data.resultCount, searchInput.value);
+        });
       }
     });
   };

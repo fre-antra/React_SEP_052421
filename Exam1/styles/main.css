@@ -37,6 +37,13 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.header__searchbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header__input:focus {
   width: 40%;
   transition: all 0.3s ease-in-out;
