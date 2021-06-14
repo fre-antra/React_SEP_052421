@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div class="div">Hello</div>
+<button class="btn">Show</button>
+<script>
+  class MyJQ {
+    constructor(selector) {
+      this.ele = document.querySelector(selector)
+    }
+
+    html(html) {
+      this.ele.innerHTML = html
+    }
+
+    hide() {
+      this.ele.style.display = 'none'
+    }
+
+    show() {
+      // not considering the tag type, ignore all the fancy things
+      this.ele.style.display = 'block'
+    }
+
+    on(type, cb) {
+      this.ele.addEventListener(type, cb)
+    }
+  }
+
+  function $$(s) {
+    return new MyJQ(s)
+  }
+
+  function ajax(options) {
+    let defaults = {
+      type: 'get',
+      url: '',
+      data: {},
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function () {
+
+      },
+      error: function () {
+
+      }
+    }
+    Object.assign(defaults, options)
+    let xhr = new XMLHttpRequest()
+    xhr.open(defaults.type, defaults.url)
+    if (defaults.type === 'get') {
+      xhr.send()
+    }
+    xhr.onload = function () {
+      let resText = xhr.responseText
+      defaults.success(resText, xhr)
+    }
+  }
+
+  let div = $$('.div')
+  div.hide()
+  $$('.btn').on('click', function () {
+    div.show()
+  })
+
+  ajax({
+    url: 'https://jsonplaceholder.typicode.com/todos/1',
+    success: function (res) {
+      console.log(res)
+    }
+  })
+</script>
+</body>
+</html>
