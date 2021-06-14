@@ -164,3 +164,4 @@ const AppController = ((model, view) => {
 })(Model, View);
 
 AppController.init();
+
