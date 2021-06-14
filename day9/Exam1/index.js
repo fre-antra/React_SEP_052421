@@ -1,4 +1,3 @@
-
 const musicAPI = (() => {
 
     const getSearchResults = (artistName) =>
