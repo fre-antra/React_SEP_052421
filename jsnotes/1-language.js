@@ -30,3 +30,37 @@ console.log(false && X); //X is never evaluated.
 //    A program is a list of statements.
 
 // 6. binding : variables, does not own the values but bind to them.
+
+// 7. hoisting
+
+console.log(notyetdeclared);
+// 'undefined', hoisted notyetdeclared is
+// registered but not defined yet
+
+var notyetdeclared = "now it is declared";
+// notyetdeclared defined
+
+hoisting();
+// registered and defined and hoisted
+
+function hoisting() {
+  console.log(notyetdeclared);
+  // 'undefined'
+  // function is hoisted before than vars
+
+  var notyetdeclared = "declared differently";
+
+  console.log(notyetdeclared);
+  // 'declared differently'
+}
+
+// class no hoisting
+
+// 7. redeclared in sub scopes works
+let a = 1;
+function foo() {
+  let a = 2;
+  console.log(a);
+}
+
+foo();
