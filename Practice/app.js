@@ -1,4 +1,36 @@
-// // oop: Object-oriented programming
+// Mypromise implementation
+class MyPromise {
+  constructor(callBack) {
+    this.callBackQueue = []
+    this.promiseStatus = 'pending'
+
+    callBack(this.resolve, this.reject)
+  }
+  resolve = function (data) {
+    this.promiseStatus = 'complete'
+    console.log(this)
+    setTimeout(() => {
+      console.log(data)
+    }, 1000)
+    return data
+  }.bind(this)
+
+  reject = function (error) {
+    this.promiseStatus = 'failed'
+    setTimeout(() => {
+      console.log(data)
+    }, 1000)
+    return error
+  }.bind(this)
+  // then
+}
+
+const prom = new MyPromise((resolve, reject) => {
+  console.log(resolve('success'))
+})
+console.log(prom)
+
+// oop: Object-oriented programming
 
 // // // encapsulation
 // class Person {
@@ -213,3 +245,17 @@
 
 // console.log(person.getInfo())
 // console.log(employee.getInfo())
+
+// function $$(data) {
+//   let classname = data.split('.')[1]
+//   let ele = document.querySelector(data)
+//   console.log(ele)
+
+//   return {
+//     html: data => {
+//       ele.innerHTML = data
+//     },
+//   }
+// }
+
+// $$('button.continue').html('Next Step..')
