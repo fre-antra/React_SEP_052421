@@ -1,8 +1,14 @@
 //put DOM manipulation at end
 
+//class var will not be hoisted crossing the func blocks
+
+//console.log(test); // test is not defined
+
 class MyJQuery {
   constructor(selector) {
     this.element = document.querySelector(selector);
+    // use querySelectorAll for multi elements
+
     this.basic = {
       style: {},
     };
@@ -15,15 +21,17 @@ class MyJQuery {
 
   html(newhtml) {
     this.element.innerHTML = newhtml;
+    //console.log(test); // test is not defined
   }
 
   hide() {
+    var test = 10;
     this.element.style.originalDisplay = this.element.style.display;
     this.element.style.display = "none";
+    //visibility : hidden -> hide and occupy the block space
   }
   show() {
     this.element.style.display = this.element.style.originalDisplay;
-    console.log(this.element.style.display);
   }
   on(event, callback) {
     let eventName;
@@ -32,6 +40,7 @@ class MyJQuery {
         eventName = "click";
     }
     this.element.addEventListener(eventName, callback);
+    // on equals addEventListener, no need switch
   }
 }
 
@@ -69,3 +78,41 @@ $$.ajax({
     console.log(result);
   },
 });
+
+/*
+console.log(document.querySelectorAll("button"));
+// nodelist type without map;
+document.querySelectorAll("button").map((ele) => {
+  console.log(ele);
+}); // document.querySelectorAll(...).map is not a function
+
+Array.prototype.map.call(document.querySelectorAll("button"), (ele) => {
+  console.log(ele);
+});
+// but we can do it here
+*/
+
+/*
+map()
+
+let contacts = new Map()
+contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
+contacts.has('Jessie') // true
+contacts.get('Hilary') // undefined
+contacts.set('Hilary', {phone: "617-555-4321", address: "321 S 2nd St"})
+contacts.get('Jessie') // {phone: "213-555-1234", address: "123 N 1st Ave"}
+contacts.delete('Raymond') // false
+contacts.delete('Jessie') // true
+console.log(contacts.size) // 1
+
+*/
+
+//console.log(document.querySelector("button").style);
+// uniterable because no-inline style
+// use computed style instead
+
+// console.log(window.getComputedStyle(document.querySelector("button")));
+// current working style
+
+// js change css through inline style, highest priority
+// inline > internal > external
