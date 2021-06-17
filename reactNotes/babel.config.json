@@ -1,0 +1,20 @@
+{
+  // 0. never try to use this shit config to do things like this:
+  /*
+  rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+  */
+
+  // 1. and always do not use babel-node, it is shit too.
+
+  // 2. do all yourself make things easier
+
+  // 3. "postbuild": "rm -rf ./build/@babel/",
+  //    this wont work because webpack serve shit rebuild webpack only every time!!!!
+
+  "presets": [["@babel/env"], ["@babel/preset-react"]]
+}
