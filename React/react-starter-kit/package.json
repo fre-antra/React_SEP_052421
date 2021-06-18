@@ -1,0 +1,23 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "This is a repo to record the SEP-FRE-TRAINING assignments and notes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fre-antra/React_SEP_052421.git"
+  },
+  "author": "Patrick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fre-antra/React_SEP_052421/issues"
+  },
+  "homepage": "https://github.com/fre-antra/React_SEP_052421#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
