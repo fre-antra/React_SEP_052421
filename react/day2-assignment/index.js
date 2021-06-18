@@ -4,9 +4,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import HelloMessage from "./src/components/HelloMessage.js";
 
+// ReactDOM.render(
+//   React.createElement(HelloMessage, {
+//     name: "Taylor",
+//   }),
+//   document.getElementById("root")
+// );
+
 ReactDOM.render(
-  React.createElement(HelloMessage, {
-    name: "Taylor",
-  }),
-  document.getElementById("root")
-);
+  <HelloMessage name= "Taylor"/>,
+  document.getElementById('root')
+)
