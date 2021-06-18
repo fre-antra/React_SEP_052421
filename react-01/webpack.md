@@ -1,5 +1,10 @@
 ## This project is just for react + webpack + html + babel. (plus jsx syntax, css files and image files.)
 
+### notes: `All files and configurations work on 6/17/2021.`
+
+### documentation:
+  - [https://medium.com/swlh/a-complete-webpack-setup-for-react-e56a2edf78ae](https://medium.com/swlh/a-complete-webpack-setup-for-react-e56a2edf78ae)
+
 1. install dependencies
 
 ```bash
