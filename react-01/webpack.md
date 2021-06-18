@@ -1,3 +1,5 @@
+## This project is just for react + webpack + html + babel. (plus jsx syntax, css files and image files.)
+
 1. install dependencies
 
 ```bash
@@ -5,20 +7,21 @@ $ mkdir webpack-react-starter
 $ cd webpack-react-starter
 $ npm init -y
 
-$ npm install --save-dev webpack webpack-cli webpack-dev-server
 $ npm install react react-dom
 
-# babel
+# webpack
+$ npm install --save-dev webpack webpack-cli webpack-dev-server
+$ npm install --save-dev autoprefixer
+$ npm install --save-dev html-webpack-plugin
+
+# babel(jsx compiler)
 $ npm install --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react
 
 # webpack css
 $ npm install --save-dev css-loader style-loader postcss-loader postcss --save-dev
+
 # webpack image loader
 $ npm install --save-dev file-loader url-loader
-
-# others
-$ npm install --save-dev autoprefixer
-$ npm install --save-dev html-webpack-plugin
 ```
 
 2. ./src/index.html
@@ -30,7 +33,7 @@ $ npm install --save-dev html-webpack-plugin
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My React App</title>
+    <title>React-01</title>
   </head>
   <body>
     <div id="root"></div>
@@ -43,16 +46,20 @@ $ npm install --save-dev html-webpack-plugin
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloMessage from './components/HelloMessage';
 
-console.log('index file');
+import MyImage from '../assets/loki.png';
+import './index.css';
 
-ReactDOM.render(
-  React.createElement(HelloMessage, {
-    name: 'Taylor',
-  }),
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <div>
+      <h2>Welcome to React-01</h2>
+      <img src={MyImage} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));
 ```
 
 4. ./src/index.css
@@ -64,12 +71,12 @@ body {
 }
 
 div {
+  color: white;
   background-color: teal;
 }
 
 img {
-  width: 640px;
-  height: 426px;
+  width: 100%;
 }
 ```
 
@@ -79,13 +86,13 @@ img {
 $ touch .babelrc
 ```
 
-6. ./src/.babelrc
+6. ./.babelrc
 
 ```json
 { "presets": ["@babel/preset-env", "@babel/preset-react"] }
 ```
 
-7. package.json
+7. package.json, `webpack version > 5`
 
 ```json
 {
@@ -125,7 +132,7 @@ $ touch .babelrc
 }
 ```
 
-8. webpack part
+8. webpack part, `this version work on 6/17/2021`
 
 - ./src/webpack.config.js
 
@@ -172,6 +179,17 @@ module.exports = {
               postcssOptions: {
                 plugins: [['autoprefixer', {}]],
               },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
             },
           },
         ],

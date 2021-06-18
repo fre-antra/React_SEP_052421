@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloMessage from './components/HelloMessage';
 
-console.log('index file');
+import MyImage from '../assets/loki.png';
+import './index.css';
 
-ReactDOM.render(
-  React.createElement(HelloMessage, {
-    name: 'Taylor',
-  }),
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <div>
+      <h2>Welcome to React-01</h2>
+      <img src={MyImage} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));

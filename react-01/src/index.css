@@ -1,0 +1,13 @@
+body {
+  margin: 50;
+  padding: 50;
+}
+
+div {
+  color: white;
+  background-color: teal;
+}
+
+img {
+  width: 100%;
+}
