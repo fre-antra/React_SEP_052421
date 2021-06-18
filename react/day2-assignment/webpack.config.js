@@ -18,13 +18,15 @@ module.exports = {
   },
   //module: this are the loader rules that will be considered.
   // For js files, webpack should use the babel-loader.
+  //Loader: Loaders are transformations that are applied 
+  // to the source code of a module.
   module: {
     rules: [
       {
-        test:/\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      }
-    ]
-  }
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };

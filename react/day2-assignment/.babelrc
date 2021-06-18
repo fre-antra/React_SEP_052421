@@ -2,6 +2,8 @@
   //Babel will automatically look for this file where we can 
   //configure how Babel behaves in there. In this file,
   //you specify all the presets to apply in your code
+  // In Babel, a preset is a set of plugins used to 
+  // support particular language features. Like use the latest JavaScript 
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react"

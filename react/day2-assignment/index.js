@@ -10,7 +10,6 @@ import HelloMessage from "./src/components/HelloMessage.js";
 //   }),
 //   document.getElementById("root")
 // );
-
 ReactDOM.render(
   <HelloMessage name= "Taylor"/>,
   document.getElementById('root')
