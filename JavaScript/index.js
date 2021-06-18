@@ -30,6 +30,14 @@
 // }
 
 // const p = new Person('Jojo', 18);
+
+// p.__proto__.run = function() {
+//     console.log(this.name + ' walk around the world! ' + this.age);
+// }
+// const p1 = new Person('David', 18);
+
+// p1.run()
+// console.log(p);
 // Person.prototype.__proto__.run = function() {
 //     console.log(this.name + ' is running');
 // }
@@ -114,18 +122,18 @@
 // monkey.move();
 
 // // Abstraction
-// class Circle {
-//     #pi = 3.1415926; 
-//     constructor(radius) {
-//         this.radius = radius;
-//     }
+class Circle {
+    #pi = 3.1415926; 
+    constructor(radius) {
+        this.radius = radius;
+    }
 
-//     getArea() {
-//         return this.#pi * this.radius ** 2;
-//     }
-// }
-// const c = new Circle(20);
-// console.log(c.getArea());
+    getArea() {
+        return this.#pi * this.radius ** 2;
+    }
+}
+const c = new Circle(20);
+console.log(c.getArea());
 
 // // loop
 
@@ -160,19 +168,22 @@
 //     return arr;
 // }
 
-Array.prototype.myReduce = function(callbackfn, init) {
-    // console.log('this: ', this);
-    let acc = init;
-    for (let i = 0; i < this.length; i++) {
-        acc = callbackfn(acc, this[i], i, this);
-    }
-    return acc;
-}
+// Array.prototype.myReduce = function(callbackfn, init) {
+//     console.log('this: ', this);
+//     // let acc = init;
+//     // for (let i = 0; i < this.length; i++) {
+//     //     acc = callbackfn(acc, this[i], i, this);
+//     // }
+//     // return acc;
+// }
+// const arr = [1, 2, 3, 4];
+// const arr1 = [23, 22];
+
 
 // // mySome, myEvery, myReduce
 
-const arr = ['a', 'b', 'c'];
-console.log(arr.myReduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaabbcc'
+// const arr = ['a', 'b', 'c'];
+// console.log(arr.myReduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaabbcc'
 // // 'dd' + a + a = 'ddaa' + b + b = ddaabb + c + c 
 
 // for (let i in arr) {
@@ -209,14 +220,27 @@ console.log(arr.myReduce((acc, cur, i, arr) => acc + cur + cur, 'dd')); // 'ddaa
 // obj2.arr[0].id = 2;
 // console.log(obj.arr[0].id);
 
-// // JSON.stringify
+// // // JSON.stringify
 // console.log(JSON.stringify(obj));
 // const obj2 = JSON.parse( JSON.stringify(obj) );
 // console.log(obj,obj2);
 
-// deep coyp;
+// // deep coyp;
 // const _ = require('lodash');
 // const obj3 = _.cloneDeep(obj);
 // console.log(obj);
 // console.log(obj3);
+
+const add = (a) => {
+    return function(b){
+        return a + b;
+    }
+}
+
+
+
+const add10 = add(4); // typeof bar
+
+
+console.log(add(4)(5)); // 9
 
