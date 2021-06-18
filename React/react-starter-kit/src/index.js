@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-const Template = React.createElement("h1", null, "hello");
+import HelloMessage from "./components/HelloMessage/HelloMessage";
 
-ReactDOM.render(Template, document.getElementById("root"));
+const HelloName = React.createElement(HelloMessage, {
+    name: "Taylor",
+});
+ReactDOM.render(HelloName, document.getElementById("root"));
