@@ -1,0 +1,4 @@
+// In this file, you specify all the presets to apply in your code
+{ 
+    "presets": ["@babel/preset-env", "@babel/preset-react"] 
+}
