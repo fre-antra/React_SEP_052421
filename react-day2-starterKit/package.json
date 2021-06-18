@@ -1,0 +1,24 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "This is a repo to record the SEP-FRE-TRAINING assignments and notes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --hot --mode development",
+    "build": "webpack --mode production"
+  },
+  "license": "MIT",
+
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
