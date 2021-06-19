@@ -1,10 +1,13 @@
-## This project is just for react + webpack + html + (JSX)
+## This project is just for react + webpack + html + (JSX/babel-loader)
+
+- Phase 3: webpack + babel-loader
+- `Works on 6/18/2021`
 
 ### Dependencies version
 
 - webpack 5
 
-1. Install dependencies. `(diff from phase1).`
+1. Install dependencies. `(diff from phase2).`
 
 ```bash
 $ npm init -y
@@ -12,7 +15,7 @@ $ npm init -y
 $ npm install react react-dom
 $ npm install --save-dev webpack webpack-cli
 
-$ npm install --save-dev @babel/core @babel/cli @babel/preset-env
+$ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
 ```
 
 2. ./public/index.html
@@ -34,7 +37,7 @@ $ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 </html>
 ```
 
-3. ./src/index.js `(diff from phase1).`
+3. ./src/index.js `(diff from phase2).`
 
 ```js
 import React from 'react';
@@ -43,13 +46,13 @@ import HelloMessage from './components/HelloMessage';
 
 ReactDOM.render(
   React.createElement(HelloMessage, {
-    message: '< Html + React + Webpack + Babel(JSX) >',
+    message: '< Html + React + Webpack + JSX + Babel-loader >',
   }),
   document.getElementById('root')
 );
 ```
 
-4. ./src/components/HelloMessage.js `(diff from phase1).`
+4. ./src/components/HelloMessage.js
 
 ```js
 import React from 'react';
@@ -62,36 +65,48 @@ export default class HelloMessage extends React.Component {
 }
 ```
 
-5. package.json, add scripts. `(diff from phase1).`
+5. package.json, add scripts. `(diff from phase1)`
 
 ```json
 "scripts": {
-  "build:webpack": "webpack",
-  "build:babel":"babel src --out-dir lib",
-  "build":"npm run build:babel && npm run build:webpack"
+  "build": "webpack"
 }
 ```
 
-6. ./src/webpack.config.js `(diff from phase1).`
+6. ./src/webpack.config.js `(diff from phase2).`
 
 ```js
 const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './lib/index.js', // changed
+  entry: './src/index.js', // changed
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
+  },
 };
 ```
 
-7. ./src/babel.config.json `new`
+7. ./src/babel.config.json
 
 ```json
 {
-  "presets": ["@babel/preset-react"]
+  "presets": ["@babel/preset-env"]
 }
 ```
 
@@ -101,4 +116,13 @@ module.exports = {
 $ npm run build
 $ cd public
 $ open index.html
+```
+
+9. 总结，相对于 phase 2 ，改变如下：
+
+```diff
++ babel 的 npm 安装内容改变
++ index.js 传输的参数改变
++ package.json 的 scripts 改回直接使用 webpack 命令
++ web.config.js 文件中加入了 babel-loader 的配置
 ```

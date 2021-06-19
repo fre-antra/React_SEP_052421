@@ -4,7 +4,7 @@ import HelloMessage from './components/HelloMessage';
 
 ReactDOM.render(
   React.createElement(HelloMessage, {
-    message: '< Html + React + Webpack + Babel(JSX) >',
+    message: '< Html + React + Webpack + JSX + Babel-loader >',
   }),
   document.getElementById('root')
 );

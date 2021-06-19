@@ -1,5 +1,6 @@
-## This project is just for react + webpack + html + (JSX)
+## This project is just for react + webpack + html + (JSX/babel)
 
+- Phase 2: webpack + babel
 - `Works on 6/18/2021`
 
 ### Dependencies version
@@ -103,4 +104,15 @@ module.exports = {
 $ npm run build
 $ cd public
 $ open index.html
+```
+
+9. 总结，相对于 phase 1 ，改变如下：
+
+```diff
++ babel 的 npm 安装
++ index.js 传输的参数改变
++ HelloMessage.js 使用了 JSX 语句。
++ package.json 的 scripts 增加了 babel 命令
++ web.config.js 文件中 entry 的位置修改为 babel 生成的文件。
++ 增加 Babel 的配置文件，‘babel.config.json’
 ```
