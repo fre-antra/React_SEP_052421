@@ -1,5 +1,7 @@
 ## This project is just for react + webpack + html. (without jsx syntax, css files and image files.)
 
+- `Works on 6/18/2021`
+
 ### Dependencies version
 
 - webpack 5

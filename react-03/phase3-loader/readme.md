@@ -1,7 +1,5 @@
 ## This project is just for react + webpack + html + (JSX)
 
-- `Works on 6/18/2021`
-
 ### Dependencies version
 
 - webpack 5
@@ -97,7 +95,7 @@ module.exports = {
 }
 ```
 
-8. Run the html file.
+8. Run the html file. `(diff from phase1).`
 
 ```bash
 $ npm run build
