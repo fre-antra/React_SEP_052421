@@ -1,6 +1,7 @@
 const path = require("path");
-const SRC_DIR = __dirname
-const DIST_DIR = path.join(__dirname, './public')
+const SRC_DIR = __dirname;
+const DIST_DIR = path.join(__dirname, "./public");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // console.log("SRC_DIR", `${SRC_DIR}/index.js`, "dir", DIST_DIR);
 module.exports = {
@@ -18,15 +19,36 @@ module.exports = {
   },
   //module: this are the loader rules that will be considered.
   // For js files, webpack should use the babel-loader.
-  //Loader: Loaders are transformations that are applied 
+  //Loader: Loaders are transformations that are applied
   // to the source code of a module.
   module: {
+    // rules: [
+    //   {
+    //     test: /\.js$/,
+    //     loader: "babel-loader",
+    //     exclude: /node_modules/,
+    //   },
+    // ],
     rules: [
       {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
 };
