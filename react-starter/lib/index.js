@@ -6,6 +6,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _HelloMessage = _interopRequireDefault(require("./components/HelloMessage/HelloMessage"));
 
+require("./index.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _reactDom["default"].render( /*#__PURE__*/_react["default"].createElement(_HelloMessage["default"], {
