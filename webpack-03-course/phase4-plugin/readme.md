@@ -90,7 +90,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: __dirname + '/public/index.html',
+      filename: 'index.html',
     }),
   ],
 };
@@ -116,5 +117,5 @@ $ open index.html
 
 6. 为什么要加入 HtmlWebpackPlugin？
 
-  - 自动生成 dist 下面的 html 文件，并自动添加 script tag。
-  - html-webpack-plugin 的作用是：当使用 webpack打包时，创建一个 html 文件，并把 webpack 打包后的静态文件自动插入到这个 html 文件当中。
+- 自动生成 dist 下面的 html 文件，并自动添加 script tag。
+- html-webpack-plugin 的作用是：当使用 webpack 打包时，创建一个 html 文件，并把 webpack 打包后的静态文件自动插入到这个 html 文件当中。
