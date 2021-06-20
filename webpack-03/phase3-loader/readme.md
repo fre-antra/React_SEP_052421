@@ -1,4 +1,4 @@
-## This project is just for react + webpack + html + (JSX/babel-loader)
+## This project is just for react + webpack + html + (JSX/babel-loader) + css-loader
 
 - Phase 3: webpack + babel-loader
 - `Works on 6/18/2021`
@@ -7,7 +7,7 @@
 
 - webpack 5
 
-1. Install dependencies. `(diff from phase2).`
+1. Install dependencies. `(add css loader).`
 
 ```bash
 $ npm init -y
@@ -16,6 +16,8 @@ $ npm install react react-dom
 $ npm install --save-dev webpack webpack-cli
 
 $ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
+
+$ npm install --save-dev css-loader style-loader
 ```
 
 2. ./public/index.html
@@ -37,16 +39,18 @@ $ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/prese
 </html>
 ```
 
-3. ./src/index.js `(diff from phase2).`
+3. ./src/index.js `(add css file & message changed).`
 
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloMessage from './components/HelloMessage';
 
+import './index.css';
+
 ReactDOM.render(
   React.createElement(HelloMessage, {
-    message: '< Html + React + Webpack + JSX + Babel-loader >',
+    message: '< Html + React + Webpack + JSX + Babel-loader + CSS-loader >',
   }),
   document.getElementById('root')
 );
@@ -65,7 +69,16 @@ export default class HelloMessage extends React.Component {
 }
 ```
 
-5. package.json, add scripts. `(diff from phase1)`
+5. ./src/index.css `new`
+
+```css
+body {
+  color: white;
+  background-color: grey;
+}
+```
+
+6. package.json, add scripts. `(only webpack command.)`
 
 ```json
 "scripts": {
@@ -73,7 +86,15 @@ export default class HelloMessage extends React.Component {
 }
 ```
 
-6. ./src/webpack.config.js `(diff from phase2).`
+7. ./src/babel.config.json `(add one preset).`
+
+```json
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+8. ./src/webpack.config.js `(add css loader module).`
 
 ```js
 const path = require('path');
@@ -97,20 +118,16 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 };
 ```
 
-7. ./src/babel.config.json
-
-```json
-{
-  "presets": ["@babel/preset-env"]
-}
-```
-
-8. Run the html file. `(diff from phase1).`
+9. Run the html file.
 
 ```bash
 $ npm run build
@@ -118,11 +135,15 @@ $ cd public
 $ open index.html
 ```
 
-9. 总结，相对于 phase 2 ，改变如下：
+10. 总结，相对于 phase 2 ，改变如下：
 
 ```diff
 + babel 的 npm 安装内容改变
-+ index.js 传输的参数改变
++ 增加了 css loader 的安装
++ index.js 向下传输的参数改变
++ index.js 引进了 css file
++ 增加了一个 css 文件
 + package.json 的 scripts 改回直接使用 webpack 命令
-+ web.config.js 文件中加入了 babel-loader 的配置
++ web.config.js 文件中加入了 babel-loader 和 css loader 的配置。
++ babel.config.json 内容改变
 ```
