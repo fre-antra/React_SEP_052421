@@ -1,13 +1,13 @@
-## This project is just for react + webpack + html + (JSX/babel-loader) + css-loader
+## This project is just for react + webpack + html + (JSX/babel-loader) + css-loader + HtmlWebpackPlugin
 
-- Phase 3: webpack + loader
-- `Works on 6/18/2021`
+- Phase 4: webpack + loader + HtmlWebpackPlugin
+- `Works on 6/19/2021`
 
 ### Dependencies version
 
 - webpack 5
 
-1. Install dependencies. `(add css loader).`
+1. Install dependencies. `(add HtmlWebpackPlugin).`
 
 ```bash
 $ npm init -y
@@ -18,9 +18,11 @@ $ npm install --save-dev webpack webpack-cli
 $ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
 
 $ npm install --save-dev css-loader style-loader
+
+$ npm i --save-dev html-webpack-plugin
 ```
 
-2. ./public/index.html
+2. ./public/index.html `delete script tag`
 
 ```html
 <!DOCTYPE html>
@@ -33,13 +35,11 @@ $ npm install --save-dev css-loader style-loader
   </head>
   <body>
     <div id="root"></div>
-    <!-- important -->
-    <script src="../dist/main.js"></script>
   </body>
 </html>
 ```
 
-3. ./src/index.js `(add css file & message changed).`
+3. ./src/index.js `add message`
 
 ```js
 import React from 'react';
@@ -50,54 +50,18 @@ import './index.css';
 
 ReactDOM.render(
   React.createElement(HelloMessage, {
-    message: '< Html + React + Webpack + JSX + Babel-loader + CSS-loader >',
+    message:
+      '< Html + React + Webpack + JSX + Babel-loader + CSS-loader + Plugin >',
   }),
   document.getElementById('root')
 );
 ```
 
-4. ./src/components/HelloMessage.js
-
-```js
-import React from 'react';
-
-export default class HelloMessage extends React.Component {
-  render() {
-    // JSX
-    return <h2>{this.props.message} success!</h2>;
-  }
-}
-```
-
-5. ./src/index.css `new`
-
-```css
-body {
-  color: white;
-  background-color: grey;
-}
-```
-
-6. package.json, add scripts. `(only webpack command.)`
-
-```json
-"scripts": {
-  "build": "webpack"
-}
-```
-
-7. ./src/babel.config.json `(add one preset).`
-
-```json
-{
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
-}
-```
-
-8. ./src/webpack.config.js `(add css loader module).`
+4. ./src/webpack.config.js `(add HtmlWebpackPlugin).`
 
 ```js
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -124,25 +88,33 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
 ```
 
-9. Run the html file.
+4. Run the html file.
 
 ```bash
 $ npm run build
-$ cd public
+$ cd dist
 $ open index.html
 ```
 
-10. 总结，相对于 phase 2 ，改变如下：
+5. 总结，相对于 phase 3 ，改变如下：
 
 ```diff
-+ 增加了 css loader 的安装
++ 增加 npm HtmlWebpackPlugin 的安装
+- 删除 index.html 中的 script 部分。
 + index.js 向下传输的参数改变
-+ index.js 引进了 css file
-+ 增加了一个 css 文件
-+ package.json 的 scripts 改回直接使用 webpack 命令
-+ web.config.js 文件中加入了 babel-loader 和 css loader 的配置。
-+ babel.config.json 内容改变
++ web.config.js 文件中加入了 HtmlWebpackPlugin 的配置。
++ 最后运行文件是 ./dist/index.html
 ```
+
+6. 为什么要加入 HtmlWebpackPlugin？
+
+  - 自动生成 dist 下面的 html 文件，并自动添加 script tag。
+  - html-webpack-plugin 的作用是：当使用 webpack打包时，创建一个 html 文件，并把 webpack 打包后的静态文件自动插入到这个 html 文件当中。
