@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.render(
     React.createElement(HelloMessage, {
-        message: '< Html + React + Webpack + Babel-loader + css-loader>',
+        message: '< Html + React + Webpack + Babel-loader + css-loader + plugin>',
     }),
     document.getElementById('root')
 );
