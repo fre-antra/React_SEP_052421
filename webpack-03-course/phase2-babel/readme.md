@@ -1,4 +1,4 @@
-## This project is just for react + webpack + html + (JSX/babel)
+## This project is a demostration about react + webpack + html + (JSX/babel).
 
 - Phase 2: webpack + babel
 - `Works on 6/18/2021`
@@ -7,7 +7,7 @@
 
 - webpack 5
 
-1. Install dependencies. `(diff from phase1).`
+1. Install dependencies. `(add babel).`
 
 ```bash
 $ npm init -y
@@ -27,7 +27,7 @@ $ npm install --save-dev @babel/core @babel/cli @babel/preset-env
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Phase1-origin</title>
+    <title>Phase2-babel</title>
   </head>
   <body>
     <div id="root"></div>
@@ -37,7 +37,7 @@ $ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 </html>
 ```
 
-3. ./src/index.js `(diff from phase1).`
+3. ./src/index.js `(message changed).`
 
 ```js
 import React from 'react';
@@ -52,7 +52,7 @@ ReactDOM.render(
 );
 ```
 
-4. ./src/components/HelloMessage.js `(diff from phase1).`
+4. ./src/components/HelloMessage.js `(Using JSX).`
 
 ```js
 import React from 'react';
@@ -65,7 +65,7 @@ export default class HelloMessage extends React.Component {
 }
 ```
 
-5. package.json, add scripts. `(diff from phase1).`
+5. package.json, add scripts. `(add new scripts).`
 
 ```json
 "scripts": {
@@ -75,7 +75,7 @@ export default class HelloMessage extends React.Component {
 }
 ```
 
-6. ./src/webpack.config.js `(diff from phase1).`
+6. ./src/webpack.config.js `(changed entry).`
 
 ```js
 const path = require('path');
@@ -90,7 +90,7 @@ module.exports = {
 };
 ```
 
-7. ./src/babel.config.json `new`
+7. ./src/babel.config.json `(new)`
 
 ```json
 {
@@ -106,7 +106,7 @@ $ cd public
 $ open index.html
 ```
 
-9. 总结，相对于 phase 1 ，改变如下：
+9. 相对于 phase 1 ，改变如下：
 
 ```diff
 + babel 的 npm 安装
@@ -115,4 +115,10 @@ $ open index.html
 + package.json 的 scripts 增加了 babel 命令
 + web.config.js 文件中 entry 的位置修改为 babel 生成的文件。
 + 增加 Babel 的配置文件，‘babel.config.json’
+```
+
+10. 总结：
+
+```diff
++ 这个项目展示的是如何使用 webpack 把 js(包含 JSX ) 和 react 还有 html 捆绑起来运行，因为包含了 JSX，所以需要增加 babel，并先把所有 js 和 JSX 转化放进 lib 文件夹，然后再使用 webpack 连接 lib 里面的文件。
 ```

@@ -1,4 +1,4 @@
-## This project is just for react + webpack + html. (without jsx syntax, css files and image files.)
+## This project is a demostration about react + webpack + html. (without jsx syntax, css files and webpack plugin.)
 
 - `Works on 6/18/2021`
 
@@ -90,4 +90,10 @@ module.exports = {
 $ npm run build:webpack
 $ cd public
 $ open index.html
+```
+
+8. 总结：
+
+```diff
++ 这个项目展示的是如何使用 webpack 把 js(非 JSX ) 和 react 还有 html 捆绑起来运行。
 ```

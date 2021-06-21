@@ -1,4 +1,4 @@
-## This project is just for react + webpack + html + (JSX/babel-loader) + css-loader
+## This project is a demostration about react + webpack + html + (JSX/babel-loader) + css-loader
 
 - Phase 3: webpack + loader
 - `Works on 6/18/2021`
@@ -29,7 +29,7 @@ $ npm install --save-dev css-loader style-loader
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Phase1-origin</title>
+    <title>Phase3-loader</title>
   </head>
   <body>
     <div id="root"></div>
@@ -39,7 +39,7 @@ $ npm install --save-dev css-loader style-loader
 </html>
 ```
 
-3. ./src/index.js `(add css file & message changed).`
+3. ./src/index.js `(import css file & message changed).`
 
 ```js
 import React from 'react';
@@ -94,7 +94,7 @@ body {
 }
 ```
 
-8. ./src/webpack.config.js `(add css loader module).`
+8. ./src/webpack.config.js `(add babel loader & css loader module).`
 
 ```js
 const path = require('path');
@@ -138,7 +138,7 @@ $ open index.html
 10. 总结，相对于 phase 2 ，改变如下：
 
 ```diff
-+ 增加了 css loader 的安装
++ 增加了 css loader 和 babel loader 的安装
 + index.js 向下传输的参数改变
 + index.js 引进了 css file
 + 增加了一个 css 文件
@@ -146,3 +146,10 @@ $ open index.html
 + web.config.js 文件中加入了 babel-loader 和 css loader 的配置。
 + babel.config.json 内容改变
 ```
+
+11. 总结：
+
+```diff
++ 这个项目展示的是如何使用 loader 把 css 和 babel 整合进 webpack 当中的过程。
+```
+

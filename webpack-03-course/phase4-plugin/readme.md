@@ -1,4 +1,4 @@
-## This project is just for react + webpack + html + (JSX/babel-loader) + css-loader + HtmlWebpackPlugin
+## This project is a demostration about react + webpack + html + (JSX/babel-loader) + css-loader + HtmlWebpackPlugin
 
 - Phase 4: webpack + loader + HtmlWebpackPlugin
 - `Works on 6/19/2021`
@@ -22,7 +22,7 @@ $ npm install --save-dev css-loader style-loader
 $ npm i --save-dev html-webpack-plugin
 ```
 
-2. ./public/index.html `delete script tag`
+2. ./public/index.html `(delete script tag)`
 
 ```html
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ $ npm i --save-dev html-webpack-plugin
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Phase1-origin</title>
+    <title>Phase4-plugin</title>
   </head>
   <body>
     <div id="root"></div>
@@ -39,7 +39,7 @@ $ npm i --save-dev html-webpack-plugin
 </html>
 ```
 
-3. ./src/index.js `add message`
+3. ./src/index.js `(add message)`
 
 ```js
 import React from 'react';
@@ -118,4 +118,4 @@ $ open index.html
 6. 为什么要加入 HtmlWebpackPlugin？
 
 - 自动生成 dist 下面的 html 文件，并自动添加 script tag。
-- html-webpack-plugin 的作用是：当使用 webpack 打包时，创建一个 html 文件，并把 webpack 打包后的静态文件自动插入到这个 html 文件当中。
+- html-webpack-plugin 的作用是：当使用 webpack 打包时，创建一个 html 文件，并把 webpack 打包后的静态 js 文件自动加入到这个 html 文件当中。
