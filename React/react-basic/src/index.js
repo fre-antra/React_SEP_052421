@@ -3,7 +3,129 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let test;
+class Counter extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      counter: 0,
+    };
+    test = this;
+  }
+  handleAdd = () => {
+    this.setState({ counter: this.state.counter + 1 });
+    this.setState({ counter: this.state.counter + 1 });
+  };
+  handleShowCounter = () => {
+    console.log(this === test);
+    setTimeout(() => {
+      alert(this.state.counter);
+    }, 3000);
+  };
+
+  render() {
+    console.log(this === test);
+
+    return (
+      <>
+        <h1>Counter:{this.state.counter}</h1>
+        <button onClick={this.handleAdd}>+</button>
+        <button onClick={this.handleShowCounter}>Show Counter After 3s</button>
+      </>
+    );
+  }
+}
+
+let counterRef = 0;
+const FcCounter = () => {
+  const [counter, setCounter] = React.useState(0);
+  counterRef = counter;
+
+  const handleShowCounter = () => {
+    setTimeout(() => {
+      alert(counterRef);
+    }, 3000);
+  };
+  return (
+    <>
+      <h1>Counter:{counter}</h1>
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+      >
+        +
+      </button>
+      <button onClick={handleShowCounter}>Show Counter After 3s</button>
+    </>
+  );
+};
+
+//let firstCall = true;
+const FnComponnet = () => {
+  const [num, setNum] = React.useState(0);
+  const firstCalRef = React.useRef(true);
+  //const [firstCall, setFirstCall] = React.useState(true); // flag
+  React.useEffect(() => {
+    console.log('didMount');
+  }, []);
+
+  React.useEffect(() => {
+    if (firstCalRef.current !== true) {
+      console.log('didUpdate');
+    } else {
+      firstCalRef.current = false;
+    }
+    return () => {
+      console.log('WillUnmount');
+    };
+  }, [num]);
+
+  return <h1 onClick={() => setNum(num + 1)}>FC ,ClickTimes: {num}</h1>;
+};
+
+class SiblingComponent extends React.Component {
+  constructor(...args) {
+    super(...args);
+    console.log('Sibling-constructor');
+  }
+  shouldComponentUpdate() {
+    console.log('Sibling-ShouldComponentUpdate');
+    return true;
+  }
+  componentDidMount() {
+    console.log('Sibling-componentDidMount');
+  }
+  componentDidUpdate() {
+    console.log('Sibling-componentDidUpdate');
+  }
+  render() {
+    return <h1>SiblingComponent</h1>;
+  }
+}
+
+class MyApp extends React.Component {
+  state = {
+    showApp: true,
+  };
+  render() {
+    return (
+      <>
+        {this.state.showApp ? <Counter /> : null}
+        <SiblingComponent></SiblingComponent>
+        <button
+          onClick={() => {
+            this.setState({ showApp: !this.state.showApp });
+          }}
+        >
+          Taggle App
+        </button>
+      </>
+    );
+  }
+}
+
+ReactDOM.render(<MyApp />, document.getElementById('root'));
 //ReactDDOM.render(React.createElement(), document.getElementById('root'));
 
 // foo(foo2());
