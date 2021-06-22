@@ -5,6 +5,21 @@ import React from "react";
  在 componentDidUpdate 判断参数是否变化，变化就调用请求函数重新请求数据；
  在 componentWillUnmount 生命周期取消发送请求。
  */
+// React.memo
+class SubApp extends React.PureComponent {
+  constructor(...args) {
+    super(...args);
+    console.log('Subapp-constructor')
+  }
+
+  // 三种触发rerender的行为 this.setProps(), setState() forceUpdate()
+  // 只要触发了重渲染 子组件就会跟着重新渲染 我们可以用shouldComponentUpdate方法
+  // React.PureComponent 和 React.memo 让子组件不进行不必要的重新渲染
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return nextProps.age !== this.props.age;
+  }
+}
+
 class App extends React.Component {
 
   state = {
@@ -34,6 +49,7 @@ class App extends React.Component {
         <>
           <h1>Hello {this.state.name}</h1>
           <button onClick={this.handleClick}>Change Name</button>
+          <SubApp/>
         </>
     )
   }
