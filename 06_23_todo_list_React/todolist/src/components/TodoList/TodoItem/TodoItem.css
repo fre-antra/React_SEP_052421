@@ -1,0 +1,8 @@
+.btn-remove {
+  background-color: transparent;
+  color: rgb(211, 68, 68);
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+}
