@@ -13,7 +13,7 @@ const SubTwo = () => {
 
   return (
     <>
-      <p>Counter:{counter}</p>
+      <p>SubTwo Counter(functional):{counter}</p>
       <button
         onClick={() => {
           setCounter(counter + 1);

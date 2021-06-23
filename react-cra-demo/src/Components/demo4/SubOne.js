@@ -9,8 +9,14 @@ class SubOne extends Component {
   }
 
   handleAdd = () => {
-    this.setState({ counter: this.state.counter + 1 });
     // this.setState({ counter: this.state.counter + 1 });
+    // this.setState({ counter: this.state.counter + 1 });
+    this.setState((pre) => {
+      return { counter: pre.counter + 1 };
+    });
+    this.setState((pre) => {
+      return { counter: pre.counter + 1 };
+    });
   };
 
   handleShowCounter = () => {
@@ -22,7 +28,7 @@ class SubOne extends Component {
   render() {
     return (
       <div>
-        <p>SubOne Counter:{this.state.counter}</p>
+        <p>SubOne Counter(class):{this.state.counter}</p>
         <button onClick={this.handleAdd}>+</button>
         <button onClick={this.handleShowCounter}>Show Counter After 3s</button>
       </div>
