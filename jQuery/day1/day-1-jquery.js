@@ -27,7 +27,8 @@ class MyQuery {
     this.elements.forEach(
       (ele, index) => {
         // this.elementsArr[index] = getComputedStyle(ele).display;
-        this.elementsArr[index] = getComputedStyle(ele).display;
+        this.elementsArr[index] ='';
+        this.elementsArr[index] = ele.style;
         console.log(this.elementsArr);
         ele.style.display = 'none'
       }

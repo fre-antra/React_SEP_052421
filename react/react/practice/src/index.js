@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-
+import AppFn from './AppFn'
+import AppClass from './AppClass.js'
 let test;
 class Counter extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       counter: 0,
-      // counter2: 1,
+      counter2: 1,
     };
     console.log('counterConstructor')
     test = this;
@@ -20,6 +21,9 @@ class Counter extends React.Component {
 
     this.setState({ counter: this.state.counter + 1 }, () => {
       console.log("firstCall", this.state.counter);
+    });
+    this.setState({ counter2: this.state.counter2 + 1 }, () => {
+      console.log("firstCallCounter2", this.state.counter2);
     });
     console.log("test2");
     // setTimeout(()=>{
@@ -87,7 +91,7 @@ class Counter extends React.Component {
 
   render() {
     // console.log(this === test);
-    console.log("render, this.state.counter:", this.state.counter);
+    console.log("render, this.state.counter:", this.state);
     return (
       <>
         <h1>Counter:{this.state.counter}</h1>
@@ -183,12 +187,16 @@ class MyApp extends React.Component {
         >
           Taggle App
         </button>
+
+        {/* <AppFn />
+        <AppClass /> */}
       </>
     );
   }
 }
 
 ReactDOM.render(<MyApp />, document.getElementById("root"));
+// ReactDOM.render(<AppFn />, document.getElementById("root"));
 //ReactDDOM.render(React.createElement(), document.getElementById('root'));
 
 // foo(foo2());
