@@ -1,32 +1,38 @@
 import React from 'react';
 import './App.css';
 
-
-
-// React.memo
 class SubApp extends React.Component {
   constructor(props) {
     super(props);
     console.log('SubApp-contructor');
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (nextProps.age !== this.props.age) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   componentDidMount() {
     console.log('SubApp-didMount');
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    /*
+    console.log('props', nextProps === this.props); // props will always be a new object, even if it doesn't exist
+    console.log('state', nextState === this.state); // if state doesn't exist, it's null
+    */
+    if (nextProps.age !== this.props.age) {
+      console.log('SubApp-shouldComponentUpdate', true);
+      return true;
+    } else {
+      console.log('SubApp-shouldComponentUpdate', false);
+      return false;
+    }
+  }
+
   componentDidUpdate() {
     console.log('SubApp-didUpdate');
   }
+
   componentWillUnmount() {
-    console.log('SubApp-WillUnmount');
+    console.log('SubApp-willUnmount');
   }
+
   render() {
     console.log('SubApp-render');
     return (
@@ -43,14 +49,15 @@ class App extends React.Component {
     super(props);
     console.log('App-contructor');
     this.state = {
-      name: 'patrick',
+      name: 'A',
       age: 18,
     };
   }
 
   data = {
-    name: 'patrick',
+    name: 'B',
   };
+
   shouldComponentUpdate() {
     console.log('App-shouldComponentUpdate');
     return true;
@@ -58,33 +65,36 @@ class App extends React.Component {
 
   handlerClick = () => {
     this.setState({
-      name: 'Sam',
+      name: 'C',
     });
   };
+
   handlerClickAge = () => {
     this.setState({
       age: 19,
     });
   };
+
   handlerClickData = () => {
     this.data = {
       ...this.data,
       name: 'Changed',
     };
   };
+
   componentDidMount() {
     console.log('App-didMount');
   }
+
   componentDidUpdate() {
     console.log('App-didUpdate');
   }
+
   componentWillUnmount() {
-    console.log('App-WillUnmount');
+    console.log('App-willUnmount');
   }
+
   render() {
-    let a = null;
-    let b = null;
-    console.log(a === b);
     console.log('App-render');
     return (
       <>
@@ -93,9 +103,8 @@ class App extends React.Component {
         <h3>Hello {this.data.name}</h3>
         <button onClick={this.handlerClick}>Change Name</button>
         <button onClick={this.handlerClickAge}>Change Age</button>
-
         <button onClick={this.handlerClickData}>Change Name Data</button>
-        <SubApp></SubApp>
+        <SubApp age={this.state.age} />
       </>
     );
   }
