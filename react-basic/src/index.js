@@ -1,9 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const FnComponnet = () => {
+  const [num, setNum] = React.useState(0);
+  const firstCalRef = React.useRef(true);
+  //const [firstCall, setFirstCall] = React.useState(true); // flag
+  React.useEffect(() => {
+    console.log("didMount");
+  }, []);
+
+  React.useEffect(() => {
+    if (firstCalRef.current !== true) {
+      console.log("didUpdate");
+    } else {
+      firstCalRef.current = false;
+    }
+    return () => {
+      console.log("WillUnmount");
+    };
+  }, [num]);
+
+  return <h1 onClick={() => setNum(num + 1)}>FC ,ClickTimes: {num}</h1>;
+};
+
+ReactDOM.render(<FnComponnet />, document.getElementById("root"));
+// ReactDOM.render(<App />, document.getElementById("root"));
 //ReactDDOM.render(React.createElement(), document.getElementById('root'));
 
 // foo(foo2());
