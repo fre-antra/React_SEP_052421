@@ -3,7 +3,7 @@ const SRC_DIR = __dirname;
 const DIST_DIR = path.join(__dirname, "./public");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// console.log("SRC_DIR", `${SRC_DIR}/index.js`, "dir", DIST_DIR);
+console.log("SRC_DIR", `${SRC_DIR}/index.js`, "dir", DIST_DIR);
 module.exports = {
   //entry point. webpack will start from index.js as the entry point
   entry: `${SRC_DIR}/index.js`,

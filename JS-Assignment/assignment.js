@@ -310,10 +310,10 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
 // 19. Write a JavaScript function that returns array elements larger than a number.
 // i: array of number, target; o: array of number(larger than target)
 function largerNumber(array, target) {
-  return array.filter((item) => item > target);
+  return array.filter((item) => item > target).sort((a, b) => a - b)[0];
 }
 
-console.log(largerNumber([2, 6, 8, , 3, 4, 5, 1, 3, 10], 3));
+console.log('19',largerNumber([2, 6, 8, , 3, 4, 5, 1, 3, 10], 3));
 
 // 20. Write a JavaScript function that generates a string id (specified length) of random characters.
 // Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -362,13 +362,13 @@ console.log(generateId(8));
 //constrain: Is order matter?
 
 var subsetArr = function (array, len) {
-  var helper = function (k, mutateArr, store, results) {
+  var helper = function (k, mutateArr, store) {
     if (k === 0) {
       results.push(store);
       return;
     }
     for (var j = 0; j < mutateArr.length; j++) {
-      helper(k - 1, mutateArr.slice(j + 1), store.concat([mutateArr[j]]), results);
+      helper(k - 1, mutateArr.slice(j + 1), store.concat([mutateArr[j]]));
     }
   };
   var results = [];
@@ -377,7 +377,7 @@ var subsetArr = function (array, len) {
     // helper(i, array, [], results);
   // }
   // results.push(array);
-  helper(len, array, [], results);
+  helper(len, array, []);
   return results;
 };
    
