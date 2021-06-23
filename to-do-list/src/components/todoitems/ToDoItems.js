@@ -1,11 +1,14 @@
 import React from 'react'
 import ToDoItem from './todoitem/ToDoItem'
+import './toDoItems.css'
 
-export default function ToDoItems() {
+export default function ToDoItems({ toDoItems, deleteItem }) {
+  // console.log('toDoItems, ', toDoItems);
   return (
-    <div>
-      <h3>toDoItems</h3>
-      <ToDoItem />
-    </div>
-  )
+    <ul className='to-do-list-ul'>
+      {toDoItems.map((item, index) => (
+        <ToDoItem key={index} item={item} deleteItem={deleteItem} />
+      ))}
+    </ul>
+  );
 }

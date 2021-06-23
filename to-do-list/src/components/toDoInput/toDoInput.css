@@ -1,0 +1,20 @@
+.to-do-list-form {
+  text-align: center;
+  padding: 30px;
+}
+
+.to-do-list-input {
+  min-width: 400px;
+  margin: 0px 20px;
+}
+
+.to-do-list-submit {
+  background-color: rgb(44, 203, 203); /* Green */
+  border: none;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+}

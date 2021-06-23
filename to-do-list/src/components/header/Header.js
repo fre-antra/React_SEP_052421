@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './header.css'
 
 export default function Header() {
   return (
-    <div>
-      header
+    <div className='header'>
+      Create your To-Do-List
     </div>
   )
 }
