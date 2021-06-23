@@ -13,6 +13,9 @@ class SubApp extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     /*
+    This method only exists as a performance optimization. Do not rely on it to “prevent” a rendering, as this can lead to bugs. Consider using the built-in PureComponent instead of writing shouldComponentUpdate() by hand. PureComponent performs a shallow comparison of props and state, and reduces the chance that you’ll skip a necessary update.
+    */
+    /*
     console.log('props', nextProps === this.props); // props will always be a new object, even if it doesn't exist
     console.log('state', nextState === this.state); // if state doesn't exist, it's null
     */
