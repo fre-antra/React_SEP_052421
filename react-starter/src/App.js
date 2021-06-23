@@ -1,4 +1,6 @@
 import React from "react";
+import Layout from "./components/Layout/Layout";
+import TodoList from "./components/TodoList/TodoList";
 
 /**
  在 componentDidMount 初始化发请求；
@@ -46,11 +48,9 @@ class App extends React.Component {
 
   render() {
     return (
-        <>
-          <h1>Hello {this.state.name}</h1>
-          <button onClick={this.handleClick}>Change Name</button>
-          <SubApp/>
-        </>
+        <Layout>
+          <TodoList/>
+        </Layout>
     )
   }
 }

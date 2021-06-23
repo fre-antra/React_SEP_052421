@@ -30,8 +30,8 @@ const FcCounter = () => {
 
 ReactDOM.render(
     <React.StrictMode>
-      {/*<App />*/}
-      <App1/>
+      <App/>
+      {/*<App1/>*/}
     </React.StrictMode>,
     document.getElementById('root')
 );
