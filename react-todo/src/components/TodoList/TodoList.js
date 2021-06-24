@@ -9,16 +9,32 @@ class TodoList extends React.Component {
     todolist: [],
   };
 
-  handleRemoveTodo = (id) => {
-    deleteTodo(id)
-      .then(() => {
-        this.setState({
-          todolist: this.state.todolist.filter((todo) => todo.id !== id),
+  // handleRemoveTodo = (id) => {
+  //   deleteTodo(id)
+  //     .then(() => {
+  //       this.setState({
+  //         todolist: this.state.todolist.filter((todo) => todo.id !== id),
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.warn(err);
+  //     });
+  // };
+
+  handlerRemove = (event) => {
+    // event delegation
+    if (event.target.className === "btn-remove") {
+      const id = event.target.id;
+      deleteTodo(+id) // + prefix to convert to number
+        .then(() => {
+          this.setState({
+            todolist: this.state.todolist.filter((todo) => +todo.id !== +id),
+          });
+        })
+        .catch((err) => {
+          console.warn(err);
         });
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
+    }
   };
 
   render() {
@@ -28,9 +44,9 @@ class TodoList extends React.Component {
           <h4 className="heading">TodoList</h4>
         </header>
         <input type="text" className="todolist__input" placeholder="What are you going to do?" />
-        <ul className="todolist__content">
+        <ul className="todolist__content" onClick={this.handlerRemove}>
           {this.state.todolist.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} removeTodo={this.handleRemoveTodo}></TodoItem>
+            <TodoItem key={todo.id} todo={todo}></TodoItem>
           ))}
         </ul>
       </section>

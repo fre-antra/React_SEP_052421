@@ -6,7 +6,7 @@ function TodoItem(props) {
   return (
     <li className="todolist__content-item">
       <span>{todo.title}</span>
-      <button id={todo.id} className="btn-remove" onClick={() => removeTodo(todo.id)}>
+      <button id={todo.id} className="btn-remove">
         X
       </button>
     </li>
