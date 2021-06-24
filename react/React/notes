@@ -1,0 +1,113 @@
+npx: download, run, delete
+
+You can control which files crawlers may access on your site with a robots.txt file. A robots.txt file lives at the root of your site. So, for site www.example.com, 
+the robots.txt file lives at www.example.com/robots.txt. robots.txt is a plain text file that follows the Robots Exclusion Standard. 
+A robots.txt file consists of one or more rules. Each rule blocks or allows access for a given crawler to a specified file path in that website. 
+Unless you specify otherwise in your robots.txt file, all files are implicitly allowed for crawling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+react: class component/ function component
+1. You get lifecycle hooks!
+React provides a bunch of so-called lifecycle hooks - or methods that are called at certain points in the component's lifecycle. 
+You can read about them in detail here. Basically, there are methods for when the component is rendered and removed to and from the DOM, 
+as well as whenever it's updated with new state or props.
+
+2. You get internal state!
+Although most state can be passed down as props from containing components or a central state management library like Redux, 
+some state is internal to a component and doesn't need to be anywhere else. This could be whether or not an accordion component is open or closed, 
+or perhaps the currently selected item in a dropdown.
+
+Class-based components give you a property called this.state to read state from and a method this.setState that lets you update it. 
+There's actually tons of stuff you can do with internal state, and I wrote about it here.
+
+3. You (can) get performance increases!
+Another great aspect of class-based components is that you can decide whether or not they should update. This might or might not be 
+important to your application - but when it is, there's some pretty simple things you can do to boost performance with this kind of component.
+
+One way to improve performance (i.e. the amount of re-renders your component does) is to implement a shouldComponentUpdate method. 
+This method gives you the next and current props and state, and lets you implement a boolean expression that triggers a re-render or not.
+
+
+A much simpler way which is good enough for most cases, is to extend the React.PureComponent class instead of React.Component. 
+This one comes with a simple implementation of the shouldComponentUpdate method, that just checks whether the current and next state and props are equal.
+Turns out, this little trick alone can make huge and slow application quicker in a matter of four characters!
+
+
+
+jsx fragment:
+must have parent !!!!
+<>
+...code
+</>
+
+
+
+some new in class:
+
+1. default implicit constructor() {}
+2. class field
+
+
+
+mutable way vs immutable way
+state = {
+    ...state,
+    name:"xxx",
+}
+
+immutable: trigger setter
+
+
+props:
+{}==={} //false diff object has diff refernence
+thus,
+always changed every time render event triggered
+which leads to update event!!!!!!
+
+
+
+
+
+
+
+setState() create vars every time!!!
+
+because every time [c,sc] is different vars created by
+useState, and only copy the value from previous one.
+however, there c is reference to the previous vars
+instead of current one which hold the value.
+thus it cause unupdate from closure
+
+
+
+
+
+
+
+componentDidMount
+componentDidUpdate
+componentWillUnmount
+shouldComponentUpdate
+
+PureComponent   shouldComponentUpdate  shallowCMP
+react.memo
+const Funcomponent = ()=> {
+    return (
+        <div>
+            Hiya!! I am a Funtional component
+        </div>
+    )
+}
+const MemodFuncComponent = React.memo(Funcomponent)
+use for mimic PureComponent

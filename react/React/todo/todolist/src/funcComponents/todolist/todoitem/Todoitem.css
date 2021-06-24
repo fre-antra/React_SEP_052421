@@ -1,0 +1,81 @@
+.item {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 4px solid rgb(255, 255, 255);
+}
+
+.item_body {
+  display: flex;
+  justify-content: left;
+  width: 60%;
+}
+
+.item_id {
+  background: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+
+.item_content {
+  display: inline-block;
+  background: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  width: 21.875rem;
+  font-size: 1.4rem;
+}
+
+.editButton {
+  font-size: 1.4rem;
+  margin: 0 0.25rem;
+  font-family: "Hind Siliguri", sans-serif;
+  background: none;
+  outline: none;
+  border: none;
+  color: rgb(0, 255, 0);
+  cursor: pointer;
+}
+
+.doneButton {
+  font-size: 1.4rem;
+  margin: 0 0.25rem;
+  font-family: "Hind Siliguri", sans-serif;
+  background: none;
+  outline: none;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+}
+
+.removeButton {
+  font-size: 1.4rem;
+  margin: 0 0.25rem;
+  font-family: "Hind Siliguri", sans-serif;
+  background: none;
+  outline: none;
+  border: none;
+  color: rgb(238, 0, 0);
+  cursor: pointer;
+}
+
+.crossline {
+  position: absolute;
+  background-color: tomato;
+  z-index: 1;
+  height: 2px;
+  width: 60%;
+  bottom: 1rem;
+}
+
+.editting {
+  background: white;
+  color: black;
+}

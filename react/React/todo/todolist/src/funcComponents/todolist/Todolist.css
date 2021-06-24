@@ -1,0 +1,45 @@
+.input_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.input_div .input {
+  padding: 0.5rem 1rem;
+  height: 3.125rem;
+  width: 26.526rem;
+  outline: none;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  margin: 0.25rem;
+  border-radius: 1.56rem;
+}
+
+.addButton {
+  height: 3.125rem;
+  width: 3.125rem;
+  border-radius: 1.56rem;
+  outline: none;
+  border: none;
+  /* background-color: rgb(255,255,255);
+    color: rgb(0, 255, 0); */
+  margin: 0.156rem;
+  cursor: pointer;
+  background-color: rgb(0, 255, 0);
+  color: rgb(255, 255, 255);
+}
+
+.addButton:hover {
+  opacity: 0.7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
