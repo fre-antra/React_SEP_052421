@@ -38,11 +38,9 @@ class TodoList extends React.Component {
   }
 
   handlerDelete = id => {
-    deleteTodo(id).then(data => {
-      this.setState({
-        todoList: this.state.todoList.filter(todo => todo.id !== id)
-      })
-    }).catch(e => console.log(e))
+    this.setState({
+      todoList: this.state.todoList.filter(x => x.id !== id)
+    })
   }
 
   render() {
