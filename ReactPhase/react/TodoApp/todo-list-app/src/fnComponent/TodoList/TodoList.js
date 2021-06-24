@@ -4,7 +4,6 @@ import ListItem from "./ListItem/ListItem";
 
 const TodoList = () => {
   const [todolist, setTodolist] = useState([]);
-  
 
   useEffect(() => {
     console.log("component Did Mount");
@@ -38,12 +37,7 @@ const TodoList = () => {
     // convert them to number
      +todoItem.id !== +id
     )
-    console.log(newTodoList);
-
-    // setTodolist({todolist: todolist.filter((todoItem) =>
-    //   // convert them to number
-    //    +todoItem.id !== +id
-    // )})
+    setTodolist(newTodoList)
     console.log("this is removeItem");
   };
 
