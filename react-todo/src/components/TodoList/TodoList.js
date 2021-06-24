@@ -1,13 +1,24 @@
 import React from "react";
 import "./TodoList.css";
 import TodoItem from "./TodoItem/TodoItem";
+import { getAllTodos, deleteTodo, addTodo } from "../../apis/TodoAPI";
+import { Todo } from "../../model/Todo";
 
 class TodoList extends React.Component {
   state = {
-    todolist: [
-      { id: 0, userId: 1, title: "buy a book", completed: false },
-      { id: 1, userId: 2, title: "buy a car", completed: false },
-    ],
+    todolist: [],
+  };
+
+  handleRemoveTodo = (id) => {
+    deleteTodo(id)
+      .then(() => {
+        this.setState({
+          todolist: this.state.todolist.filter((todo) => todo.id !== id),
+        });
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
   };
 
   render() {
@@ -19,11 +30,18 @@ class TodoList extends React.Component {
         <input type="text" className="todolist__input" placeholder="What are you going to do?" />
         <ul className="todolist__content">
           {this.state.todolist.map((todo) => (
-            <TodoItem key={todo.id} todo={todo}></TodoItem>
+            <TodoItem key={todo.id} todo={todo} removeTodo={this.handleRemoveTodo}></TodoItem>
           ))}
         </ul>
       </section>
     );
+  }
+  componentDidMount() {
+    getAllTodos().then((data) => {
+      this.setState({
+        todolist: data,
+      });
+    });
   }
 }
 
