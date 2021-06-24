@@ -1,0 +1,48 @@
+:root {
+  --height-header: 60px;
+  --height-todolist-header: 50px;
+  --height-todolist: 300px;
+  --height-todolist-item: 40px;
+
+  --width-todolist: 600px;
+  --width-todolist-item-title: 580px;
+
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  --color-primary: rgb(94, 245, 245);
+  --color-secondary: rgb(223, 219, 219);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-left: 3rem;
+  background-color: var(--color-primary);
+  height: var(--height-header);
+}
+
+
+.content {
+  padding-top: var(--height-header);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--height-todolist);
+  background-color: var(--color-secondary);
+}
