@@ -7,13 +7,6 @@ class TodoList extends React.Component {
     todolist: [],
   };
 
-  onClickRemove = (e) => {
-    console.log(e);
-    const id = e.target.id;
-    this.setState({ todolist: this.state.todolist.filter(todo => +todo.id !== +id) });
-    // id is String!!
-  };
-
   componentDidMount() {
     console.log();
     const baseUrl = 'https://jsonplaceholder.typicode.com';
@@ -21,8 +14,33 @@ class TodoList extends React.Component {
     fetch([baseUrl, todoPath].join('/'))
       .then((response) => response.json())
       .then((todolist) => this.setState({ todolist: todolist }));
-
   }
+
+  onClickRemove = (e) => {
+    console.log(e);
+    const id = e.target.id;
+    this.setState({ todolist: this.state.todolist.filter(todo => +todo.id !== +id) });
+    console.log(this.state.todolist);
+    // id is String!!
+  };
+
+  // addNewTodo = (e) => {
+  //   console.log(e.target.value);
+  //   console.log(typeof this.state.todolist);
+  //   if (e.key === 'Enter' && e.target.value !== '') {
+  //     console.log('addnewtodoshouldwork');
+  //     this.setState((state, props) => ({
+  //       todolist: state.todolist.push(
+  //         {
+  //           userId: 1,
+  //           id: this.state.todolist.length + 1,
+  //           title: e.target.value,
+  //           completed: false
+  //         }
+  //       )
+  //     }));
+  //   }
+  // };
 
   // state = {
   //   todolist: [
