@@ -21,6 +21,12 @@ export default class AppCounter extends Component {
     this.setState((prevSate) => ({
       count: prevSate.count + 1,
     }));
+    this.setState((prevSate) => ({
+      count: prevSate.count + 1,
+    }));
+    this.setState((prevSate) => ({
+      count: prevSate.count + 1,
+    }));
   };
 
   handleDelayedCount = () => {
@@ -41,10 +47,10 @@ export default class AppCounter extends Component {
         <h3>Counter Component</h3>
         <p>Counter Value : {this.state.count}</p>
         <button onClick={this.handleCountChange1}>
-          Increment Count (Callback)
+          Increment Count (Callback) +2
         </button>
         <button onClick={this.handleCountChange2}>
-          Increment Count (passing a function)
+          Increment Count (passing a function) +4
         </button>
         <button onClick={this.handleDelayedCount}>
           Show count after delay

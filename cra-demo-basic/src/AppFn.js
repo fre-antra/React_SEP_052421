@@ -1,9 +1,15 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  memo,
+  useLayoutEffect,
+} from "react";
 
 const AppFn = ({ name }) => {
   const [age, setAge] = useState(18);
   const mountRef = useRef(true);
-  useEffect(() => {
+  useLayoutEffect(() => {
     console.log("FunctionalApp-ComponentDidMount");
 
     return () => {
