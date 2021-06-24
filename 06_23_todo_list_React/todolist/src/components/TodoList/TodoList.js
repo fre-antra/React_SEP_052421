@@ -17,13 +17,31 @@ class TodoList extends React.Component {
   }
 
   onClickRemove = (e) => {
-    console.log(e);
     const id = e.target.id;
     this.setState({ todolist: this.state.todolist.filter(todo => +todo.id !== +id) });
     console.log(this.state.todolist);
     // id is String!!
   };
 
+  addNewTodo = (e) => {
+    // console.log(e.target.value);
+    // console.log(this.state.todolist); why its type is object?
+    if (e.key === 'Enter' && e.target.value !== '') {
+      let copyToDoList = [...this.state.todolist];
+      copyToDoList = [
+        {
+          userId: 1,
+          id: this.state.todolist.length + 1,
+          title: e.target.value,
+          completed: false
+        },
+        ...copyToDoList
+      ];
+      this.setState({ todolist: copyToDoList });
+    };
+  };
+
+  // doesn't work.....
   // addNewTodo = (e) => {
   //   console.log(e.target.value);
   //   console.log(typeof this.state.todolist);
@@ -42,13 +60,6 @@ class TodoList extends React.Component {
   //   }
   // };
 
-  // state = {
-  //   todolist: [
-  //     { id: 0, userId: 1, title: 'buy a book', completed: false },
-  //     { id: 1, userId: 2, title: 'buy a car', completed: false }
-  //   ]
-  // };
-
   render() {
     return (
       <section className="todolist">
@@ -57,6 +68,7 @@ class TodoList extends React.Component {
           type="text"
           className="todolist__input"
           placeholder="input here"
+          onKeyUp={this.addNewTodo}
         />
         <ul className="todolist__content">
           {this.state.todolist.map((todo) => (

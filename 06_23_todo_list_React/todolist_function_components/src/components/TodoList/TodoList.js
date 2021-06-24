@@ -19,23 +19,21 @@ const TodoList = () => {
     // id is String!!
   };
 
-  // addNewTodo = (e) => {
-  //   console.log(e.target.value);
-  //   console.log(typeof this.state.todolist);
-  //   if (e.key === 'Enter' && e.target.value !== '') {
-  //     console.log('addnewtodoshouldwork');
-  //     this.setState((state, props) => ({
-  //       todolist: state.todolist.push(
-  //         {
-  //           userId: 1,
-  //           id: this.state.todolist.length + 1,
-  //           title: e.target.value,
-  //           completed: false
-  //         }
-  //       )
-  //     }));
-  //   }
-  // };
+  const addNewTodo = (e) => {
+    if (e.key === 'Enter' && e.target.value !== '') {
+      let copyToDoList = [...todolist];
+      copyToDoList = [
+        {
+          userId: 1,
+          id: todolist.length + 1,
+          title: e.target.value,
+          completed: false
+        },
+        ...copyToDoList
+      ];
+      setTodolist(copyToDoList);
+    };
+  };
 
   return (
     <section className="todolist">
@@ -44,6 +42,7 @@ const TodoList = () => {
         type="text"
         className="todolist__input"
         placeholder="input here"
+        onKeyUp={addNewTodo}
       />
       <ul className="todolist__content">
         {todolist.map((todo) => (
