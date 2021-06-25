@@ -6,6 +6,7 @@ import { Todo } from "../../model/Todo";
 
 class TodoList extends React.Component {
   state = {
+    inputText: "",
     todolist: [],
   };
 
@@ -36,6 +37,24 @@ class TodoList extends React.Component {
         });
     }
   };
+  handleInputOnChange = (event) => {
+    this.setState({ inputText: event.target.value });
+  };
+  handleInputKeyUp = (event) => {
+    if (event.key === "Enter") {
+      const useId = 1;
+      const title = this.state.inputText;
+      const completed = false;
+      const newTodo = new Todo(useId, title, completed);
+      console.log(newTodo);
+      addTodo(newTodo).then((data) => {
+        this.setState({
+          inputText: "",
+          todolist: [data, ...this.state.todolist],
+        });
+      });
+    }
+  };
 
   render() {
     return (
@@ -43,7 +62,14 @@ class TodoList extends React.Component {
         <header className="todolist__header">
           <h4 className="heading">TodoList</h4>
         </header>
-        <input type="text" className="todolist__input" placeholder="What are you going to do?" />
+        <input
+          type="text"
+          className="todolist__input"
+          placeholder="What are you going to do?"
+          onChange={this.handleInputOnChange}
+          onKeyUp={this.handleInputKeyUp}
+          value={this.state.inputText}
+        />
         <ul className="todolist__content" onClick={this.handlerRemove}>
           {this.state.todolist.map((todo) => (
             <TodoItem key={todo.id} todo={todo}></TodoItem>
