@@ -1,0 +1,43 @@
+
+
+.content__card{
+    display: flex;
+    width: 500px;
+    height: 400px;
+    margin: 1rem;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.card__title{
+    padding: 10px 0;
+    height: 80px;
+}
+
+.card__content{
+    position: relative;
+    top: -6rem;
+   
+}
+.card__btn{
+    cursor: pointer;
+    width: 5rem;
+    height: 3rem;
+    color: white;
+    font-size: medium;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.card__btn:active{
+    opacity: 0;
+}
+
+
+/* @media  (max-width: 800px) {
+    .content__card {
+      width: 80%;
+    }
+  }
+   */

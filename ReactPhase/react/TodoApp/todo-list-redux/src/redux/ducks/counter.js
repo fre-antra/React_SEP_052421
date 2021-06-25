@@ -3,7 +3,7 @@ const initialState = {
     count: 0
 }
 
-// action
+// action (object)
 const INCREMENT = 'increment'
 
 export const increment = {
