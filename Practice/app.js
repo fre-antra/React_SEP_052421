@@ -259,3 +259,82 @@ console.log(prom)
 // }
 
 // $$('button.continue').html('Next Step..')
+
+// function foo(array, key) {
+//   let left = array.length - 2
+//   let right = array.length - 1
+//   count = 0
+//   while (right >= 0 && left >= 0) {
+//     if (array[right] === key && array[left] !== key) {
+//       count++
+//       array[right] = array[left]
+//       right--
+//       left--
+//       console.log('array1', array)
+//     } else if (array[right] !== key && array[left] === key) {
+//       left--
+//     } else {
+//       if (count > 0) {
+//         if (array[right] !== key && array[left] !== key) {
+//           array[right] = array[left]
+//           right--
+//           left--
+//           console.log('arraycount', array)
+//         } else if (array[right] !== key && array[left] === key) {
+//           left--
+//         } else {
+//           right--
+//           left--
+//         }
+//       } else {
+//         left--
+//         right--
+//       }
+//     }
+//   }
+//   if (array[0] === key) count++
+//   array.forEach((item, index) => {
+//     if (index < count) array[index] = key
+//   })
+
+//   console.log(array)
+//   console.log('left', left, 'right', right, 'count', count)
+//   return array
+// }
+
+// const arr = [1, 2, 3, 1, 2, 3, 3, 4]
+// const key = 3
+// console.log(foo(arr, key))
+
+class Objecttest {
+  constructor() {
+    this.test = 'hello'
+    this.fun = function () {
+      this.test = 'funchange'
+      return this.test
+    }.bind(this)
+  }
+
+  tester = function () {
+    this.test = 'testerchange'
+
+    return this.test
+  }
+}
+const a = new Objecttest()
+const b = new Objecttest()
+console.log('func   aaaaaa', a)
+console.log('func   bbbbbb', b)
+console.log('func  aaaaa test', a.test)
+console.log('func  bbbbb test', b.test)
+a.tester()
+// console.log('tester log return', a.tester())
+// console.log('fun log return', a.fun())
+// a.test = 'many'
+
+// console.log('func', a)
+
+// console.log('tester log return', a.tester())
+// console.log('fun log return', a.fun())
+const foo = a.tester
+console.log(foo)

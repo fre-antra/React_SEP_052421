@@ -15,6 +15,7 @@ class TodoList extends React.Component {
         this.setState(prevState => {
           return {
             ...prevState,
+            inputTodoItem: '',
             todolist: prevState.todolist.filter(
               todo => todo.id.toString() !== itemId
             ),
@@ -32,7 +33,6 @@ class TodoList extends React.Component {
   }
   handleInputEnterKey = e => {
     if (e.key === 'Enter') {
-      console.log('stateinout', addTodoAPI)
       const obj = {
         completed: false,
         title: this.state.inputTodoItem,
@@ -40,15 +40,12 @@ class TodoList extends React.Component {
       }
       addTodoAPI(obj).then(data => {
         this.setState(prevState => {
-          return { todolist: [data, ...prevState.todolist] }
+          return { inputTodoItem: '', todolist: [data, ...prevState.todolist] }
         })
       })
     }
   }
 
-  componentDidUpdate() {
-    console.log('In comp DidUpdateMount', this.state)
-  }
   componentDidMount() {
     // Setting the state to api result
     getTodoListAPI().then(json => {
