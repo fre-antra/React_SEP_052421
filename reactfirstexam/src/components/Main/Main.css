@@ -1,0 +1,22 @@
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid var(--color-gray);;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+
+  }
+
+  .card__title, .card__content{
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  .btn__changeColor{
+      border-radius: 5px;
+      padding: 10px;
+      color: white;
+      float: left;
+      position: relative;
+  }
