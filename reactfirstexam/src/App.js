@@ -1,11 +1,20 @@
-import './App.css';
+import Header from './components/Header/Header'
+import ContentBoxes from './components/ContentBoxes/ContentBoxes'
+import {data} from './DummyData'
+import React, {useState} from 'react'
 
 function App() {
+  const [color, setColor] = useState('')
+
+  const handleColor = (colorName) => {
+    console.log(colorName)
+    setColor(colorName);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        app
-      </header>
+    <div>
+      <Header color={color} />
+      <ContentBoxes data={data} handleColor={handleColor} />
     </div>
   );
 }
