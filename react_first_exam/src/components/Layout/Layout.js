@@ -21,7 +21,13 @@ const Layout = ({ data }) => {
       </header>
       <main className="container">
         {data.map((d) => (
-          <Card data={d} colorHandler={colorHandler} boxShadow={boxShadow} color={color} />
+          <Card
+            key={d.id}
+            data={d}
+            colorHandler={colorHandler}
+            boxShadow={boxShadow}
+            color={color}
+          />
         ))}
       </main>
     </>

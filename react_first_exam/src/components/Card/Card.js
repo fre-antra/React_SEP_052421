@@ -3,7 +3,7 @@ import "./Card.css";
 
 const Card = ({ data, colorHandler, boxShadow, color }) => {
   return (
-    <div key={data.id} className="card" style={color === data.color ? boxShadow : null}>
+    <div className="card" style={color === data.color ? boxShadow : null}>
       <div className="card__title">
         <h2>{data.title}</h2>
       </div>
