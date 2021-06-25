@@ -1,8 +1,8 @@
 import "./App.css";
 import DetailPage from "./fnComponent/DetailPage/DetailPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./redux/configureStore";
+// import { Provider } from "react-redux";
+// import store from "./redux/configureStore";
 
 // import Header from "./classComponent/Header/Header";
 // import TodoList from './classComponent/TodoList/TodoList'
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-        <Provider store={store}>
+        {/* <Provider store={store}> */}
           <header className="header">
             <Header />
           </header>
@@ -29,7 +29,7 @@ function App() {
               </Route>
             </Switch>
           </main>
-        </Provider>
+        {/* </Provider> */}
       </Router>
     </>
   );

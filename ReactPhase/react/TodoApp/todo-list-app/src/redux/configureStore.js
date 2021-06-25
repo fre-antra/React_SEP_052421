@@ -6,4 +6,4 @@ const reducer = combineReducers({
 })
 const store = createStore(reducer)
 
-export default reducer
+export default store
