@@ -22,18 +22,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-:root {
-  --height-header: 60px;
-  --height-todolist-header: 50px;
-  --height-todolist: 300px;
-  --height-todolist-item: 40px;
-
-  --width-todolist: 400px;
-  --width-todolist-item-title: 380px;
-
-  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
-  --color-primary: rgb(46, 103, 207);
-  --color-secondary: rgb(53, 52, 52);
-}
