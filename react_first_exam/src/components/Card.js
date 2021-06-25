@@ -1,18 +1,19 @@
 import '../style/Card.css';
 
 export default function Card(props) {
-  const { handleChangeTitle, color, title, content, isClick, index } = props;
+  const { handleChange, color, title, content, isClick, index } = props;
 
-  const boxShadow = isClick ? `4px 4px 2px ${color}` : 'none';
+  const boxShadow = isClick ? `10px 10px 4px ${color}` : 'none';
+  const border = isClick ? `1px solid ${color}` : 'none';
 
   const style = {
     color: `${color}`,
-    border: `1px solid ${color}`,
+    border: `${border}`,
     boxShadow: `${boxShadow}`,
   };
 
   const handleClick = () => {
-    handleChangeTitle({ title, color, index });
+    handleChange({ title, color, index });
   };
 
   return (

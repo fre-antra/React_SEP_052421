@@ -16,7 +16,7 @@ export default function Layout() {
   const [color, setColor] = useState('black');
   const [key, setKey] = useState('-1');
 
-  const handleChangeTitle = ({ title, color, index }) => {
+  const handleChange = ({ title, color, index }) => {
     setHead(title);
     setColor(color);
     setKey(index);
@@ -29,7 +29,7 @@ export default function Layout() {
         {colors.map((color, index) => (
           <Card
             key={index}
-            handleChangeTitle={handleChangeTitle}
+            handleChange={handleChange}
             color={color}
             title={title}
             content={content}
