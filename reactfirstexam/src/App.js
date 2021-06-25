@@ -30,4 +30,3 @@ function App() {
 }
 
 export default App
-// git commit -m "React first  exam, modularised code and changed css for "
