@@ -4,6 +4,9 @@ import "./Todolist.css";
 
 import Todoitem from "./todoitem/Todoitem.js";
 import eventHelper from "../../utils/eventHelper.js";
+
+import getAllTodo from "../../apis/todo.js";
+
 class Todolist extends React.Component {
   constructor(props) {
     super(props);
@@ -59,6 +62,10 @@ class Todolist extends React.Component {
 
   componentDidMount() {
     eventHelper.on(this.addBtn.current, "click", this.addChild);
+    // we can use event deligation!!!!! to prevent create thousands event listener!!!
+    // put parent a listener, and triggered by child
+    // use className to controll
+    // because event.target can get which element triggered this event!!
   }
 
   componentWillUnmount() {
@@ -69,6 +76,11 @@ class Todolist extends React.Component {
     const childHelper = {
       removeChild: this.removeChild,
       finishChild: this.finishChild,
+      // modify data usually done in the full data layer,
+      // because if we not modify original data before parent rerender,
+      // our child's modification will lost!!!!!!!!!
+
+      // here we miss the modifyChild!!!
     };
 
     return (

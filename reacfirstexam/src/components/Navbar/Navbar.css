@@ -1,0 +1,13 @@
+.navbar-container{
+    position: relative;
+    height: 4rem;
+    box-shadow: none;
+}
+
+.navbar{
+    height: 100%;
+}
+
+nav{
+    margin-left: 0;
+}

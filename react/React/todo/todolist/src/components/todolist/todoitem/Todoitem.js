@@ -87,6 +87,8 @@ class Todoitem extends React.Component {
                     defaultValue={this.state.content}
                   />
                 );
+                // use react's onchange and event.target.value!!!!!!
+                // more simple!!
               } else {
                 return (
                   <span ref={this.textInput} className="item_content">
