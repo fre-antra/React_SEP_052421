@@ -2,7 +2,7 @@ import React from "react";
 import "./TodoItem.css";
 
 function TodoItem(props) {
-  const { todo, removeTodo } = props;
+  const { todo } = props;
   return (
     <li className="todolist__content-item">
       <span>{todo.title}</span>
