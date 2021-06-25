@@ -6,12 +6,15 @@ import './Content.css';
 
 const Content = () => {
   const [color, setColor] = useState('black');
-  const [selectArray, setSelectArr] = useState([false, false, false, false]);
+  const [selectArray, setSelectArr] = useState(
+    new Array(data.length).fill(false)
+  );
 
   const handleColor = (targetColor, index) => {
-    let arr = [false, false, false, false];
+    let arr = new Array(data.length).fill(false);
     arr[index] = true;
     setSelectArr(arr);
+
     setColor(targetColor);
   };
 

@@ -17,19 +17,19 @@
   border-bottom: 5px solid;
 }
 
-.blue {
+.border__blue {
   border-color: blue;
 }
 
-.green {
+.border__green {
   border-color: green;
 }
 
-.red {
+.border__red {
   border-color: red;
 }
 
-.black {
+.border__black {
   border-color: black;
 }
 
