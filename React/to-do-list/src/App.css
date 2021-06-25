@@ -1,0 +1,21 @@
+:root {
+  --height-header: 60px;
+  --height-todolist: 500px;
+  --height-todolist-header: 30px;
+  --width-todolist: 500px;
+
+  --color-pink: pink;
+  --color-teal: teal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}

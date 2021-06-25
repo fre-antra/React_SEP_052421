@@ -1,0 +1,19 @@
+.todoList {
+  height: var(--height-todolist);
+  width: var(--width-todolist);
+  background-color: var(--color-pink);
+  box-shadow: 10px 10px 10px black;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+}
+
+
+.todoList__input{
+  width: 100%;
+}
+
+.todoList__header {
+  font-size: 60px;
+  text-align: center;
+}
