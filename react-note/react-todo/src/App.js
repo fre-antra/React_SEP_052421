@@ -7,8 +7,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
   return (
     <Layout>
-      {/* <Dashboard></Dashboard> */}
-      <TodoList></TodoList>
+      <Dashboard></Dashboard>
+      {/* <TodoList></TodoList> */}
     </Layout>
   );
 }
