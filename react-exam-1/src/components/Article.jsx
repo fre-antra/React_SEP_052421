@@ -46,7 +46,6 @@ export const Article = ({ color, colorClick, bStyle }) => {
                 illum modi nam dicta dignissimos beatae ad porro?
             </p>
             <Button
-                className="btn"
                 style={{ backgroundColor: `${color}` }}
                 onClick={colorClick}
             >
