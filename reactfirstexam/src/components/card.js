@@ -2,10 +2,6 @@ import { Fragment } from 'react';
 
 const Card = (props) => {
 
-    const changeColor = () => {
-        props.setColor();
-    }
-
     return (
         <Fragment>
             <div
@@ -33,7 +29,7 @@ const Card = (props) => {
                     <button
                         style={{ backgroundColor: `${props.color}` }}
                         className="card--button"
-                        onClick={() => changeColor()}
+                        onClick={() => props.setColor()}
                     >
                         Set {props.color}
                     </button>
