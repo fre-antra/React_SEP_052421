@@ -6,9 +6,11 @@ import Header from "./Components/Header/Header";
 function App() {
   const boxColors = ["blue", "black", "red", "green"];
   const [titleColor, setTitleColor] = useState("");
+  const [boxStyle, setBoxStyle] = useState({});
 
   const colorChangeHandler = (color) => {
     setTitleColor(color);
+    setBoxStyle({ boxShadow: `2px 2px 5px ${color}` });
   };
   return (
     <div className="App">
@@ -19,9 +21,10 @@ function App() {
         {boxColors.map((color, index) => {
           return (
             <ReusableBox
-              key={index}
+              key={color}
               color={color}
               colorClick={() => colorChangeHandler(color)}
+              bStyle={boxStyle}
             />
           );
         })}

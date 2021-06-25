@@ -1,22 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ReusableBox.css";
 
-const ReusableBox = ({ color, colorClick }) => {
-  const [boxStyle, setBoxStyle] = useState({});
-
-  const mouseEnter = (e) => {
-    setBoxStyle({ boxShadow: `2px 2px 5px ${color}` });
-  };
-
-  const mouseLeave = (e) => {
-    setBoxStyle({});
-  };
+const ReusableBox = ({ color, colorClick, bStyle }) => {
   return (
     <div
       className="box-container"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-      style={boxStyle}
+      style={bStyle.boxShadow.split(" ")[3] === color ? bStyle : null}
     >
       <h3 className="box__title">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias
