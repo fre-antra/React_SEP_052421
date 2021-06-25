@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'public'),
@@ -10,7 +11,6 @@ module.exports = {
         // chunkFilename: '[id].js',
         // publicPath: ''
     },
-    mode: 'development',
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -54,15 +54,17 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public')
-    }
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         template: __dirname + '/src/index.html',
-    //         filename: 'index.html',
-    //         inject: 'body'
-    //     })
-    // ]
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + '/src/index.html',
+            filename: 'index.html',
+            inject: 'body'
+        })
+    ]
 };
 
 
@@ -77,3 +79,7 @@ module.exports = {
 //          For css, use style-loader with css-loader and postcss-loader. Finally for images, use the url-loader.
 
 // plugins: use the HtmlWebpackPlugin with index.html to inject the body
+
+// mode: builr-in optimization accordingly (development, production)
+
+// loader works before bundling / plugins happends after bundling

@@ -1,56 +1,132 @@
 import React from "react";
-import './App.css';
-import PropTypes from "prop-types";
 
-class App extends React.Component {
-
+class ParentClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        name: 'Anne',
+      name: "Mike",
     };
-    this.handleClick = this.handleClick.bind(this)
+    console.log("Parent Constructor Mounted");
   }
-  
-  handleClick = () => {
-    this.setState({
-      name: "Smith",
-    });
-  };
 
   componentDidMount() {
-    // componentDidMount() is invoked immediately after a component is mounted (inserted into the tree)
-    console.log("Component did Mount");
-  }  
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    // componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
-    if (prevProps.name !== this.state.name) {
-      console.log('name has changed');
-    }
+    console.log("Child component did Mount");
   }
 
-  componentDidUnMount() {
-    // componentWillUnmount() is invoked immediately before a component is unmounted and destroyed.
-    console.log("Component did Unmount");
+  componentDidUpdate() {
+    console.log("Parent Did Update");
   }
+
+  componentWillUnmount() {
+    console.log("Parent will UnMount");
+  }
+
+  change = () => {
+    this.setState({ name: "Danial" });
+  };
 
   render() {
     return (
       <>
-        <h1>Hello {this.state.name} </h1>
-        <button onClick={this.handleClick}> change name</button>
+        <button onClick={this.change}>ativate parent</button>
+        <h2>Here is Parent component content</h2>
+        <h4>{this.state.name}</h4>
+        {this.props.showChil ? (
+          <>
+            <h2>Here is Child component content</h2>
+            <ChildFn />
+          </>
+        ) : (
+          ""
+        )}
       </>
     );
   }
 }
 
-App.propTypes = {
-  name: PropTypes.string,
+class ChildClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Jack",
+    };
+    console.log("Child Constructor Mounted");
+  }
+
+  componentDidMount() {
+    console.log("Child component did Mount");
+  }
+
+  componentDidUpdate() {
+    console.log("Child Did Update");
+  }
+
+  componentWillUnmount() {
+    console.log("Child will UnMount");
+  }
+
+  change = () => {
+    this.setState({ name: "John" });
+  };
+
+  render() {
+    return (
+      <>
+        <button onClick={this.change}>ativate child</button>
+        <h4>{this.state.name}</h4>
+      </>
+    );
+  }
+}
+
+const ChildFn = () => {
+  const [name, setName] = React.useState("Papi");
+
+  React.useEffect(() => {
+    // setName("Anne"); 
+    console.log("Child Fn Update");
+
+    return () => {
+      console.log("Child Fn Will Unmount");
+    };
+  }, [name]);
+
+  return (
+    <>
+      <button onClick={()=>{setName("Anne")}}>ativate child</button>
+      <h4>{name}</h4>
+    </>
+  );
 };
 
-App.defaultProps = {
-  name: "Jacky",
-};
+class App extends React.Component {
+  state = {
+    showPar: false,
+    showChil: false,
+  };
+
+  render() {
+    return (
+      <>
+        <button onClick={() => this.setState({ showPar: !this.state.showPar })}>
+          {this.state.showPar ? "Show" : "Hide"} Parent
+        </button>
+        <button
+          onClick={() => this.setState({ showChil: !this.state.showChil })}
+        >
+          {this.state.showChil ? "Show" : "Hide"} Child
+        </button>
+        {this.state.showPar ? (
+          <>
+            <h1>Hello My firend</h1>
+            <ParentClass showChil={this.state.showChil} />
+          </>
+        ) : (
+          ""
+        )}
+      </>
+    );
+  }
+}
 
 export default App;
