@@ -20,7 +20,9 @@ const Layout = ({ data }) => {
         <Header color={color} />
       </header>
       <main className="container">
-        <Card data={data} colorHandler={colorHandler} boxShadow={boxShadow} color={color} />
+        {data.map((d) => (
+          <Card data={d} colorHandler={colorHandler} boxShadow={boxShadow} color={color} />
+        ))}
       </main>
     </>
   );
