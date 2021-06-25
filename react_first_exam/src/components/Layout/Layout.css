@@ -1,0 +1,22 @@
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1rem;
+  margin: 1rem 2rem;
+}
+
+@media (max-width: 730px) {
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    grid-template-columns: auto;
+    margin: 1rem 1rem;
+  }
+}

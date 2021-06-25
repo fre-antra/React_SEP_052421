@@ -1,0 +1,17 @@
+.card {
+  padding: 1rem 1rem;
+}
+
+.card__title {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 730px) {
+  .card {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .card__title {
+    margin-bottom: 1.5rem;
+  }
+}
