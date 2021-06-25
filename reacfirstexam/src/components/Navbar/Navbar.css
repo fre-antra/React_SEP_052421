@@ -1,13 +1,21 @@
-.navbar-container{
-    position: relative;
-    height: 4rem;
-    box-shadow: none;
+.navbar-container {
+  position: relative;
+  height: 4rem;
+  box-shadow: none;
 }
 
-.navbar{
-    height: 100%;
+.navbar {
+  height: 100%;
+  font-size: 3rem;
 }
 
-nav{
-    margin-left: 0;
+nav {
+  margin-left: 0;
+}
+
+@media (max-width: 400px) {
+  .navbar-container {
+    height: auto;
+    text-align: center;
+  }
 }

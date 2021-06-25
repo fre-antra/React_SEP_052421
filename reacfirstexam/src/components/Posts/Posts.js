@@ -11,30 +11,76 @@ class Posts extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { color: props.color };
+    let posts = [
+      {
+        id: 0,
+        title: "Example Blog Post",
+        author: "Tom",
+        color: "red",
+        content:
+          "Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque.",
+      },
+      {
+        id: 1,
+        title: "Example Blog Post",
+        author: "Tom",
+        color: "orange",
+        content:
+          "Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque.",
+      },
+      {
+        id: 2,
+        title: "Example Blog Post",
+        author: "Tom",
+        color: "blue",
+        content:
+          "Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque.",
+      },
+      {
+        id: 3,
+        title: "Example Blog Post",
+        author: "Tom",
+        color: "green",
+        content:
+          "Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque.",
+      },
+    ];
+
+    this.state = {
+      active: props.active,
+      posts: posts,
+      setColorCallback: props.setColorCallback,
+    };
   }
 
- 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
-  componentWillUnmount() {
-    
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.active !== prevProps.active) {
+      this.setState({ active: this.props.active });
+    }
   }
+  componentWillUnmount() {}
 
   render() {
-    const childHelper = {
-      
-    };
+    const childHelper = {};
 
     return (
       <>
         <div class="mainContent-container flex-row-wrap">
-          <Postitem></Postitem>
-          <Postitem></Postitem>
-          <Postitem></Postitem>
-          <Postitem></Postitem>
+          {this.state.posts.map((item) => {
+            let border = false;
+            if (item.id === this.state.active) border = true;
+
+            return (
+              <Postitem
+                key={item.id}
+                border={border}
+                item={item}
+                setColorCallback={this.state.setColorCallback}
+              ></Postitem>
+            );
+          })}
         </div>
       </>
     );
