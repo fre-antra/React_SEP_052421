@@ -29,27 +29,17 @@ const Button = styled.button`
     border: 0;
     color: #fff;
 `;
-export const Article = ({ color, colorClick, bStyle }) => {
+export const Article = ({ colorClick, bStyle, article }) => {
     return (
         <ArticleWrapper
-            style={bStyle.boxShadow.split(" ")[3] === color ? bStyle : null}
+            style={
+                bStyle.boxShadow.split(" ")[3] === article.color ? bStyle : null
+            }
         >
-            <h3 className="box__title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                alias incidunt ipsa!
-            </h3>
-            <p className="box__content">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-                incidunt cupiditate, aspernatur consequuntur porro excepturi
-                dolore, velit possimus atque repellat unde veritatis sed odit
-                modi. Optio corporis repudiandae labore maiores placeat, nostrum
-                illum modi nam dicta dignissimos beatae ad porro?
-            </p>
-            <Button
-                style={{ backgroundColor: `${color}` }}
-                onClick={colorClick}
-            >
-                Click Me
+            <h3>{article.title}</h3>
+            <p>{article.text}</p>
+            <Button type={article.type} onClick={colorClick}>
+                Save
             </Button>
         </ArticleWrapper>
     );
