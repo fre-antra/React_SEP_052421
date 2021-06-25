@@ -4,8 +4,10 @@ export default function Header(props) {
   const { color, head } = props;
 
   return (
-    <h2 className='header' style={{ color: `${color}` }}>
-      {color} {head}
-    </h2>
+    <div className='header' style={{ color: `${color}` }}>
+      <h2>
+        {color} && Title :{head}
+      </h2>
+    </div>
   );
 }
