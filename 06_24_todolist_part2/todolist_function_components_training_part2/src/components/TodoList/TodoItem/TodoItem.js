@@ -7,8 +7,8 @@ const TodoItem = (props) => {
     <>
       <li>
         <span>{todo.title} </span>
-        {/* <button id={todo.id} className="btn-remove" onClick={() => removeTodo(todo.id)}>X</button> */}
-        <button id={todo.id} className="btn-remove" >X</button>
+        <button className="btn-remove" onClick={() => removeTodo(todo.id)}>X</button>
+        {/* <button id={todo.id} className="btn-remove" >X</button> */}
       </li>
     </>
   );

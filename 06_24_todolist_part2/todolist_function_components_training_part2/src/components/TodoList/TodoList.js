@@ -8,11 +8,15 @@ const TodoList = () => {
   const [todolist, setTodolist] = React.useState([]);
   const [inputText, setInputText] = React.useState('');
 
+  React.useEffect(() => console.log('update'));
+
   React.useEffect(() => {
     console.log('function todolist didMount');
     getAllTodos()
       .then(data => setTodolist(data));
   }, []);
+
+
 
   const handleRemoveTodo = (id) => {
     try {
@@ -27,29 +31,29 @@ const TodoList = () => {
   };
 
   // event delegation and it needs todoItems id
-  const handleRemoveTodo2 = (event) => {
-    console.log(event.target.className);
-    if (event.target.className === 'btn-remove') {
-      const id = event.target.id;
-      try {
-        deleteTodo(+id).then(data => {
-          setTodolist(
-            todolist.filter((todo) => +todo.id !== +id)
-          );
-        });
-      } catch (err) {
-        console.warn(err);
-      }
-    }
-  };
+  // const handleRemoveTodo2 = (event) => {
+  //   console.log(event.target.className);
+  //   if (event.target.className === 'btn-remove') {
+  //     const id = event.target.id;
+  //     try {
+  //       deleteTodo(+id).then(data => {
+  //         setTodolist(
+  //           todolist.filter((todo) => +todo.id !== +id)
+  //         );
+  //       });
+  //     } catch (err) {
+  //       console.warn(err);
+  //     }
+  //   }
+  // };
 
   const handleInputChange = (event) => {
-    console.log(event.target.value);
+    console.log('current event target value is', event.target.value);
     setInputText(event.target.value);
   };
 
   const handleInputKeyUp = (event) => {
-    console.log(event.key);
+    console.log('current key is', event.key);
     if (event.key === 'Enter') {
       const userId = 1;
       const title = inputText;
@@ -71,14 +75,15 @@ const TodoList = () => {
         type="text"
         className="todolist__input"
         placeholder="input here"
-        onChange={handleInputChange}
-        value={inputText}
+        onChange={handleInputChange} // 2-way-binding
+        value={inputText}  // 2-way binding
         onKeyUp={handleInputKeyUp}
       />
-      <ul className="todolist__content" onClick={handleRemoveTodo2}>
+      <ul className="todolist__content" >
+        {/* <ul className="todolist__content" onClick={handleRemoveTodo2}> */}
         {todolist.map((todo) => (
-          // <TodoItem key={todo.id} todo={todo} removeTodo={this.handleRemoveTodo} />
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} removeTodo={handleRemoveTodo} />
+          // <TodoItem key={todo.id} todo={todo} />
         ))}
       </ul>
     </section>
