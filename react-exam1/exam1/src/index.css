@@ -13,3 +13,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.blue{
+  color: blue;
+}
+
+.black{
+  color: black;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
