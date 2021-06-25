@@ -1,0 +1,42 @@
+.box-container {
+	margin: 25px;
+	border: 1px solid #bcbcbc;
+	padding: 25px;
+	max-width: 40%;
+}
+.blue {
+	border: 1px solid "blue";
+}
+
+.selected.blue {
+	box-shadow: 2px 4px 15px 1px blue;
+}
+.selected.black {
+	box-shadow: 2px 4px 15px 1px black;
+}
+.selected.red {
+	box-shadow: 2px 4px 15px 1px red;
+}
+.selected.green {
+	box-shadow: 2px 4px 15px 1px green;
+}
+.btn {
+	padding: 10px;
+	cursor: pointer;
+	color: white;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+}
+
+@media (max-width: 1050px) {
+	.box-container {
+		max-width: 30%;
+	}
+}
+
+@media (max-width: 750px) {
+	.box-container {
+		max-width: 80%;
+	}
+}
