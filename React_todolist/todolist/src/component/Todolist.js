@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { addTodo, deleteTodo } from './TodoApi';
+import { useState, useEffect } from 'react';
+import { addTodo, deleteTodo, getTodos } from './TodoApi';
 import TodoItem from './TodoItem';
 import '../style/Todolist.css';
 
@@ -7,14 +7,18 @@ function Todolist() {
   const [list, setList] = useState([]);
   const [input, setInput] = useState('');
 
-  // getTodos().then((res) => setList([...res]));
+  useEffect(() => {
+    if (list.length === 0) {
+      getTodos().then((res) => setList([...res]));
+    }
+  });
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
   };
 
   const handleEnterKey = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && input.length !== 0) {
       const newTodo = {
         title: input,
         userId: 1,

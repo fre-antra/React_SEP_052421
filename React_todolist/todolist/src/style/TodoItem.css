@@ -3,28 +3,37 @@
 }
 
 .item {
-  box-sizing: border-box;
   list-style: none;
   border: solid 1px black;
-
   width: 100%;
-  height: 30px;
-  position: relative;
+  min-height: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item-title {
-  width: 70%;
-  position: absolute;
-  left: 0%;
+  /* position: absolute;
+  left: 2%;
+  width: 88%;
+  height: 100%; */
+
+  display: flex;
+  flex-basis: 90%;
+  padding-left: 2%;
+
+  word-break: break-all;
+
   text-align: left;
 }
 
 .item-btn {
-  box-sizing: border-box;
-  position: absolute;
+  /* position: absolute;
   right: 0;
   width: 10%;
-  height: 100%;
-  margin: 0;
+  height: 100%; */
+
+  flex-basis: 10%;
+
   border: none;
 }
