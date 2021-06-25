@@ -1,0 +1,98 @@
+:root {
+  --height-header: 60px;
+  --height-card: 170px;
+  --width-card: 110px;
+
+  --color-green: #2b7e7f;
+  --color-blue: #8eb5f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  margin: auto;
+  width: 50rem;
+}
+
+.title {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+}
+
+.title h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  width: 50%;
+  /* height: 500px; */
+  padding: 5px 10px 30px;
+  border: 5px white solid;
+}
+
+#blue:hover {
+  border: blue 5px outset;
+}
+#black:hover {
+  border: black 5px outset;
+}
+#red:hover {
+  border: red 5px outset;
+}
+#green:hover {
+  border: green 5px outset;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.container button {
+  position: relative;
+  bottom: -10px;
+  width: 100px;
+  height: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+.green {
+  color: green;
+}
+.black {
+  color: black;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+
+.title div:nth-child(2) button {
+  background-color: blue;
+}
+.title div:nth-child(3) button {
+  background-color: black;
+}
+.title div:nth-child(4) button {
+  background-color: red;
+}
+.title div:nth-child(5) button {
+  background-color: green;
+}
