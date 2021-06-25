@@ -6,20 +6,15 @@ import './App.css'
 
 const App = () => {
 
-  const blue = 1, black = 2, red = 3, green = 4
+  const colors = ['blue', 'black', 'red', 'green']
 
   return (
       <>
         <Header/>
         <div className="main-section">
-          <div className="cards-1">
-            <Card num={blue}/>
-            <Card num={black}/>
-          </div>
-          <div className="cards-2">
-            <Card num={red}/>
-            <Card num={green}/>
-          </div>
+          {colors.map(color => {
+            return <Card color={color} key={color}/>
+          })}
         </div>
       </>
   );

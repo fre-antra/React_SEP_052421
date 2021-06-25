@@ -1,5 +1,5 @@
-.cards-1,
-.cards-2 {
+.main-section {
     display: flex;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
