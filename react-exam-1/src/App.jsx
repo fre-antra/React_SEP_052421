@@ -53,7 +53,6 @@ const ArticlesWrapper = styled.div`
 `;
 export function App() {
     const [articles, setArticles] = useState(initialData);
-    const boxColors = ["blue", "black", "red", "green"];
     const [titleColor, setTitleColor] = useState("");
     const [boxStyle, setBoxStyle] = useState({
         boxShadow: `0px 0px 0px black`,
@@ -68,17 +67,6 @@ export function App() {
                 <Header color={titleColor} />
             </div>
             <ArticlesWrapper>
-                {/* {boxColors.map((color, index) => {
-                    return (
-                        <Article
-                            key={color}
-                            color={color}
-                            colorClick={() => changeColor(color)}
-                            bStyle={boxStyle}
-                        />
-                    );
-                })} */}
-
                 {articles.map((article) => (
                     <Article
                         colorClick={() => changeColor(article.color)}

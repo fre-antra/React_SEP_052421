@@ -9,7 +9,7 @@ const ArticleWrapper = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: ${(props) => props.boxShadow};
+    /* box-shadow: ${(props) => `2px 2px 5px ${props.color}`}; */
     p {
         font-size: 1rem;
     }
@@ -30,8 +30,10 @@ const Button = styled.button`
     color: #fff;
 `;
 export const Article = ({ colorClick, bStyle, article }) => {
+    console.log("Article", bStyle);
     return (
         <ArticleWrapper
+            color={article.color}
             style={
                 bStyle.boxShadow.split(" ")[3] === article.color ? bStyle : null
             }
