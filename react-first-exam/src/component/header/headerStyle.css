@@ -3,6 +3,7 @@
     height: 5%;
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size: 3rem;
-    padding: 3rem 0;
+    padding: 3rem 5rem;
 }
