@@ -1,4 +1,4 @@
-import React from 'rect';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloMessage from './components/HelloMessage/HelloMessage';
 
