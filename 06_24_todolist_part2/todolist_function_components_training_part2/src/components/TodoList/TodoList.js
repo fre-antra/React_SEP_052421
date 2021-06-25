@@ -54,17 +54,20 @@ const TodoList = () => {
 
   const handleInputKeyUp = (event) => {
     console.log('current key is', event.key);
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && inputText) {
       const userId = 1;
       const title = inputText;
       const completed = false;
       const newTodo = new Todo(userId, title, completed);
+      // addTodo(newTodo).then((data) => getAllTodos()).then(newData => setTodolist(newData));
+      // fake api seems like can not actually add a newTodo
       addTodo(newTodo).then((data) => {
         setTodolist([data, ...todolist]);
         setInputText('');
       });
     };
   };
+
 
   return (
     <section className="todolist">
