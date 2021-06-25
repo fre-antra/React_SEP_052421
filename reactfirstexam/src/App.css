@@ -1,10 +1,11 @@
-.row {
-  width: 100%;
+.App {
   display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
+.app-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
