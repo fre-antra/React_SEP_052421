@@ -6,7 +6,7 @@ import Header from "./Components/Header/Header";
 function App() {
   const boxColors = ["blue", "black", "red", "green"];
   const [titleColor, setTitleColor] = useState("");
-  const [boxStyle, setBoxStyle] = useState({});
+  const [boxStyle, setBoxStyle] = useState({ boxShadow: `0px 0px 0px black` });
 
   const colorChangeHandler = (color) => {
     setTitleColor(color);
