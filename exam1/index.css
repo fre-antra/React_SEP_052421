@@ -25,7 +25,7 @@ body {
 
 }
 
-.search_input {
+.search__input {
     background-color: #f0eeee;
     border: none;
     padding: .7rem 8rem;
@@ -35,18 +35,18 @@ body {
     margin-right: -3.25rem;
 }
 
-.search_button {
+.search__button {
     border: none;
     background-color:white
 }
 
-.search_result {
+.search__result {
     width: 80%;
     margin: auto;
     padding: 1rem;
 }
 
-.search_result_info {
+.search__resultInfo {
     width: 90%;
     padding: 1rem;
     color: #333;

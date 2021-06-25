@@ -1,16 +1,13 @@
 // Model View Controller
 
 const albumAPI = (() => {
-
-    const baseUrl1 = ' https://itunes.apple.com/search?term=${';
-    const baseUrl2 = '}&media=music&entity=album&attribute=artistTerm&limit=200';
-    const artist = 'todos';
-
-    const getAlbums = () =>
-        fetch([baseUrl1, artist, baseUrl2].join(''))
-            .then((response) => response.json());
-            console.log("fetch data");
-
+    url = 'https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200'
+    const getAlbums = (name) =>
+    console.log("getartist");
+        fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data));
+   
     return {
         getAlbums,
     }
@@ -20,43 +17,29 @@ const View = (() => {
 
     const domString = {
         searchInput: 'search__input',
-        // removebtn: 'btn-remove',
-        // input: 'todolist__input'
+        searchResultsDisplay: 'searchResult__display',
+        searchResultInfo: 'search__resultInfo',
+        searchButtonn: 'search__button'
     }
 
     const render = (element, htmlString) => {
         element.innerHTML = htmlString;
     }
 
-    const createCardTmp = (todoArray) => {
-        // let htmlString = '';
-        // todoArray.forEach(ele => {
-        //     htmlString += `
-        //         <li>
-        //             <span>
-        //                 ${ele.title}
-        //             </span>
-        //             <button 
-        //                 class="btn-remove" 
-        //                 id="${ele.id}"
-        //             >
-        //                 X
-        //             </button>
-        //         </li>
-        //     `;
-        // });
-        // return htmlString;
+    const createCardTmp = (resultArr) => {
+        let htmlString = 'aaa';
+        return htmlString;
     }
 
     return {
         domString,
         render,
-        createCardTmp
+        createCardTmp,
     }
 })();
 
 const Model = ((api, view) => {        
-    const getDate = api.getAlbums;                                                                                
+    const getData = api.getAlbums;                                                                                
     class State {
         #albumlist = [];
         #count = 0;
@@ -75,16 +58,18 @@ const Model = ((api, view) => {
 
         set albumlist(newlist) {
             this.#albumlist = newlist;
-
             const albumElement = document.querySelector('.' + view.domString.albumlist);
             const albumTmp = view.createAlbumTmp(this.#albumlist);
+            console.log(albumElement);
+            console.log(albumTmp);
             view.render(albumElement,albumTmp);
         }
     }
 
     return {
-        getDate,
         State,
+        getData,
+       
         
     }
 })(albumAPI, View);
@@ -93,30 +78,52 @@ const AppController = ((model, view) => {
     const state = new model.State();
     const input = document.querySelector('.' + view.domString.searchInput);
 
-    const addAlbum = (event) => {
-        console.log("addAlbum");
-        if (event.key === 'Enter' && event.target.value) {
-            console.log("event.keyCode: " + event.keyCode);
-            console.log(event.target.value);
+   
 
-                // const newTodo = new model.Todo(state.input);
-        
-                // model.addTodo(newTodo).then(data => {
-                //     state.todolist = [data, ...state.todolist];
-                // });
 
-            state.input = '';
-
-                // event.target.value = '';
-            }
-        // )
+    const search = (event) => {
+       
+        const artist = event.target.value;
+        console.log(artist);
+        console.log(event.key);
+        console.log(typeof(albumAPI.getAlbums(artist)));
+        //  console.log(typeof(event.key));
+        //  if (event.type == 'keypress') {
+        //     event.preventDefault();
+        //     var key= event.keyCode;
+        //     console.log(key);
+        //   }
+        //   if (event.type == 'blur') {
+        //     event.preventDefault();
+        //     console.log("blur");
+            event.preventDefault();
+            // if (event.key == 'Enter' && artist) {
+            //     console.log("if")
+            //     console.log(artist);
+                Model.getAlbums(artist).then(data => {
+                     //state.albumlist = data.albumlist;
+                    //  console.log(state.albumlist);
+                    //  state.count = data.count; 
+                    console.log('data');
+                })
+            // } else {
+            //     console.log("undefined key")
+            // }
+        //   }
+        console.log("end");
+       
     }
-
+    const searchHelper = () => {
+        input.addEventListener('keyup', event => {
+            search(event);
+        })
+    }
+  
     
-
     const init = () => {
-        addAlbum();
+       searchHelper();
     }
+    
 
     return {
         init
