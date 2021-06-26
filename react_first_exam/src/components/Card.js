@@ -3,11 +3,10 @@ import '../style/Card.css';
 export default function Card(props) {
   const { handleChange, color, title, content, isClick, index } = props;
 
-  const boxShadow = isClick ? `10px 10px 4px ${color}` : 'none';
-  const border = isClick ? `1px solid ${color}` : 'none';
+  const boxShadow = isClick ? `5px 5px 8px ${color}` : 'none';
+  const border = isClick ? `2px solid ${color}` : '2px solid white';
 
   const style = {
-    color: `${color}`,
     border: `${border}`,
     boxShadow: `${boxShadow}`,
   };
