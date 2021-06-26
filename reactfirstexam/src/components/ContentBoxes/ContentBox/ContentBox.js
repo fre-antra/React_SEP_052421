@@ -2,36 +2,29 @@ import React from 'react'
 import styled from "styled-components";
 
 export default function ContentBox({ heading, content, button, handleColor }) {
-  // console.log(heading, content, button);
   const Container = styled.div`
-    padding: 1rem;
-    margin: 1rem 0px;
-    width: 80%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-    box-shadow: ;
+    padding: 20px;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid gray;
+    min-height: 300px;
+    border-radius: 5px;
     font-family: sans-serif;
-    min-height: 200px;
     :hover {
-      box-shadow: 5px 10px ${button};
+      box-shadow: 2px 6px ${button};
     }
   `;
   const Button = styled.button`
+    width: 90px;
     cursor: pointer;
     background-color: ${button};
     border: none;
     color: white;
-    padding: 15px;
-    margin:10px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 4px;
     font-size: 16px;
-    width: 30%;
-    border-radius: 10px
+    border-radius: 4px
   `;
 
   return (
