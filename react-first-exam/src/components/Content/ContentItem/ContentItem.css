@@ -10,26 +10,26 @@
   color: white;
 }
 
-.selected {
+.card--selected {
   border-top: 1px solid;
   border-left: 1px solid;
   border-right: 5px solid;
   border-bottom: 5px solid;
 }
 
-.border__blue {
+.border-blue {
   border-color: blue;
 }
 
-.border__green {
+.border-green {
   border-color: green;
 }
 
-.border__red {
+.border-red {
   border-color: red;
 }
 
-.border__black {
+.border-black {
   border-color: black;
 }
 

@@ -1,8 +1,6 @@
 import './ContentItem.css';
 
-const ContentItem = ({ data, handleColor, selected }) => {
-  let cardClass = selected ? `card selected border__${data.color}` : `card`;
-
+const ContentItem = ({ data, handleColor, cardClass }) => {
   return (
     <div className={`${cardClass}`}>
       <h4>{data.subtitle}</h4>
@@ -10,7 +8,7 @@ const ContentItem = ({ data, handleColor, selected }) => {
       <button
         className="card__button"
         style={{ backgroundColor: `${data.color}` }}
-        onClick={() => handleColor(data.color, data.id)}
+        onClick={() => handleColor(data.color)}
       >
         {data.buttonText}
       </button>

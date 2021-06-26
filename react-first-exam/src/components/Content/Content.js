@@ -5,22 +5,15 @@ import ContentItem from './ContentItem/ContentItem';
 import './Content.css';
 
 const Content = () => {
-  const [color, setColor] = useState('black');
-  const [selectArray, setSelectArr] = useState(
-    new Array(data.length).fill(false)
-  );
+  const [selectedColor, setColor] = useState('');
 
-  const handleColor = (targetColor, index) => {
-    let arr = new Array(data.length).fill(false);
-    arr[index] = true;
-    setSelectArr(arr);
-
+  const handleColor = (targetColor) => {
     setColor(targetColor);
   };
 
   return (
     <div className="main">
-      <div className="header" style={{ color: `${color}` }}>
+      <div className="header" style={{ color: `${selectedColor}` }}>
         <h3>
           CDC says roughly 4,100 people have been hospitalized or died with
           Covid breakthrough infections after vaccination
@@ -33,7 +26,11 @@ const Content = () => {
               key={index}
               data={el}
               handleColor={handleColor}
-              selected={selectArray[index]}
+              cardClass={
+                el.color === selectedColor
+                  ? `card card--selected border-${el.color}`
+                  : `card`
+              }
             />
           );
         })}
