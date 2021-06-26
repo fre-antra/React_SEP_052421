@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
       id: 1,
       title: "The U.S. government can't explain 143 of the 144 cases.",
@@ -25,5 +25,5 @@ const data = [
     },
 ];
   
-
-export default data;
+export const headerContent = "UFO report: Government can't explain 143 of 144 mysterious flying objects, blames limited data"
+// export default {data, headerContent};

@@ -1,9 +1,21 @@
+
 .header {
     width: 100%;
     height: 5%;
+    padding: 3rem 5rem;
     display: flex;
     justify-content: center;
     text-align: center;
     font-size: 3rem;
-    padding: 3rem 5rem;
+    font-family: 'Oswald', sans-serif;
+    overflow: auto;
+}
+
+/* Make the title adaptive to mobile screen */
+@media screen and (max-width : 600px)
+{
+    .header{
+      padding: 1em 1.5em 0 ;
+    font-size: 1.5em;
+  }
 }

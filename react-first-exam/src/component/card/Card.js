@@ -2,11 +2,11 @@ import "./cardStyle.css";
 
 const Card = ({ data, changeColor, selectedColor }) => {
   let cardClassName =
-    (selectedColor === data.color)
+    selectedColor === data.color
       ? `content__card card-${data.color}`
       : `content__card`;
-    // console.log(cardClassName, data.color);
-    
+  // console.log(cardClassName, data.color);
+
   return (
     <>
       <div className={cardClassName}>
@@ -15,9 +15,10 @@ const Card = ({ data, changeColor, selectedColor }) => {
         <button
           className="card__btn"
           style={{ backgroundColor: data.color }}
+          //   onClick take a function, setCardColor(aks changeColor) require state
           onClick={() => changeColor(data.color)}
         >
-          Select me
+          Select
         </button>
       </div>
     </>

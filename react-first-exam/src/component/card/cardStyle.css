@@ -1,5 +1,4 @@
-
-
+/* add margin to aviod card border overlap */
 .content__card{
     display: flex;
     width: 500px;
@@ -8,7 +7,6 @@
     padding: 1rem;
     border: 3px solid white;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 20px;
 }
 .card-red{
@@ -31,27 +29,33 @@
 .card__title{
     padding: 10px 0;
     height: 80px;
-    word-wrap: break-word;
+    font-family: 'Benne', sans-serif;
 }
 
 .card__content{
-    position: relative;
-    top: -3rem;
+    padding: 5px;
+    font-family: 'PT Serif', sans-serif;
+    overflow: auto;
 }
+
+/* margin-top:auto makes the botton stick to the end of item */
 .card__btn{
     cursor: pointer;
     width: 5rem;
     height: 3rem;
+    margin: 5px 0;
     color: white;
     font-size: medium;
     border-style: none;
-    border-radius: 5px;
+    border-radius: 5px; 
+    margin-top: auto;
+    opacity: 0.7;
+    transition: 1s opacity;
+}
+
+.card__btn:hover{
+    opacity: 1;
 }
 
 
-/* @media  (max-width: 800px) {
-    .content__card {
-      width: 80%;
-    }
-  }
-   */
+  
