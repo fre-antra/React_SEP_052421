@@ -3,18 +3,15 @@ import ContentBox from './ContentBox/ContentBox';
 import styled from "styled-components";
 
 export default function ContentBoxes({ data, handleColor }) {
-  // console.log(data);
   const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: auto;
     @media only screen and (max-width: 770px) {
       display: flex;
       flex-direction: column;
     };
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
   `;
 
   return (

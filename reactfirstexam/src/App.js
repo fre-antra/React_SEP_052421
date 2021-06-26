@@ -7,7 +7,6 @@ function App() {
   const [color, setColor] = useState('')
 
   const handleColor = (colorName) => {
-    console.log(colorName)
     setColor(colorName);
   };
 
