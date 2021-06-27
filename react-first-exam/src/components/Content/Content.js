@@ -26,11 +26,7 @@ const Content = () => {
               key={index}
               data={el}
               handleColor={handleColor}
-              cardClass={
-                el.color === selectedColor
-                  ? `card card--selected border-${el.color}`
-                  : `card`
-              }
+              selected={el.color === selectedColor}
             />
           );
         })}

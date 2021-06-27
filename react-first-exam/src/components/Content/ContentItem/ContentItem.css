@@ -2,35 +2,19 @@
   margin: 0.5rem;
   padding: 0.5rem;
   width: 45%;
+
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 5px solid;
+  border-bottom: 5px solid;
+
+  border-color: white;
 }
 
 .card__button {
   height: 2rem;
   width: 5rem;
   color: white;
-}
-
-.card--selected {
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 5px solid;
-  border-bottom: 5px solid;
-}
-
-.border-blue {
-  border-color: blue;
-}
-
-.border-green {
-  border-color: green;
-}
-
-.border-red {
-  border-color: red;
-}
-
-.border-black {
-  border-color: black;
 }
 
 @media only screen and (max-width: 800px) {
