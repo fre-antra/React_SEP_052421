@@ -11,15 +11,23 @@ function App() {
   const handleColor = (colorName) => {
     setColor(colorName);
   };
-
-  useEffect(() => {
-    console.log('render')
+  const getCards = () => {
     return new Promise((res, rej) => {
       setTimeout(() => {
         setCardsData(data);
       }, 1000);
     });
+  };
+  useEffect(() => {
+    // console.log('render')
+    getCards();
   }, []);
+
+  // useEffect(()=>{
+  //   return setTimeout(() => {
+  //         setCardsData(data);
+  //       }, 1000)
+  // })
 
   const GlobalStyle = createGlobalStyle`
   *,
