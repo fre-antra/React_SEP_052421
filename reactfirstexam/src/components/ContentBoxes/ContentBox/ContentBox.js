@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 
 export default function ContentBox({ heading, content, button, handleColor }) {
-  const Container = styled.div`
+  const Container = styled.article`
     padding: 20px;
     margin: 1rem;
     display: flex;
@@ -14,6 +14,7 @@ export default function ContentBox({ heading, content, button, handleColor }) {
     font-family: sans-serif;
     :hover {
       box-shadow: 2px 6px ${button};
+      border: 1px solid ${button};
     }
   `;
   const Button = styled.button`

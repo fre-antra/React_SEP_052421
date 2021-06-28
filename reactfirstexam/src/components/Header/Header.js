@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 export default function Header(props) {
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   position: sticky;
   top: 0px;
   background-color: white;
