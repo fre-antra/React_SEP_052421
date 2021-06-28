@@ -1,0 +1,36 @@
+.tabs{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 60%;
+    height: 5em;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.tabs__btn{
+    cursor: pointer;
+    width: 6em;
+    height: 2em;
+    font-size: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    opacity: 1;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.tabs__btn:hover {
+    opacity: 0.7;
+
+}
+
+@media screen and (max-width: 800px) {
+    .tabs{
+        height: 15em;
+    }
+    .tabs__btn{
+        width: 10em;
+        margin: 10px;
+    }
+}

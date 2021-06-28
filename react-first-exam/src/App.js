@@ -10,7 +10,7 @@ function App() {
       /*------- redux method -------*/
   
   const cardColor = useSelector(state => state.color.color)
-  console.log(cardColor);
+  
   return (
     <div className="main">
       <Header cardColor={cardColor} content={headerContent} />
@@ -20,8 +20,6 @@ function App() {
             <ReduxCard
               key={card.id}
               data={card}
-              // changeColor={setCardColor}
-              // selectedColor={cardColor}
             />
           );
         })}
