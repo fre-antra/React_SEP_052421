@@ -1,22 +1,13 @@
 import React from 'react';
 import './TodoList.css';
 import TodoItem from './TodoItem/TodoItem';
-import {getAllTodos, addTodo, deleteTodo} from "../../apis/Api";
 import {Todo} from "../../model/Todo";
+import {withTodos} from "../../hoc/withTodos";
 
 class TodoList extends React.Component {
   state = {
-    inputText: '',
-    todoList: [],
+    inputText: ''
   };
-
-  componentDidMount() {
-    getAllTodos().then(data => {
-      this.setState({
-        todoList: data
-      })
-    })
-  }
 
   // onChange函数和value属性 用来双向绑定
   handlerChange = event => {
@@ -28,19 +19,11 @@ class TodoList extends React.Component {
   handlerKeyUp = e => {
     if (e.key === 'Enter') {
       const newTodo = new Todo(1, this.state.inputText, false)
-      addTodo(newTodo).then(data => {
-        this.setState({
-          inputText: '',
-          todoList: [data, ...this.state.todoList]
-        })
+      this.props.handleAddTodo(newTodo)
+      this.setState({
+        inputText: ''
       })
     }
-  }
-
-  handlerDelete = id => {
-    this.setState({
-      todoList: this.state.todoList.filter(x => x.id !== id)
-    })
   }
 
   render() {
@@ -58,8 +41,10 @@ class TodoList extends React.Component {
               onKeyUp={this.handlerKeyUp}
           />
           <ul className="todolist__content">
-            {this.state.todoList.map(todo => (
-                <TodoItem key={todo.id} todo={todo} handlerDelete={this.handlerDelete}/>
+            {this.props.todolist.map(todo => (
+                <TodoItem key={todo.id}
+                          todo={todo}
+                          removeTodo={this.props.handleRemoveTodo}/>
             ))}
           </ul>
         </section>
@@ -67,4 +52,4 @@ class TodoList extends React.Component {
   }
 }
 
-export default TodoList;
+export default withTodos(TodoList);

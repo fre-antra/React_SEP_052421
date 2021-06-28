@@ -2,11 +2,11 @@ import React from 'react';
 import './TodoItem.css';
 
 const TodoItem = props => {
-  const {todo, handlerDelete} = props;
+  const {todo, removeTodo} = props;
   return (
       <li className="todolist__content-item">
         <span>{todo.title}</span>
-        <button className="btn-remove" onClick={() => handlerDelete(todo.id)}>X</button>
+        <button className="btn-remove" onClick={() => removeTodo(todo.id)}>X</button>
       </li>
   );
 }
