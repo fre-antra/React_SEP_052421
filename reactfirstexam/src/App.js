@@ -1,17 +1,26 @@
-import Header from './components/Header/Header'
-import ContentBoxes from './components/ContentBoxes/ContentBoxes'
-import {data} from './DummyData'
-import React, {useState} from 'react'
+import Header from "./components/Header/Header";
+import ContentBoxes from "./components/ContentBoxes/ContentBoxes";
+import { data } from "./DummyData";
+import React, { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 function App() {
-  const [color, setColor] = useState('')
-
+  // console.log(data)
+  const [color, setColor] = useState("");
+  const [cardsData, setCardsData] = useState([]);
   const handleColor = (colorName) => {
     setColor(colorName);
   };
 
-const GlobalStyle = createGlobalStyle`
+  useEffect(() => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        setCardsData(data);
+      }, 1000);
+    });
+  });
+
+  const GlobalStyle = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -25,14 +34,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
-  return (
-    <div>
-      < GlobalStyle/>
-      <Header color={color} />
-      <ContentBoxes data={data} handleColor={handleColor} />
-    </div>
-  );
+  if (cardsData.length === 0) {
+    return <div>loading data...</div>;
+  } else {
+    return (
+      <div>
+        <GlobalStyle />
+        <Header color={color} />
+        <ContentBoxes data={cardsData} handleColor={handleColor} />
+      </div>
+    );
+  }
 }
 
 export default App;
