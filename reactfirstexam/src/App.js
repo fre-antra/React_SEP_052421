@@ -46,7 +46,7 @@ function App() {
   `;
 
   if (cardsData.length === 0) {
-    return <Loading>loading data...</Loading>;
+    return <Loading>Loading data...Please be patient</Loading>;
   } else {
     return (
       <div>
