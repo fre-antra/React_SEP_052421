@@ -43,21 +43,24 @@ export default class App extends Component {
     if (input.length === 0) {
       alert('Please enter context')
     } else {
-      toDoLists.push(input);
+      // toDoLists.unshift(input);
       this.setState({
         input: "",
-        toDoLists: toDoLists,
+        toDoLists: [input, ...toDoLists],
       });
     }
   }
 
   handleDelete(event) {
     // console.log('delete',event.target.value)
-    let index = this.state.toDoLists.indexOf(event.target.value);
-    this.state.toDoLists.splice(index, 1)
+    // let index = this.state.toDoLists.indexOf(event.target.value);
+    // this.state.toDoLists.splice(index, 1)
+    let newList = this.state.toDoLists.filter(
+      (item) => item !== event.target.value
+    );
           this.setState({
             input: "",
-            toDoLists: this.state.toDoLists,
+            toDoLists: newList,
           });
   }
 
