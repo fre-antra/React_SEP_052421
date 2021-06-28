@@ -33,9 +33,20 @@ function App() {
     font-family: sans-serif;
   }
 `;
+  const Loading = styled.div`
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    font-size: 3em;
+    // position:absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%,-50%)
+  `;
 
   if (cardsData.length === 0) {
-    return <div>loading data...</div>;
+    return <Loading>loading data...</Loading>;
   } else {
     return (
       <div>
