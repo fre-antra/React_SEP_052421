@@ -13,12 +13,13 @@ function App() {
   };
 
   useEffect(() => {
+    console.log('render')
     return new Promise((res, rej) => {
       setTimeout(() => {
         setCardsData(data);
       }, 1000);
     });
-  });
+  }, []);
 
   const GlobalStyle = createGlobalStyle`
   *,
