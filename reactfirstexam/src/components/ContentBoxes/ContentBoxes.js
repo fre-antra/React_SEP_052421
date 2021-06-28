@@ -15,7 +15,7 @@ export default function ContentBoxes({ data, handleColor }) {
   `;
 
   return (
-    <div>
+    <article>
         <Container>
           {data.map((item) => (
             <ContentBox
@@ -27,6 +27,6 @@ export default function ContentBoxes({ data, handleColor }) {
             />
           ))}
         </Container>
-    </div>
+    </article>
   );
 }
