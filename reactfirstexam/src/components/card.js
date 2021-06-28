@@ -7,33 +7,30 @@ const Card = (props) => {
             <div
                 className={`${props.selected ? "card--focus" : ""}`}
                 style={props.selected ? {
-                    border: `2px solid ${props.color}`,
-                    boxShadow: `10px 5px 5px ${props.color}`
+                    border: `2px solid ${props.data.cardColor}`,
+                    boxShadow: `10px 5px 5px ${props.data.cardColor}`
                 } : {}
                 }
             >
-                <div className="padding">
-                    <div
-                        className="card--title innerPadding"
+                <article className="padding">
+                    <article
+                        className="innerPadding"
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis.
-                    </div>
-                    <div className="card--content innerPadding">
-                        Duis varius magna sem, nec molestie nunc dictum egestas. Donec faucibus
-                        sit amet purus vitae vehicula. Sed vel commodo urna, sit amet placerat neque.
-                        Vivamus iaculis ligula vitae vehicula elementum. Nulla facilisis ante erat, a
-                        ultricies eros hendrerit vitae. Suspendisse eros massa, bibendum nec tellus elementum,
-                        maximus dapibus urna. Curabitur cursus molestie elit vitae condimentum. Nunc id vestibulum velit.
-                        Vestibulum mattis risus nec molestie maximus. Quisque pharetra rhoncus eleifend. Curabitur eu commodo dui.
-                    </div>
+                        <h4>
+                            {props.data.cardTitle}
+                        </h4>
+                    </article>
+                    <article className="innerPadding">
+                        {props.data.cardContent}
+                    </article>
                     <button
-                        style={{ backgroundColor: `${props.color}` }}
+                        style={{ backgroundColor: `${props.data.cardColor}` }}
                         className="card--button"
                         onClick={() => props.setColor()}
                     >
-                        Set {props.color}
+                        Set {props.data.cardColor}
                     </button>
-                </div>
+                </article>
             </div>
         </Fragment>
     )

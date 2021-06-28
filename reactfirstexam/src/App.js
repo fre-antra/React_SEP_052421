@@ -1,17 +1,33 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Card from './components/card';
 
-const colors = ['Blue', 'Black', 'Red', 'Green'];
+const cards = [{ cardTitle: "title1", cardContent: "content1", cardColor: "blue" }, { cardTitle: "title2", cardContent: "conetent2", cardColor: "green" }];
+function getCards() {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            res(cards)
+        }, 2000)
+    })
+}
 
 function App() {
+    const [cards, setCards] = useState([]);
     const [color, setColor] = useState('#000000');
     const [selected, setSelected] = useState(-1);
     const onCardSelect = (c, i) => {
         setColor(c);
         setSelected(i);
     }
+
+    useEffect(()=>{
+        async function setData() {
+            let data = await getCards();
+            setCards(data);
+        }
+        setData();
+    },[])
 
     return (
         <div className="App">
@@ -23,12 +39,13 @@ function App() {
             </div>
             <div className="grid">
                 {
-                    colors.map((c, i) => {
+                    cards.map((c, i) => {
                         return (
                             <Card
-                                color={c}
-                                setColor={() => onCardSelect(c, i)}
+                                data={c}
+                                setColor={() => onCardSelect(c.cardColor, i)}
                                 selected={selected === i}
+                                key={i}
                             />
                         )
                     })
