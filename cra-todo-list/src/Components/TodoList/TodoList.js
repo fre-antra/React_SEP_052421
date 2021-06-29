@@ -1,65 +1,36 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem/TodoItem";
 import "./TodoList.css";
-import { getAllTodos, addTodo, deleteTodo } from "../../apis/TodoAPI";
+import { withTodos } from "../../hoc/withTodos";
+import { Todo } from "../../Models/Todo";
 
-export default class TodoList extends Component {
+class TodoList extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      todolist: [],
       newTodoItem: "",
     };
     this.keyPressHandler = this.keyPressHandler.bind(this);
-    this.deleteTodoDelegation = this.deleteTodoDelegation.bind(this);
   }
 
   keyPressHandler(e) {
     if (e.key === "Enter") {
-      const newTodo = {
-        id: this.state.todolist.length,
-        userId: this.state.todolist.length + 1,
-        title: this.state.newTodoItem,
-        completed: false,
-      };
-      addTodo(newTodo).then((data) => {
-        this.setState((prevState) => ({
-          ...prevState,
-          todolist: [data, ...prevState.todolist],
-          newTodoItem: "",
-        }));
+      const { todolist, handleAddTodo } = this.props;
+      const newTodo = new Todo(
+        todolist.length + 1,
+        this.state.newTodoItem,
+        false,
+        todolist.length
+      );
+      handleAddTodo(newTodo);
+      this.setState({
+        newTodoItem: "",
       });
     }
   }
 
-  deleteTodoHandler(id) {
-    // deleteTodo(id).then((data) => {
-    //   this.setState({
-    //     ...this.state,
-    //     todolist: this.state.todolist.filter((todo) => todo.id !== id),
-    //   });
-    // });
-  }
-
-  deleteTodoDelegation(e) {
-    deleteTodo(+e.target.id).then((data) => {
-      this.setState({
-        ...this.state,
-        todolist: this.state.todolist.filter(
-          (todo) => +todo.id !== +e.target.id
-        ),
-      });
-    });
-  }
-
-  componentDidMount() {
-    getAllTodos().then((data) => {
-      this.setState({
-        todolist: data,
-      });
-    });
-  }
   render() {
+    const { todolist, handleRemoveTodo } = this.props;
     return (
       <section className="todolist">
         <header className="todolist__header">
@@ -75,12 +46,12 @@ export default class TodoList extends Component {
           value={this.state.newTodoItem}
           onKeyPress={this.keyPressHandler}
         />
-        <ul className="todolist__content" onClick={this.deleteTodoDelegation}>
-          {this.state.todolist.map((todo) => (
+        <ul className="todolist__content">
+          {todolist.map((todo) => (
             <TodoItem
               key={todo.id}
               todo={todo}
-              Ondelete={() => this.deleteTodoHandler(todo.id)}
+              Ondelete={() => handleRemoveTodo(todo.id)}
             ></TodoItem>
           ))}
         </ul>
@@ -88,3 +59,5 @@ export default class TodoList extends Component {
     );
   }
 }
+
+export default withTodos(TodoList);

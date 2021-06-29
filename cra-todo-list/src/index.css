@@ -13,7 +13,7 @@ code {
 }
 
 :root {
-  --height-header: 60px;
+  --height-header: 80px;
   --height-todolist-header: 50px;
   --height-todolist: 300px;
   --height-todolist-item: 40px;

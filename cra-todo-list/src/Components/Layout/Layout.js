@@ -4,11 +4,11 @@ import "./Layout.css";
 
 export default class Layout extends Component {
   render() {
-    const { children } = this.props;
+    const { children, handleChangeActivePage } = this.props;
     return (
       <>
         <header className="header">
-          <Header />
+          <Header handleChangeActivePage={handleChangeActivePage} />
         </header>
         <main className="content">{children}</main>
       </>
