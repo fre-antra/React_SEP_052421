@@ -1,50 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { getAllTodos, deleteTodo, addTodo } from '../apis/TodoAPI';
 
 export const withTodos = (WrappedComponent) => (
-  class NewComponent extends React.Component {
-    state = {
-      todolist: [],
-    };
+  function NewComponent() {
+    const [todolist, setTodilist] = useState([]);
 
-    handleAddTodo = (newTodo) => {
+    useEffect(() => {
+      getAllTodos().then(data => {
+        setTodilist(data);
+      });
+    }, []);
+
+    const handleAddTodo = (newTodo) => {
       addTodo(newTodo).then((data) => {
         console.log('addTodo', data); // addTodo {userId: 1, title: "newtodo", completed: false, id: 201}
-        this.setState({
-          todolist: [data, ...this.state.todolist],
-        });
+        setTodilist([data, ...todolist]);
       });
     };
 
-    handleRemoveTodo = (id) => {
+    const handleRemoveTodo = (id) => {
       deleteTodo(id)
         .then((data) => {
           console.log('removeTodo', data); // removeTodo {}
-          this.setState({
-            todolist: this.state.todolist.filter((todo) => todo.id !== id),
-          });
+          setTodilist(todolist.filter((todo) => todo.id !== id));
         })
         .catch((err) => {
           console.warn(err);
         });
     };
 
-    componentDidMount = () => {
-      getAllTodos().then((data) => {
-        this.setState({
-          todolist: data,
-        });
-      });
-    };
 
-    render() {
-      return (
-        <WrappedComponent
-          todolist={this.state.todolist}
-          handleRemoveTodo={this.handleRemoveTodo}
-          handleAddTodo={this.handleAddTodo}
-        />
-      );
-    }
+
+
+    return (
+      <WrappedComponent
+        todolist={todolist}
+        handleRemoveTodo={handleRemoveTodo}
+        handleAddTodo={handleAddTodo}
+      />
+    );
   }
 );
