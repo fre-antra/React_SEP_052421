@@ -1,0 +1,19 @@
+.header_blue {
+  color: green;
+}
+
+.header_red {
+  color: red;
+}
+
+.header_blue {
+  color: blue;
+}
+
+.header_green {
+  color: green;
+}
+
+.header {
+  padding: 10px 5%;
+}
