@@ -27,3 +27,18 @@ export const data = [
   
 export const headerContent = "UFO report: Government can't explain 143 of 144 mysterious flying objects, blames limited data"
 // export default {data, headerContent};
+
+
+export function getCards() {
+  return new Promise((resolve, reject) => setTimeout(()=>{
+      resolve(data)
+  },2000)) 
+}
+
+export function getHeader() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(headerContent)
+    },1000)
+  })
+}

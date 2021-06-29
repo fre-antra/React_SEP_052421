@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeColor } from "../../redux/ducks/color";
 
+
 // component has to be capitailiezed
 export const ReduxCard = ({ data }) => {
   const dispatch = useDispatch();
