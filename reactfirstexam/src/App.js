@@ -3,8 +3,9 @@ import "./App.css";
 import ReusableBox from "./Components/ReusableBox/ReusableBox";
 import Header from "./Components/Header/Header";
 
+import { BoxData } from "./api/Data";
+
 function App() {
-  const boxColors = ["blue", "black", "red", "green"];
   const [titleColor, setTitleColor] = useState("");
   const [boxStyle, setBoxStyle] = useState({ boxShadow: `0px 0px 0px black` });
 
@@ -18,12 +19,12 @@ function App() {
         <Header color={titleColor} />
       </div>
       <div className="app-content">
-        {boxColors.map((color, index) => {
+        {BoxData.map((box) => {
           return (
             <ReusableBox
-              key={color}
-              color={color}
-              colorClick={() => colorChangeHandler(color)}
+              key={box.color}
+              color={box.color}
+              colorClick={() => colorChangeHandler(box.color)}
               bStyle={boxStyle}
             />
           );
