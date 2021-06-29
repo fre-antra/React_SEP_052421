@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./components/Layout/Layout";
 import TodoList from "./components/TodoList/TodoList";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 /**
  在 componentDidMount 初始化发请求；
@@ -25,31 +26,44 @@ class SubApp extends React.PureComponent {
 class App extends React.Component {
 
   state = {
-    name: 'dexter'
+    activePage: 'TodoList'
   }
 
-  handleClick = () => {
+  // componentDidMount() {
+  //   console.log('Did mount')
+  // }
+  //
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+  //   console.log('Did update')
+  // }
+  //
+  // componentWillUnmount() {
+  //   console.log('Will Unmount')
+  // }
+
+  handleChangeActivePage = newPage => {
     this.setState({
-      name: 'Sam'
+      activePage: newPage
     })
   }
 
-  componentDidMount() {
-    console.log('Did mount')
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('Did update')
-  }
-
-  componentWillUnmount() {
-    console.log('Will Unmount')
-  }
-
   render() {
+
+    let content = null;
+    switch (this.state.activePage) {
+      case "Dashboard":
+        content = <Dashboard/>
+        break;
+      case "TodoList":
+        content = <TodoList/>
+        break;
+      default:
+        break;
+    }
+
     return (
-        <Layout>
-          <TodoList/>
+        <Layout handleChangeActivePage={this.handleChangeActivePage}>
+          {content}
         </Layout>
     )
   }

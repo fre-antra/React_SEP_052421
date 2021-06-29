@@ -1,9 +1,15 @@
 import React from 'react'
+import './Header.css'
 
 export default class Header extends React.Component {
   render() {
     return (
-        <header>Header</header>
+        <div className="header-list">
+          <nav className="nav">
+            <a onClick={() => this.props.handleChangeActivePage('Dashboard')}>Dashboard</a>
+            <a onClick={() => this.props.handleChangeActivePage('TodoList')}>TodoList</a>
+          </nav>
+        </div>
     )
   }
 }
