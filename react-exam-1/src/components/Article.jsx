@@ -46,7 +46,6 @@ const Button = styled.button`
     color: #fff;
 `;
 export const Article = ({ colorClick, bStyle, article }) => {
-    console.log("Article", bStyle);
     return (
         <ArticleWrapper
             color={article.color}
