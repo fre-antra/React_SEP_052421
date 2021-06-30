@@ -8,7 +8,7 @@ function getNews() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(news);
-    }, 1000);
+    }, 500);
   });
 }
 
@@ -24,7 +24,7 @@ const Content = () => {
       setTitle(data[0].title);
       setLoaded(true);
     });
-  });
+  }, []);
 
   const handleColor = (targetColor) => {
     setColor(targetColor);
