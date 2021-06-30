@@ -18,20 +18,16 @@ const colors = [
   'lightgreen',
 ];
 
-export default function Main(props) {
-  const { handleChange, index } = props;
-
+export default function Main() {
   return (
     <div className='main'>
       {colors.map((color, idx) => (
         <Card
           key={idx}
-          handleChange={handleChange}
           color={color}
           title={title}
           content={content}
-          isClick={idx === index}
-          index={idx}
+          idx={idx}
         />
       ))}
     </div>
