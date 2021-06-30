@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
-import Header from './Header';
-import Main from './Main';
 
-export default function Layout() {
+export default function LayoutProvider(props) {
   const [head, setHead] = useState('Original Title');
   const [color, setColor] = useState('black');
   const [index, setIndex] = useState(-1);
-
-  console.log('Layout render!');
 
   const handleChange = ({ title, color, idx }) => {
     setHead(title);
@@ -17,11 +13,8 @@ export default function Layout() {
   };
 
   return (
-    <>
-      <LayoutContext.Provider value={{ head, color, index, handleChange }}>
-        <Header />
-        <Main />
-      </LayoutContext.Provider>
-    </>
+    <LayoutContext.Provider value={{ head, color, index, handleChange }}>
+      {props.children}
+    </LayoutContext.Provider>
   );
 }

@@ -2,10 +2,10 @@ import '../style/Main.css';
 import Card from './Card';
 
 const title =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod empor incididunt ut labore et dolore magna aliqua.';
+  'Dolore nostrud et ut ut ex anim exercitation sunt sit excepteur commodo.';
 
 const content =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue. In pellentesque massa placerat duis ultricies lacus sed turpis. Arcu felis bibendum ut tristique et. Accumsan sit amet nulla facilisi morbi tempus. Nunc sed blandit libero volutpat sed. Id semper risus in hendrerit gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi. Leo a diam sollicitudin tempor id eu nisl. Mollis nunc sed id semper risus in hendrerit. Mattis aliquam faucibus purus in massa tempor.';
+  'Do proident fugiat voluptate est consectetur. Proident excepteur cupidatat enim aliquip pariatur elit culpa esse. Duis magna magna elit commodo eiusmod do aliquip nulla deserunt. Exercitation occaecat adipisicing culpa duis consectetur. Tempor voluptate non excepteur elit. Officia culpa esse sunt nulla id non ullamco. Sit eu reprehenderit veniam quis veniam.';
 
 const colors = [
   'red',

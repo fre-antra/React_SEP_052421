@@ -7,7 +7,6 @@ export default function Card(props) {
   const { index, handleChange } = useContext(LayoutContext);
 
   const isClick = idx === index;
-
   const boxShadow = isClick ? `5px 5px 8px ${color}` : 'none';
   const border = isClick ? `2px solid ${color}` : '2px solid white';
 

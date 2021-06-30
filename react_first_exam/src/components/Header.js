@@ -2,7 +2,7 @@ import '../style/Header.css';
 import { useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
-export default function Header(props) {
+export default function Header() {
   const { color, head } = useContext(LayoutContext);
 
   return (
