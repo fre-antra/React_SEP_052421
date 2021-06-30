@@ -1,5 +1,6 @@
 import React from "react";
-import { withTodos } from "../../hoc/withTodos";
+// import { getAllTodos } from '../../apis/TodoAPI';
+// import { withTodos } from '../../hoc/withTodos';
 
 class Dashboard extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class Dashboard extends React.Component {
   }
 }
 
-const NewDashboard = withTodos(Dashboard);
-console.log(NewDashboard);
+// const NewDashboard = withTodos(Dashboard);
+// console.log(NewDashboard);
 
-export default NewDashboard;
+export default Dashboard;

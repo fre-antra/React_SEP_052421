@@ -1,8 +1,9 @@
 import React from "react";
 import "./TodoList.css";
 import TodoItem from "./TodoItem/TodoItem";
+// import { getAllTodos, deleteTodo, addTodo } from '../../apis/TodoAPI';
 import { Todo } from "../../model/Todo";
-import { withTodos } from "../../hoc/withTodos";
+// import { withTodos } from '../../hoc/withTodos';
 
 class TodoList extends React.Component {
   state = {
@@ -83,4 +84,5 @@ class TodoList extends React.Component {
   }
 }
 
-export default withTodos(TodoList);
+export default TodoList;
+// export default withTodos(TodoList);
