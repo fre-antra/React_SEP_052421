@@ -16,7 +16,7 @@ export default function Card(props) {
   };
 
   return (
-    <div className='card' onClick={() => handleClick()} style={style}>
+    <div className='card' onClick={handleClick} style={style}>
       <h3 className='card-title'>{title}</h3>
       <div className='card-content'>{content}</div>
       <button className='card-btn' style={{ backgroundColor: `${color}` }}>

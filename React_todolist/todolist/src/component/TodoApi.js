@@ -1,6 +1,7 @@
 const baseURL = 'https://jsonplaceholder.typicode.com/todos/';
 
 export function getTodos() {
+  console.log('Fetch Data....');
   return fetch(baseURL).then((res) => res.json());
 }
 

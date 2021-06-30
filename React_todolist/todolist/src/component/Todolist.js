@@ -6,12 +6,15 @@ import '../style/Todolist.css';
 function Todolist() {
   const [list, setList] = useState([]);
   const [input, setInput] = useState('');
+  console.log('list render----');
 
   useEffect(() => {
-    if (list.length === 0) {
-      getTodos().then((res) => setList([...res]));
-    }
-  });
+    getTodos().then((res) =>
+      setList(
+        res.filter((item) => item.completed === false && item.userId === 1)
+      )
+    );
+  }, []);
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
