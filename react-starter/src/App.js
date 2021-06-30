@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./components/Layout/Layout";
 import TodoList from "./components/TodoList/TodoList";
 import Dashboard from "./components/Dashboard/Dashboard";
+import WithTodosData from "./components/WithTodosData/WithTodosData";
 
 /**
  在 componentDidMount 初始化发请求；
@@ -52,10 +53,29 @@ class App extends React.Component {
     let content = null;
     switch (this.state.activePage) {
       case "Dashboard":
-        content = <Dashboard/>
+        // content = <Dashboard/>
+        content = (
+            <WithTodosData
+                renderHeader={headerTitle => <header>{headerTitle}</header>}
+                render={(removeTodo, addTodo, todolist) => (
+                    <Dashboard todolist={todolist}/>
+                )}
+            />
+        );
         break;
       case "TodoList":
-        content = <TodoList/>
+        // content = <TodoList/>
+        content = (
+            <WithTodosData>
+              {(removeTodo, addTodo, todolist) => (
+                  <TodoList
+                      todolist={todolist}
+                      handleRemoveTodo={removeTodo}
+                      HandleAddTodo={addTodo}
+                  />
+              )}
+            </WithTodosData>
+        );
         break;
       default:
         break;
