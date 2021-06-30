@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './TodoList.css'
 import TodoItem from './TodoListItem/TodoListItem'
 import { addTodoAPI, getTodoListAPI, deleteTodoAPI } from '../../apis/TodoAPI'
@@ -29,8 +29,8 @@ function TodoList() {
   }
 
   const handleInputChange = event => {
-    setstate({
-      inputTodoItem: event.target.value,
+    setstate(prevState => {
+      return { ...prevState, inputTodoItem: event.target.value }
     })
   }
   const handleInputEnterKey = e => {
