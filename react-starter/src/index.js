@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import App1 from './App1'
+import App1 from './App1';
+import Counter from "./redux/Counter";
 
 // 用useRef也能解决这个问题 两种方式
 // const xxx = useRef(0)
@@ -30,7 +31,7 @@ const FcCounter = () => {
 
 ReactDOM.render(
     <React.StrictMode>
-      <App/>
+      <Counter/>
       {/*<App1/>*/}
     </React.StrictMode>,
     document.getElementById('root')
