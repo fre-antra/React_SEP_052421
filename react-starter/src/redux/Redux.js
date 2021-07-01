@@ -37,3 +37,4 @@ function myCreateStore(reducer) {
 }
 
 export const myStore = myCreateStore(counterReducer);
+export const store = createStore(counterReducer)

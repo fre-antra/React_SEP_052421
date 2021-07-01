@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import App1 from './App1';
 import Counter from "./redux/Counter";
+import {store} from "./redux/Redux";
+import {Provider} from "react-redux";
 
 // 用useRef也能解决这个问题 两种方式
 // const xxx = useRef(0)
@@ -30,9 +32,10 @@ const FcCounter = () => {
 }
 
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
+      <Counter/>
       <Counter/>
       {/*<App1/>*/}
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById('root')
 );
