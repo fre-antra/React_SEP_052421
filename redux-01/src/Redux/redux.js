@@ -45,6 +45,7 @@ function myCreateStore(reducer) {
 
   function subscribe(cb) {
     listener.push(cb);
+    // console.log(listener,'=====>');
   }
 
   function dispatch(action) {
