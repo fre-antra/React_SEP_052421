@@ -12,7 +12,7 @@ const { createStore } = require('redux');
  * You can use any conditional logic you want in a reducer. In this example,
  * we use a switch statement, but it's not required.
  */
-function counterReducer(state = { value: 0 }, action) {
+function counterReducer(state = { value: 50 }, action) {
   switch (action.type) {
     case 'counter/incremented':
       return { value: state.value + 1 };
@@ -25,9 +25,14 @@ function counterReducer(state = { value: 0 }, action) {
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-let store = createStore(counterReducer);
+export let store = createStore(counterReducer);
 
 export const myStore = myCreateStore(counterReducer);
+// myStore.replaceReducer = store.replaceReducer;
+// myStore[Symbol('observable')] = Object.getOwnPropertySymbols(store)[0];
+myStore.subscribe(() => {
+  console.log(myStore.getState());
+});
 
 function myCreateStore(reducer) {
   let listeners = [];
@@ -37,7 +42,7 @@ function myCreateStore(reducer) {
     return state;
   }
   function subscribe(subCallback) {
-    listeners.push(subCallback);
+    listeners.push(subCallback.bind(this));
   }
   function dispatch(action) {
     state = reducer(state, action);
