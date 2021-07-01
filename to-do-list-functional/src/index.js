@@ -50,9 +50,9 @@ import { myStore } from "./Redux/Redux";
 
 const useForceUpdate = () => {
   const [update, setUpdate] = React.useState(0);
-  console.log("update", update);
-  // return [update, () => {console.log('return', update);setUpdate(update + 1)}];
-return [update, () => {console.log('return', update);setUpdate(preState=>{console.log('prestate', preState);return preState+1})}];
+  // console.log('update', update)
+  return [update, () => {console.log('renderUpdate', update); setUpdate(preState=>{console.log('inSetUpdate',preState,update); return update+1})}];
+  // return [update, () => setUpdate([])];
 };
 
 function FCounter() {
@@ -61,25 +61,28 @@ function FCounter() {
   React.useEffect(() => {
     myStore.subscribe(() => {
       forceUpdate();
-      // console.log(update);
     });
   }, []);
+  React.useEffect(() => {
+    console.log('didMount')
+  });
 
   const handleAdd = () => {
     myStore.dispatch({ type: "counter/incremented" });
     console.log(myStore.getState());
     // forceUpdate();
-    console.log("add", update, forceUpdate);
+    // console.log("add", update, 'forceUpdate');
   };
   const handleSub = () => {
     myStore.dispatch({ type: "counter/decremented" });
     console.log(myStore.getState());
     forceUpdate();
   };
+  // console.log('lasrRender')
   return (
     <>
       <h1>FC Counter:{myStore.getState().value}</h1>
-      <h2>FC Counter:{update}</h2>
+      <h2>State:{update}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
     </>

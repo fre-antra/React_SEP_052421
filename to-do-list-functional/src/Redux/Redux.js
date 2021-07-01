@@ -38,16 +38,16 @@ function myCreateStore(reducer) {
     return state;
   }
   function subscribe(subCallback) {
-    console.log("hey", subCallback);
+    // console.log("hey", subCallback);
     listeners.push(subCallback);
-    console.log("hey2", listeners);
+    // console.log("hey2", listeners);
   }
   function dispatch(action) {
     state = reducer(state, action);
     listeners.forEach((listener) => {
-      console.log("listener", listener);
+      // console.log("listener", listener);
       listener()
-      console.log("listener2", listener);
+      // console.log("listener2", listener);
     });
   }
 
