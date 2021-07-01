@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import { myStore } from './redux/Redux';
 
@@ -33,16 +33,17 @@ class App extends React.Component {
 
 function useForceUpdate() {
   const [value, setValue] = useState(0); // integer state
+  console.log('stateCountValue', value);
   return [value, () => setValue(value => value + 1)]; // update the state to force render
 }
 
 function FuncApp() {
   const [counter, forceUpdate] = useForceUpdate();
 
-  React.useEffect(() => {
+  useEffect(() => {
+    console.log('useEffect');
     myStore.subscribe(() => {
       forceUpdate();
-      console.log(counter, 'render');
     });
   }, []);
 
