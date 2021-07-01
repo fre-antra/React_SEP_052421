@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./Header.css";
+import TodosCount from "../TodosCount/TodosCount";
+import WithTodosData from "../WithTodosData/WithTodosData";
+
 export default class Header extends Component {
   render() {
     const { handleChangeActivePage } = this.props;
@@ -20,6 +23,9 @@ export default class Header extends Component {
             TodoList
           </h5>
         </div>
+        <WithTodosData>
+          {(_, __, todolist) => <TodosCount todolist={todolist}></TodosCount>}
+        </WithTodosData>
       </div>
     );
   }
