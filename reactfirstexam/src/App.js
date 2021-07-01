@@ -11,14 +11,22 @@ function App() {
   const handleColor = (colorName) => {
     setColor(colorName);
   };
-
-  useEffect(() => {
+  const getCards = () => {
     return new Promise((res, rej) => {
       setTimeout(() => {
         setCardsData(data);
       }, 1000);
     });
-  });
+  };
+  useEffect(() => {
+    getCards();
+  }, []);
+
+  // useEffect(()=>{
+  //   return setTimeout(() => {
+  //         setCardsData(data);
+  //       }, 1000)
+  // })
 
   const GlobalStyle = createGlobalStyle`
   *,

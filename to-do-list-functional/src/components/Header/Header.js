@@ -7,9 +7,10 @@ export default function Header({handleNav}) {
     <div className="header-list">
       <Logo></Logo>
       <nav className="nav">
-        <a onClick={handleNav}>DashBoard</a>
-        <a onClick={handleNav}>TodoList</a>
+        <button onClick={handleNav}>DashBoard</button>
+        <button onClick={handleNav}>TodoList</button>
       </nav>
+      
     </div>
   );
 }

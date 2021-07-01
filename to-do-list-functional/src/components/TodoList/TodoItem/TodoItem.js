@@ -2,7 +2,7 @@ import React from "react";
 import "./TodoItem.css";
 
 function TodoItem({ item, removeTodo }) {
-  console.log(removeTodo);
+  // console.log(removeTodo);
   return (
     <li className="todolist__content-item">
       <span>{item.title}</span>
