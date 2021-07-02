@@ -6,7 +6,7 @@ const reducer = (state = { count: 0 }, action) => {
         ...state,
         count: state.count + 1,
       }
-    case 'sub':
+    case 'SUB':
       return {
         ...state,
         count: state.count - 1,
