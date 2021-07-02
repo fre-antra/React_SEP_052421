@@ -2,9 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import { myStore, store } from './Redux/Redux';
+import { actionCreater, myStore, store } from './Redux/Redux';
 import { Provider, connect } from 'react-redux';
-import { MyProvider, myConnect } from './ReactRedux/ReactRedux';
+import {
+  MyProvider,
+  myConnect,
+  useSelector,
+  useDispatch,
+} from './ReactRedux/ReactRedux';
 
 import WithTodosData from './components/WithTodosData/WithTodosData';
 
@@ -132,11 +137,24 @@ const MyCounter = myConnect(mapStateToProps, mapDispatchToProps)(Counter);
 //     </Provider>
 //   );
 // };
+const CounterComponent = () => {
+  const counter = useSelector((state) => state.value);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      Hooks Counter : {counter}
+      <button onClick={() => dispatch(actionCreater.counterAdd())}>Add</button>
+      <button onClick={() => dispatch(actionCreater.counterSub())}>Sub</button>
+    </div>
+  );
+};
+
 const MyReactReduxTest = () => {
   return (
-    <MyProvider store={store}>
+    <MyProvider store={myStore}>
       <MyCounter name="patrick"></MyCounter>
-      <MyCounter name="sam"></MyCounter>
+      <CounterComponent></CounterComponent>
     </MyProvider>
   );
 };
