@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import myStore from '../Redux/redux';
 
 const useForceUpdate = () => {
-  const [update, setUpdate] = useState(true);
-  return () => setUpdate(!update);
+  const [update, setUpdate] = useState(0);
+  return () => setUpdate((preState) => preState + 1);
 };
 
-const Counter3 = () => {
+function Counter8() {
   const forceUpdate = useForceUpdate();
 
   useEffect(() => {
     myStore.subscribe(() => {
       forceUpdate();
     });
-  }, [forceUpdate]);
+  }, []);
 
   const handleAdd = () => {
     myStore.dispatch({ type: 'counter/incremented' });
@@ -24,14 +24,14 @@ const Counter3 = () => {
   };
 
   return (
-    <div>
-      <h1>Counter 3 -- FC - customize hook</h1>
+    <>
+      <h1>Counter 8 -- FC - preState</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
       <hr />
-    </div>
+    </>
   );
-};
+}
 
-export default Counter3;
+export default Counter8;
