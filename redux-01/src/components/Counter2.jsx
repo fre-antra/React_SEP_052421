@@ -16,7 +16,7 @@ const Counter2 = () => {
 
   return (
     <div>
-      <h1>Counter 2 -- FC - useState</h1>
+      <h1>Counter 2 - FC - useState</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>

@@ -17,7 +17,7 @@ export default class Counter1 extends Component {
   render() {
     return (
       <div>
-        <h1>Counter 1 -- CC</h1>
+        <h1>Counter 1 - CC</h1>
         <h2>Counter:{myStore.getState().value}</h2>
         <button onClick={this.handleAdd}>Add</button>
         <button onClick={this.handleSub}>Sub</button>

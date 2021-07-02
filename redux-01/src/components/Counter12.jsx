@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import myStore from '../Redux/redux';
 
 const useForceUpdate = () => {
   const [update, setUpdate] = useState(0);
-  return () => setUpdate((preState) => preState + 1);
+  return () => {
+    setUpdate(Math.random());
+  };
 };
 
-function Counter8() {
+function Counter12() {
   const forceUpdate = useForceUpdate();
 
   useEffect(() => {
@@ -25,7 +27,7 @@ function Counter8() {
 
   return (
     <>
-      <h1>Counter 8 - FC - preState</h1>
+      <h1>Counter 12 - FC - React-redux(offical)</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
@@ -34,4 +36,4 @@ function Counter8() {
   );
 }
 
-export default Counter8;
+export default Counter12;

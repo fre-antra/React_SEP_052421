@@ -25,7 +25,7 @@ const Counter6 = () => {
 
   return (
     <div>
-      <h1>Counter 6 -- FC - `0 to 1`</h1>
+      <h1>Counter 6 - FC - `0 to 1`</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>

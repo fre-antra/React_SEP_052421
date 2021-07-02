@@ -25,7 +25,7 @@ const Counter5 = () => {
 
   return (
     <div>
-      <h1>Counter 5 -- FC - empty array</h1>
+      <h1>Counter 5 - FC - empty array</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>

@@ -47,7 +47,7 @@ function Counter7() {
   // console.log('lasrRender')
   return (
     <>
-      <h1>Counter 7 -- FC - preState debug</h1>
+      <h1>Counter 7 - FC - preState debug</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>

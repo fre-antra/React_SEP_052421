@@ -25,7 +25,7 @@ const Counter3 = () => {
 
   return (
     <div>
-      <h1>Counter 3 -- FC - customize hook</h1>
+      <h1>Counter 3 - FC - customize hook</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>

@@ -20,7 +20,7 @@ const Counter4 = () => {
 
   return (
     <div>
-      <h1>Counter 4 -- FC - no customize hook</h1>
+      <h1>Counter 4 - FC - no customize hook</h1>
       <h2>Counter:{myStore.getState().value}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
