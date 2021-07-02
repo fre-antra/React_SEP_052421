@@ -8,6 +8,13 @@
     margin: auto;
 }
 
+.gallery__title{
+    width: inherit;
+    text-align: center;
+    padding: 20px;
+    font-family: "Josefin Sans",Helvetica,Arial,sans-serif;
+}
+
 .gallery__imageBolck{
     width: 220px;
     height: 165px;

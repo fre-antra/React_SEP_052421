@@ -9,15 +9,22 @@
 }
 
 .tabs__btn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
     cursor: pointer;
     width: 6em;
     height: 2em;
     font-size: 1em;
     font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
     opacity: 1;
     background-color: black;
     color: white;
     border-radius: 10px;
+}
+.btn-text{
+    margin: auto;
 }
 
 .tabs__btn:hover {
