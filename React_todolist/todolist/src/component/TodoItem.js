@@ -1,8 +1,9 @@
 import '../style/TodoItem.css';
+import { memo } from 'react';
 
 function TodoItem(props) {
   const { title, id } = props.item;
-  // console.log('item render!!');
+  console.log('item render!!');
   return (
     <li className='item'>
       <span className='item-title'>{title}</span>
@@ -17,4 +18,4 @@ function TodoItem(props) {
   );
 }
 
-export default TodoItem;
+export default memo(TodoItem);

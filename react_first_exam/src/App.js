@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import LayoutProvider from './components/LayoutProvider';
 
-function App() {
+export default function App() {
   return (
     <div className='App'>
       <LayoutProvider>
@@ -13,5 +13,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
