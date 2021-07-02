@@ -14,12 +14,42 @@ const { createStore } = require("redux");
  * we use a switch statement, but it's not required.
  */
 
+// Action Type
+const COUNTER_INCREMENTED = "counter/incremented";
+const COUNTER_DECREMENTED = "counter/decremented";
+
+// Action Creator
+const counterAdd = () => {
+  return {
+    type: COUNTER_INCREMENTED,
+  };
+};
+
+const counterSub = () => {
+  return {
+    type: COUNTER_DECREMENTED,
+  };
+};
+
+const counterAddAfter = () => {
+  setTimeout(() => {
+    return {
+      type: COUNTER_INCREMENTED,
+    };
+  }, 3000);
+};
+
+export const actionCreator = {
+  counterAdd,
+  counterSub,
+};
+
 // pure function
-function counterReducer(state = { value: 0 }, action) {
+function counterReducer(state = { value: 50 }, action) {
   switch (action.type) {
-    case "counter/incremented":
+    case COUNTER_INCREMENTED:
       return { value: state.value + 1 };
-    case "counter/decremented":
+    case COUNTER_DECREMENTED:
       return { value: state.value - 1 };
     default:
       return state;
@@ -31,6 +61,9 @@ function counterReducer(state = { value: 0 }, action) {
 export let store = createStore(counterReducer);
 
 export const myStore = myCreateStore(counterReducer);
+myStore.subscribe(() => {
+  console.log(myStore.getState());
+});
 
 function myCreateStore(reducer) {
   let listeners = [];
@@ -43,6 +76,9 @@ function myCreateStore(reducer) {
 
   function subscribe(subCallback) {
     listeners.push(subCallback);
+    return () => {
+      listeners = listeners.filter((cb) => cb !== subCallback);
+    };
   }
 
   function dispatch(action) {
