@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-function counterReducer(state = { value: 0 }, action) {
+function counterReducer1(state = { value: 0 }, action) {
   switch (action.type) {
     case 'counter/incremented':
       return { value: state.value + 1 };
@@ -11,14 +11,27 @@ function counterReducer(state = { value: 0 }, action) {
   }
 }
 
-export let store = createStore(counterReducer);
+export let store = createStore(counterReducer1);
 
 // --- my store
+let initialState = {
+  value: 1,
+};
+function counterReducer2(state = initialState, action) {
+  switch (action.type) {
+    case 'counter/incremented':
+      return { value: state.value + 1 };
+    case 'counter/decremented':
+      return { value: state.value - 1 };
+    default:
+      return state;
+  }
+}
 
 function myCreateStore(reducer) {
   let state;
   let listener = [];
-  state = reducer(state, { type: 'init' });
+  state = reducer(state, { type: '' });
 
   function getState() {
     return state;
@@ -26,7 +39,6 @@ function myCreateStore(reducer) {
 
   function subscribe(cb) {
     listener.push(cb);
-    // console.log(listener,'=====>');
   }
 
   function dispatch(action) {
@@ -43,4 +55,4 @@ function myCreateStore(reducer) {
   };
 }
 
-export let myStore = myCreateStore(counterReducer);
+export let myStore = myCreateStore(counterReducer2);

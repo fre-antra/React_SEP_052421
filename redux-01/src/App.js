@@ -1,6 +1,7 @@
 import './App.css';
 import { Provider } from 'react-redux';
-import { store } from './Redux/redux';
+import { MyProvider } from './Redux/react-redux';
+import { myStore, store } from './Redux/redux';
 
 import Counter1 from './components/Counter1';
 import Counter2 from './components/Counter2';
@@ -14,6 +15,9 @@ import Counter9 from './components/Counter9';
 import Counter10 from './components/Counter10';
 import Counter11 from './components/Counter11';
 import Counter12 from './components/Counter12';
+import Counter13 from './components/Counter13';
+import Counter14 from './components/Counter14';
+import Counter15 from './components/Counter15';
 
 function App() {
   return (
@@ -24,13 +28,23 @@ function App() {
       <Counter4 />
       <Counter5 />
       <Counter6 />
-      <Counter7 />
+
       <Counter8 />
       <Counter9 />
       <Counter10 />
       <Counter11 />
       <Provider store={store}>
         <Counter12 />
+      </Provider>
+      <MyProvider store={store}>
+        <Counter14 />
+      </MyProvider>
+      <MyProvider store={myStore}>
+        <Counter15 />
+      </MyProvider>
+      <Counter7 />
+      <Provider store={myStore}>
+        <Counter13 />
       </Provider>
     </div>
   );

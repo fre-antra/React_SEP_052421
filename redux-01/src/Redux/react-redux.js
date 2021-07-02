@@ -4,16 +4,16 @@ const MyReactReduxContext = React.createContext({});
 export class MyProvider extends Component {
   render() {
     return (
-      <MyReactReduxContext value={this.props.store}>
+      <MyReactReduxContext.Provider value={this.props.store}>
         {this.props.children}
-      </MyReactReduxContext>
+      </MyReactReduxContext.Provider>
     );
   }
 }
 
 export function myConnect(mapStateToProps, mapDispatchToProps) {
   return function (WrappedComponent) {
-    return class NewCompnnent extends React.Component {
+    return class NewCompnnent extends Component {
       static contextType = MyReactReduxContext;
 
       componentDidMount() {
@@ -24,7 +24,7 @@ export function myConnect(mapStateToProps, mapDispatchToProps) {
         const { getState, dispatch } = this.context;
         const msp = mapStateToProps(getState());
         const mdp = mapDispatchToProps(dispatch);
-        
+
         return <WrappedComponent {...this.props} {...msp} {...mdp} />;
       }
     };

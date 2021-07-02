@@ -1,9 +1,9 @@
-import { connect } from 'react-redux';
+import { myConnect } from '../Redux/react-redux';
 
-const Counter12 = ({ handleAdd, handleSub, counter }) => {
+const Counter14 = ({ handleAdd, handleSub, counter }) => {
   return (
     <>
-      <h1>Counter 12 - FC - React-redux(offical) & store(offical)</h1>
+      <h1>Counter 14 - FC - my React-redux & store(offical)</h1>
       <h2>Counter:{counter}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
@@ -25,4 +25,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter12);
+export default myConnect(mapStateToProps, mapDispatchToProps)(Counter14);
