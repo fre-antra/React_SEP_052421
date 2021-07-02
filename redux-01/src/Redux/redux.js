@@ -1,26 +1,17 @@
-import { createStore } from 'redux'
+import { createStore } from 'redux';
 
 function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
     case 'counter/incremented':
-      return { value: state.value + 1 }
+      return { value: state.value + 1 };
     case 'counter/decremented':
-      return { value: state.value - 1 }
+      return { value: state.value - 1 };
     default:
-      return state
+      return state;
   }
 }
 
-let store = createStore(counterReducer)
-
-store.subscribe(() => console.log(store.getState()))
-
-// store.dispatch({ type: 'counter/incremented' });
-// {value: 1}
-// store.dispatch({ type: 'counter/incremented' });
-// {value: 2}
-// store.dispatch({ type: 'counter/decremented' });
-// {value: 1}
+export let store = createStore(counterReducer);
 
 // --- my store
 
@@ -52,14 +43,4 @@ function myCreateStore(reducer) {
   };
 }
 
-let myStore = myCreateStore(counterReducer);
-// myStore.subscribe(() => console.log(myStore.getState()));
-
-// myStore.dispatch({ type: 'counter/incremented' });
-// {value: 1}
-// myStore.dispatch({ type: 'counter/incremented' });
-// {value: 2}
-// myStore.dispatch({ type: 'counter/decremented' });
-// {value: 1}
-
-export default myStore;
+export let myStore = myCreateStore(counterReducer);

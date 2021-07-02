@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 const useForceUpdate = () => {
   const [update, setUpdate] = useState(0);
@@ -17,6 +17,7 @@ function Counter10() {
     myStore.subscribe(() => {
       forceUpdate();
     });
+    // eslint-disable-next-line
   }, []);
 
   const handleAdd = () => {

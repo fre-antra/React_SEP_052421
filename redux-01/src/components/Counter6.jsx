@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 const useForceUpdate = () => {
   const [update, setUpdate] = useState(0);

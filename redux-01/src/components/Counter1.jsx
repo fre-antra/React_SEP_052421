@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 export default class Counter1 extends Component {
   componentDidMount() {

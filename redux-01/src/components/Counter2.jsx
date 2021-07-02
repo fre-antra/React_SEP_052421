@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 const Counter2 = () => {
   const [add, setAdd] = useState('');

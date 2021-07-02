@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 const useForceUpdate = () => {
+  // eslint-disable-next-line
   const [update, setUpdate] = useState(0);
   return () => setUpdate((preState) => preState + 1);
 };
@@ -13,6 +14,7 @@ function Counter8() {
     myStore.subscribe(() => {
       forceUpdate();
     });
+    // eslint-disable-next-line
   }, []);
 
   const handleAdd = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import myStore from '../Redux/redux';
+import { myStore } from '../Redux/redux';
 
 const Counter4 = () => {
   const [update, setUpdate] = useState(true);
