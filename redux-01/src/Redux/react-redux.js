@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 const MyReactReduxContext = React.createContext({});
 
 export class MyProvider extends Component {
@@ -30,3 +30,44 @@ export function myConnect(mapStateToProps, mapDispatchToProps) {
     };
   };
 }
+
+const useForceUpdate = () => {
+  // eslint-disable-next-line
+  const [update, setUpdate] = useState([]);
+  return () => setUpdate([]);
+};
+
+export function useMySelector(mapStateFn) {
+  const { getState, subscribe } = React.useContext(MyReactReduxContext);
+  const forceUpdate = useForceUpdate();
+
+  useEffect(() => {
+    const unsub = subscribe(() => {
+      forceUpdate();
+    });
+    return () => {
+      unsub();
+    };
+    // eslint-disable-next-line
+  }, []);
+
+  return mapStateFn(getState());
+}
+
+export const useMyDispatch = () => {
+  const { dispatch, subscribe } = React.useContext(MyReactReduxContext);
+
+  const forceUpdate = useForceUpdate();
+
+  useEffect(() => {
+    const unsub = subscribe(() => {
+      forceUpdate();
+    });
+    return () => {
+      unsub();
+    };
+    // eslint-disable-next-line
+  }, []);
+
+  return dispatch;
+};

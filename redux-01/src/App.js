@@ -18,6 +18,8 @@ import Counter12 from './components/Counter12';
 import Counter13 from './components/Counter13';
 import Counter14 from './components/Counter14';
 import Counter15 from './components/Counter15';
+import Counter16 from './components/Counter16';
+import Counter17 from './components/Counter17';
 
 function App() {
   return (
@@ -28,7 +30,6 @@ function App() {
       <Counter4 />
       <Counter5 />
       <Counter6 />
-
       <Counter8 />
       <Counter9 />
       <Counter10 />
@@ -42,10 +43,16 @@ function App() {
       <MyProvider store={myStore}>
         <Counter15 />
       </MyProvider>
-      <Counter7 />
       <Provider store={myStore}>
         <Counter13 />
       </Provider>
+      <Counter7 />
+      <Provider store={store}>
+        <Counter16 />
+      </Provider>
+      <MyProvider store={myStore}>
+        <Counter17 />
+      </MyProvider>
     </div>
   );
 }

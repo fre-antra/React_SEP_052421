@@ -15,7 +15,7 @@ export let store = createStore(counterReducer1);
 
 // --- my store
 let initialState = {
-  value: 1,
+  value: 100,
 };
 function counterReducer2(state = initialState, action) {
   switch (action.type) {

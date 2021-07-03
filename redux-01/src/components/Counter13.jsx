@@ -13,7 +13,7 @@ const Counter13 = ({ handleAdd, handleSub, counter }) => {
   return (
     <>
       <h1 style={{ color: 'red' }}>
-        Counter 13 - FC - React-redux(offical) & myStore -- `Debugging`
+        Counter 13 - FC - Provider & myStore -- `Debugging`
       </h1>
       <p>
         这个不能运作的原因是当 store state 改变时，react-redux

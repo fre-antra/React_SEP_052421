@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 const Counter12 = ({ handleAdd, handleSub, counter }) => {
   return (
     <>
-      <h1>Counter 12 - FC - React-redux(offical) & store(offical)</h1>
+      <h1>Counter 12 - FC - Provider & store</h1>
       <h2>Counter:{counter}</h2>
       <button onClick={handleAdd}>Add</button>
       <button onClick={handleSub}>Sub</button>
