@@ -35,14 +35,7 @@ export const useSelector = (mapStateFn) => {
   return mapStateFn(getState());
 };
 
-// <--------------------------------------------------------------->
-
-
-
-
-
-
-// By using useDispatch and useSelector, we don't need to use connect()() and Provider.
+// By using useDispatch and useSelector, we still need Provider to provide store in context.
 export const MyProvider = ({ store, children }) => {
   return (
     <ReduxStoreContext.Provider value={store}>
@@ -51,7 +44,19 @@ export const MyProvider = ({ store, children }) => {
   );
 };
 
-// By using useDispatch and useSelector, we don't need to use connect()() and Provider.
+// <--------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+// By using useDispatch and useSelector, we don't need to use connect()().
 
 // connect()() is a curried function, it returns a anonymous function.
 export function myConnect(mapStateToProps, mapDispatchToProps, mergeProps, options) {
