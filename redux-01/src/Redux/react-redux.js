@@ -18,8 +18,13 @@ export function myConnect(mapStateToProps, mapDispatchToProps) {
 
       componentDidMount() {
         const { subscribe } = this.context;
-        subscribe(() => this.forceUpdate());
+        this.unsubscribe = subscribe(() => this.forceUpdate());
       }
+
+      componentWillUnmount() {
+        this.unsubscribe();
+      }
+
       render() {
         const { getState, dispatch } = this.context;
         const msp = mapStateToProps(getState());

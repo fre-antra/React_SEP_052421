@@ -30,7 +30,7 @@ function counterReducer2(state = initialState, action) {
 
 function myCreateStore(reducer) {
   let state;
-  let listener = [];
+  let listeners = [];
   state = reducer(state, { type: '' });
 
   function getState() {
@@ -38,12 +38,15 @@ function myCreateStore(reducer) {
   }
 
   function subscribe(cb) {
-    listener.push(cb);
+    listeners.push(cb);
+    return () => {
+      listeners = listeners.filter((item) => item !== cb);
+    };
   }
 
   function dispatch(action) {
     state = reducer(state, action);
-    listener.forEach((cb) => {
+    listeners.forEach((cb) => {
       cb();
     });
   }
