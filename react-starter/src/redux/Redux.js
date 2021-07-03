@@ -1,4 +1,33 @@
-const {createStore} = require('redux')
+const {createStore} = require('redux');
+
+// Action type
+const COUNTER_INCREMENTED = 'counter/incremented';
+const COUNTER_DECREMENTED = 'counter/decremented';
+
+// Action Creator
+const counterAdd = () => {
+  return {
+    type: COUNTER_INCREMENTED,
+  };
+};
+const counterSub = () => {
+  return {
+    type: COUNTER_DECREMENTED,
+  };
+};
+
+const counterAddAfter3S = () => {
+  setTimeout(() => {
+    return {
+      type: COUNTER_INCREMENTED,
+    };
+  }, 3000);
+};
+
+export const actionCreator = {
+  counterAdd,
+  counterSub,
+};
 
 function counterReducer(state = {value: 0}, action) {
   switch (action.type) {

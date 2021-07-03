@@ -1,6 +1,7 @@
 import React from "react";
-import {myStore} from "./Redux";
+import {myStore, actionCreator} from "./Redux";
 import {connect} from "react-redux";
+import {useSelector, useDispatch} from "./React-redux";
 
 // class Counter extends React.Component {
 //   handleAdd = () => {
@@ -91,6 +92,23 @@ const mapDispatchToProps = dispatch => {
     handleAdd: () => dispatch({type: 'counter/incremented'}),
     handleSub: () => dispatch({type: 'counter/decremented'})
   }
+}
+
+const CounterComponent = () => {
+  const counter = useSelector(state => state.value);
+  const dispatch = useDispatch();
+
+  return (
+      <div>
+        Hooks Counter: {counter}
+        <button onClick={() => dispatch(actionCreator.counterAdd())}>
+          Add
+        </button>
+        <button onClick={() => dispatch(actionCreator.counterSub())}>
+          Sub
+        </button>
+      </div>
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
