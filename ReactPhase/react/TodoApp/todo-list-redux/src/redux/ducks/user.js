@@ -27,7 +27,6 @@ const userReducer = (state = initialState, action) => {
     
         case SET_USER:
             const { user } = action
-            
             return {...state, user: user}
         
         default:

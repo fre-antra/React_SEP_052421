@@ -1,4 +1,3 @@
-const { createStore } = require('redux');
 
 /******************     My version     ****************/
 // store (3/5): 
@@ -10,13 +9,29 @@ const { createStore } = require('redux');
 //           store.subscribe(listener);
 
 // state; action; reducer;
-const initalState = { value: 0}
+// action initial
+const COUNTER_INCREMENTED = 'counter/incremented';
+const COUNTER_DECREMENTED = 'counter/decremented';
+const initalState = { value: 0 }
+
+// action creator
+const counterAdd = () => {
+  return {type:COUNTER_INCREMENTED}
+}
+const counterSub = () => {
+  return {type:COUNTER_DECREMENTED}
+}
+export const actionCreator = {
+  counterAdd, counterSub
+}
+
+// reducer
 function myReducers(state=initalState, action) {
   switch (action.type) {
-    case 'counter/incremented':
-      return { ...state, value: state.value + 1 }
-    case 'counter/decremented':
-      return { ...state, value:  state.value  - 1 }
+    case COUNTER_INCREMENTED:
+      return {value: state.value + 1 }
+    case COUNTER_DECREMENTED:
+      return { value:  state.value  - 1 }
       
     default:
       return state;
@@ -37,11 +52,11 @@ function selfCreateStore(myReducers) {
   }
   
   //subscribe
-  function subscribe(listener) {
-    listeners.push(listener)
+  function subscribe(subCallback) {
+    listeners.push(subCallback)
     // 用完删掉这个callback（listener）
     return function unsubscribe() {
-      const index = listeners.indexOf(listener)
+      const index = listeners.indexOf(subCallback)
       listeners.splice(index,1)
     }
   }
@@ -49,6 +64,7 @@ function selfCreateStore(myReducers) {
   // dispatch action
   function dispatch(action) {
     state = myReducers(state, action)
+    console.log(listeners, state);
     listeners.forEach(listener => listener())
   }
 
@@ -89,7 +105,9 @@ function counterReducer(state = { value: 0 }, action) {
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-let store = createStore(counterReducer);
+
+
+// let store = createStore(counterReducer); // native store
 
 export const myStore = myCreateStore(counterReducer);
 
