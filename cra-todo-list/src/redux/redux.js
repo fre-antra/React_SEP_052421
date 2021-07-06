@@ -1,4 +1,6 @@
-//const { createStore } = require("redux");
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import axios from "axios";
 
 /**
  * This is a reducer - a function that takes a current state value and an
@@ -12,11 +14,57 @@
  * You can use any conditional logic you want in a reducer. In this example,
  * we use a switch statement, but it's not required.
  */
+
+// Action type
+const COUNTER_INCREMENTED = "counter/incremented";
+const COUNTER_DECREMENTED = "counter/decremented";
+
+// Action Creator
+const counterAdd = () => async (dispatch) => {
+  const { data } = await axios.get(
+    `https://jsonplaceholder.typicode.com/todos/1`
+  );
+  dispatch({
+    type: COUNTER_INCREMENTED,
+    payload: data,
+  });
+  //   return {
+  //     type: COUNTER_INCREMENTED,
+  //   };
+};
+const counterSub = () => async (dispatch) => {
+  const { data } = await axios.get(
+    `https://jsonplaceholder.typicode.com/todos/1`
+  );
+  dispatch({
+    type: COUNTER_DECREMENTED,
+    payload: data,
+  });
+  //   return {
+  //     type: COUNTER_DECREMENTED,
+  //   };
+};
+
+const counterAddAfter3S = () => {
+  setTimeout(() => {
+    return {
+      type: COUNTER_INCREMENTED,
+    };
+  }, 3000);
+};
+
+export const actionCreater = {
+  counterAdd,
+  counterSub,
+};
+
 function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
-    case "counter/incremented":
+    case COUNTER_INCREMENTED:
+      console.log(action.payload);
       return { value: state.value + 1 };
-    case "counter/decremented":
+    case COUNTER_DECREMENTED:
+      console.log(action.payload);
       return { value: state.value - 1 };
     default:
       return state;
@@ -36,6 +84,7 @@ function counterReducer(state = { value: 0 }, action) {
 
 //Custom myCreateStore
 export const myStore = myCreateStore(counterReducer);
+export const store = createStore(counterReducer, applyMiddleware(thunk));
 
 function myCreateStore(reducer) {
   let listeners = [];
