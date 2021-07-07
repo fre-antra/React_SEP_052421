@@ -86,4 +86,4 @@ class TodoList extends React.Component {
 
 export default TodoList;
 
-// export default conncent(withTodos(withAuth(withUser(TodoList))));
+// export default withTodos(TodoList);
