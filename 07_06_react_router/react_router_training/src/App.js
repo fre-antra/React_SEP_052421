@@ -3,9 +3,9 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import TodoList from './components/TodoList/TodoList';
 import Dashborad from './components/Dashboard/Dashboard';
-import { withTodos } from './hoc/withTodos';
-import WidthTodoData from './components/WithTodosData/WithTodosData';
-import { BrowserRouter, Router, Switch } from 'react-router-dom';
+import WithTodosData from './components/WithTodosData/WithTodosData';
+import { BrowserRouter } from 'react-router-dom';
+import { MyRoute } from './MyRouter/MyRouter';
 
 class App extends React.Component {
   state = {
@@ -19,41 +19,42 @@ class App extends React.Component {
   };
 
   render() {
-    let content = null;
-    switch (this.state.activePage) {
-      case 'Dashboard':
-        content = (
-          <WidthTodoData
-            renderHeader={(headerTitle) => <header>{headerTitle}</header>}
-            render={(removeTodo, addTodo, todolist) => (
-              <Dashborad todolist={todolist}></Dashborad>
-            )}
-          ></WidthTodoData>
-        );
-        break;
-      case 'TodoList':
-        content = (
-          <WidthTodoData>
-            {(removeTodo, addTodo, todolist) => (
-              <TodoList
-                todolist={todolist}
-                handleRemoveTodo={removeTodo}
-                HandleAddTodo={addTodo}
-              ></TodoList>
-            )}
-          </WidthTodoData>
-        );
-        break;
-      default:
-        break;
-    }
-
     return (
-      <Layout handleChangeActivePage={this.handleChangeActivePage}>
-        {content}
-      </Layout>
+      <BrowserRouter>
+        <Layout>
+          <MyRoute exact path="/todolist">
+            <WithTodosData>
+              {(removeTodo, addTodo, todolist) => (
+                <TodoList
+                  todolist={todolist}
+                  handleRemoveTodo={removeTodo}
+                  handleAddTodo={addTodo}
+                ></TodoList>
+              )}
+            </WithTodosData>
+          </MyRoute>
+          <MyRoute exact path="/dashboard">
+            <WithTodosData
+              renderHeader={(headerTitle) => <header>{headerTitle}</header>}
+              render={(removeTodo, addTodo, todolist) => (
+                <Dashborad todolist={todolist}></Dashborad>
+              )}
+            ></WithTodosData>
+          </MyRoute>
+          <MyRoute exact path="/home" component={Home}></MyRoute>
+          <MyRoute exact path="/about" render={() => <About></About>}></MyRoute>
+        </Layout>
+      </BrowserRouter>
     );
   }
-};
+}
 
 export default App;
+
+function Home() {
+  return <h1>HOME</h1>;
+}
+
+function About() {
+  return <h1>ABOUT</h1>;
+}

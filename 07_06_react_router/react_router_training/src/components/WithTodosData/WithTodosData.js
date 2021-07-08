@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { getAllTodos, deleteTodo, addTodo } from '../../apis/TodoAPI';
 
 class WithTodosData extends React.Component {
@@ -7,7 +7,7 @@ class WithTodosData extends React.Component {
     todolist: [],
   };
 
-  HandleAddTodo = (newTodo) => {
+  handleAddTodo = (newTodo) => {
     addTodo(newTodo).then((data) => {
       this.setState({
         todolist: [data, ...this.state.todolist],
@@ -34,11 +34,13 @@ class WithTodosData extends React.Component {
       });
     });
   }
+  // as same as HOC, but render() is different
 
   render() {
     let header = null;
     let content = null;
     const { render, children, renderHeader } = this.props;
+
     if (renderHeader) {
       header = renderHeader(this.state.title);
     }
@@ -46,24 +48,25 @@ class WithTodosData extends React.Component {
     if (render) {
       content = render(
         this.handleRemoveTodo,
-        this.HandleAddTodo,
+        this.handleAddTodo,
         this.state.todolist
       );
     } else if (children) {
       content = children(
         this.handleRemoveTodo,
-        this.HandleAddTodo,
+        this.handleAddTodo,
         this.state.todolist
       );
     }
 
     return (
-      <>
+      <Fragment>
         {header}
         {content}
-      </>
+      </Fragment>
     );
   }
 }
 
 export default WithTodosData;
+
