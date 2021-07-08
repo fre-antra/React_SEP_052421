@@ -1,7 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem/TodoItem';
 import { Todo } from '../../model/Todo';
-import { withTodos } from '../../hoc/withTodos';
 import './TodoList.css';
 
 class TodoList extends React.Component {
@@ -57,4 +56,4 @@ class TodoList extends React.Component {
   }
 }
 
-export default withTodos(TodoList);
+export default TodoList;

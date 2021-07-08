@@ -48,13 +48,13 @@ class WithTodosData extends React.Component {
     if (render) {
       content = render(
         this.handleRemoveTodo,
-        this.HandleAddTodo,
+        this.handleAddTodo,
         this.state.todolist
       );
     } else if (children) {
       content = children(
         this.handleRemoveTodo,
-        this.HandleAddTodo,
+        this.handleAddTodo,
         this.state.todolist
       );
     }

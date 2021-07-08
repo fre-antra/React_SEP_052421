@@ -36,7 +36,7 @@ class App extends React.Component {
               <TodoList
                 todolist={todolist}
                 handleRemoveTodo={removeTodo}
-                HandleAddTodo={addTodo}
+                handleAddTodo={addTodo}
               ></TodoList>
             )}
           </WithTodosData>
