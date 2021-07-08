@@ -12,11 +12,41 @@ const { createStore } = require('redux');
  * You can use any conditional logic you want in a reducer. In this example,
  * we use a switch statement, but it's not required.
  */
+
+// Action type
+const COUNTER_INCREMENTED = 'counter/incremented';
+const COUNTER_DECREMENTED = 'counter/decremented';
+
+// Action Creator
+const counterAdd = () => {
+  return {
+    type: COUNTER_INCREMENTED,
+  };
+};
+const counterSub = () => {
+  return {
+    type: COUNTER_DECREMENTED,
+  };
+};
+
+const counterAddAfter3S = () => {
+  setTimeout(() => {
+    return {
+      type: COUNTER_INCREMENTED,
+    };
+  }, 3000);
+};
+
+export const actionCreater = {
+  counterAdd,
+  counterSub,
+};
+
 function counterReducer(state = { value: 50 }, action) {
   switch (action.type) {
-    case 'counter/incremented':
+    case COUNTER_INCREMENTED:
       return { value: state.value + 1 };
-    case 'counter/decremented':
+    case COUNTER_DECREMENTED:
       return { value: state.value - 1 };
     default:
       return state;
@@ -42,7 +72,10 @@ function myCreateStore(reducer) {
     return state;
   }
   function subscribe(subCallback) {
-    listeners.push(subCallback.bind(this));
+    listeners.push(subCallback);
+    return () => {
+      listeners = listeners.filter((item) => item !== subCallback);
+    };
   }
   function dispatch(action) {
     state = reducer(state, action);
