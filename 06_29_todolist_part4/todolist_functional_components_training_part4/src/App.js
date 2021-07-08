@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import TodoList from './components/TodoList/TodoList';
+import Dashborad from './components/Dashboard/Dashboard';
+import WithTodosData from './components/WithTodosData/WithTodosData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    activePage: 'TodoList',
+  };
+
+  handleChangeActivePage = (newActivePage) => {
+    this.setState({
+      activePage: newActivePage,
+    });
+  };
+
+  render() {
+    let content = null;
+    switch (this.state.activePage) {
+      case 'Dashboard':
+        content = (
+          <WithTodosData
+            renderHeader={(headerTitle) => <header>{headerTitle}</header>} // renderHeader + render
+            render={(removeTodo, addTodo, todolist) => (
+              <Dashborad todolist={todolist}></Dashborad>
+            )}
+          />
+        );
+        break;
+      case 'TodoList':
+        content = (
+          <WithTodosData>
+            {(removeTodo, addTodo, todolist) => ( // children
+              <TodoList
+                todolist={todolist}
+                handleRemoveTodo={removeTodo}
+                HandleAddTodo={addTodo}
+              ></TodoList>
+            )}
+          </WithTodosData>
+        );
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <Layout handleChangeActivePage={this.handleChangeActivePage}>
+        {content}
+      </Layout>
+    );
+  }
 }
 
 export default App;

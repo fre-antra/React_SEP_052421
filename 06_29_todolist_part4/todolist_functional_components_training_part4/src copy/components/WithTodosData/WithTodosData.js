@@ -1,72 +1,61 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { getAllTodos, deleteTodo, addTodo } from '../../apis/TodoAPI';
 
-class WithTodosData extends React.Component {
-  state = {
-    title: 'TodoData',
-    todolist: [],
-  };
+const WithTodosData = ({ render, children, renderHeader }) => {
 
-  handleAddTodo = (newTodo) => {
+  const [title, setTitle] = useState('TodoData');
+  const [todolist, setTodolist] = useState([]);
+
+  useEffect(() => {
+    getAllTodos().then(data => {
+      setTodolist(data);
+    });
+  }, []);
+
+  const handleAddTodo = (newTodo) => {
     addTodo(newTodo).then((data) => {
-      this.setState({
-        todolist: [data, ...this.state.todolist],
-      });
+      this.setTodolist([data, ...this.state.todolist]);
     });
   };
 
-  handleRemoveTodo = (id) => {
+  const handleRemoveTodo = (id) => {
     deleteTodo(id)
       .then((data) => {
-        this.setState({
-          todolist: this.state.todolist.filter((todo) => todo.id !== id),
-        });
+        setTodolist(todolist.filter((todo) => todo.id !== id));
       })
       .catch((err) => {
         console.warn(err);
       });
   };
 
-  componentDidMount() {
-    getAllTodos().then((data) => {
-      this.setState({
-        todolist: data,
-      });
-    });
+  let header = null;
+  let content = null;
+
+  if (renderHeader) {
+    header = renderHeader(title);
   }
-  // as same as HOC, but render() is different
 
-  render() {
-    let header = null;
-    let content = null;
-    const { render, children, renderHeader } = this.props;
-
-    if (renderHeader) {
-      header = renderHeader(this.state.title);
-    }
-
-    if (render) {
-      content = render(
-        this.handleRemoveTodo,
-        this.HandleAddTodo,
-        this.state.todolist
-      );
-    } else if (children) {
-      content = children(
-        this.handleRemoveTodo,
-        this.HandleAddTodo,
-        this.state.todolist
-      );
-    }
-
-    return (
-      <Fragment>
-        {header}
-        {content}
-      </Fragment>
+  if (render) {
+    content = render(
+      handleRemoveTodo,
+      handleAddTodo,
+      todolist
+    );
+  } else if (children) {
+    content = children(
+      handleRemoveTodo,
+      handleAddTodo,
+      todolist
     );
   }
-}
+
+  return (
+    <Fragment>
+      {header}
+      {content}
+    </Fragment>
+  );
+};
 
 export default WithTodosData;
 

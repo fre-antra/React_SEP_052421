@@ -1,7 +1,8 @@
 import React from 'react';
 import './TodoItem.css';
 
-const TodoItem = ({ todo, removeTodo }) => {
+function TodoItem(props) {
+  const { todo, removeTodo } = props;
   return (
     <li className="todolist__content-item">
       <span>{todo.title}</span>
@@ -14,6 +15,6 @@ const TodoItem = ({ todo, removeTodo }) => {
       </button>
     </li>
   );
-};
+}
 
 export default TodoItem;
