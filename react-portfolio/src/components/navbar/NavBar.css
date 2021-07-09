@@ -24,6 +24,10 @@
 .primary-nav {
   padding-right: 50px;
 }
+.primary-nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
 .nav-link:hover {
   text-decoration: none;
   color: white;

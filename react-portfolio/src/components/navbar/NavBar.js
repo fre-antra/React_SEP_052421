@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../images/logo.svg'
 import { scroller } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 function NavBar() {
   const scrollToSection = classToScrollTo => {
@@ -23,24 +24,27 @@ function NavBar() {
           <div className='col-xs-11 col-sm-11 col-md-11 col-lg-11 text-right'>
             <div className='primary-nav'>
               <ul>
-                <li
+                <Link
+                  to='/'
                   className='nav-link'
                   onClick={() => scrollToSection('main')}
                 >
                   Home
-                </li>
-                <li
+                </Link>
+                <Link
+                  to='/portfolio'
                   className='nav-link'
                   onClick={() => scrollToSection('projects')}
                 >
                   Portfolio
-                </li>
-                <li
+                </Link>
+                <Link
+                  to='/contact'
                   className='nav-link'
                   onClick={() => scrollToSection('contact')}
                 >
                   Contact
-                </li>
+                </Link>
               </ul>
             </div>
           </div>
