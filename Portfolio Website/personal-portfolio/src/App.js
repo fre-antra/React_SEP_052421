@@ -17,11 +17,11 @@ function App() {
             <Home />
             <Projects />
             <Contact />
-            <Footer />
           </Route>
           <Route exact path="/portfolio" component={Projects}></Route>
           <Route exact path="/contact" component={Contact}></Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
