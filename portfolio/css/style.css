@@ -334,3 +334,7 @@ textarea {
 .resume-footer a:hover,
 .contact-footer a:hover {
 }
+
+.cardHeight {
+    padding: 20rem 1rem;
+}
