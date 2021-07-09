@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoSVG from "../../images/logo.svg";
+import HamburgerMenu from "../../images/hamburgermenu.svg";
 
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+  const handleToggle = () => {
+    const curr = toggle;
+    setToggle(!curr);
+  };
   return (
     <>
       <div className="navigation">
@@ -20,7 +26,13 @@ const Navbar = () => {
 
             <div className="col-xs-11 col-sm-11 col-md-11 col-lg-11 text-right">
               <div className="primary-nav">
-                <ul>
+                <img
+                  src={HamburgerMenu}
+                  alt="menu"
+                  className="toggleMenu"
+                  onClick={handleToggle}
+                />
+                <ul className={toggle ? "ul noslide" : "ul slide"}>
                   <li>
                     <Link to="/" className="navigation__link">
                       Home
