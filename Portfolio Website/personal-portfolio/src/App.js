@@ -9,21 +9,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import $ from 'jquery';
 
 function App() {
-
-//   const navigation = () => {
-//   $('.primary-nav').css('height', $('.logo').height());
-//   $('.primary-nav li').css(
-//     'margin-top',
-//     ($('.primary-nav').height() - $('.primary-nav li').height()) / 2 + 'px'
-//   );
-//   const initFunc = () =>{
-//     $(window).resize(function () {
-//       setTimeout(navigation, 500);
-//   });
-// }
-
-//   React.useEffect(()=> initFunc,[])
-
   return (
     <Router>
       <div className="App">
