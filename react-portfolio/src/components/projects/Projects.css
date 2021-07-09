@@ -72,3 +72,11 @@
     url(../../images/mlbproject.png);
   background-position: center center;
 }
+
+@media (max-width: 760px) {
+  .summar-flex {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+  }
+}

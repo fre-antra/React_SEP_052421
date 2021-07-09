@@ -6,12 +6,15 @@ function Projects() {
   return (
     <>
       <div className='summary'>
-        <div className='container-fluid summary-flex'>
+        <div
+          style={{ display: 'flex', justifyContent: 'center' }}
+          className='container-fluid '
+        >
           <div className='row wrap '>
             {summary.map(sum => (
               <div
                 style={{ display: 'flex', justifyContent: 'center' }}
-                className='development-summary '
+                className='development-summary summary-flex'
               >
                 <div className='sdiv'>
                   <div className='development-img sImg'>
@@ -32,7 +35,7 @@ function Projects() {
             {summary1.map(sum => (
               <div
                 style={{ display: 'flex', justifyContent: 'center' }}
-                className='development-summary '
+                className='development-summary summary-flex'
               >
                 <div className='sdiv'>
                   <div className='development-img sImg'>
