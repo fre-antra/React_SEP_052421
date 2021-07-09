@@ -1,10 +1,11 @@
-import { About, Banner } from "../index";
+import { About, Banner, Summary } from "../index";
 
 const Home = () => {
   return (
     <>
       <Banner />
       <About />
+      <Summary />
     </>
   );
 };
