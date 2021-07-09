@@ -36,3 +36,33 @@
     url(../../images/mlbproject.png);
   background-position: center center;
 }
+
+@media screen and (max-width: 770px) {
+  .see-more-button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* .luvtalk-project,
+.personal-website-project,
+.strike-zone-project {
+  height: auto !important;
+}
+
+.luvtalk-project h3,
+.personal-website-project h3,
+.strike-zone-project h3 {
+  padding-top: 0 !important;
+} */
+
+@media screen and (max-width: 770px) {
+  .luvtalk-project,
+  .personal-website-project,
+  .strike-zone-project {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+  }
+}

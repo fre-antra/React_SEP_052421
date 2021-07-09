@@ -18,3 +18,12 @@
 .summary p {
   font-family: "Roboto", Helvetica, serif;
 }
+
+@media screen and (max-width: 770px) {
+  .development-summary img,
+  .responsive-summary img,
+  .ideas-summary img,
+  .passion-summary img {
+    height: 90px;
+  }
+}

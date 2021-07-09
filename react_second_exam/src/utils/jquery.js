@@ -39,6 +39,6 @@ export function projects() {
   );
 
   $(window).on("resize", function () {
-    setTimeout(navigation, 500);
+    setTimeout(projects, 500);
   });
 }

@@ -45,8 +45,38 @@
 .contact-footer a {
   color: white;
 }
-.home-footer a:hover,
+
+@media screen and (max-width: 770px) {
+  .facebook,
+  .linkedin,
+  .pinterest,
+  .email-icon {
+    padding: 0 0;
+  }
+
+  .facebook img,
+  .linkedin img,
+  .pinterest img,
+  .email-icon img {
+    height: 50px;
+  }
+
+  .media-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .personal-contact {
+    text-align: center;
+  }
+
+  .phone {
+    margin-top: 50px;
+  }
+}
+
+/* .home-footer a:hover,
 .portfolio-footer a:hover,
 .resume-footer a:hover,
 .contact-footer a:hover {
-}
+} */
