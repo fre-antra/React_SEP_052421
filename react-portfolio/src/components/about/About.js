@@ -1,5 +1,6 @@
 import React from 'react'
 import { about as data } from './AboutText'
+import './About.css'
 function About() {
   return (
     <>
