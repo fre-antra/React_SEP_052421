@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { navigation } from "../../utils/jquery";
 import "./Navbar.css";
@@ -15,9 +16,9 @@ const Navbar = () => {
         <div className="row">
           <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center">
             <div className="logo">
-              <a href="index.html">
+              <Link to="/">
                 <img src={logo} alt="main-logo" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -25,13 +26,13 @@ const Navbar = () => {
             <div className="primary-nav">
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/">Portfolio</a>
+                  <Link to="/portfolio">Portfolio</Link>
                 </li>
                 <li>
-                  <a href="/">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
