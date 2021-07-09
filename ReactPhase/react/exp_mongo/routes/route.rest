@@ -1,0 +1,27 @@
+GET http://localhost:5000/subscribers
+
+###
+
+GET http://localhost:5000/subscribers/60e785553b5d3986b7f7cb3a
+
+###
+POST http://localhost:5000/subscribers
+Content-Type: application/json
+
+{"name": "han",
+"subscribedToChannael": "Marvel"}
+
+###
+
+PATCH http://localhost:5000/subscribers/60e785613b5d3986b7f7cb3e
+Content-Type: application/json
+
+{
+    "name": "super han"
+}
+
+###
+
+DELETE  http://localhost:5000/subscribers/60e781de3e6e64853617fc1f
+
+
