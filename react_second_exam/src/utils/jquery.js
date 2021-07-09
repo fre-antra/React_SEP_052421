@@ -1,18 +1,18 @@
 import $ from "jquery";
 
-function navigation() {
+export function navigation() {
   $(".primary-nav").css("height", $(".logo").height());
   $(".primary-nav li").css(
     "margin-top",
     ($(".primary-nav").height() - $(".primary-nav li").height()) / 2 + "px"
   );
 
-  $(window).resize(function () {
+  $(window).on("resize", function () {
     setTimeout(navigation, 500);
   });
 }
 
-function projects() {
+export function projects() {
   $(".luvtalk-project").css("height", $(".luvtalk-project").width());
   $(".luvtalk-project h3").css(
     "padding-top",
