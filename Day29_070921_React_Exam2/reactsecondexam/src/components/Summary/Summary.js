@@ -1,5 +1,5 @@
 import React from 'react';
-import './Summary.js';
+import './Summary.css';
 
 import developerdesign from "../../images/developerdesign.svg";
 import responsivedesign from "../../images/responsivedesign.svg";

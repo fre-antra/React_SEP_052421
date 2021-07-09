@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
-import Home from './Home';
+import './bootstrap/css/bootstrap.min.css';
 
+import Home from './Home';
 import Navigation from './components/Navigation/Navigation';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
