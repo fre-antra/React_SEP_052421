@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="media-links">
             <div className="col-sm-1 col-md-1 col-sm-offset-4 col-md-offset-4">
               <div className="facebook">
-                <a href="#">
+                <a href="/#">
                   <img className="img-responsive" src={facebook} alt="facebook-logo" />
                 </a>
               </div>
@@ -21,7 +21,7 @@ const Footer = () => {
 
             <div className="col-sm-1 col-md-1">
               <div className="linkedin">
-                <a href="#">
+                <a href="/#">
                   <img className="img-responsive" src={linkedin} alt="linkedin-logo" />
                 </a>
               </div>
@@ -29,7 +29,7 @@ const Footer = () => {
 
             <div className="col-sm-1 col-md-1">
               <div className="pinterest">
-                <a href="#">
+                <a href="/#">
                   <img className="img-responsive" src={pinterest} alt="pinterest-logo" />
                 </a>
               </div>
@@ -37,7 +37,7 @@ const Footer = () => {
 
             <div className="col-sm-1 col-md-1">
               <div className="email-icon">
-                <a href="#">
+                <a href="/#">
                   <img className="img-responsive" src={email} alt="email-logo" />
                 </a>
               </div>
@@ -71,7 +71,7 @@ const Footer = () => {
           <div className="col-sm-2 col-md-2 text-center">
             <div className="home-footer">
               <h4>
-                <a href="#">Home</a>
+                <a href="/#">Home</a>
               </h4>
             </div>
           </div>
@@ -79,20 +79,20 @@ const Footer = () => {
           <div className="col-sm-2 col-md-2 text-center">
             <div className="portfolio-footer">
               <h4>
-                <a href="#">Portfolio</a>
+                <a href="/#">Portfolio</a>
               </h4>
               <ul>
                 <li>
-                  <a href="#">Project1</a>
+                  <a href="/#">Project1</a>
                 </li>
                 <li>
-                  <a href="#">Project2</a>
+                  <a href="/#">Project2</a>
                 </li>
                 <li>
-                  <a href="#">Project3</a>
+                  <a href="/#">Project3</a>
                 </li>
                 <li>
-                  <a href="#">See All</a>
+                  <a href="/#">See All</a>
                 </li>
               </ul>
             </div>
@@ -101,11 +101,11 @@ const Footer = () => {
           <div className="col-sm-2 col-md-2 text-center">
             <div className="resume-footer">
               <h4>
-                <a href="#">Resume</a>
+                <a href="/#">Resume</a>
               </h4>
               <ul>
                 <li>
-                  <a href="#">Download</a>
+                  <a href="/#">Download</a>
                 </li>
               </ul>
             </div>
@@ -114,7 +114,7 @@ const Footer = () => {
           <div className="col-sm-2 col-md-2 text-center">
             <div className="contact-footer">
               <h4>
-                <a href="#">Contact</a>
+                <a href="/#">Contact</a>
               </h4>
             </div>
           </div>

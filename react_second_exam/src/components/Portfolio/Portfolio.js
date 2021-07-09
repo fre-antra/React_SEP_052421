@@ -37,7 +37,7 @@ const Portfolio = () => {
               <div className="row">
                 <div className="col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
                   <div className="project-more-info">
-                    <a className="btn btn-default btn-border" href="#">
+                    <a className="btn btn-default btn-border" href="/#">
                       More
                     </a>
                   </div>
@@ -56,7 +56,7 @@ const Portfolio = () => {
               <div className="row">
                 <div className="col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
                   <div className="project-more-info">
-                    <a className="btn btn-default btn-border" href="#">
+                    <a className="btn btn-default btn-border" href="/#">
                       More
                     </a>
                   </div>
@@ -75,7 +75,7 @@ const Portfolio = () => {
               <div className="row">
                 <div className="col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
                   <div className="project-more-info">
-                    <a className="btn btn-default btn-border" href="#">
+                    <a className="btn btn-default btn-border" href="/#">
                       More
                     </a>
                   </div>
@@ -88,7 +88,7 @@ const Portfolio = () => {
         <div className="row">
           <div className="col-sm-2 col-md-2 col-sm-offset-5 col-md-offset-5">
             <div className="see-more-button">
-              <a className="btn btn-default btn-border" href="#">
+              <a className="btn btn-default btn-border" href="/#">
                 More Projects
               </a>
             </div>
