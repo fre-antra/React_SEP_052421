@@ -22,8 +22,8 @@ function About() {
               }}
               className='banner-buttons'
             >
-              <div className=''>
-                <a className='btn btn-default btn-border' href='#about'>
+              <div className='info-buttons'>
+                <a className='btn btn-default btn-border ' href='#about'>
                   Info
                 </a>
               </div>

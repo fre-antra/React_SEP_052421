@@ -8,7 +8,7 @@ function Projects() {
       <div className='summary'>
         <div
           style={{ display: 'flex', justifyContent: 'center' }}
-          className='container-fluid '
+          className='container-fluid summary-flex-media '
         >
           <div className='row wrap '>
             {summary.map(sum => (
@@ -69,10 +69,13 @@ function Projects() {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className='row projects-flex'>
             {projects.map(project => (
-              <div className='col-sm-4 col-md-4 text-center'>
-                <div className='luvtalk-project project-flex'>
+              <div
+                key={project}
+                className='col-sm-4 col-md-4 text-center project-card-size'
+              >
+                <div className={`${project.Background} project-flex`}>
                   <h3>{project.project}</h3>
                   <p>{project.Description}</p>
                   <div className='project-more-info'>
@@ -84,7 +87,7 @@ function Projects() {
               </div>
             ))}
           </div>
-          <div className='row'>
+          <div className='row center'>
             <div className='col-sm-2 col-md-2 col-sm-offset-5 col-md-offset-5'>
               <div className='see-more-button'>
                 <a className='btn btn-default btn-border' href='#'>

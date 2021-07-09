@@ -45,17 +45,20 @@ export const projects = [
     project: `LUV TALK Website`,
     Description: `Website, created during my first internship, which utilized
 HTML, CSS, PHP, Ajax, Javascript/jQuery, and Wordpress.`,
+    Background: 'project-one',
   },
   {
     project: `Personal Website`,
     Description: `Enjoyable side project that was created to experiment with
 more HTML and CSS, but also provided an outlet to showcase my
 abilities and interests.`,
+    Background: 'project-two',
   },
   {
     project: `Strike Zone Analysis`,
     Description: `Data analytics project completed during my time at the
 Illinois Math and Science Academy which studied the baseball
 strike zone based on the state of the game.`,
+    Background: 'project-three',
   },
 ]

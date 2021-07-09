@@ -26,7 +26,7 @@
   width: 100%;
 }
 .project-flex {
-  height: 470px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,9 +37,14 @@
   background-color: #59585d;
   padding: 50px;
   color: white;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-
+.center {
+  display: flex;
+  justify-content: center;
+}
 .projects-header-quote {
   margin-bottom: 20px;
 }
@@ -55,25 +60,38 @@
 .projects-header-quote {
   font-style: italic;
 }
-.luvtalk-project {
+.project-one {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url(../../images/luvtalklogo.png);
   background-position: center center;
 }
-
-.personal-website-project {
+.project-two {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url(../../images/logo.svg);
   background-position: center center;
 }
-
-.strike-zone-project {
+.project-three {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url(../../images/mlbproject.png);
   background-position: center center;
 }
 
 @media (max-width: 760px) {
+  .projects-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80vw;
+  }
+  .summary-flex-media {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-size {
+  }
+
   .summar-flex {
     /* display: flex;
     justify-content: center;
