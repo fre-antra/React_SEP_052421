@@ -1,18 +1,17 @@
 import React from 'react'
 import { projects, summary, summary1 } from './ProjectsText'
+import './Projects.css'
+
 function Projects() {
   return (
     <>
-      <div style={{ width: '100%' }} className='summary'>
-        <div
-          style={{ display: 'flex', justifyContent: 'center' }}
-          className='container-fluid '
-        >
-          <div className='row wrap'>
+      <div className='summary'>
+        <div className='container-fluid summary-flex'>
+          <div className='row wrap '>
             {summary.map(sum => (
               <div
                 style={{ display: 'flex', justifyContent: 'center' }}
-                className='development-summary'
+                className='development-summary '
               >
                 <div className='sdiv'>
                   <div className='development-img sImg'>
@@ -29,11 +28,11 @@ function Projects() {
             ))}
           </div>
 
-          <div className='row wrap'>
+          <div className='row wrap '>
             {summary1.map(sum => (
               <div
                 style={{ display: 'flex', justifyContent: 'center' }}
-                className='development-summary'
+                className='development-summary '
               >
                 <div className='sdiv'>
                   <div className='development-img sImg'>
@@ -70,16 +69,7 @@ function Projects() {
           <div className='row'>
             {projects.map(project => (
               <div className='col-sm-4 col-md-4 text-center'>
-                <div
-                  style={{
-                    height: '470px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                  }}
-                  className='luvtalk-project'
-                >
+                <div className='luvtalk-project project-flex'>
                   <h3>{project.project}</h3>
                   <p>{project.Description}</p>
                   <div className='project-more-info'>

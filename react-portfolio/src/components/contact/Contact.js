@@ -1,6 +1,6 @@
 import React from 'react'
 import { contact as data } from './ContactText'
-
+import './Contact.css'
 function Contact() {
   return (
     <div className='contact' id='contact'>

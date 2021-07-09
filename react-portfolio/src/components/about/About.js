@@ -66,10 +66,7 @@ function About() {
                 <p>{data.myOverview}</p>
               </div>
 
-              <div
-                style={{ display: ' flex', flexDirection: 'column' }}
-                className='col-sm-8 col-md-8'
-              >
+              <div className='col-sm-8 col-md-8 flex-column'>
                 <h2>Statistics</h2>
                 <h5>
                   <em>And for those that don't fancy reading:</em>

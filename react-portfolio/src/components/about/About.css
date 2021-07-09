@@ -49,7 +49,10 @@
   font-size: 12pt;
   margin-bottom: 20px;
 }
-
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 .about-statistic-description p {
   margin: 5px 0px;
 }

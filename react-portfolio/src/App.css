@@ -4,13 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.navigation {
-  position: absolute;
-  width: 100%;
-  padding: 10px 0px;
-  background: linear-gradient(rgba(20, 20, 20, 0.1), rgba(20, 20, 20, 0.1));
-}
-
 .entry {
   display: flex;
   justify-content: center;
@@ -31,30 +24,6 @@ html {
 
 .logo img {
   max-width: 90px;
-}
-.primary-nav {
-  padding-right: 50px;
-}
-.primary-nav li {
-  display: inline-block;
-  margin: 0px 20px;
-  color: white;
-  font-size: 13pt;
-}
-
-.primary-nav a {
-  color: white;
-  padding-bottom: 5px;
-  -webkit-transition: border 50ms linear;
-  -moz-transition: border 50ms linear;
-  -o-transition: border 50ms linear;
-  -ms-transition: border 50ms linear;
-  transition: border 50ms linear;
-}
-.pointer:hover {
-  text-decoration: none;
-  color: white;
-  border-bottom: 2px solid #f5f5f5;
 }
 
 .entry-banner h1 {
@@ -94,67 +63,6 @@ html {
   background-color: white;
 }
 
-.summary {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    url(./images/architecture-2178604_1920-main1.jpg);
-  background-attachment: fixed;
-  background-attachment: center center;
-  color: white;
-  padding: 60px 30px;
-}
-
-.summary .row {
-  padding: 50px 6%;
-  width: 100%;
-}
-
-.summary h3 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-.summary p {
-  font-family: 'Roboto', Helvetica, serif;
-}
-
-.projects {
-  background-color: #59585d;
-  padding: 50px;
-  color: white;
-  height: 100vh;
-}
-
-.projects-header-quote {
-  margin-bottom: 20px;
-}
-.projects h1,
-.projects h3 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-.projects p {
-  font-family: 'Roboto', Helvetica, serif;
-  padding: 0 10px;
-}
-
-.projects-header-quote {
-  font-style: italic;
-}
-.luvtalk-project {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url(./images/luvtalklogo.png);
-  background-position: center center;
-}
-
-.personal-website-project {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url(./images/logo.svg);
-  background-position: center center;
-}
-
-.strike-zone-project {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url(./images/mlbproject.png);
-  background-position: center center;
-}
-
 .resume {
   padding: 50px 0px;
   font-family: 'Calisto MT', Helvetica, serif;
@@ -171,106 +79,6 @@ html {
 .skills h4,
 .endorsements h4 {
   border-bottom: 1px solid black;
-}
-.contact {
-  background-color: #3a3a3a;
-  padding: 50px 150px;
-  color: white;
-}
-.contact input,
-textarea {
-  color: black;
-}
-
-.contact h1,
-.contact h2,
-.contact h4 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-.contact p {
-  font-family: 'Roboto', Helvetica, serif;
-}
-.contact-header-quote {
-  font-style: italic;
-}
-.contact-header-quote h4 {
-  margin: 5px 0;
-}
-.contact-instructions,
-.contact-form-body {
-  margin-top: 50px;
-  padding: 0px 6%;
-}
-
-.email,
-.message {
-  margin: 15px 0px;
-}
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 3px 0px;
-}
-
-.submit-contact .btn-border {
-  margin-top: 10px;
-}
-.footer {
-  background-color: black;
-  color: white;
-  padding: 50px 0;
-  font-family: 'Roboto', Helvetica, serif;
-}
-
-.footer h3,
-.footer h4 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-.facebook,
-.linkedin,
-.pinterest,
-.email-icon {
-  padding: 31%;
-}
-.footer img {
-  background-color: #8a8a8a;
-  -webkit-transition: all 200ms ease-out;
-  -moz-transition: all 200ms ease-out;
-  -o-transition: all 200ms ease-out;
-  -ms-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-}
-
-.footer img:hover {
-  background-color: white;
-}
-.company-information,
-.home-footer,
-.portfolio-footer,
-.resume-footer,
-.contact-footer {
-  margin-top: 50px;
-}
-.footer ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.home-footer a,
-.portfolio-footer a,
-.resume-footer a,
-.contact-footer a {
-  color: white;
-}
-.home-footer a:hover,
-.portfolio-footer a:hover,
-.resume-footer a:hover,
-.contact-footer a:hover {
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 @media screen and (max-width: 760px) {

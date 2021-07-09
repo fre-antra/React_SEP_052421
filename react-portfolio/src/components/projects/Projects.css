@@ -1,0 +1,74 @@
+.summary {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../../images/architecture-2178604_1920-main1.jpg);
+  background-attachment: fixed;
+  background-attachment: center center;
+  color: white;
+  padding: 60px 30px;
+}
+
+.summar-flex {
+  display: flex;
+  justify-content: center;
+}
+.summary .row {
+  padding: 50px 6%;
+  width: 100%;
+}
+
+.summary h3 {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+.summary p {
+  font-family: 'Roboto', Helvetica, serif;
+}
+.summary {
+  width: 100%;
+}
+.project-flex {
+  height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projects {
+  background-color: #59585d;
+  padding: 50px;
+  color: white;
+  height: 100vh;
+}
+
+.projects-header-quote {
+  margin-bottom: 20px;
+}
+.projects h1,
+.projects h3 {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+.projects p {
+  font-family: 'Roboto', Helvetica, serif;
+  padding: 0 10px;
+}
+
+.projects-header-quote {
+  font-style: italic;
+}
+.luvtalk-project {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../../images/luvtalklogo.png);
+  background-position: center center;
+}
+
+.personal-website-project {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../../images/logo.svg);
+  background-position: center center;
+}
+
+.strike-zone-project {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../../images/mlbproject.png);
+  background-position: center center;
+}

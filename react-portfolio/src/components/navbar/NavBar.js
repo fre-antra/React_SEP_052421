@@ -1,12 +1,11 @@
 import React from 'react'
 import logo from '../../images/logo.svg'
 import { scroller } from 'react-scroll'
-
-function NavBAr() {
+import './NavBar.css'
+function NavBar() {
   const scrollToSection = classToScrollTo => {
     scroller.scrollTo(classToScrollTo, {
       duration: 100,
-      delay: 0,
       smooth: 'easeInOutQuart',
     })
   }
@@ -24,17 +23,20 @@ function NavBAr() {
           <div className='col-xs-11 col-sm-11 col-md-11 col-lg-11 text-right'>
             <div className='primary-nav'>
               <ul>
-                <li className='pointer' onClick={() => scrollToSection('main')}>
+                <li
+                  className='nav-link'
+                  onClick={() => scrollToSection('main')}
+                >
                   Home
                 </li>
                 <li
-                  className='pointer'
+                  className='nav-link'
                   onClick={() => scrollToSection('projects')}
                 >
                   Portfolio
                 </li>
                 <li
-                  className='pointer'
+                  className='nav-link'
                   onClick={() => scrollToSection('contact')}
                 >
                   Contact
@@ -48,4 +50,4 @@ function NavBAr() {
   )
 }
 
-export default NavBAr
+export default NavBar

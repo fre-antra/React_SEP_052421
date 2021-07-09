@@ -4,21 +4,14 @@ import linkedIn from '../../images/linkedin.svg'
 import emailImg from '../../images/email.svg'
 import pinterest from '../../images/pinterest.svg'
 import { contact as data } from '../contact/ContactText'
-
+import './Footer.css'
 function Footer() {
   return (
     <div>
       <div className='footer'>
         <div className='container-fluid'>
           <div className='row'>
-            <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                justifyContent: 'center',
-              }}
-              className='media-links'
-            >
+            <div className='media-links footer-flex'>
               <div className=''>
                 <div className='facebook social'>
                   <a href='#'>
