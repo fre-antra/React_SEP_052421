@@ -6,18 +6,18 @@ import "./Summary.css";
 
 const Summary = () => {
   return (
-    <div class="summary">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="development-summary">
-            <div class="col-sm-1 col-md-1">
-              <div class="development-img">
-                <img class="img-responsive" src={developerDesign} alt="developerDesign-svg" />
+    <div className="summary">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="development-summary">
+            <div className="col-sm-1 col-md-1">
+              <div className="development-img">
+                <img className="img-responsive" src={developerDesign} alt="developerDesign-svg" />
               </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
-              <div class="development-description">
+            <div className="col-sm-4 col-md-4">
+              <div className="development-description">
                 <h3>Development and Design</h3>
                 <p>
                   I aim to put my creativity to the test, designing and building unique, meaningful
@@ -27,15 +27,15 @@ const Summary = () => {
             </div>
           </div>
 
-          <div class="responsive-summary">
-            <div class="col-sm-1 col-md-1 col-sm-offset-2 col-md-offset-2">
-              <div class="responsive-img">
-                <img class="img-responsive" src={responsiveDesign} alt="responsiveDesign-svg" />
+          <div className="responsive-summary">
+            <div className="col-sm-1 col-md-1 col-sm-offset-2 col-md-offset-2">
+              <div className="responsive-img">
+                <img className="img-responsive" src={responsiveDesign} alt="responsiveDesign-svg" />
               </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
-              <div class="responsive-description">
+            <div className="col-sm-4 col-md-4">
+              <div className="responsive-description">
                 <h3>Responsive Layouts</h3>
                 <p>
                   Development and design isn't merely putting information on the site or preferred
@@ -47,20 +47,20 @@ const Summary = () => {
           </div>
         </div>
 
-        <div class="row">
-          <div class="ideas-summary">
-            <div class="col-sm-1 col-md-1">
-              <div class="idea-img">
+        <div className="row">
+          <div className="ideas-summary">
+            <div className="col-sm-1 col-md-1">
+              <div className="idea-img">
                 <img
-                  class="img-responsive"
+                  className="img-responsive"
                   src={innovativeSolutions}
                   alt="innovativeSolutions-svg"
                 />
               </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
-              <div class="idea-description">
+            <div className="col-sm-4 col-md-4">
+              <div className="idea-description">
                 <h3>Ideas and Solutions</h3>
                 <p>
                   There are still many problems that exist in today's society, including laziness.
@@ -71,13 +71,13 @@ const Summary = () => {
             </div>
           </div>
 
-          <div class="passion-summary">
-            <div class="col-sm-1 col-md-1 col-sm-offset-2 col-md-offset-2">
-              <img class="img-responsive" src={passion} alt="passion-svg" />
+          <div className="passion-summary">
+            <div className="col-sm-1 col-md-1 col-sm-offset-2 col-md-offset-2">
+              <img className="img-responsive" src={passion} alt="passion-svg" />
             </div>
 
-            <div class="col-sm-4 col-md-4">
-              <div class="passion-description">
+            <div className="col-sm-4 col-md-4">
+              <div className="passion-description">
                 <h3>Passion and Dedication</h3>
                 <p>
                   With my profound interest and commitment to my field of study, my projects rarely
