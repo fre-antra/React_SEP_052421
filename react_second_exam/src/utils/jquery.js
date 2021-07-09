@@ -37,9 +37,8 @@ export function projects() {
       $(".strike-zone-project .row").outerHeight()) /
       2
   );
-  var doit;
-  $(window).resize(function () {
-    clearTimeout(doit);
-    doit = setTimeout(projects, 500);
+
+  $(window).on("resize", function () {
+    setTimeout(navigation, 500);
   });
 }
