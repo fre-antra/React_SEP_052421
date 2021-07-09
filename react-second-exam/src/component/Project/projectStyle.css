@@ -1,0 +1,78 @@
+.projects {
+    background-color: #6c6b70;
+    padding: 50px;
+    color: white;
+  }
+  
+  .projects-header-quote {
+    margin-bottom: 20px;
+  }
+
+  .projects h1,
+  .projects h3 {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+  }
+  .projects p {
+    font-family: "Roboto", Helvetica, serif;
+    padding: 0 10px;
+  }
+  
+  .projects-header-quote {
+    font-style: italic;
+  }
+  
+  .luvtalk-project {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.85), 
+      rgba(0, 0, 0, 0.85)),
+      url(../../bgimages/luvtalklogo.png);
+    background-position: center center;
+  }
+  
+  .personal-website-project {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.85)),
+      url(../../bgimages/logo.svg);
+    background-position: center center;
+  }
+  
+  .strike-zone-project {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.85), 
+      rgba(0, 0, 0, 0.85)),
+      url(../../bgimages/mlbproject.png);
+    background-position: center center;
+  }
+  
+
+  .project-more-info .btn-border,
+  .see-more-button .btn-border{
+    background-color: transparent;
+    width: 10rem;
+    margin-top: 40px;
+    color: white;
+    font-family: "Roboto", Helvetica, serif;
+    font-size: 15pt;
+    border-radius: 0;
+    border: 2px solid white;
+  }
+  .see-more-button .btn-border{
+    width: 17rem;
+  }
+  
+  .project-more-info .btn-border:hover{
+    transition: all 0.5s;
+    color: black;
+    border: 2px solid white;
+    font-weight: 500;
+    background-color: white;
+  }
+  
+  .see-more-button .btn-border:hover{
+    transition: all 0.5s;
+    color: black;
+    border: 2px solid white;
+    font-weight: 500;
+    background-color: transparent;
+  }

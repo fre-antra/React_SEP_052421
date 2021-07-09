@@ -1,0 +1,46 @@
+/* Main banner */
+.main {
+    background: linear-gradient(
+    rgba(20, 20, 20, 0.7), 
+    rgba(20, 20, 20, 0.7)),
+    url(../../bgimages/apple.jpg); /* Browser prefixes*/
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    padding: 10% 0; 
+    color: white;
+  }
+  
+  .entry-banner h1 {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 500;
+  }
+  #hello {
+    font-size: 25pt;
+  }
+  #name {
+    font-size: 100pt;
+  }
+  #person-description {
+    font-size: 30pt;
+  }
+
+
+  .banner-buttons .btn-border{
+    background-color: transparent;
+    width: 10rem;
+    margin-top: 40px;
+    color: white;
+    font-family: "Roboto", Helvetica, serif;
+    font-size: 15pt;
+    border-radius: 0;
+    border: 2px solid white;
+  }
+  
+  .banner-buttons .btn-border:hover{
+    transition: all 0.5s;
+    color: black;
+    border: 2px solid white;
+    font-weight: 500;
+    background-color: white;
+  }

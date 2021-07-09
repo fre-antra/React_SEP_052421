@@ -1,0 +1,7 @@
+
+#intro{
+    background-image: url("./bgimages/apple.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}

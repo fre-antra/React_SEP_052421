@@ -1,0 +1,71 @@
+.about {
+    padding: 3% 0;
+    background: linear-gradient(
+        #e1e1e1f0,
+        rgba(225, 225, 225, 0.94)
+      ),
+      url("../../bgimages/aboutbackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .about-header h1 {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 50pt;
+    font-weight: 600;
+  }
+  
+  .about-header-quote {
+    font-family: "Slabo", Helvetica, serif;
+    font-style: italic;
+    margin-bottom: 50px;
+  }
+  
+  .about-general-description,
+  .about-statistic-description {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-general-description h2,
+  .about-statistic-description h2 {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 25pt;
+    font-weight: 550;
+    margin-bottom: 30px;
+  }
+  
+  .about-general-description p,
+  .about-statistic-description p {
+    font-family: "Roboto", Helvetica, serif;
+    font-size: 13pt;
+    margin-bottom: 20px;
+  }
+  
+  .about-statistic-description p {
+    margin: 5px 0px;
+  }
+
+  .about-option-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-option-buttons .btn-black-border {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 40px;
+    color: black;
+    font-family: "Roboto", Helvetica, serif;
+    font-size: 16pt;
+    border-radius: 0;
+    border: 2px solid black;
+  }
+  
+  .about-option-buttons .btn-black-border:hover{
+    transition: all 0.5s;
+    border: 2px solid #525252;
+    background-color: #525252;
+    color: white;
+  }
