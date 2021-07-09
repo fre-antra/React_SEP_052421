@@ -1,10 +1,11 @@
-import { Navbar } from "./components";
 import "./boostrap/css/bootstrap.min.css";
+import { Home, Navbar } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Home />
     </>
   );
 }
