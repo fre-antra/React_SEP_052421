@@ -1,9 +1,22 @@
-import React from 'react';
-import logoHeader from '../../image/logo.svg';
-import './Header.css'
+import React from "react";
+import logoHeader from "../../image/logo.svg";
 import { Link } from "react-router-dom";
+import $ from "jquery";
 
 export default function Header() {
+  const navigation = () => {
+    $(".primary-nav").css("height", $(".logo").height());
+    $(".primary-nav li").css(
+      "margin-top",
+      ($(".primary-nav").height() - $(".primary-nav li").height()) / 2 + "px"
+    );
+
+    $(window).resize(function () {
+      setTimeout(navigation, 500);
+    });
+  };
+  React.useEffect(() => navigation(), []);
+
   return (
     <div className="navigation">
       <div className="container-fluid">
@@ -20,13 +33,13 @@ export default function Header() {
             <div className="primary-nav">
               <ul>
                 <li>
-                  <Link to='/'>Home</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to='/portfolio'>Portfolio</Link>
+                  <Link to="/portfolio">Portfolio</Link>
                 </li>
                 <li>
-                  <Link to='/contact'>Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

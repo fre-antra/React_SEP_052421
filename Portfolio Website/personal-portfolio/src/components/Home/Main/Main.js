@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Main() {
   return (
-    <div class="main">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="entry-banner text-center">
+    <div className="main">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="entry-banner text-center">
             <h1 id="hello">Hello, I'm</h1>
             <h1 id="name">Huanliang Fan</h1>
             <h1 id="person-description">
@@ -14,16 +14,16 @@ export default function Main() {
           </div>
         </div>
 
-        <div class="row text-center">
-          <div class="banner-buttons">
-            <div class="col-sm-1 col-md-1 col-sm-offset-5 col-md-offset-5">
-              <a class="btn btn-default btn-border" href="#about">
+        <div className="row text-center">
+          <div className="banner-buttons">
+            <div className="col-sm-1 col-md-1 col-sm-offset-5 col-md-offset-5">
+              <a className="btn btn-default btn-border" href="#about">
                 Info
               </a>
             </div>
 
-            <div class="col-sm-1 col-md-1">
-              <a class="btn btn-default btn-border" href="#projects">
+            <div className="col-sm-1 col-md-1">
+              <a className="btn btn-default btn-border" href="#projects">
                 Portfolio
               </a>
             </div>
