@@ -1,0 +1,121 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px 0;
+  font-family: "Roboto", Helvetica, serif;
+}
+
+.footer h3,
+.footer h4 {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.footer img {
+  background-color: #8a8a8a;
+  -webkit-transition: all 200ms ease-out;
+  -moz-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  -ms-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.footer img:hover {
+  background-color: white;
+}
+.company-information,
+.home-footer,
+.portfolio-footer,
+.resume-footer,
+.contact-footer {
+  margin-top: 50px;
+}
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.home-footer a,
+.portfolio-footer a,
+.resume-footer a,
+.contact-footer a {
+  color: white;
+}
+
+.footer .container-fluid {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.facebook,
+.linkedin,
+.pinterest,
+.email-icon {
+  display: inline-block;
+  width: auto;
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.media-links a {
+  display: inline-block;
+  width: auto;
+}
+
+.personal-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.phone,
+.email-personal-contact {
+  vertical-align: middle;
+  flex: 1 0 50%;
+}
+
+.phone {
+  text-align: end;
+  margin-right: 1rem;
+}
+.email-personal-contact {
+  text-align: start;
+  margin-left: 1rem;
+}
+
+.footer img {
+  width: 5rem;
+}
+
+.addtional-information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.company-information,
+.home-footer,
+.portfolio-footer,
+.resume-footer,
+.contact-footer {
+  flex: 1 1 auto;
+  text-align: center;
+  vertical-align: top;
+  padding: 0 0.4rem;
+}
+
+.company-information h3,
+.home-footer h4,
+.portfolio-footer h4,
+.resume-footer h4,
+.contact-footer h4 {
+  margin-top: unset;
+}

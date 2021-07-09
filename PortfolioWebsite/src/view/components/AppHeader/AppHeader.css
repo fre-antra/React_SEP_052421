@@ -1,0 +1,73 @@
+.navigation {
+  position: absolute;
+  width: 100%;
+  padding: 10px 0px;
+  background: linear-gradient(rgba(20, 20, 20, 0.1), rgba(20, 20, 20, 0.1));
+}
+
+.logo img {
+  max-width: 90px;
+}
+
+.primary-nav {
+  padding-right: 50px;
+}
+
+.primary-nav li {
+  /*double selector more prior than single selector, like .nav__link{} only*/
+  display: inline-block;
+  margin: 0px 20px;
+  color: white;
+  font-size: 13pt;
+}
+
+@media (max-width: 750px) {
+  .primary-nav {
+    padding-right: unset;
+  }
+
+  .primary-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-inline-start: 0;
+  }
+  .primary-nav li {
+    flex: 0 1 auto;
+    margin: 0px 5px;
+  }
+}
+
+.primary-nav a {
+  color: white;
+  padding-bottom: 5px;
+  -webkit-transition: border 50ms linear;
+  -moz-transition: border 50ms linear;
+  -o-transition: border 50ms linear;
+  -ms-transition: border 50ms linear;
+  transition: border 50ms linear;
+}
+.primary-nav a:hover {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+/*inline style*/
+/*
+set by js
+.primary-nav .nav__link {
+  margin-top: 1.3rem;
+}
+.primary-nav {
+  height: 50px;
+}
+*/
+a:active {
+  text-decoration: none;
+}
+.navigation {
+  /*display: none;*/
+  /*use display none there is no height!!!!*/
+  visibility: hidden;
+  /*use visibility: hidden there indeed has height!!!!*/
+}
