@@ -6,28 +6,21 @@ import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import $ from 'jquery';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
         <Switch>
           <Route exact path="/">
-            <Header />
             <Home />
             <Projects />
             <Contact />
             <Footer />
           </Route>
-          <Route exact path="/portfolio">
-            <Header />
-            <Projects />
-          </Route>
-          <Route exact path="/contact">
-            <Header />
-            <Contact />
-          </Route>
+          <Route exact path="/portfolio" component={Projects}></Route>
+          <Route exact path="/contact" component={Contact}></Route>
         </Switch>
       </div>
     </Router>
