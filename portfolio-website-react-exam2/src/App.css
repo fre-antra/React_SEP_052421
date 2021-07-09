@@ -1,0 +1,23 @@
+.resume .btn-black-border:hover {
+  border: 2px solid #464646;
+  background-color: #464646;
+  color: white;
+}
+
+.resume {
+  padding: 50px 0px;
+  font-family: "Calisto MT", Helvetica, serif;
+}
+
+.resume-header {
+  margin-bottom: 20px;
+}
+.objective h4,
+.education h4,
+.work-experience h4,
+.resume-projects h4,
+.activities h4,
+.skills h4,
+.endorsements h4 {
+  border-bottom: 1px solid black;
+}
