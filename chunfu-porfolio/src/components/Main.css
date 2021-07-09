@@ -1,0 +1,35 @@
+.main-introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    width: 100%;
+    background-color: var(--introduction-bg-color);
+    color: white;
+}
+
+.main-introduction h5 {
+    font-size: 2rem;
+}
+
+.main-introduction h1 {
+    font-size: 4rem;
+}
+
+.main-introduction h3 {
+    font-size: 3rem;
+}
+
+.button-contain {
+    display: flex;
+}
+
+.main-introduction-buttons {
+    font-size: 2rem;
+    width: 180px;
+    height: 50px;
+    border: 2px solid white;
+    margin: 10px 20px;
+    background-color: var(--introduction-bg-color);
+}

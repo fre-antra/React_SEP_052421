@@ -1,0 +1,38 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 100%;
+    background-color: var(--about-bg-color);
+    color: black;
+}
+
+.about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 50px 200px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+
+}
+.contact-button {
+    font-size: 2rem;
+    width: 240px;
+    height: 50px;
+    border: 2px solid black;
+    background-color: var(--about-bg-color);    
+}
