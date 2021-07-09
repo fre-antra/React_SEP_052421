@@ -11,7 +11,7 @@ export function* handleGetUser(action) {
         // yield is the stop point
         const response =yield call(requestGetUser)
         const { data } = response
-        
+        console.log(response);
         // put the request data into redux action(setUser aka update the state)
         yield put(setUser(data))
     } catch(err) {

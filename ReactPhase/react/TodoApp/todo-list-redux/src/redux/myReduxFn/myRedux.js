@@ -14,7 +14,7 @@ const COUNTER_INCREMENTED = 'counter/incremented';
 const COUNTER_DECREMENTED = 'counter/decremented';
 const initalState = { value: 0 }
 
-// action creator
+// action creator: change actions object into function then combine together
 const counterAdd = () => {
   return {type:COUNTER_INCREMENTED}
 }
@@ -31,7 +31,7 @@ function myReducers(state=initalState, action) {
     case COUNTER_INCREMENTED:
       return {value: state.value + 1 }
     case COUNTER_DECREMENTED:
-      return { value:  state.value  - 1 }
+      return { value: state.value  - 1 }
       
     default:
       return state;
