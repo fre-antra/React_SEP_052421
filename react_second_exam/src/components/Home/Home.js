@@ -1,4 +1,4 @@
-import { About, Banner, Portfolio, Summary } from "../index";
+import { About, Banner, Contact, Portfolio, Summary } from "../index";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <About />
       <Summary />
       <Portfolio />
+      <Contact />
     </>
   );
 };
