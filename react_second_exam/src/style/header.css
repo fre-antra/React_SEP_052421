@@ -1,0 +1,8 @@
+.header {
+  height: 100px;
+  background-color: black;
+  opacity: 0.2;
+  color: white;
+
+  display: flex;
+}

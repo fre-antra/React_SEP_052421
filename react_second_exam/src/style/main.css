@@ -1,0 +1,10 @@
+.main {
+  height: 800px;
+  background-image: url(../images/apple-1838564_1920-main.jpg);
+  opacity: 0.5;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

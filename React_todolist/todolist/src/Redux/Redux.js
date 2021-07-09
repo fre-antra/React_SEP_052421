@@ -32,7 +32,6 @@ function myCreateStore(reducer) {
   function dispatch(action) {
     state = reducer(state, action);
     listeners.forEach((listener) => {
-      console.log(listener);
       listener();
     });
   }

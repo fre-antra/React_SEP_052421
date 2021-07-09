@@ -1,0 +1,18 @@
+.summary {
+  height: 800px;
+
+  background-image: url(../images/architecture-2178604_1920-main1.jpg);
+
+  opacity: 0.2;
+
+  color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary-card {
+  flex-basis: 40%;
+}

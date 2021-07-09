@@ -1,0 +1,20 @@
+.portfolio {
+  height: 800px;
+  background-color: grey;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-head {
+  flex-basis: 20%;
+}
+
+.portfolio-cards {
+  flex-basis: 60%;
+}
+
+.portfolio-foot {
+  flex-basis: 20%;
+}

@@ -1,0 +1,8 @@
+.aboutMe {
+  height: 800px;
+  background-color: lightgrey;
+  color: balck;
+
+  display: flex;
+  flex-direction: column;
+}
