@@ -1,11 +1,12 @@
 import "./boostrap/css/bootstrap.min.css";
-import { Home, Navbar } from "./components";
+import { Home, Navbar, Footer } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
       <Home />
+      <Footer />
     </>
   );
 }
