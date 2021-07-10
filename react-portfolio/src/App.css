@@ -4,40 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.entry {
-  display: flex;
-  justify-content: center;
-}
-.sdiv {
-  margin: 30px;
-}
-
-.social > a > img {
-  width: 80px;
-  margin-left: 20px;
-}
-.sImg > img {
-  width: 90px;
-  margin-right: 30px;
-  margin-top: -20px;
-}
-
-.logo img {
-  max-width: 90px;
-}
-
-.entry-banner h1 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-#hello {
-  font-size: 28pt;
-}
-#name {
-  font-size: 100pt;
-}
-#person-description {
-  font-size: 33pt;
-}
 .banner-buttons .btn-border,
 .submit-contact .btn-border,
 .projects .btn-border {
@@ -68,19 +34,6 @@ html {
   font-family: 'Calisto MT', Helvetica, serif;
 }
 
-.resume-header {
-  margin-bottom: 20px;
-}
-.objective h4,
-.education h4,
-.work-experience h4,
-.resume-projects h4,
-.activities h4,
-.skills h4,
-.endorsements h4 {
-  border-bottom: 1px solid black;
-}
-
 @media screen and (max-width: 760px) {
   body {
     display: flex;
@@ -90,9 +43,5 @@ html {
   .wrap .container-fluid {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .person-description {
-    font-size: 5px;
   }
 }

@@ -79,7 +79,7 @@ function Projects() {
                   <h3>{project.project}</h3>
                   <p>{project.Description}</p>
                   <div className='project-more-info'>
-                    <a className='btn btn-default btn-border' href='#'>
+                    <a className='btn btn-default btn-border' href='/'>
                       More
                     </a>
                   </div>
@@ -90,7 +90,7 @@ function Projects() {
           <div className='row center'>
             <div className='col-sm-2 col-md-2 col-sm-offset-5 col-md-offset-5'>
               <div className='see-more-button'>
-                <a className='btn btn-default btn-border' href='#'>
+                <a className='btn btn-default btn-border' href='/'>
                   More Projects
                 </a>
               </div>

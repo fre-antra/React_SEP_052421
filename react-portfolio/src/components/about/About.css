@@ -8,6 +8,22 @@
   color: white;
   height: 100vh;
 }
+.entry {
+  display: flex;
+  justify-content: center;
+}
+.entry-banner h1 {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+#hello {
+  font-size: 28pt;
+}
+#name {
+  font-size: 100pt;
+}
+#person-description {
+  font-size: 33pt;
+}
 .about {
   padding: 3% 0;
   background: linear-gradient(
@@ -33,20 +49,17 @@
   margin-bottom: 50px;
 }
 
-.about-general-description,
-.about-statistic-description {
+.about-general-description {
   display: flex;
   justify-content: center;
 }
-.about-general-description h2,
-.about-statistic-description h2 {
+.about-general-description h2 {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-size: 24pt;
   margin-bottom: 20px;
 }
 
-.about-general-description p,
-.about-statistic-description p {
+.about-general-description p {
   font-family: 'Roboto', Helvetica, serif;
   font-size: 12pt;
   margin-bottom: 20px;
@@ -55,9 +68,7 @@
   display: flex;
   flex-direction: column;
 }
-.about-statistic-description p {
-  margin: 5px 0px;
-}
+
 .about-option-buttons {
   display: flex;
   justify-content: center;
@@ -84,4 +95,10 @@
   border: 2px solid #464646;
   background-color: #464646;
   color: white;
+}
+
+@media screen and (max-width: 760px) {
+  .person-description {
+    font-size: 5px;
+  }
 }

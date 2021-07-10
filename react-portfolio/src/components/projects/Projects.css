@@ -25,6 +25,16 @@
 .summary {
   width: 100%;
 }
+
+.sdiv {
+  margin: 30px;
+}
+
+.sImg > img {
+  width: 90px;
+  margin-right: 30px;
+  margin-top: -20px;
+}
 .project-flex {
   height: 550px;
   display: flex;

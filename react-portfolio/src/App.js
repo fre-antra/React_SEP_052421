@@ -10,26 +10,22 @@ function App() {
   return (
     <Router>
       <div className='App'>
+        <NavBar />
         <Switch>
           <Route exact path='/'>
-            <NavBar />
             <About />
             <Projects />
             <Contact />
-            <Footer />
           </Route>
           <Route exact path='/portfolio'>
-            <NavBar />
             <Projects />
             <Contact />
-            <Footer />
           </Route>
           <Route exact path='/contact'>
-            <NavBar />
             <Contact />
-            <Footer />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   )
