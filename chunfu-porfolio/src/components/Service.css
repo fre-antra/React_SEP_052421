@@ -1,0 +1,13 @@
+.service-container {
+    background-color: black;
+    columns: white;
+    width: 100%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 4;
+}
+
+.service-upper,
+.service-lower {
+    display: flex;
+}

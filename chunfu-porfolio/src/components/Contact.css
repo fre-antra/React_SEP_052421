@@ -28,6 +28,15 @@
     width: 40%;
 }
 
+.contact-form {
+    font-size: 1.2rem;
+}
+
+.full-name input,
+.email-container input {
+    height: 30px;
+}
+
 .full-name {
     display: flex;
 }
@@ -45,4 +54,22 @@
     flex-direction: column;
     width: 85%;
     margin: 10px 20px;
+}
+
+.message-container textarea {
+    height: 50px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button {
+    font-size: 1.5rem;
+    width: 200px;
+    height: 48px;
+    background-color: var(--contact-bg-color);
+    color: white;
+    border: 2px solid white;
+    margin-top: 25px;
 }

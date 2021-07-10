@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Main from './Main';
-import Home from './Home';
-import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -11,11 +9,15 @@ const App = () => {
     return (
         <div>
             <Header />
-            <Main />
-            <About />
-            {/*<Home />*/}
-            {/*<Portfolio />*/}
-            <Contact />
+            <Route path='/'>
+                <Main />
+            </Route>
+            <Route path='/portfolio'>
+                <Portfolio />
+            </Route>
+            <Route path='/contact'>
+                <Contact />
+            </Route>
             <Footer />
         </div>
     )

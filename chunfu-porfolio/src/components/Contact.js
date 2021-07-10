@@ -49,6 +49,9 @@ const Contact = () => {
                         <label htmlFor="message">Message*</label>
                         <textarea type="text" name="message" placeholder="Message" />
                     </div>
+                    <div className="button-container">
+                        <button className="submit-button">Submit</button>
+                    </div>                       
                 </div>
                   
 

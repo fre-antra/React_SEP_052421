@@ -1,0 +1,40 @@
+.portfolio-container {
+    background-color: var(--portfolio-bg-color);
+    height: 900px;
+    width: 100%;
+}
+
+.portfolio-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.portfolio-title div {
+    font-size: 2rem;
+    padding-top: 50px;
+}
+
+.portfolio-title p {
+    font-size: 1.6rem;
+
+}
+
+.portfolio-cards {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    margin: 20px 5vw;
+}
+
+.portfolio-button {
+    font-size: 2rem;
+    width: 240px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: var(--portfolio-bg-color);    
+    color: white;
+    margin: 40px auto;
+}

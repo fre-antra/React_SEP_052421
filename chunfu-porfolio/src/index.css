@@ -1,7 +1,8 @@
 :root {
-    --header-bg-color: #555;
-    --introduction-bg-color: #666;
+    --header-bg-color: #333;
+    --introduction-bg-color: #444;
     --about-bg-color: #eee;
+    --portfolio-bg-color: #59585d;
     --contact-bg-color: #3a3a3a;
 }
 
@@ -12,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./components/apple-main.jpg');
 }
 
 code {

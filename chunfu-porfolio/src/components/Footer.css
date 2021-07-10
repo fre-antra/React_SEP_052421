@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 450px;
     width: 100%;
     background-color: black;
     color: white;
@@ -29,9 +29,11 @@
     padding: 10px 20px;
 }
 
-.foot-links {
+.footer-lower {
     display: flex;
-}
+    justify-content: space-evenly;
+    margin-top: 50px;
+    font-size: 1.2rem;}
 
 .footer-links-items {
     display: flex;
@@ -40,18 +42,7 @@
     font-size: 1.2rem;
 }
 
-.copyright {
-    display: flex;
-    flex-direction: column;
-}
-
 .copyright-items {
     display: flex;
-    justify-content: center;
-}
-
-.portfolio {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }

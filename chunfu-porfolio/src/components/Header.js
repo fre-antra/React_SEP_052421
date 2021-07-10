@@ -5,14 +5,23 @@ import Link from './Link';
 const Header = () => {
     return (
         <header className="header">
-            <div className="header-left">
+            <Link href='/' className="header-left">
+                <img alt='Home logo' src='/images/logo.svg'></img> 
+            </Link>
+            <div className="header-right">
+                <Link href='/' className="header-right-items">Home</Link>
+                <Link href='portfolio' className="header-right-items">Portfolio</Link>
+                <Link href='contact' className="header-right-items">Contact</Link>
+            </div>
+
+            {/*<div className="header-left">
                 <img alt='Home logo' src='/images/logo.svg'></img> 
             </div>
             <div className="header-right">
                 <div className="header-right-items">Home</div>
                 <div className="header-right-items">Portfolio</div>
                 <div className="header-right-items">Contact</div>
-            </div>
+            </div>*/}
         </header>
     )
 }
