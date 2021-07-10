@@ -8,8 +8,15 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
   }
-  
+  .about > *{
+    display: block;
+  }
   .about-header h1 {
     font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 50pt;
@@ -19,13 +26,16 @@
   .about-header-quote {
     font-family: "Slabo", Helvetica, serif;
     font-style: italic;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   
   .about-general-description,
   .about-statistic-description {
     display: flex;
-    justify-content: center;
+    width: 80%;
+    margin-left: 4rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .about-general-description h2,
@@ -33,7 +43,7 @@
     font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 25pt;
     font-weight: 550;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .about-general-description p,
@@ -50,6 +60,10 @@
   .about-option-buttons {
     display: flex;
     justify-content: center;
+    width: 8rem;
+    /* height: 3rem; */
+    align-content: center;
+    margin-bottom: 3rem;
   }
 
   .about-option-buttons .btn-black-border {

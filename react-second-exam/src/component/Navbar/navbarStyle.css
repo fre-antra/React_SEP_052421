@@ -1,29 +1,36 @@
 .navigation {
   position: absolute;
-  width: 100%;
-  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  justify-content: space-between;
+  padding: 20px;
   background: rgba(20, 20, 20, 0.1);
 }
 
+.logo, .primary-nav{
+  display: inline-block;
+}
+
 .logo img {
+  margin-left: 2rem;
   max-width: 50px;
   opacity: 0.8;
 }
 .primary-nav {
   padding-top: 10px;
-  padding-right: 40px;
 }
 
-.primary-nav li {
+.primary-nav p {
   display: inline-block;
   margin: 0px 20px;
-  color: white;
   font-size: 16pt;
   font-weight: 500;
 }
 
 .primary-nav a {
   color: white;
+  text-decoration: none;
 }
 
 .primary-nav a:hover {

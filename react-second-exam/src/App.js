@@ -1,5 +1,4 @@
 import './App.css';
-import './Addon.css';
 import Layout from './component/Layout';
 
 function App() {

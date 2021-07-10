@@ -1,7 +1,7 @@
 import Navbar from "./Navbar/Navbar";
 import Intro from "./Intro/Intro";
 import About from "./About/About";
-import Skill from "./Skill/Skill";
+import Summary from "./Summary/Summary";
 import Project from "./Project/Project";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
@@ -15,7 +15,7 @@ const Layout = () => {
           <Navbar></Navbar>
           <Intro></Intro>
           <About></About>
-          <Skill></Skill>
+          <Summary></Summary>
           <Project></Project>
           <Contact></Contact>
           <Footer></Footer>

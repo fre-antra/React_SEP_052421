@@ -1,11 +1,23 @@
 .projects {
     background-color: #6c6b70;
-    padding: 50px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 4rem 3rem;
   }
-  
-  .projects-header-quote {
-    margin-bottom: 20px;
+  .projects__holder{
+    display: flex;
+    width: 100%;
+    margin: 2rem auto 3rem;
+  }
+
+  .holder__project{
+    width: 30%;
+    margin: 1rem;
+    padding: 2rem;
+    text-align: center;
   }
 
   .projects h1,
@@ -49,17 +61,28 @@
   .project-more-info .btn-border,
   .see-more-button .btn-border{
     background-color: transparent;
-    width: 10rem;
-    margin-top: 40px;
     color: white;
     font-family: "Roboto", Helvetica, serif;
     font-size: 15pt;
     border-radius: 0;
     border: 2px solid white;
   }
-  .see-more-button .btn-border{
-    width: 17rem;
+
+  .project-more-info {
+    text-align: center;
+    margin-left: auto;
   }
+
+  .project-more-info .btn{
+    width: 25rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+  }
+
+  .see-more-button .btn{
+    padding: 0.5rem 1.5rem ;
+  }
+  
   
   .project-more-info .btn-border:hover{
     transition: all 0.5s;
@@ -74,5 +97,16 @@
     color: black;
     border: 2px solid white;
     font-weight: 500;
-    background-color: transparent;
+    background-color: white;
+  }
+
+
+  @media screen and (max-width: 750px) {
+    .projects__holder{
+      flex-direction: column;
+    }
+
+    .holder__project{
+      width: 80%;
+    }
   }

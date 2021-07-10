@@ -8,16 +8,35 @@
       background-position: center center;
     color: white;
     padding: 60px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
   }
   
-  .summary .row {
-    padding: 50px 6%;
-    width: 100%;
+  .summary__post img{
+    width: 3rem;
+    height: auto;
+    margin: 1rem 1rem auto;
   }
-  
+  .summary__post{
+    width: 40%;
+    margin: 1rem;
+    display: flex;
+  }
+
   .summary h3 {
     font-family: "Source Sans Pro", Arial, sans-serif;
   }
   .summary p {
     font-family: "Roboto", Helvetica, serif;
+  }
+
+  @media screen and (max-width: 700px) {
+    .summary{
+      justify-content: flex-start;
+    }
+    .summary__post{
+      width: 80%;
+    }
   }
