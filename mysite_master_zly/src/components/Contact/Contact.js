@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.css";
 import Footer from "../Footer/Footer";
 
-export default class extends React.Component {
+export default class Contact extends React.Component {
   render() {
     return (
       <>
