@@ -9,8 +9,8 @@ function NavBar() {
         <div className='row'>
           <div className='col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center'>
             <div className='logo'>
-              <a href='/'>
-                <img alt='logo' src={logo} />
+              <a>
+                <img src={logo} />
               </a>
             </div>
           </div>

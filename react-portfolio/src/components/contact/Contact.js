@@ -71,7 +71,7 @@ function Contact() {
                 <div className='row'>
                   <div className='col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4'>
                     <div className='submit-contact'>
-                      <a className='btn btn-default btn-border' href='/contact'>
+                      <a className='btn btn-default btn-border' href='#'>
                         Submit
                       </a>
                     </div>

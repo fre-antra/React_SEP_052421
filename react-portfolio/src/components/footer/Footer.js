@@ -12,30 +12,30 @@ function Footer() {
         <div className='container-fluid'>
           <div className='row'>
             <div className='media-links footer-flex'>
-              <div>
+              <div className=''>
                 <div className='facebook social'>
                   <a href='/'>
                     <img className='img-responsive' src={facebook} />
                   </a>
                 </div>
               </div>
-              <div>
+              <div className=''>
                 <div className='linkedin social'>
-                  <a href='/'>
+                  <a href='#'>
                     <img className='img-responsive' src={linkedIn} />
                   </a>
                 </div>
               </div>
-              <div>
+              <div className=''>
                 <div className='pinterest social'>
-                  <a href='/'>
+                  <a href='#'>
                     <img className='img-responsive' src={pinterest} />
                   </a>
                 </div>
               </div>
-              <div>
+              <div className=''>
                 <div className='email-icon social'>
-                  <a href='/'>
+                  <a href='#'>
                     <img className='img-responsive' src={emailImg} />
                   </a>
                 </div>
@@ -65,27 +65,27 @@ function Footer() {
             <div className='col-sm-2 col-md-2 text-center'>
               <div className='home-footer'>
                 <h4>
-                  <a href='/'>Home</a>
+                  <a href='#'>Home</a>
                 </h4>
               </div>
             </div>
             <div className='col-sm-2 col-md-2 text-center'>
               <div className='portfolio-footer'>
                 <h4>
-                  <a href='/portfolio'>Portfolio</a>
+                  <a href='#'>Portfolio</a>
                 </h4>
                 <ul>
                   <li>
-                    <a href='/'>Project1</a>
+                    <a href='#'>Project1</a>
                   </li>
                   <li>
-                    <a href='/'>Project2</a>
+                    <a href='#'>Project2</a>
                   </li>
                   <li>
-                    <a href='/'>Project3</a>
+                    <a href='#'>Project3</a>
                   </li>
                   <li>
-                    <a href='/'>See All</a>
+                    <a href='#'>See All</a>
                   </li>
                 </ul>
               </div>
@@ -93,11 +93,11 @@ function Footer() {
             <div className='col-sm-2 col-md-2 text-center'>
               <div className='resume-footer'>
                 <h4>
-                  <a href='/'>Resume</a>
+                  <a href='#'>Resume</a>
                 </h4>
                 <ul>
                   <li>
-                    <a href='/'>Download</a>
+                    <a href='#'>Download</a>
                   </li>
                 </ul>
               </div>
@@ -105,7 +105,7 @@ function Footer() {
             <div className='col-sm-2 col-md-2 text-center'>
               <div className='contact-footer'>
                 <h4>
-                  <a href='/contact'>Contact</a>
+                  <a href='#'>Contact</a>
                 </h4>
               </div>
             </div>
