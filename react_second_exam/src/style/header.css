@@ -1,8 +1,27 @@
 .header {
-  height: 100px;
+  height: 50px;
   background-color: black;
-  opacity: 0.2;
   color: white;
 
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-logo {
+  flex-basis: 10%;
+}
+
+.header-navbar {
+  flex-basis: 40%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.header-navlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

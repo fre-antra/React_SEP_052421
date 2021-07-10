@@ -3,11 +3,14 @@ import '../style/aboutMe.css';
 export default function AboutMe() {
   return (
     <div className='aboutMe' id='aboutMe'>
-      <h1>About Me</h1>
-      <h4>Sharing a little bit of my story...</h4>
-      <div>
-        <h2>General Overview</h2>
-        <p>
+      <div className='aboutMe-head'>
+        <div>About Me</div>
+        <div>Sharing a little bit of my story...</div>
+      </div>
+
+      <div className='aboutMe-content'>
+        <div>General Overview</div>
+        <div>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -17,20 +20,22 @@ export default function AboutMe() {
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum
-        </p>
-      </div>
-      <div>
-        <h3>Statistics</h3>
-        <div>And for those that don't fancy reading:</div>
-        <div>
-          <li>Male, 200 years old.</li>
-          <li>Five feet 110 inches</li>
-          <li>Favorite fonts:Roboto</li>
-          <li>Loves to learn new things</li>
         </div>
       </div>
-      <div>
-        <a href='#contact'>Contact</a>
+
+      <div className='aboutMe-content'>
+        <div>Statistics</div>
+        <div>And for those that don't fancy reading:</div>
+        <li>Male, 200 years old.</li>
+        <li>Five feet 110 inches</li>
+        <li>Favorite fonts:Roboto</li>
+        <li>Loves to learn new things</li>
+      </div>
+
+      <div className='aboutMe-content'>
+        <a href='#contact' className='btn'>
+          Contact
+        </a>
       </div>
     </div>
   );

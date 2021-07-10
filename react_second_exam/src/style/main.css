@@ -1,10 +1,23 @@
 .main {
   height: 800px;
   background-image: url(../images/apple-1838564_1920-main.jpg);
-  opacity: 0.5;
+  /* opacity: 0.5; */
   color: white;
 
   display: flex;
+  /* flex-wrap: nowrap; */
+  flex-direction: column;
+  align-content: center;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main-btns a {
+  margin: 20px;
 }

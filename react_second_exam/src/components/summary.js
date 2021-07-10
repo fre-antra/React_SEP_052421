@@ -4,9 +4,9 @@ export default function Summary() {
   return (
     <div className='summary' id='summary'>
       <div className='summary-card'>
-        <div>Image</div>
-        <div>
-          <h3>Development and Design</h3>
+        <img src='images/developerdesign.svg' alt='developerdesign' />
+        <div className='summary-content'>
+          <div>Development and Design</div>
           <div>
             I aim to put my creativity to the test, designing and building
             unique, meaningful products for clients or merely for my own
@@ -14,10 +14,11 @@ export default function Summary() {
           </div>
         </div>
       </div>
+
       <div className='summary-card'>
-        <div>Image</div>
-        <div>
-          <h3>Ideas and Solutions</h3>
+        <img src='images/responsivedesign.svg' alt='responsivedesign' />
+        <div className='summary-content'>
+          <div>Ideas and Solutions</div>
           <div>
             There are still many problems that exist in today's society,
             including laziness. Luckily, I hope to combat these issues by
@@ -26,9 +27,9 @@ export default function Summary() {
         </div>
       </div>
       <div className='summary-card'>
-        <div>Image</div>
-        <div>
-          <h3>Development and Design</h3>
+        <img src='images/innovativesolutions.svg' alt='innovativesolutions' />
+        <div className='summary-content'>
+          <div>Development and Design</div>
           <div>
             I aim to put my creativity to the test, designing and building
             unique, meaningful products for clients or merely for my own
@@ -37,9 +38,9 @@ export default function Summary() {
         </div>
       </div>
       <div className='summary-card'>
-        <div>Image</div>
-        <div>
-          <h3>Passion and Dedication</h3>
+        <img src='images/passion.svg' alt='passion' />
+        <div className='summary-content'>
+          <div>Passion and Dedication</div>
           <div>
             With my profound interest and commitment to my field of study, my
             projects rarely go unfinished and my problems are never left

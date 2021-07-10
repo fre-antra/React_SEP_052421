@@ -3,16 +3,28 @@
 
   background-image: url(../images/architecture-2178604_1920-main1.jpg);
 
-  opacity: 0.2;
+  /* opacity: 0.2; */
 
   color: white;
 
+  padding: 50px;
+
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .summary-card {
-  flex-basis: 40%;
+  flex-basis: 50%;
+  height: 150px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
 }

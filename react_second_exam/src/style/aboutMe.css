@@ -2,7 +2,30 @@
   height: 800px;
   background-color: lightgrey;
   color: balck;
+  padding: 20px 100px;
 
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.aboutMe-head {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutMe-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.aboutMe-btn {
+  text-align: center;
 }

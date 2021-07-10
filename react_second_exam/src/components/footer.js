@@ -4,24 +4,64 @@ export default function Footer() {
   return (
     <div className='footer' id='footer'>
       <div className='footer-ex-links'>
-        <a href='#'>Facebook</a>
-        <a href='#'>LinkedIn</a>
-        <a href='#'>Pintrest</a>
-        <a href='#'>Email</a>
+        <a href='#'>
+          <img src='images/facebook.svg' alt='facebook' />
+        </a>
+        <a href='#'>
+          <img src='images/linkedin.svg' alt='linkedin' />
+        </a>
+        <a href='#'>
+          <img src='images/pinterest.svg' alt='pinterest' />
+        </a>
+        <a href='#'>
+          <img src='images/email.svg' alt='email' />
+        </a>
       </div>
       <div className='footer-content'>Phone: XXXXXX Email: XXXXX@gmail.com</div>
+
       <div className='footer-bottom'>
         <div>XXXX Copyright © 2021 NY</div>
-        <div>Home</div>
+        <a href='#' className='link'>
+          Home
+        </a>
         <div>
-          <div>Portfolio</div>
-          <li>Project1</li>
-          <li>Project2</li>
-          <li>Project3</li>
-          <li>See more</li>
+          <a href='#portfolio' className='link'>
+            Portfolio
+          </a>
+          <li>
+            <a href='#' className='link'>
+              Project1
+            </a>
+          </li>
+          <li>
+            <a href='#' className='link'>
+              Project2
+            </a>
+          </li>
+          <li>
+            <a href='#' className='link'>
+              Project3
+            </a>
+          </li>
+          <li>
+            <a href='#' className='link'>
+              See more
+            </a>
+          </li>
         </div>
-        <div>Resume</div>
-        <div>Contact</div>
+        <div>
+          <a href='#' className='link'>
+            Resume
+          </a>
+          <li>
+            <a href='#' className='link'>
+              Download
+            </a>
+          </li>
+        </div>
+        <a href='#contact' className='link'>
+          Contact
+        </a>
       </div>
     </div>
   );
