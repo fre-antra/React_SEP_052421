@@ -97,7 +97,7 @@ const Form = ({ currentId, setCurrentId }) => {
             fullWidth
             value={postData.tags}
             onChange={(even) =>
-              setPostdata({ ...postData, tags: even.target.value })
+              setPostdata({ ...postData, tags: even.target.value.split(',') })
             }
           ></TextField>
           <div className={classes.fileInput}></div>

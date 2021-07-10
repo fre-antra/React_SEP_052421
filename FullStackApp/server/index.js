@@ -2,11 +2,13 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv';
 
 
 import postsRoute from './routes/posts.js'
 
 
+dotenv.config();
 const app = express()
 const PORT = process.env.PORT || 4000
 // const corsOptions = {
@@ -23,12 +25,16 @@ app.use(express.json())
 // use middle ware to wrap whole file into path:/posts  === Linke routers to the /posts path
 app.use('/posts', postsRoute)
 
+/* ------------------------------  important  --------------------------- */
+// npm install dotenv
+// all secere data: user name, user password, db name should save in .env environment document
+// also need to import dotenv and configure it
+/* ------------------------------  important  --------------------------- */
 
-
-const CONECTION_URL = "mongodb+srv://user-baihan:123741@cluster0.6hjpf.mongodb.net/postsProj"
+// const CONECTION_URL = "mongodb+srv://user-baihan:123741@cluster0.6hjpf.mongodb.net/postsProj"
 // mongodb+srv://user-baihan:<password>@cluster0.6hjpf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
-mongoose.connect(CONECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on ${PORT}`)))
     .catch((error)=> console.log(error.message))
 

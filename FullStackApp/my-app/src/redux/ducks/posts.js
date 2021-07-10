@@ -57,19 +57,39 @@ export const deletePost = (id) => async (dispatch) =>  {
     }
 }
 
+const LIKE = 'LIKE'
+
+export const likePost = (id) => async (dispatch) =>  {
+    try {
+        const { data } = await api.likePost(id)
+        console.log('this is the LIKE data', data);
+        dispatch({ type: LIKE, payload: data })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 
 // reducer
 
 const postsReducer = (state = initailState, action) => {
     switch(action.type){
         case FETCH:
-            return  { ...state, posts: action.payload }
+            return  { posts: action.payload }
         case CREATE:
             return { ...state, posts: action.payload }
         case UPDATE:
-            return  state.map((post) => post._id === action.payload ? action.payload : state)
+            const newPost = state.posts.map((post) => post._id === action.payload ? action.payload : post)
+            console.log('newPost state',newPost, 'state:',state.posts);
+            return { posts: newPost }
         case DELETE:
-            return  state.filter((post) => post._id !== action.payload)
+            const remaindPost = state.posts.filter((post) => post._id !== action.payload)
+            return { posts: remaindPost }
+        case LIKE:
+            const likePost = state.posts.map((post) => post._id === action.payload ? action.payload : post)
+            console.log('like state',likePost, 'state:',state.posts);
+            return { posts: likePost }
         default:
             return state
     }
