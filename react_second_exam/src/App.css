@@ -17,13 +17,14 @@
 
 li {
   list-style: none;
+  height: fit-content;
 }
 
 .btn {
   color: white;
   text-decoration: none;
-  border: 1px solid white;
-  padding: 10px;
+  border: 2px solid white;
+  padding: 10px 40px;
   width: fit-content;
   height: fit-content;
 }
@@ -31,4 +32,32 @@ li {
 .btn:hover {
   background-color: white;
   color: black;
+}
+
+.title0 {
+  font-size: 800%;
+}
+
+.title1 {
+  font-size: 250%;
+}
+
+.title2 {
+  font-size: 180%;
+}
+
+.title3 {
+  font-size: 130%;
+}
+
+.content1 {
+  font-size: 100%;
+}
+
+.content2 {
+  font-size: 80%;
+}
+
+.italic {
+  font-style: italic;
 }

@@ -1,23 +1,23 @@
 import '../style/header.css';
+import { Link } from 'react-router-dom';
+
 export default function Header() {
   return (
     <div className='header' id='header'>
-      <div className='header-logo'>
-        <a href='#'>
-          <img src='images/logo.svg' alt='logo' />
-        </a>
-      </div>
+      <a href='#main' className='header-logo'>
+        <img src='images/logo.svg' alt='logo' />
+      </a>
 
       <div className='header-navbar'>
-        <a href='#' className='header-navlink link'>
+        <Link to='/' className='header-navlink link title3'>
           Home
-        </a>
-        <a href='#portfolio' className='header-navlink link'>
+        </Link>
+        <Link to='/portfolio' className='header-navlink link title3'>
           Portfolio
-        </a>
-        <a href='#contact' className='header-navlink link'>
+        </Link>
+        <Link to='/contact' className='header-navlink link title3'>
           Contact
-        </a>
+        </Link>
       </div>
     </div>
   );

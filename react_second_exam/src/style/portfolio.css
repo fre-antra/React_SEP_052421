@@ -1,10 +1,13 @@
 .portfolio {
   height: 800px;
-  background-color: grey;
+  background-color: #59585d;
   color: white;
+
+  padding: 40px 20px 20px 20px;
 
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
 
@@ -12,11 +15,21 @@
 }
 
 .portfolio-head {
-  flex-basis: 20%;
+  flex-basis: 40%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-head div {
+  height: fit-content;
+  margin: 20px;
 }
 
 .portfolio-cards {
-  flex-basis: 60%;
+  flex-basis: 40%;
 
   display: flex;
   flex-direction: row;
@@ -25,26 +38,41 @@
 
 .portfolio-card {
   flex-basis: 30%;
-  height: 400px;
+  height: 350px;
   border: 1px solid balck;
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
+.portfolio-card div {
+  height: fit-content;
+  margin-bottom: 40px;
+}
 .portfolio-foot {
   flex-basis: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #card1 {
-  background-image: url(../images/luvtalklogo.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../images/luvtalklogo.png);
+  background-position: center center;
 }
 
 #card2 {
-  background-image: url(../images/bboytimeline.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../images/logo.svg);
+  background-position: center center;
 }
 
 #card3 {
-  background-image: url(../images/mlbproject.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url(../images/mlbproject.png);
+  background-position: center center;
 }

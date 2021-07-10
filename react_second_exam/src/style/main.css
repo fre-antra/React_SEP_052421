@@ -1,23 +1,36 @@
 .main {
   height: 800px;
-  background-image: url(../images/apple-1838564_1920-main.jpg);
-  /* opacity: 0.5; */
-  color: white;
+  background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+    url(../images/apple-1838564_1920-main.jpg); /* Browser prefixes*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 
+  color: white;
   display: flex;
-  /* flex-wrap: nowrap; */
   flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
 }
 
-.main h1 {
-  font-size: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.main-content {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.main-btns {
+  flex-basis: 30%;
 }
 
 .main-btns a {
-  margin: 20px;
+  margin: 10px;
+}
+
+.main-content div {
+  height: fit-content;
+  margin: 0 0;
 }

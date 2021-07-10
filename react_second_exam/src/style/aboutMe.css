@@ -1,8 +1,16 @@
 .aboutMe {
   height: 800px;
-  background-color: lightgrey;
+  background: linear-gradient(
+      rgba(225, 225, 225, 0.94),
+      rgba(225, 225, 225, 0.94)
+    ),
+    url(../images/aboutbackground.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+
   color: balck;
-  padding: 20px 100px;
+  padding: 20px 200px;
 
   display: flex;
   flex-direction: column;
@@ -19,13 +27,22 @@
 }
 
 .aboutMe-content {
+  margin: 10px;
+  padding: 10px;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
-.aboutMe-btn {
-  text-align: center;
+#btn {
+  color: black;
+  border: 2px solid black;
+}
+
+#btn:hover {
+  background-color: black;
+  color: white;
 }

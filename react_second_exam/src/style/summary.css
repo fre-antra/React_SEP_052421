@@ -1,13 +1,12 @@
 .summary {
   height: 800px;
 
-  background-image: url(../images/architecture-2178604_1920-main1.jpg);
-
-  /* opacity: 0.2; */
-
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../images/architecture-2178604_1920-main1.jpg);
+  background-attachment: fixed;
+  background-attachment: center center;
   color: white;
-
-  padding: 50px;
+  padding: 60px 30px;
 
   display: flex;
   flex-direction: row;
@@ -17,14 +16,23 @@
 }
 
 .summary-card {
-  flex-basis: 50%;
+  flex-basis: 40%;
   height: 150px;
 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .summary-content {
+  flex-basis: 85%;
+  padding: 10px 10px;
+  width: 300px;
   display: flex;
   flex-direction: column;
+}
+
+.summary-content div {
+  margin: 10px;
+  height: fit-content;
 }
