@@ -1,4 +1,6 @@
 .gallery{
     /* display: flex; */
     padding: 2rem;
+    width: 80%;
+    margin: auto;
 }

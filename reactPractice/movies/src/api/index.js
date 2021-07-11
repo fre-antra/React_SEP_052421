@@ -16,6 +16,6 @@ import axios from 'axios'
      console.error(error);
  });
 
-export const getMovie = (movie) => axios.request(movieAPI(movie))
+export const  getMovie = (movie) => axios.request(movieAPI(movie))
  
  export default movieAPI

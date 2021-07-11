@@ -1,24 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./moviepageStyle.css";
 const MoviePage = (props) => {
-    console.log(props);
-    return (
-        <div>
-             {/* <div className='gallery__movie'>
-                <img src={`${poster}`} alt={`${name}`} />
-                <div className='movie__info'>
-                    <p className='info--name'> { name }</p>
-                    <p className='info--year'> { year } </p>
-                </div>
-            </div> */}
-            <h1>this is movie page</h1>
+  console.log(props);
+  let location = useLocation();
 
-            <Link to={'/'}>
-                back to  main
-            </Link>
-        </div>
-    )
-}
+  const movie = location.state.data;
 
-export default MoviePage
+  return (
+    <div className="moviepage">
+      {/* <div className="container"> */}
+      <div className="movie__poster">
+        <img src={movie.poster} alt={movie.name} />
+      </div>
+
+      <div className="movie__contant">
+        <h1>{movie.name}</h1>
+        <p>{movie.detail}</p>
+        <p>{movie.year}</p>
+
+        <p className="btn-backhome">
+          <Link to={"/"}>Back To Movies</Link>
+        </p>
+      </div>
+      {/* </div> */}
+    </div>
+  );
+};
+
+export default MoviePage;

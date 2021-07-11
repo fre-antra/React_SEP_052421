@@ -1,0 +1,37 @@
+.moviepage{
+    width: 100%;
+    display: flex;
+    padding: 4rem 6rem;
+    justify-content:left;
+    align-content: flex-start;
+}
+
+.movie__poster{
+    width: 50%;
+    height: auto;
+    padding-left:5rem;
+}
+.movie__poster img{
+    width: 100%;
+    height: auto;
+}
+.movie__contant > *{
+    padding-left: 4rem;
+    padding-top: 3rem;
+}
+
+.movie__contant h1{
+    font-size: 32pt;
+}
+
+.movie__contant p{
+    font-size: 16pt;
+}
+
+.btn-backhome a{
+    text-decoration: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px ;
+}

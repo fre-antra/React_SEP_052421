@@ -1,5 +1,7 @@
 .search{
-    padding: 2rem;
+    padding: 3rem ;
+    width: 80%;
+    margin: auto;
 }
 
 .search__header{
@@ -12,7 +14,8 @@
     padding-left: 1rem;
     border-style: none;
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
+    min-width: 5rem; 
     height: 3rem;
     font-size: 12pt;
 }

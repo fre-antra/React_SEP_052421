@@ -1,6 +1,6 @@
 .gallery__movie{
     display:inline-block;
-    width: 30%;
+    width: 25%;
     height: 6rem;
 
 }
@@ -35,4 +35,12 @@
     visibility: visible;
     bottom: 94%;
     transition: all 1s;
+}
+
+
+@media screen and (max-width:950px) {
+    .gallery__movie{
+        width: 50%;
+        height: auto;
+    }
 }
