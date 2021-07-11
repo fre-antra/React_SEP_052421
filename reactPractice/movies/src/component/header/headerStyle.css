@@ -1,0 +1,22 @@
+.search{
+    padding: 2rem;
+}
+
+.search__header{
+    font-size: 40pt;
+    font-weight: bold;
+    padding-bottom:2rem;
+}
+
+.search__input{
+    padding-left: 1rem;
+    border-style: none;
+    border-radius: 5px;
+    width: 30%;
+    height: 3rem;
+    font-size: 12pt;
+}
+
+.search__notation{
+    padding: 10px 5px;
+}

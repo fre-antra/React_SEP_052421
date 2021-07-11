@@ -1,0 +1,38 @@
+.gallery__movie{
+    display:inline-block;
+    width: 30%;
+    height: 6rem;
+
+}
+
+.gallery__movie img{
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.movie__info{
+    position: relative;
+    bottom: 0;
+    background-color: rgba(70, 70, 70, 0.6);
+    font-size: 18pt;
+    font-weight: bold;
+    color: wheat;
+    padding: 1rem 0 1rem 2rem;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.info--year{
+    padding-top: 5px;
+    font-size: 14pt;
+    font-weight: 500;
+}
+.gallery__movie:hover{
+    cursor: pointer;
+}
+.gallery__movie:hover .movie__info{
+    visibility: visible;
+    bottom: 94%;
+    transition: all 1s;
+}
