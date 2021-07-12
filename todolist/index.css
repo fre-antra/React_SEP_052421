@@ -106,10 +106,8 @@ ul li button:active {
     font-size: 1.2rem;
 }
 
-
 ul li span {
     /* line-height: var(--height-todolist-header); */
     width: 100%;
     overflow: hidden;
 }
-
