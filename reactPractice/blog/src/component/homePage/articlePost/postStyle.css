@@ -1,0 +1,32 @@
+.article__post{
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.article__post > *{
+    padding: 1rem;
+}
+
+.post--time{
+    padding: 0 1rem
+}
+
+.post__btns{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: auto;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .post__btns{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 840px) {
+    .post__btns{
+        width: 80%;
+    }
+}

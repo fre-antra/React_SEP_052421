@@ -1,0 +1,27 @@
+.creatContainer{
+    padding: 2rem 3rem;
+}
+
+.creatContainer h3{
+    padding: 1rem 0;
+}
+
+.creatContainer textarea {
+    width: 80%;
+    padding: 10px 15px;
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    font-size: 12pt;
+    letter-spacing: 1px;
+}
+
+.creatContainer div{
+    padding-bottom: 1rem;
+}
+
+.descript__input {
+    height: 7rem;
+}
+.article__input {
+    height: 30rem;
+}

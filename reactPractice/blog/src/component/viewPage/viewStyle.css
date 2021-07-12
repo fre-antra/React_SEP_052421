@@ -1,0 +1,18 @@
+.viewHeader > *{
+    padding: 1rem 3rem;
+}
+
+.viewHeader {
+    width: 90%;
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: rgb(184, 184, 184) solid;
+}
+
+
+.viewContent{
+    width: 90%;
+    margin: auto;
+    padding: 3rem;
+}
