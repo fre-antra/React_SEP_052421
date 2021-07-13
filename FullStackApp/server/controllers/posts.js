@@ -41,8 +41,13 @@ export const updatePost = async (req, res) => {
         return res.status(404).json({message: 'No post with that id'})
     }
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(_id, {...post,_id}, { new: true })
-    
+    console.log(_id, ' updated');
+    // console.log('--------/n', { ...post, _id }, '--------/n', { ...post }, '--------/n', post); // all are same 
+    // { ...post } : App not rerender
+    // post:
+    // { ...post, _id } :
+    const updatedPost = await PostMessage.findByIdAndUpdate(_id, {...post}, { new: true })
+     
     res.json(updatedPost)
 }
  
@@ -54,7 +59,6 @@ export const deletePost = async (req, res) => {
     }
 
     await PostMessage.findByIdAndRemove(id)
-    
     res.json('Post Deleted.')
 }
 
@@ -65,6 +69,7 @@ export const likePost = async (req, res) => {
         return res.status(404).json({message: 'No post with that id'})
     }
 
+    console.log('LIKE + 1');
     const post =  await PostMessage.findById(id)
     const updateLike =  await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1}, {new:true})
     res.json(updateLike)

@@ -3,13 +3,16 @@ import useStyle from "./style";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
-import { createPosts, updatePost } from "../../redux/ducks/posts"; 
+import { createPosts, updatePost } from "../../redux/ducks/posts";
 
 const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyle();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
-  const curPost = currentId ? posts.find((p) => p._id === currentId) : null
+  // const curPost = currentId ? posts.find((p) => p._id === currentId) : null
+  const curPost = useSelector((state) =>
+    currentId ? state.posts.posts.find((p) => p._id === currentId) : null
+  );
   // console.log("ID + CurPost", currentId, useSelector((state) => state));
 
   const [postData, setPostdata] = useState({
@@ -19,37 +22,44 @@ const Form = ({ currentId, setCurrentId }) => {
     tags: "",
     selectedFile: "",
   });
-    
 
   useEffect(() => {
-    if(curPost) setPostdata(curPost)
-  },[curPost])
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
-      console.log(postData)
-      
-      if (currentId) {
-        dispatch(updatePost(currentId, postData))
-        
-      } else {
-      // dispatch action
-      dispatch(createPosts(postData))
-      }
-      clear()
-    };
-    
+    if (curPost) setPostdata(curPost);
+  }, [curPost]);
 
-  const clear = () => {
-      setCurrentId(null)
-      setPostdata({
-        creater: "",
-        title: "",
-        message: "",
-        tags: "",
-        selectedFile: "",
-      })
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form --- submit data", postData);
+
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+      clear(0);
+    } else {
+      // dispatch action
+      dispatch(createPosts(postData));
+      // need wait till the DB update then get new posts
+      setTimeout(() => {
+        clear(1);
+      }, 0);
+    }
+  };
+
+  const clear = (flage) => {
+    // setCurrentId(null);
+    if (flage === 1) {
+    setCurrentId(null);
+    }
+
+    setPostdata({
+      creater: "",
+      title: "",
+      message: "",
+      tags: "",
+      selectedFile: "",
+    });
+  };
+
+
   return (
     <>
       <Paper className={classes.paper}>
@@ -59,7 +69,9 @@ const Form = ({ currentId, setCurrentId }) => {
           noValidate
           onSubmit={handleSubmit}
         >
-          <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} your Memory</Typography>
+          <Typography variant="h6">
+            {currentId ? "Editing" : "Creating"} your Memory
+          </Typography>
           <TextField
             name="creater"
             variant="outlined"
@@ -97,7 +109,7 @@ const Form = ({ currentId, setCurrentId }) => {
             fullWidth
             value={postData.tags}
             onChange={(even) =>
-              setPostdata({ ...postData, tags: even.target.value.split(',') })
+              setPostdata({ ...postData, tags: even.target.value.split(", ") })
             }
           ></TextField>
           <div className={classes.fileInput}></div>
@@ -106,7 +118,7 @@ const Form = ({ currentId, setCurrentId }) => {
               type="file"
               multiple={false}
               onDone={({ base64 }) =>
-              setPostdata({ ...postData, selectedFile: base64 })
+                setPostdata({ ...postData, selectedFile: base64 })
               }
             />
           </div>
@@ -124,7 +136,7 @@ const Form = ({ currentId, setCurrentId }) => {
             variant="contained"
             color="secondary"
             size="small"
-            onClick={clear}
+            onClick={()=>clear(1)}
             fullWidth
           >
             Clear

@@ -7,11 +7,12 @@ import useStyle from "./style";
 const Posts = ({ setCurrentId }) => {
   const classes = useStyle();
   const posts = useSelector((state) => state.posts.posts);
-  console.log('show state', posts);
+  console.log('Posts --- Show Posts', posts);
+   
   
-  useEffect(() => {
-    console.log('Posts component changed');
-  }, [posts])
+  // useEffect(() => {
+  //   console.log('Posts component changed');
+  // }, [posts])
 
   return !posts.length ? (
     <CircularProgress />

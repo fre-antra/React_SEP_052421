@@ -16,8 +16,9 @@ import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../../redux/ducks/posts";
 
 const Post = ({ post, setCurrentId }) => {
-    const classes = useStyle();
-    const dispatch = useDispatch()
+  const classes = useStyle();
+  const dispatch = useDispatch();
+  // console.log('Post ---||--- post ', post);
 
   return (
     <Card className={classes.card}>
@@ -29,11 +30,15 @@ const Post = ({ post, setCurrentId }) => {
       <div className={classes.overlay}>
         <Typography variant="h6">{post.creater}</Typography>
         <Typography variant="body2">
-          {moment(post.createdAt).fromNow()}
+          {moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}
         </Typography>
       </div>
       <div className={classes.overlay2}>
-        <Button style={{ color: "white" }} size="small" onClick={() =>setCurrentId(post._id) }>
+        <Button
+          style={{ color: "white" }}
+          size="small"
+          onClick={() => setCurrentId(post._id)}
+        >
           <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
@@ -43,7 +48,7 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
       </div>
       <CardContent>
-        <Typography  variant="h4" color="textSecondary" component="p">
+        <Typography variant="h4" color="textSecondary" component="p">
           {post.title}
         </Typography>
       </CardContent>
@@ -58,7 +63,8 @@ const Post = ({ post, setCurrentId }) => {
           color="primary"
           onClick={() => dispatch(likePost(post._id))}
         >
-          <ThumbUpAltIcon fontSize="small" /> &nbsp; Like &nbsp; {post.likeCount}
+          <ThumbUpAltIcon fontSize="small" /> &nbsp; Like &nbsp;{" "}
+          {post.likeCount}
         </Button>
         <Button
           size="small"
