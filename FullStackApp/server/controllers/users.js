@@ -4,7 +4,7 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
-import UserDB from '../models/user'
+import UserDB from '../models/user.js'
 
 
 /* Sign In */
@@ -17,7 +17,7 @@ export const signin = async (req, res) => {
     const { email, password } = req.body
     try {
         /* check Email existed */
-        const existedUser = await UserDB.fineOne({ email })
+        const existedUser = await UserDB.findOne({ email })
 
         if (!existedUser) {
             return res.status(404).json({message: "User doesn't existed"})
@@ -53,7 +53,7 @@ export const signup = async (req, res) => {
     const { firstName, lastName, email, password, confirmPassword } = req.body
     
     try {
-        const existedUser = await UserDB.fineOne({ email })
+        const existedUser = await UserDB.findOne({ email })
 
         if (existedUser) {
             return res.status(400).json({message: "User already exists."})

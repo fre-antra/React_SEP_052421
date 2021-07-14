@@ -15,8 +15,9 @@ const Form = ({ currentId, setCurrentId }) => {
   );
   // console.log("ID + CurPost", currentId, useSelector((state) => state));
 
+  const user = JSON.parse(localStorage.getItem('profile'))
   const [postData, setPostdata] = useState({
-    creater: "",
+    // creater: "",
     title: "",
     message: "",
     tags: "",
@@ -32,11 +33,13 @@ const Form = ({ currentId, setCurrentId }) => {
     console.log("Form --- submit data", postData);
 
     if (currentId) {
-      dispatch(updatePost(currentId, postData));
+      // dispatch(updatePost(currentId, postData));
+      dispatch(updatePost(currentId, {...postData, name: user?.result?.name}));
       clear(0);
     } else {
       // dispatch action
-      dispatch(createPosts(postData));
+      // dispatch(createPosts(postData));
+      dispatch(createPosts({...postData, name: user?.result?.name}));
       // need wait till the DB update then get new posts
       setTimeout(() => {
         clear(1);
@@ -51,7 +54,7 @@ const Form = ({ currentId, setCurrentId }) => {
     }
 
     setPostdata({
-      creater: "",
+      // creater: "",
       title: "",
       message: "",
       tags: "",
@@ -59,6 +62,19 @@ const Form = ({ currentId, setCurrentId }) => {
     });
   };
 
+
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
+        <Typography variant="h6" align="center">
+          Please Sign In to create your memories
+        </Typography>
+
+      </Paper>
+    )
+  } else {
+    
+  }
 
   return (
     <>
@@ -72,7 +88,7 @@ const Form = ({ currentId, setCurrentId }) => {
           <Typography variant="h6">
             {currentId ? "Editing" : "Creating"} your Memory
           </Typography>
-          <TextField
+          {/* <TextField
             name="creater"
             variant="outlined"
             label="Creater"
@@ -81,7 +97,7 @@ const Form = ({ currentId, setCurrentId }) => {
             onChange={(even) =>
               setPostdata({ ...postData, creater: even.target.value })
             }
-          ></TextField>
+          ></TextField> */}
           <TextField
             name="title"
             variant="outlined"

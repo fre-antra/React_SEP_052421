@@ -3,6 +3,7 @@ import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import useStyle from "./style";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { decode } from "jsonwebtoken";
 
 const NavBar = () => {
   const classes = useStyle();
@@ -15,8 +16,17 @@ const NavBar = () => {
   console.log(user);
 
   useEffect(() => {
-    const tokent = user?.token
+    const token = user?.token
+    
     // JSON Web Token
+    // check token expired
+    if (token) {
+      const decodedToken = decode(token)
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout()
+      }
+    }
+
     setUser(JSON.parse(localStorage.getItem('profile')))
   }, [location]) //add location for rerender when user logout
   

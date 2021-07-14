@@ -19,8 +19,8 @@ export const getPosts = async (req, res) => {
 // sending request to db for adding new post info
 export const createPost = async (req, res) => {
     // res.send('POST request to the homepage')
-    const { title, message, selectedFile, creater, tags } = req.body;
-    const newPost = new PostMessage({ title, message, selectedFile, creater, tags })
+    const post = req.body;
+    const newPost = new PostMessage({...post, creater: req.userId, createdAt: new Date().toISOString()})
 
     try {
         const post = await newPost.save()
@@ -61,13 +61,26 @@ export const deletePost = async (req, res) => {
 
 export const likePost = async (req, res) => {
     const { id } = req.params
+
+    // this come from middleware. next will pass property
+    if (!req.userId) return res.json({message: 'Unauthenticated'})
+
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({message: 'No post with that id'})
     }
 
-    console.log('LIKE + 1');
-    const post =  await PostMessage.findById(id)
-    const updateLike =  await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1}, {new:true})
+    const post = await PostMessage.findById(id)
+    
+    const index = post.likes.findIndex((id) => id === String(req.userId))
+
+
+    if (index === -1 ) {
+        post.likes.push(req.userId)
+    } else {
+        post.likes = post.likes.filter((id)=> id !== String(req.userId))
+    }
+    
+    const updateLike =  await PostMessage.findByIdAndUpdate(id, post, {new:true})
     res.json(updateLike)
 }
 

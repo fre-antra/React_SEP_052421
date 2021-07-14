@@ -1,3 +1,5 @@
+import * as api from '../../api/index'
+
 // init state
 const initailState = {
     authData: null
@@ -22,6 +24,9 @@ export const logout = ()=>({
 /* ---------- My Auth ------------*/
 export const signup = (userInfo, history) => async (dispatch) => {
     try {
+        const { data } = await api.signUp(userInfo)
+        
+        dispatch({ type: AUTH, payload: data })
         
         history.push('/')
     } catch (error) {
@@ -31,7 +36,9 @@ export const signup = (userInfo, history) => async (dispatch) => {
 
 export const signin = (userInfo, history) => async (dispatch) => {
     try {
+        const { data } = await api.signIn(userInfo)
         
+        dispatch({ type: AUTH, payload: data })
         history.push('/')
     } catch (error) {
         console.log(error);
