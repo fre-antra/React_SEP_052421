@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 
 import postsRoute from './routes/posts.js'
+import usersRoute from './routes/users.js'
 
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cors())
 app.use(express.json())
 // use middle ware to wrap whole file into path:/posts  === Linke routers to the /posts path
 app.use('/posts', postsRoute)
+app.use('/user', usersRoute)
 
 /* ------------------------------  important  --------------------------- */
 // npm install dotenv

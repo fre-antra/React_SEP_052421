@@ -1,10 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import useStyle from "./style";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const NavBar = () => {
   const classes = useStyle();
-  const user = null;
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const location = useLocation()
+
+  // JSON.parse(localStorage.getItem('profile')) : get the user info from local storage
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+  console.log(user);
+
+  useEffect(() => {
+    const tokent = user?.token
+    // JSON Web Token
+    setUser(JSON.parse(localStorage.getItem('profile')))
+  }, [location]) //add location for rerender when user logout
+  
+  const logout = () => {
+    dispatch({ type: 'LOGOUT' })
+    history.push('/')
+    setUser(null)
+  }
 
   return (
     <>
@@ -45,6 +65,7 @@ const NavBar = () => {
                 variant="contained"
                 className={classes.logout}
                 color="secondary"
+                onClick={logout}
               >
                 Log out
               </Button>

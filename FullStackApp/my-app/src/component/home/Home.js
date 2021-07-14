@@ -3,8 +3,6 @@ import Posts from "../posts/Posts";
 import Form from "../form/Form";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-// import getPosts from '../../redux/ducks/posts'
-// // import useStyle from './appStyle'
 import { getPosts } from '../../redux/ducks/posts'
 
 const Home = () => {
@@ -15,6 +13,7 @@ const Home = () => {
       dispatch(getPosts());
     }, [currentId]);
   
+
 
     return (
         <Grow in>

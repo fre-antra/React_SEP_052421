@@ -42,10 +42,6 @@ export const updatePost = async (req, res) => {
     }
 
     console.log(_id, ' updated');
-    // console.log('--------/n', { ...post, _id }, '--------/n', { ...post }, '--------/n', post); // all are same 
-    // { ...post } : App not rerender
-    // post:
-    // { ...post, _id } :
     const updatedPost = await PostMessage.findByIdAndUpdate(_id, {...post}, { new: true })
      
     res.json(updatedPost)
