@@ -28,6 +28,10 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '400px',
   },
+  profileUser: {
+    display: 'flex',
+    justifyContent: 'space-around',
+  },
   userName: {
     display: 'flex',
     alignItems: 'center',
@@ -39,5 +43,6 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    marginRight:'10px'
   },
 }));

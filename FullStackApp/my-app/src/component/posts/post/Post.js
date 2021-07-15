@@ -20,9 +20,9 @@ const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
 
-  const loggedByGoogle = user?.result?.google === post.creater;
+  const loggedByGoogle = user?.result?.googleId === post.creater;
   const loggedByAuth = user?.result?._id === post.creater;
-  const checkUserLogged = loggedByAuth || loggedByAuth;
+  const checkUserLogged = loggedByAuth || loggedByGoogle;
 
   return (
     <Card className={classes.card}>
@@ -35,7 +35,10 @@ const Post = ({ post, setCurrentId }) => {
       <div className={classes.overlay}>
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">
-          {moment(post.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
+          {moment(post.createdAt).format("MMMM Do YYYY")}
+        </Typography>
+        <Typography variant="body2">
+          {moment(post.createdAt).format("h:mm:ss a")}
         </Typography>
       </div>
 
@@ -82,7 +85,7 @@ const Post = ({ post, setCurrentId }) => {
         {checkUserLogged ? (
           <Button
             size="small"
-            color="primary"
+            color="secondary"
             onClick={() => dispatch(deletePost(post._id))}
           >
             <DeleteIcon fontSize="small" /> Delete

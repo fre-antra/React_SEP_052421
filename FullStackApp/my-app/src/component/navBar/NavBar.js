@@ -7,34 +7,32 @@ import { decode } from "jsonwebtoken";
 
 const NavBar = () => {
   const classes = useStyle();
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const location = useLocation()
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
 
+  
   // JSON.parse(localStorage.getItem('profile')) : get the user info from local storage
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
-  console.log(user);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   useEffect(() => {
-    const token = user?.token
-    
-    // JSON Web Token
-    // check token expired
+    const token = user?.token;
+    // JSON Web Token && check token expiration
     if (token) {
-      const decodedToken = decode(token)
+      const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) {
-        logout()
+        logout();
       }
     }
 
-    setUser(JSON.parse(localStorage.getItem('profile')))
-  }, [location]) //add location for rerender when user logout
-  
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]); //add location for rerender when user logout
+
   const logout = () => {
-    dispatch({ type: 'LOGOUT' })
-    history.push('/')
-    setUser(null)
-  }
+    dispatch({ type: "LOGOUT" });
+    history.push("/");
+    setUser(null);
+  };
 
   return (
     <>
@@ -49,6 +47,7 @@ const NavBar = () => {
           >
             Memories
           </Typography>
+
           <img
             className={classes.image}
             src="/logo192.png"
@@ -61,16 +60,19 @@ const NavBar = () => {
         <Toolbar className={classes.toolbar}>
           {user ? (
             <div className={classes.profile}>
-              <Avatar
-                className={classes.purple}
-                alt={user.result.name}
-                src={user.result.imageUrl}
-              >
-                {user.result.name.charAt(0)}
-              </Avatar>
-              <Typography className={classes.username} variant="h6">
-                {user.result.name}
-              </Typography>
+              <div className={classes.profileUser}>
+                <Avatar
+                  className={classes.purple}
+                  alt={user.result.name}
+                  src={user.result.imageUrl}
+                >
+                  {user.result.name.charAt(0)}
+                </Avatar>
+                <Typography className={classes.username} variant="h6">
+                  {user.result.name}
+                </Typography>
+              </div>
+
               <Button
                 variant="contained"
                 className={classes.logout}

@@ -67,15 +67,17 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In to create your memories
+          <h2 style={{color: "rgba(245, 106, 71, 0.9)"}}>
+            Please Sign In!
+          </h2>
+          <p>
+            After that you are able to POST, LIKE, DELETE memories.
+          </p>
         </Typography>
 
       </Paper>
     )
-  } else {
-    
-  }
-
+  } 
   return (
     <>
       <Paper className={classes.paper}>
@@ -88,16 +90,6 @@ const Form = ({ currentId, setCurrentId }) => {
           <Typography variant="h6">
             {currentId ? "Editing" : "Creating"} your Memory
           </Typography>
-          {/* <TextField
-            name="creater"
-            variant="outlined"
-            label="Creater"
-            fullWidth
-            value={postData.creater}
-            onChange={(even) =>
-              setPostdata({ ...postData, creater: even.target.value })
-            }
-          ></TextField> */}
           <TextField
             name="title"
             variant="outlined"
@@ -113,6 +105,8 @@ const Form = ({ currentId, setCurrentId }) => {
             variant="outlined"
             label="Message"
             fullWidth
+            multiline
+            rows={4}
             value={postData.message}
             onChange={(even) =>
               setPostdata({ ...postData, message: even.target.value })
@@ -125,7 +119,7 @@ const Form = ({ currentId, setCurrentId }) => {
             fullWidth
             value={postData.tags}
             onChange={(even) =>
-              setPostdata({ ...postData, tags: even.target.value.split(", ") })
+              setPostdata({ ...postData, tags: even.target.value.split(",") })
             }
           ></TextField>
           <div className={classes.fileInput}></div>

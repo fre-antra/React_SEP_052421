@@ -18,16 +18,14 @@ export const signin = async (req, res) => {
     try {
         /* check Email existed */
         const existedUser = await UserDB.findOne({ email })
-
         if (!existedUser) {
-            return res.status(404).json({message: "User doesn't existed"})
+            return res.status(404).json({message: "User doesn't existed! Please Sign Up."})
         }
 
         /* check password correct */
         const isPasswordCorrect = await bcrypt.compare(password, existedUser.password)
-
         if (!isPasswordCorrect) {
-            return res.status(404).json({message: "Invalid Password"})
+            return res.status(404).json({message: "Invalid Password."})
         }
 
         /* generate and return json web token for user */
@@ -37,7 +35,7 @@ export const signin = async (req, res) => {
         res.status(200).json({result: existedUser, token})
 
     } catch (error) {
-        res.status(500).json({message: error})
+        res.status(500).json(error)
     }
 }
 
@@ -54,7 +52,6 @@ export const signup = async (req, res) => {
     
     try {
         const existedUser = await UserDB.findOne({ email })
-
         if (existedUser) {
             return res.status(400).json({message: "User already exists."})
         }

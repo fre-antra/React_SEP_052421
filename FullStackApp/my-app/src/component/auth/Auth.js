@@ -1,4 +1,4 @@
-import useStyle from "./style";
+import useStyle from "./style.js";
 import {
   Avatar,
   Button,
@@ -7,13 +7,14 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
+import { Alert } from '@material-ui/lab';
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from "./Input";
 import Icon from "./icon";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signin, signup } from "../../redux/ducks/auth";
 
 
@@ -21,13 +22,17 @@ const initUser = { firstName: '', lastName: "", email:'' , password:'', confirmP
 
 
 const Auth = () => {
-  const classes = useStyle;
-
+  const classes = useStyle();
   const dispatch = useDispatch();
   const history = useHistory();
+  
   const [showPW, setShowPw] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  const [userInfo,  setUserInfo] = useState(initUser)
+  const [userInfo, setUserInfo] = useState(initUser)
+  
+  const logError = useSelector(state => state.error.error)
+  const state = useSelector(state => state)
+  console.log(logError , state);
 
   const handleSubmit = (e) => {
     // prevent defualt behaviour (refresh the page) of form submit
@@ -38,7 +43,6 @@ const Auth = () => {
       dispatch(signup(userInfo, history)) // history use to redirect home page once operation done
     } else {
       dispatch(signin(userInfo, history))
-      
     }
   };
 
@@ -62,13 +66,11 @@ const Auth = () => {
     const token = res?.tokenId;
 
     try {
-      console.log("dispatch here");
       dispatch({ type: "AUTH", payload: { result, token } });
-
       // once the login, redirect to home page
       history.push("/"); 
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.message);
     }
   };
   const googleFailure = (err) => {
@@ -126,6 +128,9 @@ const Auth = () => {
             )}
           </Grid>
 
+          
+          {logError && <Alert className={classes.warn} severity="error">{logError}</Alert>}
+          
           <Button
             type="submit"
             fullWidth
@@ -135,6 +140,8 @@ const Auth = () => {
           >
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
+
+
           <GoogleLogin
             clientId="775512263366-mk6lj2ej98c56a11mfc1e2vvrmb4t3ha.apps.googleusercontent.com"
             render={(renderProps) => (
@@ -147,22 +154,24 @@ const Auth = () => {
                 startIcon={<Icon />}
                 variant="contained"
               >
-                Google Sign in
+                Sign in with google
               </Button>
             )}
             onSuccess={googleSuccess}
             onFailure={googleFailure}
             cookiePolicy="single_host_origin"
           />
+
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Button onClick={switchMode}>
+              <Button color="secondary" onClick={switchMode}>
                 {isSignup
                   ? "Already have acount? Sign In"
                   : "Dont have an aount? Sign up"}
               </Button>
             </Grid>
           </Grid>
+
         </form>
       </Paper>
     </Container>
