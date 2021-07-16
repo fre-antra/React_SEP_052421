@@ -36,18 +36,20 @@ const Auth = () => {
   // console.log(logError , state);
 
   const handleSubmit = (e) => {
-    // prevent defualt behaviour (refresh the page) of form submit
+    /* prevent defualt behaviour (refresh the page) of form submit */
     e.preventDefault()
-    console.log(userInfo);
+    console.log("UserInfo Submited: ",userInfo);
+
     if (isSignup) {
-      // sign up operations
-      dispatch(signup(userInfo, history)) // history use to redirect home page once operation done
+      /* sign up operations */
+      dispatch(signup(userInfo, history)) /* history use to redirect home page once operation done */
     } else {
       dispatch(signin(userInfo, history))
     }
   };
 
   const handleChange = (e) => {
+    /* [obj_property]:value  is fynamically update obj property while running (even the property is undefine)*/
     setUserInfo({ ...userInfo, [e.target.name]:e.target.value})
   };
 

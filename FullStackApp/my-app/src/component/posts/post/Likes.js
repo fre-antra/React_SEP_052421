@@ -11,6 +11,7 @@ const Likes = ({ post, user }) => {
         ) ? (
           <>
             <ThumbUpAltIcon fontSize="small" />
+            {/* non-breaking space */}
             &nbsp; {post.likes.length}
             {/* <ThumbUpAltIcon fontSize="small" />
             &nbsp;
@@ -21,8 +22,8 @@ const Likes = ({ post, user }) => {
         ) : (
           <>
             <ThumbUpAltOutlined fontSize="small" />
-            &nbsp;{post.likes.length}{" "}
-            {post.likes.length === 1 ? "Like" : "Likes"}
+            &nbsp;{post.likes.length}
+            {/* {post.likes.length === 1 ? "Like" : "Likes"} */}
           </>
         )}
       </>
