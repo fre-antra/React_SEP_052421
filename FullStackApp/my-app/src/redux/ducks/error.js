@@ -6,9 +6,9 @@ const initState = {
 
 // action 
 const ERROR = 'ERROR'
-const getError = {
-    type: ERROR
-}
+export const getError = () => {return {
+    type: ERROR,
+}}
 
 
 // reducer

@@ -9,10 +9,10 @@ const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
-  // const curPost = currentId ? posts.find((p) => p._id === currentId) : null
-  const curPost = useSelector((state) =>
-    currentId ? state.posts.posts.find((p) => p._id === currentId) : null
-  );
+  const curPost = currentId ? posts.find((p) => p._id === currentId) : null
+  // const curPost = useSelector((state) =>
+  //   currentId ? state.posts.posts.find((p) => p._id === currentId) : null
+  // );
   // console.log("ID + CurPost", currentId, useSelector((state) => state));
 
   const user = JSON.parse(localStorage.getItem('profile'))
@@ -66,13 +66,13 @@ const Form = ({ currentId, setCurrentId }) => {
   if (!user?.result?.name) {
     return (
       <Paper className={classes.paper}>
-        <Typography variant="h6" align="center">
-          <h2 style={{color: "rgba(245, 106, 71, 0.9)"}}>
+        <Typography variant="h4" align="center">
+          <p style={{color: "rgba(245, 106, 71, 0.9)"}}>
             Please Sign In!
-          </h2>
-          <p>
-            After that you are able to POST, LIKE, DELETE memories.
           </p>
+        </Typography>
+        <Typography variant="h6" align="center">
+            After that you are able to POST, LIKE, DELETE memories.
         </Typography>
 
       </Paper>

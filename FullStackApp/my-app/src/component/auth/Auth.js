@@ -31,8 +31,9 @@ const Auth = () => {
   const [userInfo, setUserInfo] = useState(initUser)
   
   const logError = useSelector(state => state.error.error)
-  const state = useSelector(state => state)
-  console.log(logError , state);
+  /* Testing code */
+  // const state = useSelector(state => state)
+  // console.log(logError , state);
 
   const handleSubmit = (e) => {
     // prevent defualt behaviour (refresh the page) of form submit
@@ -68,7 +69,7 @@ const Auth = () => {
     try {
       dispatch({ type: "AUTH", payload: { result, token } });
       // once the login, redirect to home page
-      history.push("/"); 
+      history.push("/posts"); 
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -129,7 +130,7 @@ const Auth = () => {
           </Grid>
 
           
-          {logError && <Alert className={classes.warn} severity="error">{logError}</Alert>}
+          {logError && <Alert className={classes.warn} severity="error" >{logError}</Alert>}
           
           <Button
             type="submit"

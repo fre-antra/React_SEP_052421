@@ -30,7 +30,7 @@ const NavBar = () => {
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
-    history.push("/");
+    history.push("/posts");
     setUser(null);
   };
 
@@ -40,7 +40,7 @@ const NavBar = () => {
         <div className={classes.brandContainer}>
           <Typography
             component={Link}
-            to="/"
+            to="/posts"
             className={classes.heading}
             variant="h2"
             align="center"
@@ -85,7 +85,7 @@ const NavBar = () => {
           ) : (
             <Button
               component={Link}
-              to="/auth"
+              to="/posts/auth"
               variant="contained"
               color="primary"
             >

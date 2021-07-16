@@ -28,7 +28,7 @@ export const signup = (userInfo, history) => async (dispatch) => {
         const { data } = await api.signUp(userInfo)
         dispatch({ type: AUTH, payload: data })
         dispatch({ type: 'ERROR', payload: null})
-        history.push('/')
+        history.push('/posts')
     } catch (error) {
         const err = error.response.data.message
         dispatch({ type: 'ERROR', payload: err})
@@ -45,7 +45,7 @@ export const signin = (userInfo, history) => async (dispatch) => {
         console.log(res);
         dispatch({ type: AUTH, payload: data })
         dispatch({ type: 'ERROR', payload: null})
-        history.push('/')
+        history.push('/posts')
     } catch (error) {
         const err = error.response.data.message
         dispatch({ type: 'ERROR', payload: err})

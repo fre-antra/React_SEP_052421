@@ -11,9 +11,8 @@ const Home = () => {
   
     useEffect(() => {
       dispatch(getPosts());
-    }, [currentId]);
+    }, [currentId,dispatch]);
   
-
 
     return (
         <Grow in>

@@ -13,7 +13,17 @@ export const getPosts = async (req, res) => {
     } catch (error) {
         res.status(404).json({message: error.message})
     }
- }
+}
+ 
+export const getPostDetail = async (req, res) => {
+    const {id} = req.params
+    try {
+        const postMessage = await PostMessage.findById(id)
+        res.status(200).json(postMessage)
+    } catch (error) {
+        res.status(404).json({message: error.message})
+    }
+}
 
 
 // sending request to db for adding new post info

@@ -15,7 +15,23 @@ export const getPosts = () => async (dispatch) => {
         console.log('GET data', data);
         dispatch({ type: FETCH, payload: data })
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
+    }
+}
+
+
+const FETCH_ONE = 'FETCH_ONE'
+export const getPostDetail =  (id) => async (dispatch) => {
+    try {
+        dispatch({ type: 'START_LOADING' })
+
+        const { data } = await api.fetchPostDetail(id)
+        console.log('GET post detail', data);
+        dispatch({ type: FETCH_ONE, payload: data })
+        
+        dispatch({ type: 'END_LOADING' })
+    } catch (error) {
+        console.log(error.response.data);
     }
 }
 
@@ -28,7 +44,7 @@ export const createPosts = (post) => async (dispatch) =>  {
         console.log('POST data', data);
         dispatch({ type: CREATE, payload: data})
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
         
     }
 }
@@ -41,7 +57,7 @@ export const updatePost = (id, post) => async (dispatch) =>  {
         console.log('UPDATE data', data);
         dispatch({ type: UPDATE, payload: data })
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
     }
 }
 
@@ -53,7 +69,7 @@ export const deletePost = (id) => async (dispatch) =>  {
         console.log('DELETE data', id);
         dispatch({ type: DELETE, payload: id })
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
     }
 }
 
@@ -65,7 +81,7 @@ export const likePost = (id) => async (dispatch) =>  {
         console.log('LIKE data', data);
         dispatch({ type: LIKE, payload: data })
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
     }
 }
 
@@ -76,21 +92,21 @@ export const likePost = (id) => async (dispatch) =>  {
 const postsReducer = (state = initailState, action) => {
     switch(action.type){
         case FETCH:
-            return  { posts: action.payload }
+            return  {  ...state, posts: action.payload }
+        case FETCH_ONE:
+            console.log('FETCH_ONE');
+            return  {  ...state, post: action.payload }
         case CREATE:
-            console.log({...state, posts:action.payload});
             return { ...state, posts: action.payload }
         case UPDATE:
             const newPosts = state.posts.map((post) => post._id === action.payload._id ? action.payload : post)
-            // console.log('Action Payload',action.payload);
-            return { posts: newPosts }
+            return {  ...state, posts: newPosts }
         case DELETE:
             const remaindPost = state.posts.filter((post) => post._id !== action.payload)
-            return { posts: remaindPost }
+            return {  ...state, posts: remaindPost }
         case LIKE:
             const likePost = state.posts.map((post) => post._id === action.payload._id ? action.payload : post)
-            console.log('like state',likePost, 'state:',state.posts);
-            return { posts: likePost }
+            return {  ...state, posts: likePost }
         default:
             return state
     }
