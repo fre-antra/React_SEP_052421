@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
 import UserDB from '../models/user.js'
+import PostMessage from '../models/postMessage.js'
 
 
 /* Sign In */
@@ -44,8 +45,7 @@ export const signin = async (req, res) => {
 /* Sign UP */
 /* 
     1. Get all user data
-    2. Serach user Email to check if exist
-    3. 
+    2. Serach user Email to check if exist 
 */
 export const signup = async (req, res) => {
     const { firstName, lastName, email, password, confirmPassword } = req.body
@@ -74,7 +74,34 @@ export const signup = async (req, res) => {
         res.status(200).json({ result, token })
 
     } catch (error) {
-        res.status(500).json({message: error})
+        res.status(500).json(error)
     }
     
 }
+
+
+/* Update user info */
+/* 
+    change Name or PassWord
+*/
+export const update = async (req, res) => {
+    const { name, email, password, confirmPassword } = req.body
+    const { id } = req.params
+
+    try {
+
+        const hashPassword = await bcrypt.hash(password, 12)
+        const result = await UserDB.findOneAndUpdate({ email }, { name, password:hashPassword }, {new:true} )
+  
+        const token = jwt.sign({ email: result.email, id: result._id }, 'test', {expiresIn: "1h"})
+
+        const updatedPost = await PostMessage.findOneAndUpdate( {creater:id}, { name }, { new: true })
+
+        const message = 'Your profile has been successfully updated!'
+
+        res.status(200).json({ result, token, message })
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+

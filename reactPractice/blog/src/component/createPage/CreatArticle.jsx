@@ -45,8 +45,7 @@ const CreatArticle = () => {
             console.log("you got me");
           }}
         >
-          {" "}
-          Cancel{" "}
+          Cancel
         </Link>
       </div>
     </form>

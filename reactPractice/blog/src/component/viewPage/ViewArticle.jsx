@@ -1,7 +1,13 @@
 import './viewStyle.css'
 import {  Link } from "react-router-dom";
+import { useContext } from 'react';
+import { BlogContext } from '../blogContext/BlogContext';
 
 const ViewArticle = () => {
+    const { curBlogId, setCurBlogId } = useContext(BlogContext)
+
+    console.log('View page ID: ', curBlogId, setCurBlogId);
+
     return (
         <div className='view'>
             <div className='viewHeader'>

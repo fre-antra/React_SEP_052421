@@ -7,9 +7,13 @@ import {
   Typography,
   CircularProgress,
   Divider,
+  TextField,
+  Button,
 } from "@material-ui/core/";
 import moment from "moment";
 import { getPostDetail } from "../../redux/ducks/posts";
+import Comment from "./Comment";
+import Comment2 from "./Comment2";
 
 const PostDetail = () => {
   const classes = useStyle();
@@ -17,14 +21,18 @@ const PostDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
+  
+  const test = useSelector((state) => state);
   const post = useSelector((state) => state.posts.post);
   const loading = useSelector((state) => state.loading.loading);
-  console.log("From detail page", post, "\n", loading);
+  console.log("From detail page", test, post, "\n", loading);
 
   useEffect(() => {
     dispatch(getPostDetail(id));
     console.log("U R in", id);
   }, [id]);
+
+
 
   if (!post) return null;
 
@@ -63,6 +71,7 @@ const PostDetail = () => {
             {moment(post.createdAt).fromNow()}
           </Typography>
         </div>
+
         <div className={classes.imageSection}>
           <img
             className={classes.media}
@@ -74,6 +83,8 @@ const PostDetail = () => {
           />
         </div>
       </div>
+      <Comment postID={id} postComments={post.comments} ></Comment>
+      {/* <Comment2 postID={post._id} postComments={post.comments}></Comment2> */}
     </Paper>
   );
 };

@@ -42,4 +42,18 @@ export default makeStyles((theme) => ({
     borderRadius: '15px',
     height: '39vh',
   },
+  showComment: {
+    height: '200px',
+    overflowY: 'auto',
+    margin:'1em 0',
+  },
+  writeComment: {
+    width:'50%',
+    height: '200px',
+    margin:'1rem 0'
+  },
+  comment__btn: {
+    display:'block',
+    marginTop: '1rem',
+  }
 }));

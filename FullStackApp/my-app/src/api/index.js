@@ -2,7 +2,9 @@ import axios from 'axios'
 
 // const url = 'http://localhost:4000/posts'
 
-const API = axios.create({ baseURL: "http://localhost:4000/" })
+const API = axios.create({
+    baseURL: "http://localhost:4000/"
+})
 
 
 // it takes function and apply on each request
@@ -17,10 +19,15 @@ API.interceptors.request.use((req) => {
 export const fetchPosts = () => API.get('/posts')
 export const fetchPostDetail = (id) => API.get(`/posts/${id}`)
 export const createPost = (newPost) => API.post('/posts', newPost)
-export const updatePost = (id, updatedPost) => API.patch(`${'/posts'}/${id}`, updatedPost)
-export const deletePost = (id) => API.delete(`${'/posts'}/${id}`)
-export const likePost = (id) => API.patch(`${'/posts'}/${id}/likePost`)
+export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost)
+export const updatePostComment = (postID, comments) => API.patch(`/posts/${postID}/comments`, comments)
+export const deletePost = (id) => API.delete(`/posts/${id}`)
+export const likePost = (id) => API.patch(`/posts/${id}/likePost`)
 
+
+export const updataComment2 = (id, comments) => API.patch(`/posts/${id}/comments2`, comments)
+
+export const profileUpdate = (userInfo) => API.patch(`/user/${userInfo._id}/profile`, userInfo)
 
 export const signIn = (userInfo) => API.post('/user/signin', userInfo)
 export const signUp = (userInfo) => API.post('/user/signup', userInfo)

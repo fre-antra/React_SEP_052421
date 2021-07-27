@@ -16,9 +16,11 @@ export const getPosts = async (req, res) => {
 }
  
 export const getPostDetail = async (req, res) => {
+    /* id in here is Post ID not user Id */
     const {id} = req.params
     try {
         const postMessage = await PostMessage.findById(id)
+        // console.log(postMessage);
         res.status(200).json(postMessage)
     } catch (error) {
         res.status(404).json({message: error.message})
@@ -92,6 +94,28 @@ export const likePost = async (req, res) => {
     
     const updateLike =  await PostMessage.findByIdAndUpdate(id, post, {new:true})
     res.json(updateLike)
+}
+
+
+ 
+export const commentPost = async (req, res) => {
+    const { id } = req.params
+    const comments = req.body
+    console.log(id, comments);
+    // set the new option to true to return the document after update was applied.
+    const updataComments = await PostMessage.findByIdAndUpdate(id, { comments }, {new:true})
+    res.json(updataComments)
+}
+
+
+export const commentIIPost = async (req, res) => {
+    const { id } = req.params
+    const comments = req.body
+    console.log(comments);
+
+    const updatedComment2 = await PostMessage.findByIdAndUpdate(id, { comments }, { new: true })
+    
+    res.json(updatedComment2)
 }
 
  export default getPosts

@@ -2,16 +2,16 @@ import ArticlePost from "./articlePost/ArticlePost";
 import { Link } from "react-router-dom";
 import "./HPstyle.css";
 
-const HomePage = ({ articals }) => {
+const HomePage = ({ articles }) => {
 
-    console.log(articals);
+    // console.log(articles);
   return (
     <section className="homepage">
       <header>Blog Articles</header>
       <Link to="/blog/create">New Article</Link>
       <div className="articles">
-        {articals.map((artical, index) => (
-            <ArticlePost key={index} artical={artical} />
+        {articles.map((article, index) => (
+          <ArticlePost key={index} article={article}/>
         ))}
       </div>
     </section>

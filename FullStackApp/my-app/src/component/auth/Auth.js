@@ -7,7 +7,7 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import { Alert } from '@material-ui/lab';
+import { Alert } from "@material-ui/lab";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from "./Input";
 import Icon from "./icon";
@@ -17,40 +17,67 @@ import { GoogleLogin } from "react-google-login";
 import { useDispatch, useSelector } from "react-redux";
 import { signin, signup } from "../../redux/ducks/auth";
 
-
-const initUser = { firstName: '', lastName: "", email:'' , password:'', confirmPassword:''}
-
+const initUser = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
+const validateError = {
+  emailError: "",
+  passwordError: "",
+};
 
 const Auth = () => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const history = useHistory();
-  
+
   const [showPW, setShowPw] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  const [userInfo, setUserInfo] = useState(initUser)
-  
-  const logError = useSelector(state => state.error.error)
+  const [userInfo, setUserInfo] = useState(initUser);
+  const [validation, setValidation] = useState(validateError);
+
+  const logError = useSelector((state) => state.error.error);
   /* Testing code */
   // const state = useSelector(state => state)
   // console.log(logError , state);
 
   const handleSubmit = (e) => {
     /* prevent defualt behaviour (refresh the page) of form submit */
-    e.preventDefault()
-    console.log("UserInfo Submited: ",userInfo);
+    e.preventDefault();
+    console.log("UserInfo Submited: ", userInfo);
+
+    var pwValidate = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{3,}$/
+    // /^            : Start
+    // (?=.{8,})        : Length
+    // (?=.*[a-zA-Z])   : Letters
+    // (?=.*\d)         : Digits
+    // (?=.*[!#$%&? "]) : Special characters
+    // $/              : End
+    if (pwValidate.test(userInfo.password)) {
+      alert("password good to go");
+    } else {
+      alert("password invalid!");
+    }
+
 
     if (isSignup) {
       /* sign up operations */
-      dispatch(signup(userInfo, history)) /* history use to redirect home page once operation done */
+      dispatch(
+        signup(userInfo, history)
+      ); /* history use to redirect home page once operation done */
     } else {
-      dispatch(signin(userInfo, history))
+      dispatch(signin(userInfo, history));
     }
   };
 
+  
   const handleChange = (e) => {
     /* [obj_property]:value  is fynamically update obj property while running (even the property is undefine)*/
-    setUserInfo({ ...userInfo, [e.target.name]:e.target.value})
+    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+    console.log(userInfo.password);
   };
 
   const handleShowPassword = () => {
@@ -71,7 +98,7 @@ const Auth = () => {
     try {
       dispatch({ type: "AUTH", payload: { result, token } });
       // once the login, redirect to home page
-      history.push("/posts"); 
+      history.push("/posts");
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -120,6 +147,7 @@ const Auth = () => {
               handleChange={handleChange}
               type={showPW ? "text" : "password"}
               handleShowPassword={handleShowPassword}
+              error
             />
             {isSignup && (
               <Input
@@ -131,9 +159,12 @@ const Auth = () => {
             )}
           </Grid>
 
-          
-          {logError && <Alert className={classes.warn} severity="error" >{logError}</Alert>}
-          
+          {logError && (
+            <Alert className={classes.warn} severity="error">
+              {logError}
+            </Alert>
+          )}
+
           <Button
             type="submit"
             fullWidth
@@ -143,7 +174,6 @@ const Auth = () => {
           >
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
-
 
           <GoogleLogin
             clientId="775512263366-mk6lj2ej98c56a11mfc1e2vvrmb4t3ha.apps.googleusercontent.com"
@@ -157,7 +187,7 @@ const Auth = () => {
                 startIcon={<Icon />}
                 variant="contained"
               >
-                Sign in with google
+                Sign in using google
               </Button>
             )}
             onSuccess={googleSuccess}
@@ -174,7 +204,6 @@ const Auth = () => {
               </Button>
             </Grid>
           </Grid>
-
         </form>
       </Paper>
     </Container>

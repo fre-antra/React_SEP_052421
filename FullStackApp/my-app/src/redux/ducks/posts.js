@@ -85,6 +85,34 @@ export const likePost = (id) => async (dispatch) =>  {
     }
 }
 
+const COMMENT = 'COMMENT'
+
+export const commentPost = (id, comments) => async (dispatch) =>  {
+    try {
+        const { data } = await api.updatePostComment(id, comments)
+        console.log('comments ', data)
+        dispatch({type:COMMENT, payload: data})
+
+    } catch (error) {
+        console.log(error.response.data);
+    }
+}
+
+
+const COMMENT2 = 'COMMENT2'
+
+export const newComments2 = (id, comments) => async (dispatch) =>  {
+    try {
+        const { data } = await api.updataComment2(id, comments)
+        console.log('COMMENT2 data', data);
+        dispatch({ type: COMMENT2, payload: data })
+        
+    } catch (error) {
+        console.log(error.response.data);
+    }
+}
+
+
 
 
 // reducer
@@ -106,7 +134,11 @@ const postsReducer = (state = initailState, action) => {
             return {  ...state, posts: remaindPost }
         case LIKE:
             const likePost = state.posts.map((post) => post._id === action.payload._id ? action.payload : post)
-            return {  ...state, posts: likePost }
+            return { ...state, posts: likePost }
+        case COMMENT:
+            return { ...state, comments: action.payload }
+        case COMMENT2:
+            return {  ...state, comments: action.payload }
         default:
             return state
     }

@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 import blogReducer from "./ducks/blogInfo";
 
 const reducers = combineReducers({
-    blog: blogReducer
+    blogReducer: blogReducer
 })
 
 
