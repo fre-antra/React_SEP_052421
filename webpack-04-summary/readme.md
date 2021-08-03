@@ -1,35 +1,27 @@
-## This project is a demostration about react + webpack + html + (JSX/babel-loader) + css-loader + HtmlWebpackPlugin
+## This project is a demostration about react + webpack + html + (JSX/babel-loader) + css-loader + HtmlWebpackPlugin, entirelly work flow
 
-- Phase 4: webpack + loader + HtmlWebpackPlugin
-- `Works on 6/19/2021`
+- Phase 5: Summary
+- `Works on 8/3/2021`
 
 ### Dependencies version
 
 - webpack 5
 
-1. Install dependencies. `(add HtmlWebpackPlugin).`
+1. Install dependencies.
 
-```bash
-$ npm init -y
-
-$ npm install react react-dom
-$ npm install --save-dev webpack webpack-cli
-
-$ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
-
-$ npm install --save-dev css-loader style-loader
-
-$ npm i --save-dev html-webpack-plugin
-```
-
-- one line command
 ```bash
 $ npm init -y
 $ npm install react react-dom
 $ npm install --save-dev webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/preset-react css-loader style-loader html-webpack-plugin
 ```
 
-2. ./public/index.html `(delete script tag)`
+2. .gitignore file
+
+```bash
+node_modules
+```
+
+3. ./public/index.html `(add html file)`
 
 ```html
 <!DOCTYPE html>
@@ -38,7 +30,7 @@ $ npm install --save-dev webpack webpack-cli babel-loader @babel/core @babel/pre
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Phase4-plugin</title>
+    <title>Phase5-Summary</title>
   </head>
   <body>
     <div id="root"></div>
@@ -46,7 +38,7 @@ $ npm install --save-dev webpack webpack-cli babel-loader @babel/core @babel/pre
 </html>
 ```
 
-3. ./src/index.js `(add message)`
+3. ./src/index.js `(add index.js)`
 
 ```js
 import React from 'react';
@@ -64,7 +56,28 @@ ReactDOM.render(
 );
 ```
 
-4. ./src/webpack.config.js `(add HtmlWebpackPlugin).`
+4. ./src/components/HelloMessage.js `add component`
+
+```js
+import React from 'react';
+
+export default class HelloMessage extends React.Component {
+  render() {
+    return <h2>{this.props.message} success!</h2>;
+  }
+}
+```
+
+5. ./src/index.css `add css file`
+
+```css
+body {
+  color: white;
+  background-color: grey;
+}
+```
+
+6. ./src/webpack.config.js `add webpack configuration.`
 
 ```js
 const path = require('path');
@@ -72,7 +85,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js', // changed
+  entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -104,7 +117,23 @@ module.exports = {
 };
 ```
 
-4. Run the html file.
+7. ./src/babel.config.json `add babel configuration.`
+
+```json
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+8. add scripts.
+
+```json
+"scripts": {
+  "build": "webpack"
+}
+```
+
+9. Run the html file.
 
 ```bash
 $ npm run build
@@ -112,17 +141,8 @@ $ cd dist
 $ open index.html
 ```
 
-5. 总结，相对于 phase 3 ，改变如下：
+10. 实施重点
 
 ```diff
-+ 增加 npm HtmlWebpackPlugin 的安装
-- 删除 index.html 中的 script 部分。(html-webpack-plugin)
-+ index.js 向下传输的参数改变
-+ web.config.js 文件中加入了 HtmlWebpackPlugin 的配置。
-+ 最后运行文件是 ./dist/index.html
++ 因为 webpack 的配置比较多，所以理清文件结构很重要，尤其是初学者可以先记住常用格式和结构，熟练后再改动。
 ```
-
-6. 为什么要加入 HtmlWebpackPlugin？
-
-- 自动生成 dist 下面的 html 文件，并自动添加 script tag。
-- html-webpack-plugin 的作用是：当使用 webpack 打包时，创建一个 html 文件，并把 webpack 打包后的静态 js 文件自动加入到这个 html 文件当中。
