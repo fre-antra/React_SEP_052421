@@ -146,3 +146,55 @@ $ open index.html
 ```diff
 + 因为 webpack 的配置比较多，所以理清文件结构很重要，尤其是初学者可以先记住常用格式和结构，熟练后再改动。
 ```
+
+11. 8/4 webpack async 补充：
+
+- 添加 babel 处理 async 的功能，也就是解决问题
+
+```diff
+- Error: regeneratorRuntime is not defined
+```
+
+- 方案：[Click here.](https://dev.to/hulyakarakaya/how-to-fix-regeneratorruntime-is-not-defined-doj)
+
+12. 8/4 webpack server & proxy 补充：
+
+- 添加 react frontend 的 webpack server 功能，并添加对应后端的 proxy。
+
+- 方案：
+
+  - [npm webpack-dev-server.](https://www.npmjs.com/package/webpack-dev-server)
+  - [添加 script](https://stackoverflow.com/questions/40379139/cannot-find-module-webpack-bin-config-yargs),`解决错误：Cannot find module 'webpack/bin/config-yargs'`
+  - [添加 proxy](https://riptutorial.com/webpack/example/30415/using-proxy)
+
+- 具体代码：
+
+  1. 安装 webpack-dev-server
+
+  ```bash
+  $ npm install webpack-dev-server --save-dev
+  ```
+
+  2. 添加 script：(./client/package.json)
+
+  ```json
+  "scripts": {
+    "start": "webpack serve"
+  },
+  ```
+
+  3. 添加 proxy。(./webpack.config.js)
+
+  - `这里要重点讲的是，webpack serve 命令直接把 client 的端口放在 8080， 而这一步的 proxy 设置主要是用于沟通后端的端口`。
+
+  ```js
+  devServer: {
+    proxy: {
+      '/': {
+        target: 'http://localhost:3000',
+      },
+    }
+  }
+  ```
+
+  - 以上这个配置就是告诉 react 每当向后端发送请求时，`/`路径代表`http://localhost:3000`，也就是后端的端口。
