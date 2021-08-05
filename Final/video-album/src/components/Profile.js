@@ -4,13 +4,12 @@ import '../css/Profile.css';
 import { withRouter } from 'react-router';
 
 
-async function fetchData(token) {
-    return fetch('http://localhost:8080/profile', {
-        method: 'POST',
+async function fetchData(uid) {
+    return fetch('http://localhost:8080/profile/' + uid, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(token)
+        }
     })
     .then(data => data.json());
 }
@@ -27,22 +26,40 @@ class Profile extends React.Component {
         this.loadProfile = this.loadProfile.bind(this);
     }
 
-    async loadProfile() {
-        const { token } = this.props;
-        const profile = await fetchData(token);
-        this.setState({
-            loaded: true,
-            profile: profile
-        });
+    async loadProfile(uid) {
+        const response = await fetchData(uid);
+        if (response.success) {
+            this.setState({
+                loaded: true,
+                profile: response.data
+            });
+        } else {
+            this.setState({
+                loaded: true,
+                profile: undefined
+            });
+        }
     }
 
     render() {
-        const { token, history } = this.props;
+        const { getToken, history } = this.props;
+        const token = getToken();
+
+        if (!token) {
+            return (
+                <div className="profile">
+                    <div className="profile-title-container">Profile</div>
+
+                    <div className="profile-row">
+                        <div className="profile-message-container">You haven't logged in.</div>
+                    </div>
+                </div>
+            );
+        }
+
         return (
             <div className="profile">
-                <div className="profile-title-container">
-                    <div className="profile-title">Profile</div>
-                </div>
+                <div className="profile-title-container">Profile</div>
 
                 {this.state.loaded ? (
                     this.state.profile ? (
@@ -69,23 +86,30 @@ class Profile extends React.Component {
                                 <div className="profile-table-cell-2">{this.state.profile.age}</div>
                             </div>
 
+                            
+                            {(token.role <= 1 && this.state.profile.uid !== token.token.uid) ? (
+                                <div className="profile-row profile-row-buttons">
+                                    <button className="profile-button" onClick={() => history.push("/users/delete/" + token.token.uid)}>Delete User</button>
+                                </div>
+                            ) : null}
                         </div>
                     ) : (
-                        <div className="profile-title-container">You don't have access to this page.</div>
+                        <div className="profile-message-container">You don't have access to this page.</div>
                     )
                 ) : (
-                    <div className="profile-title-container">Loading...</div>
+                    <div className="profile-message-container">Loading...</div>
                 )}
-
-                <div className="profile-row profile-row-buttons">
-                    <button className="profile-button" onClick={() => history.push("/users/delete/" + token.token.uid)}>Delete User</button>
-                </div>
             </div>
         );
     }
 
     componentDidMount() {
-        this.loadProfile();
+        const { getToken } = this.props;
+        const token = getToken();
+        if (token && !this.state.loaded) {
+            const { uid } = this.props.match.params;
+            this.loadProfile(uid);
+        }
     }
 }
 

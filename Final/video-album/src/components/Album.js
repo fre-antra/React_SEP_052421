@@ -24,8 +24,7 @@ export default class Album extends React.Component {
         this.loadAlbum = this.loadAlbum.bind(this);
     }
 
-    async loadAlbum() {
-        const { aid } = this.props.match.params;
+    async loadAlbum(aid) {
         const album = await fetchData(aid);
         this.setState({
             loaded: true,
@@ -72,6 +71,7 @@ export default class Album extends React.Component {
     }
 
     componentDidMount() {
-        this.loadAlbum();
+        const { aid } = this.props.match.params;
+        this.loadAlbum(aid);
     }
 }

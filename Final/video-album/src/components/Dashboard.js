@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 
 async function fetchData(token) {
-    return fetch('http://localhost:8080/album', {
+    return fetch('http://localhost:8080/dashboard', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
         this.state = {
             loaded: false,
             albums: undefined,
-            checked: undefined,
+            checked: [],
             checkedCount: 0,
             checkedAll: false,
             popupNewAlbum: false,
@@ -48,14 +48,23 @@ class Dashboard extends React.Component {
         this.setState({ newAlbumTitle: newAlbumTitle });
     }
 
-    async loadAlbums () {
-        const { token } = this.props;
-        const albums = await fetchData(token);
-        this.setState({
-            loaded: true,
-            albums: albums,
-            checked: Array(albums.length).fill(false)
-        });
+    async loadAlbums (token) {
+        const response = await fetchData(token);
+        if (response.success) {
+            this.setState({
+                loaded: true,
+                albums: response.data,
+                checked: Array(response.data.length).fill(false)
+            });
+        } else {
+            const { handleLogout } = this.props;
+            handleLogout();
+            this.setState({
+                loaded: true,
+                albums: undefined,
+                checked: []
+            });
+        }
     }
 
     toggleCheck (ind) {
@@ -89,7 +98,18 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        const { history } = this.props;
+        const { getToken, history } = this.props;
+        const token = getToken();
+        if (!token) {
+            return (
+                <div classname="dashboard">
+                    <div className="dashboard-title-container">Dashboard</div>
+
+                    <div className="dashboard-message-container">You haven't logged in.</div>
+                </div>
+            );
+        }
+
         return (
             <div className="dashboard">
                 <div className="dashboard-title-container">Dashboard</div>
@@ -124,14 +144,26 @@ class Dashboard extends React.Component {
                         <div className="dashboard-table-cell-3">Size</div>
                         <div className="dashboard-table-cell-4">Created At</div>
                     </div>
-                    {this.state.loaded ? <AlbumList albums={this.state.albums} checked={this.state.checked} toggleCheck={this.toggleCheck} /> : null}
+
+                    {this.state.loaded ? (
+                        this.state.albums ?
+                            <AlbumList albums={this.state.albums} checked={this.state.checked} toggleCheck={this.toggleCheck} />
+                            :
+                            <div className="dashboard-message-container">You don't have access to this page.</div>
+                    ) : (
+                        <div className="dashboard-message-container">Loading...</div>
+                    )}
                 </div>
             </div>
         );
     }
 
     componentDidMount() {
-        this.loadAlbums();
+        const { getToken } = this.props;
+        const token = getToken();
+        if (token) {
+            this.loadAlbums(token);
+        }
     }
 }
 

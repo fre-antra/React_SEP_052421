@@ -3,6 +3,7 @@ import '../css/Login.css';
 
 import { withRouter } from 'react-router-dom';
 
+
 async function loginUser (credentials) {
     return fetch('http://localhost:8080/login', {
         method: 'POST',
@@ -18,12 +19,13 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
 
-        const { isLoggedIn, history } = this.props;
-        if (isLoggedIn) history.goBack();
+        const { isAuthed, history } = this.props;
+        if (isAuthed) history.goBack();
 
         this.state = {
             email: undefined,
-            password: undefined
+            password: undefined,
+            popupAuthFailed: false
         }
 
         this.setEmail = this.setEmail.bind(this);
@@ -31,30 +33,43 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    setEmail (value) {
-        this.setState({ email: value });
+    setEmail (email) {
+        this.setState({ email: email });
     }
-
-    setPassword (value) {
-        this.setState({ password: value });
+    setPassword (password) {
+        this.setState({ password: password });
     }
 
     async handleSubmit (e) {
-        const { setToken, setIsLoggedIn, history } = this.props;
+        const { setIsAuthed, setToken, history } = this.props;
         e.preventDefault();
-        const token = await loginUser({
+        const response = await loginUser({
             email: this.state.email,
             password: this.state.password
         });
-        setToken(token);
-        setIsLoggedIn(true);
-        history.goBack();
+        if (response.success) {
+            setToken(response.data.token);
+            setIsAuthed(true);
+            history.goBack();
+        } else {
+            setToken(null);
+            setIsAuthed(false);
+            this.setState({
+                email: undefined,
+                password: undefined,
+                popupAuthFailed: true
+            });
+        }
     }
 
     render() {
         return (
             <div className="login-wrapper">
                 <h2>Please Login</h2>
+
+                {this.state.popupAuthFailed ?
+                    <div className="login-message-container">Authentication failed...</div> : null}
+                
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <p>Email</p>

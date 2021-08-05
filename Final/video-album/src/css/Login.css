@@ -1,3 +1,8 @@
+.login-message {
+    color: red;
+}
+
+
 .login-submit {
     cursor: pointer;
     width: 100px;

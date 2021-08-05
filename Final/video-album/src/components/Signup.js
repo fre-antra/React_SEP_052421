@@ -22,8 +22,8 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
 
-        const { isLoggedIn, history } = this.props;
-        if (isLoggedIn) history.goBack();
+        const { isAuthed, history } = this.props;
+        if (isAuthed) history.goBack();
 
         this.state = {
             email: undefined,
@@ -58,7 +58,7 @@ class Signup extends React.Component {
     }
     
     async handleSubmit (e) {
-        const { setToken, setIsLoggedIn, history } = this.props;
+        const { setIsAuthed, setToken, history } = this.props;
         e.preventDefault();
         if (!this.state.passwordMatched) {
             this.setState({
@@ -66,15 +66,28 @@ class Signup extends React.Component {
             });
             return;
         }
-        const token = await signupUser({
+        const response = await signupUser({
             email: this.state.email,
             password: this.state.password,
             gender: this.state.gender,
             age: this.state.age
         });
-        setToken(token);
-        setIsLoggedIn(true);
-        history.goBack();
+        if (response.success) {
+            setToken(response.data.token);
+            setIsAuthed(true);
+            history.goBack();
+        } else {
+            setToken(null);
+            setIsAuthed(false);
+            this.setState({
+                email: undefined,
+                password: undefined,
+                gender: undefined,
+                age: undefined,
+                passwordMatched: false,
+                popupPasswordNotMatched: false
+            });
+        }
     }
 
     render() {
