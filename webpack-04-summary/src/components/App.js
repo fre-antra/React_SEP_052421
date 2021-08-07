@@ -34,7 +34,7 @@ const App = ({ message }) => {
           </ul>
         </div>
         <div>
-          <h4>Async call: User2</h4>
+          <h4>Es6 Async call: User2</h4>
           <ul>
             <li>User id:{es6User.userId}</li>
             <li>Id:{es6User.id}</li>
