@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloMessage from './components/HelloMessage';
+import App from './components/App';
 
 import './index.css';
 
 ReactDOM.render(
-  React.createElement(HelloMessage, {
+  React.createElement(App, {
     message:
-      '< Html + React + Webpack + JSX + Babel-loader + CSS-loader + Plugin >',
+      '< Html + React + Webpack + JSX + Babel-loader + CSS-loader + Plugin +  webpack server & proxy + webpack async >',
   }),
   document.getElementById('root')
 );
