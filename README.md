@@ -20,4 +20,4 @@ This is a repo to record the SEP-FRE-TRAINING assignments and notes.
 # Notes:
 
 - Avoid modifying the main (master) branch
-- Only commit your changes under your feature branch
+- Only commit your changes under your feature branch.
